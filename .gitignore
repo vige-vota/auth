@@ -2,8 +2,6 @@
 # Project Specific
 ######################
 /src/test/javascript/coverage/
-/src/main/docker/Dockerfile
-.maven-dockerignore
 
 ######################
 # Node

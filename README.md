@@ -1,5 +1,5 @@
 # auth
-Authenticator and Role Manager for VOTA.
+Authenticator and Role Manager.
 This project is aimed to manage Keycloak extensions using a fully Maven lifecycle.
 The current supported component are the following:
 
