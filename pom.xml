@@ -73,7 +73,7 @@
 		<docker.keycloak.bind.volume.providers.authenticator.1>${project.parent.basedir}${docker.keycloak.volume.internal.providers.authenticator.1}:${docker.keycloak.volume.external.providers.authenticator.1}</docker.keycloak.bind.volume.providers.authenticator.1>
 
 		<!-- Docker - Image saving options -->
-		<docker.keycloak.saveName>custom/keycloak:${project.version}</docker.keycloak.saveName>
+		<docker.keycloak.saveName>vige/vota-auth:${project.version}</docker.keycloak.saveName>
 		<docker.keycloak.saveFile>custom-keycloak-server</docker.keycloak.saveFile>
 		<docker.keycloak.skipSave>false</docker.keycloak.skipSave>
 		
@@ -160,7 +160,7 @@
 					<images>
 						<image>
 							<alias>custom-keycloak</alias>
-							<name>custom/keycloak:${project.version}</name>
+							<name>vige/vota-auth:${project.version}</name>
 							<build>
 								<dockerFileDir>${project.basedir}</dockerFileDir>
 								<compression>gzip</compression>
