@@ -1,8 +1,3 @@
-FROM maven
-RUN mvn package
-COPY ${docker.keycloak.volume.internal.providers.authenticator.1} ${docker.keycloak.volume.external.providers.authenticator.1}
-COPY ${docker.keycloak.volume.internal.theme} ${docker.keycloak.volume.external.theme}
-
 FROM ${docker.keycloak.groupId}/${docker.keycloak.image.name}:${keycloak.version}
 
 ENV KEYCLOAK_USER ${docker.keycloak.user}

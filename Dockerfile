@@ -1,8 +1,3 @@
-FROM maven
-RUN mvn package
-COPY /keycloak-identity-providers/keycloak-identity-provider-authenticator/target/keycloak-identity-provider-authenticator-1.0.0-SNAPSHOT.jar /opt/jboss/keycloak/standalone/deployments/keycloak-identity-provider-authenticator-1.0.0-SNAPSHOT.jar
-COPY /keycloak-theme/target/keycloak-theme-1.0.0-SNAPSHOT.jar /opt/jboss/keycloak/standalone/deployments/keycloak-theme-1.0.0-SNAPSHOT.jar
-
 FROM jboss/keycloak:8.0.1
 
 ENV KEYCLOAK_USER admin
