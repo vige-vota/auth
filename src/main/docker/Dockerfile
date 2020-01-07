@@ -1,3 +1,8 @@
+FROM maven
+RUN mvn package
+COPY ${docker.keycloak.volume.internal.providers.authenticator.1} ${docker.keycloak.volume.external.providers.authenticator.1}
+COPY ${docker.keycloak.volume.internal.theme} ${docker.keycloak.volume.external.theme}
+
 FROM ${docker.keycloak.groupId}/${docker.keycloak.image.name}:${keycloak.version}
 
 ENV KEYCLOAK_USER ${docker.keycloak.user}
@@ -8,8 +13,6 @@ ENV JAVA_OPTS -server -Xms64m -Xmx512m -XX:MetaspaceSize=96M -XX:MaxMetaspaceSiz
 RUN mvn clean package
 COPY ${docker.keycloak.volume.internal.realm-config} ${docker.keycloak.volume.external.realm-config}
 COPY ${docker.keycloak.volume.internal.configuration.standalone} ${docker.keycloak.volume.external.configuration.standalone}
-COPY ${docker.keycloak.volume.internal.providers.authenticator.1} ${docker.keycloak.volume.external.providers.authenticator.1}
-COPY ${docker.keycloak.volume.internal.theme} ${docker.keycloak.volume.external.theme}
 
 EXPOSE ${docker.keycloak.port.external}
 
