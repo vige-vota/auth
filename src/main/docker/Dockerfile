@@ -8,6 +8,7 @@ ENV JAVA_OPTS -server -Xms64m -Xmx512m -XX:MetaspaceSize=96M -XX:MaxMetaspaceSiz
 COPY ${docker.keycloak.volume.internal.realm-config} ${docker.keycloak.volume.external.realm-config}
 COPY ${docker.keycloak.volume.internal.configuration.standalone} ${docker.keycloak.volume.external.configuration.standalone}
 
+EXPOSE ${docker.keycloak.port.internal}
 EXPOSE ${docker.keycloak.port.external}
 
 CMD ["${docker.keycloak.run.cmd.arg.1}", "${docker.keycloak.run.cmd.arg.2}", "${docker.keycloak.run.cmd.arg.3}", "${docker.keycloak.run.cmd.arg.4}", "${docker.keycloak.run.cmd.arg.5}", "${docker.keycloak.run.cmd.arg.6}","${docker.keycloak.run.cmd.arg.7}","${docker.keycloak.run.cmd.arg.8}"]
