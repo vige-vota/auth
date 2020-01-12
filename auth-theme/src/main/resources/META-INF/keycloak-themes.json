@@ -1,0 +1,12 @@
+{
+	"themes": [
+		{
+			"name": "auth-theme",
+			"types": [
+				"admin",
+				"login",
+				"account"
+			]
+		}
+	]
+}
