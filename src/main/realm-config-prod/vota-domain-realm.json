@@ -13,11 +13,11 @@
     "requiredCredentials": [ "password" ],
     "users" : [
         {
-            "username" : "alice",
+            "username" : "gladys",
             "enabled": true,
-            "email" : "alice@keycloak.org",
-            "firstName": "Alice",
-            "lastName": "Liddel",
+            "email" : "gladys@keycloak.org",
+            "firstName": "Gladys",
+            "lastName": "Carrizales",
             "credentials" : [
                 { "type" : "password",
                     "value" : "password" }

@@ -40,6 +40,10 @@ It can include also your own code for integration tests after executing your cus
 ```
 mvn clean package
 ```
+or if you want a production environment:
+```
+mvn clean package -Pproduction
+```
 
 This will also regenerate the Dockerfile in the project root.
 
@@ -60,6 +64,11 @@ In order to execute the build process locally of the Docker image **custom/keycl
 ```
 mvn clean package
 mvn install
+```
+or if you want a production environment:
+```
+mvn clean package -Pproduction
+mvn install -Pproduction
 ```
 
 After the startup of Keycloak, you can access as admin/admin from the admin console URL:
