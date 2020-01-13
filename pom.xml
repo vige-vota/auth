@@ -27,9 +27,9 @@
 		<docker.keycloak.image.name>keycloak</docker.keycloak.image.name>
 		<docker.keycloak.user>admin</docker.keycloak.user>
 		<docker.keycloak.password>admin</docker.keycloak.password>
-		<docker.keycloak.port.host>8080</docker.keycloak.port.host>
-		<docker.keycloak.port.internal>8080</docker.keycloak.port.internal>
-		<docker.keycloak.port.external>8080</docker.keycloak.port.external>
+		<docker.keycloak.port.host>8480</docker.keycloak.port.host>
+		<docker.keycloak.port.internal>8480</docker.keycloak.port.internal>
+		<docker.keycloak.port.external>8480</docker.keycloak.port.external>
 		<docker.keycloak.time.test>120000</docker.keycloak.time.test>
 		<docker.keycloak.db.vendor>H2</docker.keycloak.db.vendor>
 
@@ -47,6 +47,7 @@
 		<docker.keycloak.run.cmd.arg.6>-Dkeycloak.migration.strategy=OVERWRITE_EXISTING</docker.keycloak.run.cmd.arg.6>
 		<docker.keycloak.run.cmd.arg.7>-bmanagement</docker.keycloak.run.cmd.arg.7>
 		<docker.keycloak.run.cmd.arg.8>0.0.0.0</docker.keycloak.run.cmd.arg.8>
+		<docker.keycloak.run.cmd.arg.9>-Djboss.socket.binding.port-offset=400</docker.keycloak.run.cmd.arg.9>
 
 
 		<!-- Docker Volumes Building -->
@@ -95,6 +96,8 @@
 			<properties>
 				<docker.keycloak.volume.internal.realm-config>/src/main/prod/realm-config</docker.keycloak.volume.internal.realm-config>
 				<docker.keycloak.volume.internal.dir>${project.basedir}/src/main/prod/docker</docker.keycloak.volume.internal.dir>
+				<docker.keycloak.port.https.internal>8843</docker.keycloak.port.https.internal>
+				<docker.keycloak.port.https.external>8843</docker.keycloak.port.https.external>
 			</properties>
 		</profile>
 	</profiles>

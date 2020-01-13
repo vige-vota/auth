@@ -52,6 +52,7 @@
 									<arg>${docker.keycloak.run.cmd.arg.6}</arg>
 									<arg>${docker.keycloak.run.cmd.arg.7}</arg>
 									<arg>${docker.keycloak.run.cmd.arg.8}</arg>
+									<arg>${docker.keycloak.run.cmd.arg.9}</arg>
 								</cmd>
 
 								<volumes>
