@@ -49,7 +49,6 @@
 		<docker.keycloak.run.cmd.arg.8>0.0.0.0</docker.keycloak.run.cmd.arg.8>
 		<docker.keycloak.run.cmd.arg.9>-Djboss.socket.binding.port-offset=400</docker.keycloak.run.cmd.arg.9>
 
-
 		<!-- Docker Volumes Building -->
 
 		<!-- Realm -->
