@@ -54,10 +54,6 @@
 		<!-- Realm -->
 		<docker.keycloak.volume.external.realm-config>/opt/jboss/keycloak/realm-config</docker.keycloak.volume.external.realm-config>
 
-		<!-- WildFly configuration -->
-		<docker.keycloak.volume.internal.configuration.standalone>/src/main/resources/standalone/configuration/standalone.xml</docker.keycloak.volume.internal.configuration.standalone>
-		<docker.keycloak.volume.external.configuration.standalone>/opt/jboss/keycloak/standalone/configuration/standalone.xml</docker.keycloak.volume.external.configuration.standalone>
-
 		<!-- Keycloak Theme -->
 		<docker.keycloak.volume.internal.theme>/keycloak-theme/target/keycloak-theme-${project.version}.jar</docker.keycloak.volume.internal.theme>
 		<docker.keycloak.volume.external.theme>/opt/jboss/keycloak/standalone/deployments/keycloak-theme-${project.version}.jar</docker.keycloak.volume.external.theme>
@@ -154,14 +150,6 @@
 									<includes>
 										<include>Dockerfile</include>
 									</includes>
-								</resource>
-								<!-- # Unfiltered Resources -->
-								<resource>
-									<directory>${docker.keycloak.volume.internal.dir}</directory>
-									<filtering>false</filtering>
-									<excludes>
-										<exclude>Dockerfile</exclude>
-									</excludes>
 								</resource>
 							</resources>
 							<outputDirectory>${project.basedir}</outputDirectory>
