@@ -1,103 +1,108 @@
-# auth
+Auth
+=============
 Authenticator and Role Manager.
 This project is aimed to manage Keycloak extensions using a fully Maven lifecycle.
-The current supported component are the following:
 
-*  keycloak-assembly
-*  keycloak-identity-providers
-*  keycloak-integration-tests
-*  keycloak-theme
+It covers all the following features:
 
-Developed and tested on Keycloak 8.0.1.
+- Import voting users.
+- Browsing users.
 
-## Requirements
-In order to use this project, you need to install the following components:
+This draft version has been tested on WildFly 18.0.1.Final.
 
-* Apache Maven 3.6.x
-* Docker
+Requirements
+------------
 
-
-## Keycloak Assembly
-This is the Maven assembly module for deploying the platform in any environment that is not currently supporting Docker.
-The final artifact for this module is a folder tree as the following:
-
-* realm-config
-* standalone
-* themes
-
-## Keycloak Identity Providers
-Main module that includes all the needed custom providers and authenticators.
-The default project contains only a single custom authenticator but you can easily add new providers following the same configuration approach.
-
-**Custom Authenticator**
-This is the implementation of the secret question provider taken from the Keycloak examples folder.
-
-## Keycloak Integration Tests
-This module will install and run all the artifacts using Docker.
-It can include also your own code for integration tests after executing your custom image.
-
-**Building**
-```
-mvn clean package
-```
-
-This will also regenerate the Dockerfile in the project root.
-
-**Running Integration Tests**
-
-To execute integration tests you can run the following command:
-
-```
-mvn clean integration-test
-```
-
-A specific Maven property (docker.keepRunning) is provided to decide if keep running the container after the execution of tests or not.
-Please consider that the default value is true, this means that you have to manually stop the container after executing integration-test.
+- JDK 13
+- Maven 3.6.x
 
 
-## Saving and running the Custom Keycloak Docker image
-In order to execute the build process locally of the Docker image **custom/keycloak:latest**
-```
-mvn clean package
-mvn install
-```
+Build
+-----
 
-After the startup of Keycloak, you can access as admin/admin from the admin console URL:
-```
-http://localhost:8080/auth/admin
-```
+In development mode:
 
-A quickstart realm is provided to test your extensions.
+    mvn install -Pproduction,prepare-keycloak
+    
+If you want to start the WildFly prepared instance and execute the JSF application:
 
-To dinamically regenerate the Dockerfile and build only the Docker image:
-```
-mvn clean package
-docker build -t custom/keycloak:${project.version} .
-```
+    mvn install -Pproduction,runtime-school-jsf -Dkeycloak.url=${keycloak.url}
+    
+Where ${keycloak.url} is the host name of the keycloak server shown in the below guide. Or for the Keycloak server:
 
-Run the latest Docker image:
+    mvn install -Pproduction,runtime-keycloak
+   
+From the 1.2.0 version we need keycloak to manage the users. To prepare a keycloak standalone use the following command:
 
-```
-docker run -p 8080:8080 custom/keycloak:latest
-```
+    mvn install -Pdevelopment,prepare-keycloak
+    
+and to start the prepared keycloak instance:
 
-## Keycloak Themes
-This module includes the default example of themes with the addition of the secret question sample templates taken from the default authenticator.
+    mvn install -Pdevelopment,runtime-keycloak
+    
+This command import default users and development configurations. To prepare keycloak in a clean production environment you can use:
 
-## Deliverables
+    mvn install -Pproduction,prepare-keycloak
+    
+and to start the prepared keycloak instance:
 
-**Overlays**
+    mvn install -Pproduction,runtime-keycloak -Dapp.url=${school.url}
+    
+Where ${app.url} is the host name of the app server to connect. If you start with the developer profile you must not specify the host names because the default host name localhost is used. If you don't declare the url variables in the mode production, the default will be localhost.
+To create new users in WildFly:
 
-| Source | Target deployment | Artifact |
-| -------- | -------- | -------- |
-| /src/main/resources/standalone/configuration/standalone.xml | /opt/jboss/keycloak/standalone/configuration/standalone.xml | XML |
-| /src/main/realm-config | /opt/jboss/keycloak/realm-config | Folder |
-| /keycloak-theme/target/keycloak-theme-${project.version}.jar | /opt/jboss/keycloak/standalone/deployments | JAR |
-| /keycloak-identity-providers/keycloak-identity-provider-authenticator/target/keycloak-identity-provider-authenticator-${project.version}.jar | /opt/jboss/keycloak/standalone/deployments | JAR |
+$JBOSS_HOME/bin/add_user.sh
 
-**Docker image**
-The Docker image is written inside your local repo but it is also available in the following path:
+    What type of user do you wish to add? 
+     a) Management User (mgmt-users.properties) 
+     b) Application User (application-users.properties)
+    (a): b
 
-```
-/target/docker/custom/keycloak/${project.version}/tmp/docker-build.tar.gz
-```
+Enter the details of the new user to add.
+Realm (ApplicationRealm) : 
+Username : user2
+Password : password2
+Re-enter Password : password2
+What roles do you want this user to belong to? (Please enter a comma separated list, or leave blank for none) : users
+The username 'admin' is easy to guess
+Are you sure you want to add user 'admin' yes/no? yes
+
+to test the rest api with junit:
+
+    deploy the rest api in a server
+    mvn -Prest-test test
+
+To debug the application using Eclipse you can put this parameter:
+
+    mvn -Dmaven.surefire.debug test
+
+It will start on the 5005 port.
+
+The tests are done using Chrome 72.0.3626.109 (64-bit) on WildFly 17.0.0.Beta1-SNAPSHOT
+
+Docker image
+------------
+
+To install the docker image run the command:
+
+    docker pull vige/school
+    
+To run the image run the command:
+
+    docker run -p 8080:8080 -p 8180:8180 --name school vige/school
+    
+If you want start it in background mode:
+
+    docker run -p 8080:8080 -p 8180:8180 -d --name school vige/school
+
+Both the executions will run using localhost as host connection name. If you need to specify a different host, for example if you are in a remote cloud, you must specify the hosts for keycloak and the school app so:
+
+    docker run -p 8080:8080 -p 8180:8180 -e SCHOOL_URL=${school.url} -e KEYCLOAK_URL=${keycloak.url} -d --name school vige/school
+    
+If you need a different language by the english you can set the i18 variable. A sample to start the docker container with a italian language:
+
+    docker run -p 8080:8080 -p 8180:8180 -e LC_ALL=it_IT.UTF-8 -d --name school vige/school
+
+Then connect to http://localhost:8080/school with root/gtn to start a session as admin in the school webapp.
+If you want to configure, add schools, classes and new users or approve users connect to: http://localhost:8180/auth with root/gtn in the keycloak webapp.
+If you want connect in the keycloak webapp as superuser connect to it with admin/admin
