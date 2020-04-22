@@ -58,13 +58,12 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<spec.jakartaee.version>8.0.0</spec.jakartaee.version>
 		<maven.replacer.plugin.version>1.5.3</maven.replacer.plugin.version>
-		<maven.docker.plugin.version>0.31.0</maven.docker.plugin.version>
 		<maven.resources.plugin.version>3.1.0</maven.resources.plugin.version>
 		<wildfly.version>18.0.1.Final</wildfly.version>
 		<wildfly.maven.plugin.version>2.0.2.Final</wildfly.maven.plugin.version>
-		<keycloak.version>7.0.0</keycloak.version>
+		<keycloak.version>9.0.0</keycloak.version>
 		<resteasy.version>3.9.1.Final</resteasy.version>
-		<junit.version>5.5.2</junit.version>
+		<junit.version>5.6.0</junit.version>
 	</properties>
 
 	<build>
