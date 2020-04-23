@@ -19,7 +19,7 @@
 		"password"
 	],
 	"defaultGroups": [
-		"/pupil"
+		"/citizen"
 	],
 	"users": [
 		{
@@ -122,7 +122,7 @@
 				"description": "Teacher privileges"
 			},
 			{
-				"name": "pupil",
+				"name": "citizen",
 				"description": "Pupil privileges"
 			}
 		]
@@ -150,13 +150,13 @@
 			"subGroups": []
 		},
 		{
-			"name": "pupil",
-			"path": "/pupil",
+			"name": "citizen",
+			"path": "/citizen",
 			"attributes": {
 				
 			},
 			"realmRoles": [
-				"pupil"
+				"citizen"
 			],
 			"clientRoles": {
 				"realm-management": [

@@ -4,7 +4,7 @@ public interface Constants {
 
 	String ADMIN_ROLE = "admin";
 
-	String PUPIL_ROLE = "pupil";
+	String CITIZEN_ROLE = "citizen";
 
 	String TEACHER_ROLE = "teacher";
 
