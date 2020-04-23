@@ -45,6 +45,6 @@ RUN rm -Rf /home/wildfly/.m2 && \
 
 CMD mkdir -p /opt/keycloak/realm-config/execution && \
 	cp /opt/keycloak/realm-config/auth-domain-realm.json /opt/keycloak/realm-config/execution && \
-	sed -i -e 's/MAVEN_REPLACER_SCHOOL_SERVER_URL/'"$SCHOOL_URL"'/g' /opt/keycloak/realm-config/execution/auth-domain-realm.json && \
+	sed -i -e 's/MAVEN_REPLACER_VOTA_SERVER_URL/'"$VOTA_URL"'/g' /opt/keycloak/realm-config/execution/auth-domain-realm.json && \
 	sudo service keycloak start && \
     tail -f /dev/null

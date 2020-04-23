@@ -154,7 +154,7 @@
 											<artifactId>auth-rooms</artifactId>
 											<version>${project.version}</version>
 											<destFileName>auth-rooms.jar</destFileName>
-											<outputDirectory>${project.build.directory}/keycloak-run/wildfly-${wildfly.version}/modules/it/vige/school/rooms/main</outputDirectory>
+											<outputDirectory>${project.build.directory}/keycloak-run/wildfly-${wildfly.version}/modules/it/vige/vota/rooms/main</outputDirectory>
 										</artifactItem>
 									</artifactItems>
 								</configuration>
@@ -172,10 +172,10 @@
 									<goal>copy-resources</goal>
 								</goals>
 								<configuration>
-									<outputDirectory>${project.build.directory}/keycloak-run/wildfly-${wildfly.version}/modules/it/vige/school/rooms/main</outputDirectory>
+									<outputDirectory>${project.build.directory}/keycloak-run/wildfly-${wildfly.version}/modules/it/vige/vota/rooms/main</outputDirectory>
 									<resources>
 										<resource>
-											<directory>auth-rooms/src/main/config/it/vige/school/rooms/main</directory>
+											<directory>auth-rooms/src/main/config/it/vige/vota/rooms/main</directory>
 											<include>module.xml</include>
 										</resource>
 									</resources>
@@ -264,7 +264,7 @@
 									<resources>
 										<resource>
 											<directory>${project.build.directory}/keycloak-run/wildfly-${wildfly.version}/realm-config</directory>
-											<include>school-domain-realm.json</include>
+											<include>vota-domain-realm.json</include>
 											<filtering>true</filtering>
 										</resource>
 									</resources>
@@ -284,11 +284,11 @@
 									<goal>replace</goal>
 								</goals>
 								<configuration>
-									<file>${project.build.directory}/keycloak-run/wildfly-${wildfly.version}/realm-config/execution/school-domain-realm.json</file>
+									<file>${project.build.directory}/keycloak-run/wildfly-${wildfly.version}/realm-config/execution/vota-domain-realm.json</file>
 									<replacements>
 										<replacement>
-											<token>MAVEN_REPLACER_SCHOOL_SERVER_URL</token>
-											<value>${school.url}</value>
+											<token>MAVEN_REPLACER_VOTA_SERVER_URL</token>
+											<value>${vota.url}</value>
 										</replacement>
 									</replacements>
 								</configuration>

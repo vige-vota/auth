@@ -1,8 +1,8 @@
 {
-	"realm": "school-domain",
+	"realm": "vota-domain",
 	"auth-server-url": "http://localhost:8180/auth",
 	"ssl-required": "none",
-	"resource": "school",
+	"resource": "vota",
 	"enable-basic-auth" : "true",
 	"credentials": {
 		"secret": "bce5816d-98c4-404f-a18d-bcc5cb005c79"

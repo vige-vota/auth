@@ -50,7 +50,7 @@ This command import default users and development configurations. To prepare key
     
 and to start the prepared keycloak instance:
 
-    mvn install -Pproduction,runtime-keycloak -Dapp.url=${school.url}
+    mvn install -Pproduction,runtime-keycloak -Dapp.url=${vota.url}
     
 Where ${app.url} is the host name of the app server to connect. If you start with the developer profile you must not specify the host names because the default host name localhost is used. If you don't declare the url variables in the mode production, the default will be localhost.
 To create new users in WildFly:
@@ -89,24 +89,24 @@ Docker image
 
 To install the docker image run the command:
 
-    docker pull vige/school
+    docker pull vige/vota
     
 To run the image run the command:
 
-    docker run -p 8080:8080 -p 8180:8180 --name school vige/school
+    docker run -p 8080:8080 -p 8180:8180 --name vota vige/vota
     
 If you want start it in background mode:
 
-    docker run -p 8080:8080 -p 8180:8180 -d --name school vige/school
+    docker run -p 8080:8080 -p 8180:8180 -d --name vota vige/vota
 
-Both the executions will run using localhost as host connection name. If you need to specify a different host, for example if you are in a remote cloud, you must specify the hosts for keycloak and the school app so:
+Both the executions will run using localhost as host connection name. If you need to specify a different host, for example if you are in a remote cloud, you must specify the hosts for keycloak and the vota app so:
 
-    docker run -p 8080:8080 -p 8180:8180 -e SCHOOL_URL=${school.url} -e KEYCLOAK_URL=${keycloak.url} -d --name school vige/school
+    docker run -p 8080:8080 -p 8180:8180 -e VOTA_URL=${vota.url} -e KEYCLOAK_URL=${keycloak.url} -d --name vota vige/vota
     
 If you need a different language by the english you can set the i18 variable. A sample to start the docker container with a italian language:
 
-    docker run -p 8080:8080 -p 8180:8180 -e LC_ALL=it_IT.UTF-8 -d --name school vige/school
+    docker run -p 8080:8080 -p 8180:8180 -e LC_ALL=it_IT.UTF-8 -d --name vota vige/vota
 
-Then connect to http://localhost:8080/school with root/gtn to start a session as admin in the school webapp.
-If you want to configure, add schools, classes and new users or approve users connect to: http://localhost:8180/auth with root/gtn in the keycloak webapp.
+Then connect to http://localhost:8080/vota with root/gtn to start a session as admin in the vota webapp.
+If you want to configure, add votas, classes and new users or approve users connect to: http://localhost:8180/auth with root/gtn in the keycloak webapp.
 If you want connect in the keycloak webapp as superuser connect to it with admin/admin
