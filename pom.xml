@@ -22,8 +22,8 @@
 	<artifactId>auth</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
-	<name>School Keycloak</name>
-	<description>School Keycloak Configuration</description>
+	<name>Vota Keycloak</name>
+	<description>Vota Keycloak Configuration</description>
 	<url>http://www.vige.it</url>
 
 	<organization>
@@ -88,9 +88,6 @@
 
 		<profile>
 			<id>development</id>
-			<activation>
-				<activeByDefault>true</activeByDefault>
-			</activation>
 			<properties>
 				<realm.config.environment>dev</realm.config.environment>
 				<realm.migration>OVERWRITE_EXISTING</realm.migration>
@@ -308,11 +305,12 @@
 							</java-opts>
 							<server-args>
 								<server-arg>-b=0.0.0.0</server-arg>
-								<server-arg>-Djboss.socket.binding.port-offset=100</server-arg>
+								<server-arg>-Djboss.socket.binding.port-offset=400</server-arg>
 								<server-arg>-Dkeycloak.migration.action=import</server-arg>
 								<server-arg>-Dkeycloak.migration.provider=dir</server-arg>
 								<server-arg>-Dkeycloak.migration.dir=${project.build.directory}/keycloak-run/wildfly-${wildfly.version}/realm-config/execution</server-arg>
 								<server-arg>-Dkeycloak.migration.strategy=${realm.migration}</server-arg>
+								<server-arg>-Dkeycloak.profile.feature.upload_scripts=enabled</server-arg>
 							</server-args>
 						</configuration>
 						<executions>
@@ -325,6 +323,7 @@
 								<configuration>
 									<jbossHome>${project.build.directory}/keycloak-run/wildfly-${wildfly.version}</jbossHome>
 									<port>10090</port>
+									<startupTimeout>300</startupTimeout>
 								</configuration>
 							</execution>
 						</executions>

@@ -24,7 +24,7 @@
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
 
-	<name>School Keycloak Theme</name>
+	<name>Vota Keycloak Theme</name>
 	<description />
 	<artifactId>auth-theme</artifactId>
 

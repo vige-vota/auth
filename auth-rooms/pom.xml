@@ -25,8 +25,8 @@
 	</parent>
 
 	<artifactId>auth-rooms</artifactId>
-	<name>School Keycloak Rooms</name>
-	<description>School Keycloak Rooms Configuration</description>
+	<name>Vota Keycloak Rooms</name>
+	<description>Vota Keycloak Rooms Configuration</description>
 
 	<build>
 		<plugins>

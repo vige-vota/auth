@@ -22,11 +22,15 @@ Build
 
 In development mode:
 
+    mvn install -Pdevelopment,prepare-keycloak
+    
+In production mode:
+
     mvn install -Pproduction,prepare-keycloak
     
-If you want to start the WildFly prepared instance and execute the JSF application:
+If you want to start the WildFly prepared instance and execute the application:
 
-    mvn install -Pproduction,runtime-school-jsf -Dkeycloak.url=${keycloak.url}
+    mvn install -Pproduction,runtime-keycloak -Dkeycloak.url=${keycloak.url}
     
 Where ${keycloak.url} is the host name of the keycloak server shown in the below guide. Or for the Keycloak server:
 
@@ -78,7 +82,7 @@ To debug the application using Eclipse you can put this parameter:
 
 It will start on the 5005 port.
 
-The tests are done using Chrome 72.0.3626.109 (64-bit) on WildFly 17.0.0.Beta1-SNAPSHOT
+The tests are done using Chrome 72.0.3626.109 (64-bit) on WildFly 18.0.1.Final
 
 Docker image
 ------------
