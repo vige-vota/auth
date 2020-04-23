@@ -59,9 +59,9 @@
 		<spec.jakartaee.version>8.0.0</spec.jakartaee.version>
 		<maven.replacer.plugin.version>1.5.3</maven.replacer.plugin.version>
 		<maven.resources.plugin.version>3.1.0</maven.resources.plugin.version>
-		<wildfly.version>18.0.1.Final</wildfly.version>
+		<wildfly.version>19.0.0.Final</wildfly.version>
 		<wildfly.maven.plugin.version>2.0.2.Final</wildfly.maven.plugin.version>
-		<keycloak.version>9.0.0</keycloak.version>
+		<keycloak.version>9.0.3</keycloak.version>
 		<resteasy.version>3.9.1.Final</resteasy.version>
 		<junit.version>5.6.0</junit.version>
 	</properties>
@@ -322,7 +322,6 @@
 								</goals>
 								<configuration>
 									<jbossHome>${project.build.directory}/keycloak-run/wildfly-${wildfly.version}</jbossHome>
-									<port>10090</port>
 									<startupTimeout>300</startupTimeout>
 								</configuration>
 							</execution>
