@@ -74,7 +74,7 @@ Are you sure you want to add user 'admin' yes/no? yes
 to test the rest api with junit:
 
     deploy the rest api in a server
-    mvn -Prest-test test
+    mvn -Prest-keycloak-test test
 
 To debug the application using Eclipse you can put this parameter:
 
