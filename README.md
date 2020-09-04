@@ -82,7 +82,7 @@ To debug the application using Eclipse you can put this parameter:
 
 It will start on the 5005 port.
 
-The tests are done using Chrome 80.0.3987.163 (64-bit) on WildFly 19.0.0.Final
+The tests are done using Chrome 84.0.4147.135 (64-bit) on WildFly 20.0.1.Final
 
 Docker image
 ------------
