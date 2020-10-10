@@ -8,12 +8,12 @@ It covers all the following features:
 - Import voting users.
 - Browsing users.
 
-This draft version has been tested on WildFly 18.0.1.Final.
+This draft version has been tested on WildFly 20.0.1.Final.
 
 Requirements
 ------------
 
-- JDK 13
+- JDK 15
 - Maven 3.6.x
 
 
