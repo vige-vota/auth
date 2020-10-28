@@ -11,7 +11,7 @@
 # limitations under the License.
 
 FROM openjdk:13-jdk
-EXPOSE 8000 8080 8180 9990 10090 8443 8543
+EXPOSE 8843
 RUN yum -y update && \
 	yum -y install sudo wget openssh-server && \
     echo "wildfly ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers && \
@@ -28,6 +28,9 @@ RUN mkdir /home/wildfly/apache-maven-$MAVEN_VERSION && \
   	wget -qO- "http://apache.ip-connect.vn.ua/maven/maven-3/$MAVEN_VERSION/binaries/apache-maven-$MAVEN_VERSION-bin.tar.gz" | tar -zx --strip-components=1 -C /home/wildfly/apache-maven-$MAVEN_VERSION/
 ENV TERM xterm
 ENV KEYCLOAK_URL=localhost
+ENV VOTINGPAPERS_URL=https://vota-votingpapers.vige.it
+ENV VOTING_URL=https://vota-voting.vige.it
+ENV HISTORY_URLL=https://vota-history.vige.it
 
 WORKDIR /workspace
 COPY / /workspace/auth
@@ -45,6 +48,8 @@ RUN rm -Rf /home/wildfly/.m2 && \
 
 CMD mkdir -p /opt/keycloak/realm-config/execution && \
 	cp /opt/keycloak/realm-config/auth-domain-realm.json /opt/keycloak/realm-config/execution && \
-	sed -i -e 's/MAVEN_REPLACER_VOTA_SERVER_URL/'"$VOTA_URL"'/g' /opt/keycloak/realm-config/execution/auth-domain-realm.json && \
+	sed -i -e 's/MAVEN_REPLACER_VOTINGPAPERS_SERVER_URL/'"$VOTINGPAPERS_URL"'/g' /opt/keycloak/realm-config/execution/auth-domain-realm.json && \
+	sed -i -e 's/MAVEN_REPLACER_VOTING_SERVER_URL/'"$VOTING_URL"'/g' /opt/keycloak/realm-config/execution/auth-domain-realm.json && \
+	sed -i -e 's/MAVEN_REPLACER_HISTORY_SERVER_URL/'"$HISTORY_URL"'/g' /opt/keycloak/realm-config/execution/auth-domain-realm.json && \
 	sudo service keycloak start && \
     tail -f /dev/null

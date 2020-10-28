@@ -48,19 +48,22 @@
 			"authorizationServicesEnabled": true
 		},
 		{
-			"clientId": "vota",
-			"rootUrl": "http://MAVEN_REPLACER_VOTA_SERVER_URL:8080/vota",
+			"clientId": "voting",
+			"rootUrl": "MAVEN_REPLACER_VOTING_SERVER_URL",
 			"enabled": true,
 			"redirectUris": [
-				"http://MAVEN_REPLACER_VOTA_SERVER_URL:8080/vota/*"
+				"MAVEN_REPLACER_VOTING_SERVER_URL/vote/*",
+				"MAVEN_REPLACER_VOTING_SERVER_URL/result/*",
+				"MAVEN_REPLACER_VOTING_SERVER_URL/swagger-ui/*"
 			],
 			"webOrigins": [
-				"http://MAVEN_REPLACER_VOTA_SERVER_URL:8080"
+				"MAVEN_REPLACER_VOTING_SERVER_URL"
 			],
 			"publicClient": false,
 			"secret": "bce5816d-98c4-404f-a18d-bcc5cb005c79",
 			"serviceAccountsEnabled": true,
 			"authorizationServicesEnabled": true,
+			"implicitFlowEnabled": true,
 			"authorizationSettings": {
 				"allowRemoteResourceManagement": true,
 				"policyEnforcementMode": "ENFORCING",
@@ -72,7 +75,6 @@
 						"attributes": {
 							
 						},
-						"_id": "c338b2be-da73-471c-9bb0-77ad52e1f88f",
 						"uris": [
 							"/*"
 						]
@@ -80,7 +82,6 @@
 				],
 				"policies": [
 					{
-						"id": "edb01393-180e-4d95-afd3-92b3ac5a6d41",
 						"name": "Default Policy",
 						"description": "A policy that grants access only for users within this realm",
 						"type": "js",
@@ -91,7 +92,124 @@
 						}
 					},
 					{
-						"id": "1f5dce97-54e3-4dcf-92bd-a2a59120286f",
+						"name": "Default Permission",
+						"description": "A permission that applies to the default resource type",
+						"type": "resource",
+						"logic": "POSITIVE",
+						"decisionStrategy": "UNANIMOUS",
+						"config": {
+							"defaultResourceType": "urn:vota:resources:default",
+							"applyPolicies": "[\"Default Policy\"]"
+						}
+					}
+				],
+				"scopes": []
+			}
+		},
+		{
+			"clientId": "votingPapers",
+			"rootUrl": "MAVEN_REPLACER_VOTINGPAPERS_SERVER_URL",
+			"enabled": true,
+			"redirectUris": [
+				"MAVEN_REPLACER_VOTINGPAPERS_SERVER_URL/votingPapers/*",
+				"MAVEN_REPLACER_VOTINGPAPERS_SERVER_URL/swagger-ui/*"
+			],
+			"webOrigins": [
+				"MAVEN_REPLACER_VOTINGPAPERS_SERVER_URL"
+			],
+			"publicClient": false,
+			"secret": "bce5816d-98c4-404f-a18d-bcc5cb005c79",
+			"serviceAccountsEnabled": true,
+			"authorizationServicesEnabled": true,
+			"implicitFlowEnabled": true,
+			"authorizationSettings": {
+				"allowRemoteResourceManagement": true,
+				"policyEnforcementMode": "ENFORCING",
+				"resources": [
+					{
+						"name": "Default Resource",
+						"type": "urn:vota:resources:default",
+						"ownerManagedAccess": false,
+						"attributes": {
+							
+						},
+						"uris": [
+							"/*"
+						]
+					}
+				],
+				"policies": [
+					{
+						"name": "Default Policy",
+						"description": "A policy that grants access only for users within this realm",
+						"type": "js",
+						"logic": "POSITIVE",
+						"decisionStrategy": "AFFIRMATIVE",
+						"config": {
+							"code": "// by default, grants any permission associated with this policy\n$evaluation.grant();\n"
+						}
+					},
+					{
+						"name": "Default Permission",
+						"description": "A permission that applies to the default resource type",
+						"type": "resource",
+						"logic": "POSITIVE",
+						"decisionStrategy": "UNANIMOUS",
+						"config": {
+							"defaultResourceType": "urn:vota:resources:default",
+							"applyPolicies": "[\"Default Policy\"]"
+						}
+					}
+				],
+				"scopes": []
+			}
+		},
+		{
+			"clientId": "history",
+			"rootUrl": "MAVEN_REPLACER_HISTORY_SERVER_URL",
+			"enabled": true,
+			"redirectUris": [
+				"MAVEN_REPLACER_HISTORY_SERVER_URL/save/*",
+				"MAVEN_REPLACER_HISTORY_SERVER_URL/votingPapers/*",
+				"MAVEN_REPLACER_HISTORY_SERVER_URL/result/*",
+				"MAVEN_REPLACER_HISTORY_SERVER_URL/swagger-ui/*"
+			],
+			"webOrigins": [
+				"MAVEN_REPLACER_HISTORY_SERVER_URL"
+			],
+			"publicClient": false,
+			"secret": "bce5816d-98c4-404f-a18d-bcc5cb005c79",
+			"serviceAccountsEnabled": true,
+			"authorizationServicesEnabled": true,
+			"implicitFlowEnabled": true,
+			"authorizationSettings": {
+				"allowRemoteResourceManagement": true,
+				"policyEnforcementMode": "ENFORCING",
+				"resources": [
+					{
+						"name": "Default Resource",
+						"type": "urn:vota:resources:default",
+						"ownerManagedAccess": false,
+						"attributes": {
+							
+						},
+						"uris": [
+							"/*"
+						]
+					}
+				],
+				"policies": [
+					{
+						"name": "Default Policy",
+						"description": "A policy that grants access only for users within this realm",
+						"type": "js",
+						"logic": "POSITIVE",
+						"decisionStrategy": "AFFIRMATIVE",
+						"config": {
+							"code": "// by default, grants any permission associated with this policy\n$evaluation.grant();\n"
+						}
+					},
+					{
 						"name": "Default Permission",
 						"description": "A permission that applies to the default resource type",
 						"type": "resource",
@@ -118,12 +236,12 @@
 				"description": "Vota Operator privileges"
 			},
 			{
-				"name": "teacher",
-				"description": "Teacher privileges"
+				"name": "representative",
+				"description": "Representative privileges"
 			},
 			{
 				"name": "citizen",
-				"description": "Pupil privileges"
+				"description": "Citizen privileges"
 			}
 		]
 	},
@@ -188,13 +306,13 @@
 			"subGroups": []
 		},
 		{
-			"name": "teacher",
-			"path": "/teacher",
+			"name": "representative",
+			"path": "/representative",
 			"attributes": {
 				
 			},
 			"realmRoles": [
-				"teacher"
+				"representative"
 			],
 			"clientRoles": {
 				"realm-management": [

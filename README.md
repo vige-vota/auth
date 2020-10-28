@@ -21,38 +21,43 @@ Build
 -----
 
 In development mode:
-
+```
     mvn install -Pdevelopment,prepare-keycloak
-    
+```
 In production mode:
-
+```
     mvn install -Pproduction,prepare-keycloak
-    
-If you want to start the WildFly prepared instance and execute the application:
-
-    mvn install -Pproduction,runtime-keycloak -Dkeycloak.url=${keycloak.url}
-    
-Where ${keycloak.url} is the host name of the keycloak server shown in the below guide. Or for the Keycloak server:
-
-    mvn install -Pproduction,runtime-keycloak
-   
-From the 1.2.0 version we need keycloak to manage the users. To prepare a keycloak standalone use the following command:
-
-    mvn install -Pdevelopment,prepare-keycloak
-    
-and to start the prepared keycloak instance:
-
+```
+If you want to start the WildFly prepared instance and execute the application in the development mode:
+```
     mvn install -Pdevelopment,runtime-keycloak
-    
-This command import default users and development configurations. To prepare keycloak in a clean production environment you can use:
-
-    mvn install -Pproduction,prepare-keycloak
-    
+```
+If you want to start the WildFly prepared instance and execute the application in the production mode, here a sample:
+```
+    mvn install -Pproduction,runtime-keycloak -Dvotingpapers.url=https://vota-votingpapers.vige.it:8543 -Dvoting.url=https://vota-voting.vige.it:8443 -Dhistory.url=https://vota-history.vige.it:8643
+```
+Where votingpapers.url, voting.url, history.url are the host names of the clients shown in the below guide.
+Before to start the production mode update the ssl certificate so:
+```
+keytool -genkey -alias server -storetype PKCS12 -keyalg RSA -keysize 2048 -keystore ./target/keycloak-run/wildfly-20.0.1.Final/standalone/configuration/application.keystore -validity 3650 -dname "CN=vota-auth.vige.it, OU=Vige, O=Vige, L=Rome, S=Italy, C=IT" -storepass password
+```
+From the 1.2.0 version we need keycloak to manage the users. To prepare a keycloak standalone use the following command:
+```
+    mvn install -Pdevelopment,prepare-keycloak
+```
 and to start the prepared keycloak instance:
-
-    mvn install -Pproduction,runtime-keycloak -Dapp.url=${vota.url}
-    
-Where ${app.url} is the host name of the app server to connect. If you start with the developer profile you must not specify the host names because the default host name localhost is used. If you don't declare the url variables in the mode production, the default will be localhost.
+```
+    mvn install -Pdevelopment,runtime-keycloak
+```
+This command import default users and development configurations. To prepare keycloak in a clean production environment you can use:
+```
+    mvn install -Pproduction,prepare-keycloak
+```
+and to start the prepared keycloak instance:
+```
+    mvn install -Pproduction,runtime-keycloak -Dvoting.url=${voting.url} -Dvotingpapers.url=${votingpapers.url} -Dhistory.url=${history.url}
+```
+Where ${voting.url}, ${votingpapers.url} and ${history.url} are the addresses of the app servers to connect, for example: https://vota-voting.vige.it:8443. If you start with the developer profile you must not specify the host names because the default host name localhost is used. If you don't declare the url variables in the mode production, the default will be localhost.
 To create new users in WildFly:
 
 $JBOSS_HOME/bin/add_user.sh
@@ -72,14 +77,14 @@ The username 'admin' is easy to guess
 Are you sure you want to add user 'admin' yes/no? yes
 
 to test the rest api with junit:
-
+```
     deploy the rest api in a server
     mvn -Prest-keycloak-test test
-
+```
 To debug the application using Eclipse you can put this parameter:
-
+```
     mvn -Dmaven.surefire.debug test
-
+```
 It will start on the 5005 port.
 
 The tests are done using Chrome 84.0.4147.135 (64-bit) on WildFly 20.0.1.Final
@@ -88,25 +93,24 @@ Docker image
 ------------
 
 To install the docker image run the command:
-
-    docker pull vige/vota
-    
+```
+    docker pull vige/vota-auth
+```
 To run the image run the command:
-
-    docker run -p 8080:8080 -p 8180:8180 --name vota vige/vota
-    
+```
+    docker run -p 8843:8843 --name vota-auth vige/vota-auth
+```
 If you want start it in background mode:
-
-    docker run -p 8080:8080 -p 8180:8180 -d --name vota vige/vota
-
+```
+    docker run -p 8843:8843 -d --name vota-auth vige/vota-auth
+```
 Both the executions will run using localhost as host connection name. If you need to specify a different host, for example if you are in a remote cloud, you must specify the hosts for keycloak and the vota app so:
-
-    docker run -p 8080:8080 -p 8180:8180 -e VOTA_URL=${vota.url} -e KEYCLOAK_URL=${keycloak.url} -d --name vota vige/vota
-    
+```
+    docker run -p 8843:8843 -e VOTING_URL=${voting.url} -e VOTINGPAPERS_URL=${votingpapers.url} -e HISTORY_URL=${history.url} -e KEYCLOAK_URL=${keycloak.url} -d --name vota-auth vige/vota-auth
+```
 If you need a different language by the english you can set the i18 variable. A sample to start the docker container with a italian language:
-
-    docker run -p 8080:8080 -p 8180:8180 -e LC_ALL=it_IT.UTF-8 -d --name vota vige/vota
-
-Then connect to http://localhost:8080/vota with root/gtn to start a session as admin in the vota webapp.
-If you want to configure, add votas, classes and new users or approve users connect to: http://localhost:8180/auth with root/gtn in the keycloak webapp.
+```
+    docker run -p 8843:8843 -e LC_ALL=it_IT.UTF-8 -d --name vota-auth vige/vota-auth
+```
+If you want to configure, add votes, classes and new users or approve users connect to: http://localhost:8180/auth with root/gtn in the keycloak webapp.
 If you want connect in the keycloak webapp as superuser connect to it with admin/admin
