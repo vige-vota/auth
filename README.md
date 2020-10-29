@@ -37,7 +37,7 @@ If you want to start the WildFly prepared instance and execute the application i
     mvn install -Pproduction,runtime-keycloak -Dvotingpapers.url=https://vota-votingpapers.vige.it:8543 -Dvoting.url=https://vota-voting.vige.it:8443 -Dhistory.url=https://vota-history.vige.it:8643
 ```
 Where votingpapers.url, voting.url, history.url are the host names of the clients shown in the below guide.
-Before to start the production mode update the ssl certificate so:
+In a production environment you could move a different ssl certificate and keys. Use this command to generate it:
 ```
 keytool -genkey -alias server -storetype PKCS12 -keyalg RSA -keysize 2048 -keystore ./target/keycloak-run/wildfly-20.0.1.Final/standalone/configuration/application.keystore -validity 3650 -dname "CN=vota-auth.vige.it, OU=Vige, O=Vige, L=Rome, S=Italy, C=IT" -storepass password
 ```

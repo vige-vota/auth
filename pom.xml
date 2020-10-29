@@ -199,6 +199,22 @@
 								</configuration>
 							</execution>
 							<execution>
+								<id>copy-certificates</id>
+								<phase>process-test-classes</phase>
+								<goals>
+									<goal>copy-resources</goal>
+								</goals>
+								<configuration>
+									<outputDirectory>${project.build.directory}/keycloak-run/wildfly-${wildfly.version}/standalone/configuration</outputDirectory>
+									<resources>
+										<resource>
+											<directory>${project.basedir}</directory>
+											<include>application.keystore</include>
+										</resource>
+									</resources>
+								</configuration>
+							</execution>
+							<execution>
 								<id>copy-resources</id>
 								<phase>process-test-classes</phase>
 								<goals>
