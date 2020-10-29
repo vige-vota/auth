@@ -10,7 +10,7 @@
 # See the License for the specific language governing permissions and        
 # limitations under the License.
 
-FROM openjdk:13-jdk
+FROM openjdk:15-oraclelinux7
 EXPOSE 8843
 RUN yum -y update && \
 	yum -y install sudo wget openssh-server && \
@@ -27,10 +27,9 @@ ENV MAVEN_VERSION=3.6.3
 RUN mkdir /home/wildfly/apache-maven-$MAVEN_VERSION && \
   	wget -qO- "http://apache.ip-connect.vn.ua/maven/maven-3/$MAVEN_VERSION/binaries/apache-maven-$MAVEN_VERSION-bin.tar.gz" | tar -zx --strip-components=1 -C /home/wildfly/apache-maven-$MAVEN_VERSION/
 ENV TERM xterm
-ENV KEYCLOAK_URL=localhost
 ENV VOTINGPAPERS_URL=https://vota-votingpapers.vige.it
 ENV VOTING_URL=https://vota-voting.vige.it
-ENV HISTORY_URLL=https://vota-history.vige.it
+ENV HISTORY_URL=https://vota-history.vige.it
 
 WORKDIR /workspace
 COPY / /workspace/auth
@@ -39,7 +38,7 @@ RUN cd auth && /home/wildfly/apache-maven-$MAVEN_VERSION/bin/mvn install -Pprodu
 RUN cd auth && /home/wildfly/apache-maven-$MAVEN_VERSION/bin/mvn package -Pproduction,prepare-keycloak
 RUN rm -Rf /home/wildfly/.m2 && \
 	rm -Rf /home/wildfly/apache-maven-$MAVEN_VERSION && \
-	sudo mv /workspace/auth/auth-keycloak/target/keycloak-run/wildfly* /opt/keycloak && \
+	sudo mv /workspace/auth/target/keycloak-run/wildfly* /opt/keycloak && \
 	sudo chown -R wildfly:wildfly /opt/keycloak && \
 	sudo echo "export JBOSS_OPTS=\"-b 0.0.0.0 -Djboss.socket.binding.port-offset=100 -Dkeycloak.migration.action=import -Dkeycloak.migration.provider=dir -Dkeycloak.migration.dir=/opt/keycloak/realm-config/execution -Dkeycloak.migration.strategy=IGNORE_EXISTING -Dkeycloak.profile.feature.upload_scripts=enabled\"" > /workspace/auth/keycloak && \
 	sudo mv /workspace/auth/keycloak /etc/default/keycloak && \

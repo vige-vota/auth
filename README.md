@@ -106,11 +106,11 @@ If you want start it in background mode:
 ```
 Both the executions will run using localhost as host connection name. If you need to specify a different host, for example if you are in a remote cloud, you must specify the hosts for keycloak and the vota app so:
 ```
-    docker run -p 8843:8843 -e VOTING_URL=${voting.url} -e VOTINGPAPERS_URL=${votingpapers.url} -e HISTORY_URL=${history.url} -e KEYCLOAK_URL=${keycloak.url} -d --name vota-auth vige/vota-auth
+    docker run -p 8843:8843 -e VOTING_URL=${voting.url} -e VOTINGPAPERS_URL=${votingpapers.url} -e HISTORY_URL=${history.url} -d --name vota-auth vige/vota-auth
 ```
 If you need a different language by the english you can set the i18 variable. A sample to start the docker container with a italian language:
 ```
-    docker run -p 8843:8843 -e LC_ALL=it_IT.UTF-8 -d --name vota-auth vige/vota-auth
+    docker run -p 8843:8843 -e LC_ALL=it_IT.UTF-8 -e VOTING_URL=${voting.url} -e VOTINGPAPERS_URL=${votingpapers.url} -e HISTORY_URL=${history.url} -d --name vota-auth vige/vota-auth
 ```
 If you want to configure, add votes, classes and new users or approve users connect to: http://localhost:8180/auth with root/gtn in the keycloak webapp.
 If you want connect in the keycloak webapp as superuser connect to it with admin/admin
