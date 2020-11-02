@@ -13,7 +13,7 @@
 FROM openjdk:15-oraclelinux7
 EXPOSE 8843
 RUN yum -y update && \
-	yum -y install sudo wget openssh-server && \
+	yum -y install sudo wget openssh-server initscripts && \
     echo "wildfly ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers && \
     useradd -u 1000 -G users,wheel -d /home/wildfly --shell /bin/bash -m wildfly && \
     echo "wildfly:secret" | chpasswd && \
@@ -40,15 +40,15 @@ RUN rm -Rf /home/wildfly/.m2 && \
 	rm -Rf /home/wildfly/apache-maven-$MAVEN_VERSION && \
 	sudo mv /workspace/auth/target/keycloak-run/wildfly* /opt/keycloak && \
 	sudo chown -R wildfly:wildfly /opt/keycloak && \
-	sudo echo "export JBOSS_OPTS=\"-b 0.0.0.0 -Djboss.socket.binding.port-offset=100 -Dkeycloak.migration.action=import -Dkeycloak.migration.provider=dir -Dkeycloak.migration.dir=/opt/keycloak/realm-config/execution -Dkeycloak.migration.strategy=IGNORE_EXISTING -Dkeycloak.profile.feature.upload_scripts=enabled\"" > /workspace/auth/keycloak && \
+	sudo echo "export JBOSS_OPTS=\"-b 0.0.0.0 jboss.as.management.blocking.timeout=9000 -Djboss.socket.binding.port-offset=400 -Dkeycloak.migration.action=import -Dkeycloak.migration.provider=dir -Dkeycloak.migration.dir=/opt/keycloak/realm-config/execution -Dkeycloak.migration.strategy=IGNORE_EXISTING -Dkeycloak.profile.feature.upload_scripts=enabled\"" > /workspace/auth/keycloak && \
 	sudo mv /workspace/auth/keycloak /etc/default/keycloak && \
-	sudo cp /opt/keycloak/docs/contrib/scripts/init.d/wildfly-init-debian.sh /etc/init.d/keycloak && \
+	sudo cp /opt/keycloak/docs/contrib/scripts/init.d/wildfly-init-redhat.sh /etc/init.d/keycloak && \
 	rm -Rf /workspace/auth
 
 CMD mkdir -p /opt/keycloak/realm-config/execution && \
-	cp /opt/keycloak/realm-config/auth-domain-realm.json /opt/keycloak/realm-config/execution && \
-	sed -i -e 's/MAVEN_REPLACER_VOTINGPAPERS_SERVER_URL/'"$VOTINGPAPERS_URL"'/g' /opt/keycloak/realm-config/execution/auth-domain-realm.json && \
-	sed -i -e 's/MAVEN_REPLACER_VOTING_SERVER_URL/'"$VOTING_URL"'/g' /opt/keycloak/realm-config/execution/auth-domain-realm.json && \
-	sed -i -e 's/MAVEN_REPLACER_HISTORY_SERVER_URL/'"$HISTORY_URL"'/g' /opt/keycloak/realm-config/execution/auth-domain-realm.json && \
+	cp /opt/keycloak/realm-config/vota-domain-realm.json /opt/keycloak/realm-config/execution && \
+	sed -i -e 's@MAVEN_REPLACER_VOTINGPAPERS_SERVER_URL@'"$VOTINGPAPERS_URL"'@g' /opt/keycloak/realm-config/execution/vota-domain-realm.json && \
+	sed -i -e 's@MAVEN_REPLACER_VOTING_SERVER_URL@'"$VOTING_URL"'@g' /opt/keycloak/realm-config/execution/vota-domain-realm.json && \
+	sed -i -e 's@MAVEN_REPLACER_HISTORY_SERVER_URL@'"$HISTORY_URL"'@g' /opt/keycloak/realm-config/execution/vota-domain-realm.json && \
 	sudo service keycloak start && \
     tail -f /dev/null

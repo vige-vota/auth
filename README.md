@@ -22,11 +22,13 @@ Build
 
 In development mode:
 ```
-    mvn install -Pdevelopment,prepare-keycloak
+    mvn install -Pdevelopment
+    mvn package -Pdevelopment,prepare-keycloak
 ```
 In production mode:
 ```
-    mvn install -Pproduction,prepare-keycloak
+    mvn install -Pproduction
+    mvn package -Pproduction,prepare-keycloak
 ```
 If you want to start the WildFly prepared instance and execute the application in the development mode:
 ```
@@ -41,23 +43,7 @@ In a production environment you could move a different ssl certificate and keys.
 ```
 keytool -genkey -alias server -storetype PKCS12 -keyalg RSA -keysize 2048 -keystore ./target/keycloak-run/wildfly-20.0.1.Final/standalone/configuration/application.keystore -validity 3650 -dname "CN=vota-auth.vige.it, OU=Vige, O=Vige, L=Rome, S=Italy, C=IT" -storepass password
 ```
-From the 1.2.0 version we need keycloak to manage the users. To prepare a keycloak standalone use the following command:
-```
-    mvn install -Pdevelopment,prepare-keycloak
-```
-and to start the prepared keycloak instance:
-```
-    mvn install -Pdevelopment,runtime-keycloak
-```
-This command import default users and development configurations. To prepare keycloak in a clean production environment you can use:
-```
-    mvn install -Pproduction,prepare-keycloak
-```
-and to start the prepared keycloak instance:
-```
-    mvn install -Pproduction,runtime-keycloak -Dvoting.url=${voting.url} -Dvotingpapers.url=${votingpapers.url} -Dhistory.url=${history.url}
-```
-Where ${voting.url}, ${votingpapers.url} and ${history.url} are the addresses of the app servers to connect, for example: https://vota-voting.vige.it:8443. If you start with the developer profile you must not specify the host names because the default host name localhost is used. If you don't declare the url variables in the mode production, the default will be localhost.
+If you start with the developer profile you must not specify the host names because the default host name localhost is used. If you don't declare the url variables in the mode production, the default will be localhost.
 To create new users in WildFly:
 
 $JBOSS_HOME/bin/add_user.sh
@@ -106,7 +92,7 @@ If you want start it in background mode:
 ```
 Both the executions will run using localhost as host connection name. If you need to specify a different host, for example if you are in a remote cloud, you must specify the hosts for keycloak and the vota app so:
 ```
-    docker run -p 8843:8843 -e VOTING_URL=${voting.url} -e VOTINGPAPERS_URL=${votingpapers.url} -e HISTORY_URL=${history.url} -d --name vota-auth vige/vota-auth
+    docker run -p 8843:8843 -e VOTINGPAPERS_URL=${votingpapers.url} -e VOTING_URL=${voting.url} -e HISTORY_URL=${history.url} -d --name vota-auth vige/vota-auth
 ```
 If you need a different language by the english you can set the i18 variable. A sample to start the docker container with a italian language:
 ```
