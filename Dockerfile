@@ -40,7 +40,7 @@ RUN rm -Rf /home/wildfly/.m2 && \
 	rm -Rf /home/wildfly/apache-maven-$MAVEN_VERSION && \
 	sudo mv /workspace/auth/target/keycloak-run/wildfly* /opt/keycloak && \
 	sudo chown -R wildfly:wildfly /opt/keycloak && \
-	sudo echo "export JBOSS_OPTS=\"-b 0.0.0.0 jboss.as.management.blocking.timeout=9000 -Djboss.socket.binding.port-offset=400 -Dkeycloak.migration.action=import -Dkeycloak.migration.provider=dir -Dkeycloak.migration.dir=/opt/keycloak/realm-config/execution -Dkeycloak.migration.strategy=IGNORE_EXISTING -Dkeycloak.profile.feature.upload_scripts=enabled\"" > /workspace/auth/keycloak && \
+	sudo echo "export JBOSS_OPTS=\"-b 0.0.0.0 -Djboss.as.management.blocking.timeout=90000 -Djboss.socket.binding.port-offset=400 -Dkeycloak.migration.action=import -Dkeycloak.migration.provider=dir -Dkeycloak.migration.dir=/opt/keycloak/realm-config/execution -Dkeycloak.migration.strategy=IGNORE_EXISTING -Dkeycloak.profile.feature.upload_scripts=enabled\"" > /workspace/auth/keycloak && \
 	sudo mv /workspace/auth/keycloak /etc/default/keycloak && \
 	sudo cp /opt/keycloak/docs/contrib/scripts/init.d/wildfly-init-redhat.sh /etc/init.d/keycloak && \
 	rm -Rf /workspace/auth
