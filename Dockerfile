@@ -27,9 +27,9 @@ ENV MAVEN_VERSION=3.6.3
 RUN mkdir /home/wildfly/apache-maven-$MAVEN_VERSION && \
   	wget -qO- "http://apache.ip-connect.vn.ua/maven/maven-3/$MAVEN_VERSION/binaries/apache-maven-$MAVEN_VERSION-bin.tar.gz" | tar -zx --strip-components=1 -C /home/wildfly/apache-maven-$MAVEN_VERSION/
 ENV TERM xterm
-ENV VOTINGPAPERS_URL=https://vota-votingpapers.vige.it
-ENV VOTING_URL=https://vota-voting.vige.it
-ENV HISTORY_URL=https://vota-history.vige.it
+ENV VOTINGPAPERS_URL=https://vota-votingpapers.vige.it:8543
+ENV VOTING_URL=https://vota-voting.vige.it:8443
+ENV HISTORY_URL=https://vota-history.vige.it:8643
 
 WORKDIR /workspace
 COPY / /workspace/auth

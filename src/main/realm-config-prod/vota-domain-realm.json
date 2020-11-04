@@ -44,10 +44,12 @@
 	],
 	"clients": [
 		{
+			"id": "c338b2be-da73-471c-9bb0-77ad52e1f88f",
 			"clientId": "realm-management",
 			"authorizationServicesEnabled": true
 		},
 		{
+			"id": "c338b2be-da73-471c-9bb0-77ad52e1f88g",
 			"clientId": "voting",
 			"rootUrl": "MAVEN_REPLACER_VOTING_SERVER_URL",
 			"enabled": true,
@@ -107,6 +109,7 @@
 			}
 		},
 		{
+			"id": "c338b2be-da73-471c-9bb0-77ad52e1f88h",
 			"clientId": "votingPapers",
 			"rootUrl": "MAVEN_REPLACER_VOTINGPAPERS_SERVER_URL",
 			"enabled": true,
@@ -165,6 +168,7 @@
 			}
 		},
 		{
+			"id": "c338b2be-da73-471c-9bb0-77ad52e1f88i",
 			"clientId": "history",
 			"rootUrl": "MAVEN_REPLACER_HISTORY_SERVER_URL",
 			"enabled": true,

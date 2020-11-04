@@ -3299,10 +3299,12 @@
 	],
 	"clients": [
 		{
+			"id": "c338b2be-da73-471c-9bb0-77ad52e1f88f",
 			"clientId": "realm-management",
 			"authorizationServicesEnabled": true
 		},
 		{
+			"id": "c338b2be-da73-471c-9bb0-77ad52e1f88g",
 			"clientId": "voting",
 			"rootUrl": "http://localhost:8080",
 			"enabled": true,
@@ -3362,6 +3364,7 @@
 			}
 		},
 		{
+			"id": "c338b2be-da73-471c-9bb0-77ad52e1f88h",
 			"clientId": "votingPapers",
 			"rootUrl": "http://localhost:8180",
 			"enabled": true,
@@ -3420,6 +3423,7 @@
 			}
 		},
 		{
+			"id": "c338b2be-da73-471c-9bb0-77ad52e1f88i",
 			"clientId": "history",
 			"rootUrl": "http://localhost:8280",
 			"enabled": true,
