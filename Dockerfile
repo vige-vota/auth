@@ -10,7 +10,7 @@
 # See the License for the specific language governing permissions and        
 # limitations under the License.
 
-FROM openjdk:15-jdk
+FROM openjdk:15.0.1-jdk
 EXPOSE 8843
 RUN adduser -u 1000 -G adm -d /home/wildfly --shell /bin/bash wildfly && \
     echo "wildfly:secret" | chpasswd
@@ -28,7 +28,6 @@ ENV HISTORY_URL=https://vota-history.vige.it:8643
 
 WORKDIR /workspace
 COPY / /workspace/auth
-RUN touch /tmp/foobar
 RUN chown -R wildfly:adm /workspace
 RUN cd auth && /home/wildfly/apache-maven-$MAVEN_VERSION/bin/mvn install -Pproduction
 RUN cd auth && /home/wildfly/apache-maven-$MAVEN_VERSION/bin/mvn package -Pproduction,prepare-keycloak
