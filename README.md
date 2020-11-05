@@ -92,6 +92,10 @@ If you want start it in background mode:
 ```
 Both the executions will run using localhost as host connection name. If you need to specify a different host, for example if you are in a remote cloud, you must specify the hosts for keycloak and the vota app so:
 ```
+    docker run -p 8843:8843 -e VOTINGPAPERS_URL=https://vota-votingpapers.vige.it:8543 -e VOTING_URL=https://vota-voting.vige.it:8443 -e HISTORY_URL=https://vota-history.vige.it:8643 -d --name vota-auth vige/vota-auth
+```
+Here a sample how fill the variables:
+```
     docker run -p 8843:8843 -e VOTINGPAPERS_URL=${votingpapers.url} -e VOTING_URL=${voting.url} -e HISTORY_URL=${history.url} -d --name vota-auth vige/vota-auth
 ```
 If you need a different language by the english you can set the i18 variable. A sample to start the docker container with a italian language:
