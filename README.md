@@ -8,7 +8,7 @@ It covers all the following features:
 - Import voting users.
 - Browsing users.
 
-This draft version has been tested on WildFly 20.0.1.Final.
+This draft version has been tested on WildFly 21.0.2.Final.
 
 Requirements
 ------------

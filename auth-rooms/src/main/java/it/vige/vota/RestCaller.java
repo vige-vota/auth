@@ -13,7 +13,7 @@
  ******************************************************************************/
 package it.vige.vota;
 
-import static javax.json.bind.JsonbBuilder.create;
+import static jakarta.json.bind.JsonbBuilder.create;
 import static javax.ws.rs.client.ClientBuilder.newClient;
 import static javax.ws.rs.client.Entity.entity;
 import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
@@ -22,7 +22,7 @@ import java.io.IOException;
 import java.util.Map;
 import java.util.function.Supplier;
 
-import javax.json.bind.Jsonb;
+import jakarta.json.bind.Jsonb;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientRequestContext;
 import javax.ws.rs.client.ClientRequestFilter;

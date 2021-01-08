@@ -17,7 +17,7 @@ public class RoomsRestResource {
 
 	public RoomsRestResource(KeycloakSession session) {
 		this.session = session;
-		this.auth = new AppAuthManager().authenticateBearerToken(session, session.getContext().getRealm());
+		this.auth = new AppAuthManager().authenticateIdentityCookie(session, session.getContext().getRealm());
 	}
 
 	@Path("rooms")
@@ -33,8 +33,8 @@ public class RoomsRestResource {
 	public static void checkRealmAdmin(AuthResult auth) {
 		if (auth == null) {
 			throw new NotAuthorizedException("Bearer");
-		} else if (auth.getUser().getGroups() == null
-				|| auth.getUser().getGroups().stream().filter(x -> x.getName().equals(ADMIN_ROLE)).count() == 0) {
+		} else if (auth.getUser().getGroupsStream() == null
+				|| auth.getUser().getGroupsStream().filter(x -> x.getName().equals(ADMIN_ROLE)).count() == 0) {
 			throw new ForbiddenException("Does not have realm admin role");
 		}
 	}
