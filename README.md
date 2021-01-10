@@ -36,9 +36,9 @@ If you want to start the WildFly prepared instance and execute the application i
 ```
 If you want to start the WildFly prepared instance and execute the application in the production mode, here a sample:
 ```
-    mvn install -Pproduction,runtime-keycloak -Dvotingpapers.url=https://vota-votingpapers.vige.it:8543 -Dvoting.url=https://vota-voting.vige.it:8443 -Dhistory.url=https://vota-history.vige.it:8643
+    mvn install -Pproduction,runtime-keycloak -Dvotingpapers.url=https://vota-votingpapers.vige.it:8543 -Dvoting.url=https://vota-voting.vige.it:8443 -Dhistory.url=https://vota-history.vige.it:8643 -Dfrontend.url=https://localhost
 ```
-Where votingpapers.url, voting.url, history.url are the host names of the clients shown in the below guide.
+Where votingpapers.url, voting.url, history.url, frontend.url are the host names of the clients shown in the below guide.
 In a production environment you could move a different ssl certificate and keys. Use this command to generate it:
 ```
 keytool -genkey -alias server -storetype PKCS12 -keyalg RSA -keysize 2048 -keystore ./target/keycloak-run/wildfly-20.0.1.Final/standalone/configuration/application.keystore -validity 3650 -dname "CN=vota-auth.vige.it, OU=Vige, O=Vige, L=Rome, S=Italy, C=IT" -storepass password
@@ -92,15 +92,15 @@ If you want start it in background mode:
 ```
 Both the executions will run using localhost as host connection name. If you need to specify a different host, for example if you are in a remote cloud, you must specify the hosts for keycloak and the vota app so:
 ```
-    docker run -p 8843:8843 -e VOTINGPAPERS_URL=https://vota-votingpapers.vige.it:8543 -e VOTING_URL=https://vota-voting.vige.it:8443 -e HISTORY_URL=https://vota-history.vige.it:8643 -d --name vota-auth vige/vota-auth
+    docker run -p 8843:8843 -e VOTINGPAPERS_URL=https://vota-votingpapers.vige.it:8543 -e VOTING_URL=https://vota-voting.vige.it:8443 -e HISTORY_URL=https://vota-history.vige.it:8643 -e FRONTEND_URL=https://vige-vota.github.io/frontend -d --name vota-auth vige/vota-auth
 ```
 Here a sample how fill the variables:
 ```
-    docker run -p 8843:8843 -e VOTINGPAPERS_URL=${votingpapers.url} -e VOTING_URL=${voting.url} -e HISTORY_URL=${history.url} -d --name vota-auth vige/vota-auth
+    docker run -p 8843:8843 -e VOTINGPAPERS_URL=${votingpapers.url} -e VOTING_URL=${voting.url} -e HISTORY_URL=${history.url} -e FRONTEND_URL=${frontend.url} -d --name vota-auth vige/vota-auth
 ```
 If you need a different language by the english you can set the i18 variable. A sample to start the docker container with a italian language:
 ```
-    docker run -p 8843:8843 -e LC_ALL=it_IT.UTF-8 -e VOTING_URL=${voting.url} -e VOTINGPAPERS_URL=${votingpapers.url} -e HISTORY_URL=${history.url} -d --name vota-auth vige/vota-auth
+    docker run -p 8843:8843 -e LC_ALL=it_IT.UTF-8 -e VOTING_URL=${voting.url} -e VOTINGPAPERS_URL=${votingpapers.url} -e HISTORY_URL=${history.url} -e FRONTEND_URL=${frontend.url} -d --name vota-auth vige/vota-auth
 ```
 If you want to configure, add votes, classes and new users or approve users connect to: http://localhost:8180/auth with root/gtn in the keycloak webapp.
 If you want connect in the keycloak webapp as superuser connect to it with admin/admin
