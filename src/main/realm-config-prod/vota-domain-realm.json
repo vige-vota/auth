@@ -231,17 +231,17 @@
 		{
       		"id": "c338b2be-da73-471c-9bb0-77ad52e1f88l",
       		"clientId": "frontend",
-      		"rootUrl": "http://localhost:3000",
+      		"rootUrl": "MAVEN_REPLACER_FRONTEND_SERVER_URL",
       		"surrogateAuthRequired": false,
       		"enabled": true,
       		"alwaysDisplayInConsole": false,
       		"clientAuthenticatorType": "client-secret",
       		"secret": "**********",
       		"redirectUris": [
-        		"http://localhost:3000/frontend/*"
+        		"MAVEN_REPLACER_FRONTEND_SERVER_URL/frontend/*"
       		],
       		"webOrigins": [
-        		"http://localhost:3000"
+        		"MAVEN_REPLACER_FRONTEND_SERVER_URL"
       		],
       		"notBefore": 0,
       		"bearerOnly": false,

@@ -25,7 +25,7 @@ ENV TERM xterm
 ENV VOTINGPAPERS_URL=https://vota-votingpapers.vige.it:8543
 ENV VOTING_URL=https://vota-voting.vige.it:8443
 ENV HISTORY_URL=https://vota-history.vige.it:8643
-ENV FRONTEND_URL=https://vige-vota.github.io/frontend
+ENV FRONTEND_URL=https://vige-vota.github.io
 
 WORKDIR /workspace
 COPY / /workspace/auth
