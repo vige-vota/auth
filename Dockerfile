@@ -22,6 +22,7 @@ ENV MAVEN_VERSION=3.6.3
 RUN mkdir /home/wildfly/apache-maven-$MAVEN_VERSION && \
   	curl http://apache.ip-connect.vn.ua/maven/maven-3/$MAVEN_VERSION/binaries/apache-maven-$MAVEN_VERSION-bin.tar.gz | tar xvz -C /home/wildfly
 ENV TERM xterm
+ENV CITIESGENERATOR_URL=https://cities-generator-service.vige.it:8743
 ENV VOTINGPAPERS_URL=https://vota-votingpapers.vige.it:8543
 ENV VOTING_URL=https://vota-voting.vige.it:8443
 ENV HISTORY_URL=https://vota-history.vige.it:8643
@@ -42,6 +43,7 @@ USER wildfly
 
 CMD mkdir -p /opt/keycloak/realm-config/execution && \
 	cp /opt/keycloak/realm-config/vota-domain-realm.json /opt/keycloak/realm-config/execution && \
+	sed -i -e 's@MAVEN_REPLACER_CITIESGENERATOR_SERVER_URL@'"$CITIESGENERATOR_URL"'@g' /opt/keycloak/realm-config/execution/vota-domain-realm.json && \
 	sed -i -e 's@MAVEN_REPLACER_VOTINGPAPERS_SERVER_URL@'"$VOTINGPAPERS_URL"'@g' /opt/keycloak/realm-config/execution/vota-domain-realm.json && \
 	sed -i -e 's@MAVEN_REPLACER_VOTING_SERVER_URL@'"$VOTING_URL"'@g' /opt/keycloak/realm-config/execution/vota-domain-realm.json && \
 	sed -i -e 's@MAVEN_REPLACER_HISTORY_SERVER_URL@'"$HISTORY_URL"'@g' /opt/keycloak/realm-config/execution/vota-domain-realm.json && \

@@ -3304,6 +3304,64 @@
 			"authorizationServicesEnabled": true
 		},
 		{
+			"id": "c338b2be-dj73-571c-9bb0-77ad52e1f88h",
+			"clientId": "citiesGenerator",
+			"rootUrl": "http://localhost:8380",
+			"enabled": true,
+			"redirectUris": [
+				"http://localhost:8380/swagger-ui/*"
+			],
+			"webOrigins": [
+				"http://localhost:8380"
+			],
+			"publicClient": false,
+			"secret": "bce5816d-98c4-404f-a18d-bcc5cb005c79",
+			"serviceAccountsEnabled": true,
+			"authorizationServicesEnabled": true,
+			"implicitFlowEnabled": true,
+			"authorizationSettings": {
+				"allowRemoteResourceManagement": true,
+				"policyEnforcementMode": "ENFORCING",
+				"resources": [
+					{
+						"name": "Default Resource",
+						"type": "urn:vota:resources:default",
+						"ownerManagedAccess": false,
+						"attributes": {
+							
+						},
+						"uris": [
+							"/*"
+						]
+					}
+				],
+				"policies": [
+					{
+						"name": "Default Policy",
+						"description": "A policy that grants access only for users within this realm",
+						"type": "js",
+						"logic": "POSITIVE",
+						"decisionStrategy": "AFFIRMATIVE",
+						"config": {
+							"code": "// by default, grants any permission associated with this policy\n$evaluation.grant();\n"
+						}
+					},
+					{
+						"name": "Default Permission",
+						"description": "A permission that applies to the default resource type",
+						"type": "resource",
+						"logic": "POSITIVE",
+						"decisionStrategy": "UNANIMOUS",
+						"config": {
+							"defaultResourceType": "urn:vota:resources:default",
+							"applyPolicies": "[\"Default Policy\"]"
+						}
+					}
+				],
+				"scopes": []
+			}
+		},
+		{
 			"id": "c338b2be-da73-471c-9bb0-77ad52e1f88g",
 			"clientId": "voting",
 			"rootUrl": "http://localhost:8080",
