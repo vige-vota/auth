@@ -61,7 +61,7 @@
 		<maven.resources.plugin.version>3.2.0</maven.resources.plugin.version>
 		<wildfly.version>21.0.2.Final</wildfly.version>
 		<wildfly.maven.plugin.version>2.0.2.Final</wildfly.maven.plugin.version>
-		<keycloak.version>12.0.1</keycloak.version>
+		<keycloak.version>12.0.2</keycloak.version>
 		<resteasy.version>3.14.0.Final</resteasy.version>
 		<junit.version>5.7.0</junit.version>
 		<maven.surefire.plugin.version>3.0.0-M5</maven.surefire.plugin.version>
@@ -303,6 +303,10 @@
 								<configuration>
 									<file>${project.build.directory}/keycloak-run/wildfly-${wildfly.version}/realm-config/execution/vota-domain-realm.json</file>
 									<replacements>
+										<replacement>
+											<token>MAVEN_REPLACER_CITIESGENERATOR_SERVER_URL</token>
+											<value>${citiesgenerator.url}</value>
+										</replacement>
 										<replacement>
 											<token>MAVEN_REPLACER_VOTING_SERVER_URL</token>
 											<value>${voting.url}</value>
