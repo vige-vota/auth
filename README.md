@@ -8,7 +8,7 @@ It covers all the following features:
 - Import voting users.
 - Browsing users.
 
-This draft version has been tested on WildFly 21.0.2.Final.
+This draft version has been tested on WildFly 22.0.0.Final.
 
 Requirements
 ------------
@@ -73,7 +73,7 @@ To debug the application using Eclipse you can put this parameter:
 ```
 It will start on the 5005 port.
 
-The tests are done using Chrome 84.0.4147.135 (64-bit) on WildFly 20.0.1.Final
+The tests are done using Chrome 87.0.4280.141 (64-bit) on WildFly 22.0.0.Final
 
 Docker image
 ------------
