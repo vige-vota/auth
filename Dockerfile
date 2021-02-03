@@ -11,7 +11,7 @@
 # limitations under the License.
 
 FROM openjdk:15.0.1-jdk
-EXPOSE 8843
+EXPOSE 8480
 RUN adduser -u 1000 -G adm -d /home/wildfly --shell /bin/bash wildfly && \
     echo "wildfly:secret" | chpasswd
 
@@ -22,17 +22,17 @@ ENV MAVEN_VERSION=3.6.3
 RUN mkdir /home/wildfly/apache-maven-$MAVEN_VERSION && \
   	curl http://apache.ip-connect.vn.ua/maven/maven-3/$MAVEN_VERSION/binaries/apache-maven-$MAVEN_VERSION-bin.tar.gz | tar xvz -C /home/wildfly
 ENV TERM xterm
-ENV CITIESGENERATOR_URL=https://cities-generator-service.vige.it:8743
-ENV VOTINGPAPERS_URL=https://vota-votingpapers.vige.it:8543
-ENV VOTING_URL=https://vota-voting.vige.it:8443
-ENV HISTORY_URL=https://vota-history.vige.it:8643
-ENV FRONTEND_URL=https://vige-vota.github.io
+ENV CITIESGENERATOR_URL=http://cities-generator-service.vige.it:8380
+ENV VOTINGPAPERS_URL=http://vota-votingpapers.vige.it:8180
+ENV VOTING_URL=http://vota-voting.vige.it:8080
+ENV HISTORY_URL=http://vota-history.vige.it:8280
+ENV FRONTEND_URL=http://vige-vota.github.io
 
 WORKDIR /workspace
 COPY / /workspace/auth
 RUN chown -R wildfly:adm /workspace
-RUN cd auth && /home/wildfly/apache-maven-$MAVEN_VERSION/bin/mvn install -Pproduction
-RUN cd auth && /home/wildfly/apache-maven-$MAVEN_VERSION/bin/mvn package -Pproduction,prepare-keycloak
+RUN cd auth && /home/wildfly/apache-maven-$MAVEN_VERSION/bin/mvn install -Pdocker
+RUN cd auth && /home/wildfly/apache-maven-$MAVEN_VERSION/bin/mvn package -Pdocker,prepare-keycloak
 RUN rm -Rf /home/wildfly/.m2 && \
 	rm -Rf /home/wildfly/apache-maven-$MAVEN_VERSION && \
 	mv /workspace/auth/target/keycloak-run/wildfly* /opt/keycloak && \

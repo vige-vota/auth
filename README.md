@@ -92,7 +92,7 @@ If you want start it in background mode:
 ```
 Both the executions will run using localhost as host connection name. If you need to specify a different host, for example if you are in a remote cloud, you must specify the hosts for keycloak and the vota app so:
 ```
-    docker run -p 8843:8843 -e CITIESGENERATOR_URL=https://cities-generator-service.vige.it:8743 -e VOTINGPAPERS_URL=https://vota-votingpapers.vige.it:8543 -e VOTING_URL=https://vota-voting.vige.it:8443 -e HISTORY_URL=https://vota-history.vige.it:8643 -e FRONTEND_URL=https://vige-vota.github.io/frontend -d --name vota-auth vige/vota-auth
+    docker run -p 8843:8843 -e CITIESGENERATOR_URL=http://cities-generator-service.vige.it:8380 -e VOTINGPAPERS_URL=https://vota-votingpapers.vige.it:8180 -e VOTING_URL=https://vota-voting.vige.it:8080 -e HISTORY_URL=https://vota-history.vige.it:8280 -e FRONTEND_URL=https://vige-vota.github.io/frontend -d --name vota-auth vige/vota-auth
 ```
 Here a sample how fill the variables:
 ```
