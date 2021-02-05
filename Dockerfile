@@ -26,7 +26,7 @@ ENV CITIESGENERATOR_URL=http://cities-generator-service.vige.it:8380
 ENV VOTINGPAPERS_URL=http://vota-votingpapers.vige.it:8180
 ENV VOTING_URL=http://vota-voting.vige.it:8080
 ENV HISTORY_URL=http://vota-history.vige.it:8280
-ENV FRONTEND_URL=http://vige-vota.github.io
+ENV FRONTEND_URL=http://vota-frontend.vige.it
 
 WORKDIR /workspace
 COPY / /workspace/auth
