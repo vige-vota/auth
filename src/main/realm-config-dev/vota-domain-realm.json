@@ -3146,7 +3146,7 @@
 				}
 			],
 			"groups": [
-				"votaoperator"
+				"party"
 			]
 		},
 		{
@@ -3167,7 +3167,7 @@
 				}
 			],
 			"groups": [
-				"votaoperator"
+				"party"
 			]
 		},
 		{
@@ -3188,7 +3188,7 @@
 				}
 			],
 			"groups": [
-				"votaoperator"
+				"party"
 			]
 		},
 		{
@@ -3209,7 +3209,7 @@
 				}
 			],
 			"groups": [
-				"votaoperator"
+				"party"
 			]
 		},
 		{
@@ -3230,7 +3230,7 @@
 				}
 			],
 			"groups": [
-				"votaoperator"
+				"party"
 			]
 		},
 		{
@@ -3251,7 +3251,7 @@
 				}
 			],
 			"groups": [
-				"votaoperator"
+				"party"
 			]
 		},
 		{
@@ -3272,7 +3272,7 @@
 				}
 			],
 			"groups": [
-				"votaoperator"
+				"party"
 			]
 		},
 		{
@@ -3293,7 +3293,7 @@
 				}
 			],
 			"groups": [
-				"votaoperator"
+				"party"
 			]
 		}
 	],
@@ -3647,7 +3647,7 @@
 				"description": "Administrator privileges"
 			},
 			{
-				"name": "votaoperator",
+				"name": "party",
 				"description": "Vota Operator privileges"
 			},
 			{
@@ -3702,13 +3702,13 @@
 			"subGroups": []
 		},
 		{
-			"name": "votaoperator",
-			"path": "/votaoperator",
+			"name": "party",
+			"path": "/party",
 			"attributes": {
 				
 			},
 			"realmRoles": [
-				"votaoperator"
+				"party"
 			],
 			"clientRoles": {
 				"realm-management": [

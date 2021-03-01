@@ -6,9 +6,9 @@ public interface Constants {
 
 	String CITIZEN_ROLE = "citizen";
 
-	String TEACHER_ROLE = "teacher";
+	String REPRESENTATIVE_ROLE = "representative";
 
-	String VOTA_OPERATOR_ROLE = "votaoperator";
+	String PARTY_ROLE = "party";
 
 	String ERROR = "error";
 
