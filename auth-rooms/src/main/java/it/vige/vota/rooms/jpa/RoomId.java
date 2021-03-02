@@ -1,57 +1,30 @@
 package it.vige.vota.rooms.jpa;
 
-import static javax.persistence.FetchType.LAZY;
-
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Embeddable;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 
 @Embeddable
 public class RoomId implements Serializable {
 
 	private static final long serialVersionUID = -3002711450547460105L;
 
-	private int clazz;
+	private List<Integer> income;
 
-	private char section;
-
-	@ManyToOne(fetch = LAZY)
-	@JoinColumn(name = "VOTA_ID")
-	private VotaEntity vota;
-
-	public int getClazz() {
-		return clazz;
+	public List<Integer> getIncome() {
+		return income;
 	}
 
-	public void setClazz(int clazz) {
-		this.clazz = clazz;
-	}
-
-	public char getSection() {
-		return section;
-	}
-
-	public void setSection(char section) {
-		this.section = section;
-	}
-
-	public VotaEntity getVota() {
-		return vota;
-	}
-
-	public void setVota(VotaEntity vota) {
-		this.vota = vota;
+	public void setIncome(List<Integer> income) {
+		this.income = income;
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + clazz;
-		result = prime * result + ((vota.getId() == null) ? 0 : vota.getId().hashCode());
-		result = prime * result + section;
+		result = prime * result + ((income == null) ? 0 : income.hashCode());
 		return result;
 	}
 
@@ -64,14 +37,10 @@ public class RoomId implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		RoomId other = (RoomId) obj;
-		if (clazz != other.clazz)
-			return false;
-		if (vota.getId() == null) {
-			if (other.vota.getId() != null)
+		if (income == null) {
+			if (other.income != null)
 				return false;
-		} else if (!vota.getId().equals(other.vota.getId()))
-			return false;
-		if (section != other.section)
+		} else if (!income.equals(other.income))
 			return false;
 		return true;
 	}

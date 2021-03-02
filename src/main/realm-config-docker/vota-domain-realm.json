@@ -395,14 +395,6 @@
 				"description": "Administrator privileges"
 			},
 			{
-				"name": "group",
-				"description": "Group privileges"
-			},
-			{
-				"name": "party",
-				"description": "Party privileges"
-			},
-			{
 				"name": "representative",
 				"description": "Representative privileges"
 			},
@@ -442,44 +434,6 @@
 			},
 			"realmRoles": [
 				"citizen"
-			],
-			"clientRoles": {
-				"realm-management": [
-					"view-users"
-				],
-				"account": [
-					"manage-account"
-				]
-			},
-			"subGroups": []
-		},
-		{
-			"name": "group",
-			"path": "/group",
-			"attributes": {
-				
-			},
-			"realmRoles": [
-				"group"
-			],
-			"clientRoles": {
-				"realm-management": [
-					"view-users"
-				],
-				"account": [
-					"manage-account"
-				]
-			},
-			"subGroups": []
-		},
-		{
-			"name": "party",
-			"path": "/party",
-			"attributes": {
-				
-			},
-			"realmRoles": [
-				"party"
 			],
 			"clientRoles": {
 				"realm-management": [

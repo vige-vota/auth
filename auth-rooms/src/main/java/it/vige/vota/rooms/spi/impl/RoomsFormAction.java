@@ -1,7 +1,6 @@
 package it.vige.vota.rooms.spi.impl;
 
 import static java.util.stream.Collectors.toList;
-import static java.util.stream.Collectors.toMap;
 import static org.keycloak.models.AuthenticationExecutionModel.Requirement.DISABLED;
 import static org.keycloak.models.AuthenticationExecutionModel.Requirement.REQUIRED;
 
@@ -23,7 +22,6 @@ import org.keycloak.models.RealmModel;
 import org.keycloak.models.UserModel;
 import org.keycloak.provider.ProviderConfigProperty;
 
-import it.vige.vota.rooms.Vota;
 import it.vige.vota.rooms.spi.RoomsService;
 
 public class RoomsFormAction implements FormAction, FormActionFactory {
@@ -40,18 +38,10 @@ public class RoomsFormAction implements FormAction, FormActionFactory {
 	@Override
 	public void buildPage(FormContext context, LoginFormsProvider form) {
 		RoomsService roomsService = context.getSession().getProvider(RoomsService.class);
-		List<Vota> votas = roomsService.findVotas(null, null, null, null);
-		Map<String, String> mapVotas = votas.stream().collect(toMap(Vota::getId, Vota::getDescription));
 		Map<String, List<String>> mapRooms = new HashMap<String, List<String>>();
-		for (Vota vota : votas) {
-			String id = vota.getId();
-			List<String> rooms = new ArrayList<String>();
-			rooms.add("");
-			rooms.addAll(roomsService.findRoomsByVota(id).stream().map(x -> "" + x.getClazz() + x.getSection())
-					.collect(toList()));
-			mapRooms.put(id, rooms);
-		}
-		form.setAttribute("votas", mapVotas);
+		List<String> rooms = new ArrayList<String>();
+		rooms.addAll(roomsService.findAllRooms().stream().map(x -> "" + x.getIncome()).collect(toList()));
+		mapRooms.put("", rooms);
 		form.setAttribute("rooms", mapRooms);
 	}
 

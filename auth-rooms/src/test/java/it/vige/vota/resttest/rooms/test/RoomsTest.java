@@ -15,10 +15,10 @@ package it.vige.vota.resttest.rooms.test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertNull;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ws.rs.core.GenericType;
@@ -35,11 +35,9 @@ import com.mashape.unirest.http.exceptions.UnirestException;
 
 import it.vige.vota.RestCaller;
 import it.vige.vota.rooms.Room;
-import it.vige.vota.rooms.Vota;
 
 public class RoomsTest extends RestCaller {
 
-	private final static String url_votas = "http://localhost:8180/auth/realms/vota-domain/rooms/votas";
 	private final static String url_rooms = "http://localhost:8180/auth/realms/vota-domain/rooms/rooms";
 	private final static String url_auth = "http://localhost:8180/auth/realms/vota-domain/protocol/openid-connect/auth?response_type=code&client_id=vota&callback_uri=http://localhost:8080/vota";
 	private final static String url_authenticate = "http://localhost:8180/auth/realms/vota-domain/login-actions/authenticate?session_code=";
@@ -48,60 +46,16 @@ public class RoomsTest extends RestCaller {
 	private static String authorization = null;
 
 	@Test
-	public void setVota() throws IOException, VerificationException, UnirestException {
-
-		Vota vota = new Vota();
-		vota.setDescription("My Vota");
-		authenticate();
-
-		Response response = post(authorization, url_votas, vota);
-		InputStream addedVota = (InputStream) response.getEntity();
-		assertNotNull(addedVota, "The vota was inserted");
-		response.close();
-
-		response = get(null, url_votas + "/myvota", null);
-		vota = response.readEntity(Vota.class);
-		assertNotNull(vota, "The vota is found");
-		response.close();
-
-		vota.setDescription("new description");
-		response = put(authorization, url_votas + "/" + vota.getId(), vota);
-		InputStream updatedVota = (InputStream) response.getEntity();
-		assertNull(updatedVota, "The vota was updated");
-		response.close();
-
-		response = get(null, url_votas + "/" + vota.getId(), null);
-		vota = response.readEntity(Vota.class);
-		assertEquals("new description", vota.getDescription(), "The vota was updated");
-		response.close();
-
-		response = delete(authorization, url_votas + "/" + vota.getId(), null);
-		InputStream deletedVota = (InputStream) response.getEntity();
-		assertNotNull(deletedVota, "The vota was deleted");
-		response.close();
-	}
-
-	@Test
 	public void setRoom() throws IOException, VerificationException, UnirestException {
 		Response response = get(null, url_rooms, null);
 		List<Room> rooms = response.readEntity(new GenericType<List<Room>>() {
 		});
 		assertEquals(111, rooms.size(), "The query finds all 111 rooms ");
 
-		Vota vota = new Vota();
-		vota.setId("myvota");
-		vota.setDescription("My Vota");
 		Room room = new Room();
-		room.setClazz(1);
-		room.setSection('H');
-		room.setVota(vota);
+		room.setIncome(new ArrayList<Integer>());
 
 		authenticate();
-
-		response = post(authorization, url_votas, vota);
-		InputStream addedVota = (InputStream) response.getEntity();
-		assertNotNull(addedVota, "The vota was inserted");
-		response.close();
 
 		response = post(authorization, url_rooms, room);
 		InputStream addedRoom = (InputStream) response.getEntity();
@@ -114,14 +68,9 @@ public class RoomsTest extends RestCaller {
 		assertEquals(1, rooms.size(), "The room is found");
 		response.close();
 
-		response = delete(authorization, url_rooms + "/" + vota.getId(), null);
+		response = delete(authorization, url_rooms + "/" + "6", null);
 		InputStream deletedRoom = (InputStream) response.getEntity();
 		assertNotNull(deletedRoom, "The room was deleted");
-		response.close();
-
-		response = delete(authorization, url_votas + "/" + vota.getId(), null);
-		InputStream deletedVota = (InputStream) response.getEntity();
-		assertNotNull(deletedVota, "The vota was deleted");
 		response.close();
 	}
 

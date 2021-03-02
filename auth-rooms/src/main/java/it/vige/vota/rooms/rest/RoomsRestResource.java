@@ -25,11 +25,6 @@ public class RoomsRestResource {
 		return new RoomResource(session, auth);
 	}
 
-	@Path("votas")
-	public VotaResource getVotaResource() {
-		return new VotaResource(session, auth);
-	}
-
 	public static void checkRealmAdmin(AuthResult auth) {
 		if (auth == null) {
 			throw new NotAuthorizedException("Bearer");

@@ -10,7 +10,6 @@ import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 
@@ -39,14 +38,6 @@ public class RoomResource {
 		return session.getProvider(RoomsService.class).findAllRooms();
 	}
 
-	@GET
-	@NoCache
-	@Path("{vota}")
-	@Produces(APPLICATION_JSON)
-	public List<Room> findRoomsByVota(@PathParam("vota") final String vota) {
-		return session.getProvider(RoomsService.class).findRoomsByVota(vota);
-	}
-
 	@POST
 	@Path("")
 	@NoCache
@@ -64,8 +55,9 @@ public class RoomResource {
 	public Response removeRoom(Room room) {
 		checkRealmAdmin(auth);
 		session.getProvider(RoomsService.class).removeRoom(room);
-		return Response.created(session.getContext().getUri().getAbsolutePathBuilder()
-				.path(room.getClazz() + "-" + room.getSection() + "-" + room.getVota()).build()).build();
+		return Response.created(
+				session.getContext().getUri().getAbsolutePathBuilder().path(room.getIncome().toString()).build())
+				.build();
 	}
 
 }

@@ -1,48 +1,27 @@
 package it.vige.vota.rooms;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class Room implements Serializable {
 
 	private static final long serialVersionUID = 5714119820308270263L;
 
-	private int clazz;
+	private List<Integer> income;
 
-	private char section;
-	
-	private Vota vota;
-
-	public int getClazz() {
-		return clazz;
+	public List<Integer> getIncome() {
+		return income;
 	}
 
-	public void setClazz(int clazz) {
-		this.clazz = clazz;
-	}
-
-	public char getSection() {
-		return section;
-	}
-
-	public void setSection(char section) {
-		this.section = section;
-	}
-
-	public Vota getVota() {
-		return vota;
-	}
-
-	public void setVota(Vota vota) {
-		this.vota = vota;
+	public void setIncome(List<Integer> income) {
+		this.income = income;
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + clazz;
-		result = prime * result + ((vota == null) ? 0 : vota.hashCode());
-		result = prime * result + section;
+		result = prime * result + ((income == null) ? 0 : income.hashCode());
 		return result;
 	}
 
@@ -55,14 +34,10 @@ public class Room implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Room other = (Room) obj;
-		if (clazz != other.clazz)
-			return false;
-		if (vota == null) {
-			if (other.vota != null)
+		if (income == null) {
+			if (other.income != null)
 				return false;
-		} else if (!vota.equals(other.vota))
-			return false;
-		if (section != other.section)
+		} else if (!income.equals(other.income))
 			return false;
 		return true;
 	}
