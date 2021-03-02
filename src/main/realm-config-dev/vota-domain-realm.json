@@ -311,7 +311,7 @@
 				}
 			],
 			"groups": [
-				"citizen"
+				"group"
 			]
 		},
 		{
@@ -332,7 +332,7 @@
 				}
 			],
 			"groups": [
-				"citizen"
+				"group"
 			]
 		},
 		{
@@ -353,7 +353,7 @@
 				}
 			],
 			"groups": [
-				"citizen"
+				"group"
 			]
 		},
 		{
@@ -3647,8 +3647,12 @@
 				"description": "Administrator privileges"
 			},
 			{
+				"name": "group",
+				"description": "Group privileges"
+			},
+			{
 				"name": "party",
-				"description": "Vota Operator privileges"
+				"description": "Party privileges"
 			},
 			{
 				"name": "representative",
@@ -3690,6 +3694,25 @@
 			},
 			"realmRoles": [
 				"citizen"
+			],
+			"clientRoles": {
+				"realm-management": [
+					"view-users"
+				],
+				"account": [
+					"manage-account"
+				]
+			},
+			"subGroups": []
+		},
+		{
+			"name": "group",
+			"path": "/group",
+			"attributes": {
+				
+			},
+			"realmRoles": [
+				"group"
 			],
 			"clientRoles": {
 				"realm-management": [

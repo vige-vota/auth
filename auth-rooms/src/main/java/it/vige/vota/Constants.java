@@ -8,6 +8,8 @@ public interface Constants {
 
 	String REPRESENTATIVE_ROLE = "representative";
 
+	String GROUP_ROLE = "group";
+
 	String PARTY_ROLE = "party";
 
 	String ERROR = "error";
