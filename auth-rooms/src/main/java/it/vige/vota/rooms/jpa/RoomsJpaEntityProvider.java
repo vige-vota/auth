@@ -12,7 +12,6 @@ public class RoomsJpaEntityProvider implements JpaEntityProvider {
 	List<Class<?>> entities = new ArrayList<Class<?>>();
 	{
 		entities.add(RoomEntity.class);
-		entities.add(VotaEntity.class);
 	}
 
 	@Override

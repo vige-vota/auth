@@ -395,10 +395,6 @@
 				"description": "Administrator privileges"
 			},
 			{
-				"name": "representative",
-				"description": "Representative privileges"
-			},
-			{
 				"name": "citizen",
 				"description": "Citizen privileges"
 			}
@@ -434,25 +430,6 @@
 			},
 			"realmRoles": [
 				"citizen"
-			],
-			"clientRoles": {
-				"realm-management": [
-					"view-users"
-				],
-				"account": [
-					"manage-account"
-				]
-			},
-			"subGroups": []
-		},
-		{
-			"name": "representative",
-			"path": "/representative",
-			"attributes": {
-				
-			},
-			"realmRoles": [
-				"representative"
 			],
 			"clientRoles": {
 				"realm-management": [

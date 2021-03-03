@@ -51,7 +51,7 @@ public class RoomsServiceImpl implements RoomsService, Converters {
 	@Override
 	public void removeRoom(Room room) {
 		EntityManager em = getEntityManager();
-		RoomEntity entity = em.createNamedQuery("findRoomByClazzSectionAndVota", RoomEntity.class)
+		RoomEntity entity = em.createNamedQuery("findRoomByIncome", RoomEntity.class)
 				.setParameter("income", room.getIncome()).getSingleResult();
 		em.remove(entity);
 	}
