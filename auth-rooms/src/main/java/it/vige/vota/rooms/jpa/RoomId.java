@@ -1,7 +1,6 @@
 package it.vige.vota.rooms.jpa;
 
 import java.io.Serializable;
-import java.util.List;
 
 import javax.persistence.Embeddable;
 
@@ -10,13 +9,13 @@ public class RoomId implements Serializable {
 
 	private static final long serialVersionUID = -3002711450547460105L;
 
-	private List<Integer> income;
+	private Integer income;
 
-	public List<Integer> getIncome() {
+	public Integer getIncome() {
 		return income;
 	}
 
-	public void setIncome(List<Integer> income) {
+	public void setIncome(Integer income) {
 		this.income = income;
 	}
 
