@@ -53,18 +53,15 @@
 	</developers>
 
 	<properties>
-		<maven.compiler.source>15</maven.compiler.source>
-		<maven.compiler.target>15</maven.compiler.target>
+		<maven.compiler.source>16</maven.compiler.source>
+		<maven.compiler.target>16</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<spec.jakartaee.version>9.0.0</spec.jakartaee.version>
 		<maven.replacer.plugin.version>1.5.3</maven.replacer.plugin.version>
 		<maven.resources.plugin.version>3.2.0</maven.resources.plugin.version>
-		<wildfly.version>22.0.0.Final</wildfly.version>
+		<wildfly.version>23.0.0.Final</wildfly.version>
 		<wildfly.maven.plugin.version>2.0.2.Final</wildfly.maven.plugin.version>
-		<keycloak.version>12.0.2</keycloak.version>
-		<resteasy.version>3.14.0.Final</resteasy.version>
-		<junit.version>5.7.0</junit.version>
-		<maven.surefire.plugin.version>3.0.0-M5</maven.surefire.plugin.version>
+		<keycloak.version>12.0.4</keycloak.version>
 	</properties>
 
 	<build>
@@ -73,17 +70,7 @@
 
 	<modules>
 		<module>auth-theme</module>
-		<module>auth-rooms</module>
 	</modules>
-
-	<dependencies>
-		<dependency>
-			<groupId>jakarta.platform</groupId>
-			<artifactId>jakarta.jakartaee-api</artifactId>
-			<version>${spec.jakartaee.version}</version>
-			<scope>provided</scope>
-		</dependency>
-	</dependencies>
 
 	<profiles>
 
@@ -158,13 +145,6 @@
 											<destFileName>auth-theme.jar</destFileName>
 											<outputDirectory>${project.build.directory}/keycloak-run/wildfly-${wildfly.version}/standalone/deployments</outputDirectory>
 										</artifactItem>
-										<artifactItem>
-											<groupId>it.vige</groupId>
-											<artifactId>auth-rooms</artifactId>
-											<version>${project.version}</version>
-											<destFileName>auth-rooms.jar</destFileName>
-											<outputDirectory>${project.build.directory}/keycloak-run/wildfly-${wildfly.version}/modules/it/vige/vota/rooms/main</outputDirectory>
-										</artifactItem>
 									</artifactItems>
 								</configuration>
 							</execution>
@@ -174,22 +154,6 @@
 						<artifactId>maven-resources-plugin</artifactId>
 						<version>${maven.resources.plugin.version}</version>
 						<executions>
-							<execution>
-								<id>deploy-rooms</id>
-								<phase>process-test-classes</phase>
-								<goals>
-									<goal>copy-resources</goal>
-								</goals>
-								<configuration>
-									<outputDirectory>${project.build.directory}/keycloak-run/wildfly-${wildfly.version}/modules/it/vige/vota/rooms/main</outputDirectory>
-									<resources>
-										<resource>
-											<directory>auth-rooms/src/main/config/it/vige/vota/rooms/main</directory>
-											<include>module.xml</include>
-										</resource>
-									</resources>
-								</configuration>
-							</execution>
 							<execution>
 								<id>copy-admin-user</id>
 								<phase>process-test-classes</phase>
@@ -249,7 +213,6 @@
 							<offline>true</offline>
 							<scripts>
 								<script>${project.build.directory}/keycloak-run/wildfly-${wildfly.version}/bin/keycloak-install.cli</script>
-								<script>auth-rooms/src/main/config/add-provider.cli</script>
 							</scripts>
 						</configuration>
 						<executions>

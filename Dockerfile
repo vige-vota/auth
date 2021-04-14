@@ -10,14 +10,14 @@
 # See the License for the specific language governing permissions and        
 # limitations under the License.
 
-FROM openjdk:15.0.1-jdk
+FROM openjdk:16-jdk
 EXPOSE 8480
 RUN adduser -u 1000 -G adm -d /home/wildfly --shell /bin/bash wildfly && \
     echo "wildfly:secret" | chpasswd
 
 USER root
 
-ENV MAVEN_VERSION=3.6.3
+ENV MAVEN_VERSION=3.8.1
 
 RUN mkdir /home/wildfly/apache-maven-$MAVEN_VERSION && \
   	curl http://apache.ip-connect.vn.ua/maven/maven-3/$MAVEN_VERSION/binaries/apache-maven-$MAVEN_VERSION-bin.tar.gz | tar xvz -C /home/wildfly

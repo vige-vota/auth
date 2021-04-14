@@ -8,13 +8,13 @@ It covers all the following features:
 - Import voting users.
 - Browsing users.
 
-This draft version has been tested on WildFly 22.0.0.Final.
+This draft version has been tested on WildFly 23.0.0.Final.
 
 Requirements
 ------------
 
-- JDK 15
-- Maven 3.6.x
+- JDK 16
+- Maven 3.8.x
 
 
 Build
@@ -61,19 +61,6 @@ Re-enter Password : password2
 What roles do you want this user to belong to? (Please enter a comma separated list, or leave blank for none) : users
 The username 'admin' is easy to guess
 Are you sure you want to add user 'admin' yes/no? yes
-
-to test the rest api with junit:
-```
-    deploy the rest api in a server
-    mvn -Prest-keycloak-test test
-```
-To debug the application using Eclipse you can put this parameter:
-```
-    mvn -Dmaven.surefire.debug test
-```
-It will start on the 5005 port.
-
-The tests are done using Chrome 87.0.4280.141 (64-bit) on WildFly 22.0.0.Final
 
 Docker image
 ------------
