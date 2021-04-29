@@ -296,7 +296,8 @@
       		"clientAuthenticatorType": "client-secret",
       		"secret": "**********",
       		"redirectUris": [
-        		"MAVEN_REPLACER_FRONTEND_SERVER_URL/frontend/*"
+        		"MAVEN_REPLACER_FRONTEND_SERVER_URL/frontend/*",
+        		"MAVEN_REPLACER_FRONTEND_SERVER_URL/*"
       		],
       		"webOrigins": [
         		"MAVEN_REPLACER_FRONTEND_SERVER_URL"
