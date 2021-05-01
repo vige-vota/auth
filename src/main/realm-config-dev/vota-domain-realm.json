@@ -27,7 +27,7 @@
 			"enabled": true,
 			"email": "lsflashboss62@gmail.com",
 			"attributes": {
-				"income": []
+				"income": -1
 			},
 			"credentials": [
 				{
@@ -46,9 +46,7 @@
 			"firstName": "Luca",
 			"lastName": "Stancapiano",
 			"attributes": {
-				"income": [
-					"100"
-				]
+				"income": "100"
 			},
 			"credentials": [
 				{
@@ -83,10 +81,7 @@
 			"firstName": "Beppe",
 			"lastName": "Grillo",
 			"attributes": {
-				"income": [
-					"27",
-					"211"
-				]
+				"income": "27"
 			},
 			"credentials": [
 				{
@@ -105,10 +100,7 @@
 			"firstName": "Manlio",
 			"lastName": "Di Stefano",
 			"attributes": {
-				"income": [
-					"123",
-					"146"
-				]
+				"income": "123"
 			},
 			"credentials": [
 				{
@@ -127,9 +119,7 @@
 			"firstName": "Sebastiano",
 			"lastName": "Cubeddu",
 			"attributes": {
-				"income": [
-					"119"
-				]
+				"income": "119"
 			},
 			"credentials": [
 				{
@@ -148,9 +138,7 @@
 			"firstName": "Maurizio",
 			"lastName": "Celani",
 			"attributes": {
-				"income": [
-					"37"
-				]
+				"income": "37"
 			},
 			"credentials": [
 				{
@@ -169,9 +157,7 @@
 			"firstName": "Domenico",
 			"lastName": "Gigliotti",
 			"attributes": {
-				"income": [
-					"36"
-				]
+				"income": "36"
 			},
 			"credentials": [
 				{
@@ -190,9 +176,7 @@
 			"firstName": "Laura",
 			"lastName": "Spinella",
 			"attributes": {
-				"income": [
-					"26"
-				]
+				"income": "26"
 			},
 			"credentials": [
 				{
@@ -211,10 +195,7 @@
 			"firstName": "Laura",
 			"lastName": "Alessandrini",
 			"attributes": {
-				"income": [
-					"190",
-					"211"
-				]
+				"income": "190"
 			},
 			"credentials": [
 				{
@@ -233,9 +214,7 @@
 			"firstName": "Laura",
 			"lastName": "Santoni",
 			"attributes": {
-				"income": [
-					"83"
-				]
+				"income": "83"
 			},
 			"credentials": [
 				{
@@ -254,9 +233,7 @@
 			"firstName": "Giuliano",
 			"lastName": "Santoboni",
 			"attributes": {
-				"income": [
-					"19"
-				]
+				"income": "19"
 			},
 			"credentials": [
 				{
@@ -275,10 +252,7 @@
 			"firstName": "Maria",
 			"lastName": "Naimo",
 			"attributes": {
-				"income": [
-					"98",
-					"32"
-				]
+				"income": "98"
 			},
 			"credentials": [
 				{
@@ -297,10 +271,7 @@
 			"firstName": "Raffaele",
 			"lastName": "Bonaffini",
 			"attributes": {
-				"income": [
-					"142",
-					"138"
-				]
+				"income": "142"
 			},
 			"credentials": [
 				{
@@ -319,10 +290,7 @@
 			"firstName": "Fabrizio",
 			"lastName": "Fossati",
 			"attributes": {
-				"income": [
-					"89",
-					"44"
-				]
+				"income": "89"
 			},
 			"credentials": [
 				{
@@ -341,9 +309,7 @@
 			"firstName": "Patrizia",
 			"lastName": "Fontana",
 			"attributes": {
-				"income": [
-					"87"
-				]
+				"income": "87"
 			},
 			"credentials": [
 				{
@@ -362,9 +328,7 @@
 			"firstName": "Gladys",
 			"lastName": "Carrizales",
 			"attributes": {
-				"income": [
-					"16"
-				]
+				"income": "16"
 			},
 			"credentials": [
 				{
@@ -383,11 +347,7 @@
 			"firstName": "Alessandro",
 			"lastName": "Toro",
 			"attributes": {
-				"income": [
-					"59",
-					"33",
-					"178"
-				]
+				"income": "59"
 			},
 			"credentials": [
 				{
@@ -406,9 +366,7 @@
 			"firstName": "Daniele",
 			"lastName": "Ronci",
 			"attributes": {
-				"income": [
-					"32"
-				]
+				"income": "32"
 			},
 			"credentials": [
 				{
@@ -427,9 +385,7 @@
 			"firstName": "Luigi",
 			"lastName": "Di Maio",
 			"attributes": {
-				"income": [
-					"45"
-				]
+				"income": "45"
 			},
 			"credentials": [
 				{
@@ -448,9 +404,7 @@
 			"firstName": "Claudio",
 			"lastName": "Cos",
 			"attributes": {
-				"income": [
-					"11"
-				]
+				"income": "11"
 			},
 			"credentials": [
 				{
@@ -468,6 +422,9 @@
 			"email": "antonino.briganti@vige.it",
 			"firstName": "Antonino",
 			"lastName": "Briganti",
+			"attributes": {
+				"income": "-1"
+			},
 			"credentials": [
 				{
 					"type": "password",
@@ -484,6 +441,9 @@
 			"email": "luigi.briganti@vige.it",
 			"firstName": "Luigi",
 			"lastName": "Briganti",
+			"attributes": {
+				"income": "-1"
+			},
 			"credentials": [
 				{
 					"type": "password",
@@ -500,6 +460,9 @@
 			"email": "matteo.castorino@vige.it",
 			"firstName": "Matteo",
 			"lastName": "Castorino",
+			"attributes": {
+				"income": "-1"
+			},
 			"credentials": [
 				{
 					"type": "password",
@@ -517,10 +480,7 @@
 			"firstName": "Stefano",
 			"lastName": "Bufalieri",
 			"attributes": {
-				"income": [
-					"9",
-					"4"
-				]
+				"income": "9"
 			},
 			"credentials": [
 				{
@@ -539,9 +499,7 @@
 			"firstName": "Giuseppe",
 			"lastName": "Conte",
 			"attributes": {
-				"income": [
-					"112"
-				]
+				"income": "112"
 			},
 			"credentials": [
 				{
@@ -560,9 +518,7 @@
 			"firstName": "Giulia",
 			"lastName": "Grillo",
 			"attributes": {
-				"income": [
-					"14"
-				]
+				"income": "14"
 			},
 			"credentials": [
 				{
@@ -581,10 +537,7 @@
 			"firstName": "Riccardo",
 			"lastName": "Fraccaro",
 			"attributes": {
-				"income": [
-					"121",
-					"2"
-				]
+				"income": "121"
 			},
 			"credentials": [
 				{
@@ -603,10 +556,7 @@
 			"firstName": "Alfonso",
 			"lastName": "Bonafede",
 			"attributes": {
-				"income": [
-					"120",
-					"59"
-				]
+				"income": "120"
 			},
 			"credentials": [
 				{
@@ -625,9 +575,7 @@
 			"firstName": "Valerio",
 			"lastName": "Novelli",
 			"attributes": {
-				"income": [
-					"229"
-				]
+				"income": "229"
 			},
 			"credentials": [
 				{
@@ -646,9 +594,7 @@
 			"firstName": "Valentina",
 			"lastName": "Corrado",
 			"attributes": {
-				"income": [
-					"248"
-				]
+				"income": "248"
 			},
 			"credentials": [
 				{
@@ -667,9 +613,7 @@
 			"firstName": "Roberta",
 			"lastName": "Lombardi",
 			"attributes": {
-				"income": [
-					"243"
-				]
+				"income": "243"
 			},
 			"credentials": [
 				{
@@ -688,9 +632,7 @@
 			"firstName": "Roberta",
 			"lastName": "Della Casa",
 			"attributes": {
-				"income": [
-					"231"
-				]
+				"income": "231"
 			},
 			"credentials": [
 				{
@@ -709,9 +651,7 @@
 			"firstName": "Virginia",
 			"lastName": "Raggi",
 			"attributes": {
-				"income": [
-					"209"
-				]
+				"income": "209"
 			},
 			"credentials": [
 				{
@@ -730,10 +670,7 @@
 			"firstName": "Marcello",
 			"lastName": "De Vito",
 			"attributes": {
-				"income": [
-					"201",
-					"203"
-				]
+				"income": "201"
 			},
 			"credentials": [
 				{
@@ -752,10 +689,7 @@
 			"firstName": "Giuseppe",
 			"lastName": "Bonaventura",
 			"attributes": {
-				"income": [
-					"110",
-					"9"
-				]
+				"income": "110"
 			},
 			"credentials": [
 				{
@@ -774,10 +708,7 @@
 			"firstName": "Alessandro",
 			"lastName": "Cocchiarella",
 			"attributes": {
-				"income": [
-					"55",
-					"59"
-				]
+				"income": "55"
 			},
 			"credentials": [
 				{
@@ -796,11 +727,7 @@
 			"firstName": "Michel",
 			"lastName": "Barbet",
 			"attributes": {
-				"income": [
-					"68",
-					"41",
-					"15"
-				]
+				"income": "68"
 			},
 			"credentials": [
 				{
@@ -819,9 +746,7 @@
 			"firstName": "Davide",
 			"lastName": "Russo",
 			"attributes": {
-				"income": [
-					"132"
-				]
+				"income": "132"
 			},
 			"credentials": [
 				{
@@ -840,9 +765,7 @@
 			"firstName": "Salvatore",
 			"lastName": "Galletta",
 			"attributes": {
-				"income": [
-					"119"
-				]
+				"income": "119"
 			},
 			"credentials": [
 				{
@@ -861,9 +784,7 @@
 			"firstName": "Davide",
 			"lastName": "Casaleggio",
 			"attributes": {
-				"income": [
-					"1"
-				]
+				"income": "1"
 			},
 			"credentials": [
 				{
@@ -882,10 +803,7 @@
 			"firstName": "Devid",
 			"lastName": "Porrello",
 			"attributes": {
-				"income": [
-					"237",
-					"118"
-				]
+				"income": "237"
 			},
 			"credentials": [
 				{
@@ -904,11 +822,7 @@
 			"firstName": "Zefferino",
 			"lastName": "Ridolfi",
 			"attributes": {
-				"income": [
-					"116",
-					"77",
-					"192"
-				]
+				"income": "116"
 			},
 			"credentials": [
 				{
@@ -927,7 +841,7 @@
 			"firstName": "Lamberto",
 			"lastName": "Cardellino",
 			"attributes": {
-				"income": []
+				"income": "-1"
 			},
 			"credentials": [
 				{
@@ -946,7 +860,7 @@
 			"firstName": "Fabrizio",
 			"lastName": "Fossati",
 			"attributes": {
-				"income": []
+				"income": "-1"
 			},
 			"credentials": [
 				{
@@ -965,7 +879,7 @@
 			"firstName": "Valerio",
 			"lastName": "Romanazzi",
 			"attributes": {
-				"income": []
+				"income": "-1"
 			},
 			"credentials": [
 				{
@@ -984,7 +898,7 @@
 			"firstName": "Claudio",
 			"lastName": "Zarro",
 			"attributes": {
-				"income": []
+				"income": "-1"
 			},
 			"credentials": [
 				{
@@ -1003,7 +917,7 @@
 			"firstName": "Gaetano",
 			"lastName": "Calì",
 			"attributes": {
-				"income": []
+				"income": "-1"
 			},
 			"credentials": [
 				{
@@ -1022,7 +936,7 @@
 			"firstName": "Mattia",
 			"lastName": "Marini",
 			"attributes": {
-				"income": []
+				"income": "-1"
 			},
 			"credentials": [
 				{
@@ -1041,7 +955,7 @@
 			"firstName": "Armando",
 			"lastName": "Caponegro",
 			"attributes": {
-				"income": []
+				"income": "-1"
 			},
 			"credentials": [
 				{
@@ -1060,7 +974,7 @@
 			"firstName": "Tiziana",
 			"lastName": "Guida",
 			"attributes": {
-				"income": []
+				"income": "-1"
 			},
 			"credentials": [
 				{
@@ -1079,7 +993,7 @@
 			"firstName": "Marco",
 			"lastName": "Colazza",
 			"attributes": {
-				"income": []
+				"income": "-1"
 			},
 			"credentials": [
 				{
@@ -1098,7 +1012,7 @@
 			"firstName": "Ilaria",
 			"lastName": "Nicolella",
 			"attributes": {
-				"income": []
+				"income": "-1"
 			},
 			"credentials": [
 				{
@@ -1117,9 +1031,7 @@
 			"firstName": "Elisa",
 			"lastName": "Strani",
 			"attributes": {
-				"income": [
-					"3"
-				]
+				"income": "3"
 			},
 			"credentials": [
 				{
@@ -1138,10 +1050,7 @@
 			"firstName": "Rossana",
 			"lastName": "Santarelli",
 			"attributes": {
-				"income": [
-					"44",
-					"12"
-				]
+				"income": "44"
 			},
 			"credentials": [
 				{
@@ -1160,10 +1069,7 @@
 			"firstName": "Loredana",
 			"lastName": "Terzulli",
 			"attributes": {
-				"income": [
-					"22",
-					"78"
-				]
+				"income": "22"
 			},
 			"credentials": [
 				{
@@ -1182,9 +1088,7 @@
 			"firstName": "Anna",
 			"lastName": "Checchi",
 			"attributes": {
-				"income": [
-					"84"
-				]
+				"income": "84"
 			},
 			"credentials": [
 				{
@@ -1203,9 +1107,7 @@
 			"firstName": "Fabrizio",
 			"lastName": "Mastroddi",
 			"attributes": {
-				"income": [
-					"93"
-				]
+				"income": "93"
 			},
 			"credentials": [
 				{
@@ -1224,9 +1126,7 @@
 			"firstName": "Roberto",
 			"lastName": "Zilli",
 			"attributes": {
-				"income": [
-					"95"
-				]
+				"income": "95"
 			},
 			"credentials": [
 				{
@@ -1245,11 +1145,7 @@
 			"firstName": "Raffaella",
 			"lastName": "Fantegrossi",
 			"attributes": {
-				"income": [
-					"49",
-					"22",
-					"188"
-				]
+				"income": "49"
 			},
 			"credentials": [
 				{
@@ -1268,11 +1164,7 @@
 			"firstName": "Marina",
 			"lastName": "Cocchiarella",
 			"attributes": {
-				"income": [
-					"29",
-					"18",
-					"36"
-				]
+				"income": "29"
 			},
 			"credentials": [
 				{
@@ -1291,10 +1183,7 @@
 			"firstName": "Alberto",
 			"lastName": "Airola",
 			"attributes": {
-				"income": [
-					"52",
-					"39"
-				]
+				"income": "52"
 			},
 			"credentials": [
 				{
@@ -1313,10 +1202,7 @@
 			"firstName": "Angelo",
 			"lastName": "Scipioni",
 			"attributes": {
-				"income": [
-					"19",
-					"71"
-				]
+				"income": "19"
 			},
 			"credentials": [
 				{
@@ -1335,10 +1221,7 @@
 			"firstName": "Emanuela",
 			"lastName": "Bivi",
 			"attributes": {
-				"income": [
-					"158",
-					"78"
-				]
+				"income": "158"
 			},
 			"credentials": [
 				{
@@ -1357,10 +1240,7 @@
 			"firstName": "Antonio",
 			"lastName": "Iennaco",
 			"attributes": {
-				"income": [
-					"50",
-					"60"
-				]
+				"income": "50"
 			},
 			"credentials": [
 				{
@@ -1379,9 +1259,7 @@
 			"firstName": "Cristian",
 			"lastName": "Falconi",
 			"attributes": {
-				"income": [
-					"40"
-				]
+				"income": "40"
 			},
 			"credentials": [
 				{
@@ -1400,9 +1278,7 @@
 			"firstName": "David",
 			"lastName": "Rossi",
 			"attributes": {
-				"income": [
-					"39"
-				]
+				"income": "39"
 			},
 			"credentials": [
 				{
@@ -1421,9 +1297,7 @@
 			"firstName": "Tiziana",
 			"lastName": "Mastropietro",
 			"attributes": {
-				"income": [
-					"38"
-				]
+				"income": "38"
 			},
 			"credentials": [
 				{
@@ -1442,11 +1316,7 @@
 			"firstName": "Laura",
 			"lastName": "Baldassarre",
 			"attributes": {
-				"income": [
-					"14",
-					"117",
-					"231"
-				]
+				"income": "14"
 			},
 			"credentials": [
 				{
@@ -1465,10 +1335,7 @@
 			"firstName": "Fabrizio",
 			"lastName": "Santomaggio",
 			"attributes": {
-				"income": [
-					"86",
-					"13"
-				]
+				"income": "86"
 			},
 			"credentials": [
 				{
@@ -1487,10 +1354,7 @@
 			"firstName": "Russotto",
 			"lastName": "Vitale",
 			"attributes": {
-				"income": [
-					"71",
-					"89"
-				]
+				"income": "71"
 			},
 			"credentials": [
 				{
@@ -1509,10 +1373,7 @@
 			"firstName": "Chiara",
 			"lastName": "Amati",
 			"attributes": {
-				"income": [
-					"6",
-					"232"
-				]
+				"income": "6"
 			},
 			"credentials": [
 				{
@@ -1531,10 +1392,7 @@
 			"firstName": "Maria",
 			"lastName": "Di Palma",
 			"attributes": {
-				"income": [
-					"67",
-					"18"
-				]
+				"income": "67"
 			},
 			"credentials": [
 				{
@@ -1553,10 +1411,7 @@
 			"firstName": "Claudio",
 			"lastName": "Ortenzi",
 			"attributes": {
-				"income": [
-					"22",
-					"99"
-				]
+				"income": "22"
 			},
 			"credentials": [
 				{
@@ -1575,10 +1430,7 @@
 			"firstName": "Paolo",
 			"lastName": "Aprile",
 			"attributes": {
-				"income": [
-					"10",
-					"249"
-				]
+				"income": "10"
 			},
 			"credentials": [
 				{
@@ -1597,10 +1449,7 @@
 			"firstName": "Lorena",
 			"lastName": "Roscetti",
 			"attributes": {
-				"income": [
-					"12",
-					"14"
-				]
+				"income": "12"
 			},
 			"credentials": [
 				{
@@ -1619,11 +1468,7 @@
 			"firstName": "Sonia",
 			"lastName": "Caregnato",
 			"attributes": {
-				"income": [
-					"71",
-					"43",
-					"99"
-				]
+				"income": "71"
 			},
 			"credentials": [
 				{
@@ -1642,11 +1487,7 @@
 			"firstName": "Michele",
 			"lastName": "Solimando",
 			"attributes": {
-				"income": [
-					"49",
-					"51",
-					"66"
-				]
+				"income": "49"
 			},
 			"credentials": [
 				{
@@ -1665,11 +1506,7 @@
 			"firstName": "Stefania",
 			"lastName": "Cerqua",
 			"attributes": {
-				"income": [
-					"64",
-					"3",
-					"189"
-				]
+				"income": "64"
 			},
 			"credentials": [
 				{
@@ -1688,11 +1525,7 @@
 			"firstName": "Vito",
 			"lastName": "Telesca",
 			"attributes": {
-				"income": [
-					"39",
-					"28",
-					"5"
-				]
+				"income": "39"
 			},
 			"credentials": [
 				{
@@ -1711,11 +1544,7 @@
 			"firstName": "Fabiana",
 			"lastName": "Carletti",
 			"attributes": {
-				"income": [
-					"34",
-					"98",
-					"41"
-				]
+				"income": "34"
 			},
 			"credentials": [
 				{
@@ -1734,11 +1563,7 @@
 			"firstName": "Massimo",
 			"lastName": "Nasini",
 			"attributes": {
-				"income": [
-					"53",
-					"250",
-					"78"
-				]
+				"income": "53"
 			},
 			"credentials": [
 				{
@@ -1757,9 +1582,7 @@
 			"firstName": "Maurizio",
 			"lastName": "Brunetti",
 			"attributes": {
-				"income": [
-					"78"
-				]
+				"income": "78"
 			},
 			"credentials": [
 				{
@@ -1778,9 +1601,7 @@
 			"firstName": "Enrico",
 			"lastName": "Lanzo",
 			"attributes": {
-				"income": [
-					"12"
-				]
+				"income": "12"
 			},
 			"credentials": [
 				{
@@ -1799,11 +1620,7 @@
 			"firstName": "Carlo",
 			"lastName": "Proietti",
 			"attributes": {
-				"income": [
-					"11",
-					"48",
-					"39"
-				]
+				"income": "11"
 			},
 			"credentials": [
 				{
@@ -1822,11 +1639,7 @@
 			"firstName": "Antonio",
 			"lastName": "Castellino",
 			"attributes": {
-				"income": [
-					"8",
-					"88",
-					"222"
-				]
+				"income": "8"
 			},
 			"credentials": [
 				{
@@ -1845,11 +1658,7 @@
 			"firstName": "Elia",
 			"lastName": "Santori",
 			"attributes": {
-				"income": [
-					"1",
-					"158",
-					"129"
-				]
+				"income": "1"
 			},
 			"credentials": [
 				{
@@ -1868,11 +1677,7 @@
 			"firstName": "Claudio",
 			"lastName": "Deriu",
 			"attributes": {
-				"income": [
-					"16",
-					"9",
-					"40"
-				]
+				"income": "16"
 			},
 			"credentials": [
 				{
@@ -1891,9 +1696,7 @@
 			"firstName": "Romina",
 			"lastName": "Polverini",
 			"attributes": {
-				"income": [
-					"55"
-				]
+				"income": "55"
 			},
 			"credentials": [
 				{
@@ -1912,11 +1715,7 @@
 			"firstName": "Antonio",
 			"lastName": "Caridi",
 			"attributes": {
-				"income": [
-					"178",
-					"9",
-					"56"
-				]
+				"income": "178"
 			},
 			"credentials": [
 				{
@@ -1935,9 +1734,7 @@
 			"firstName": "Roberto",
 			"lastName": "Lucia",
 			"attributes": {
-				"income": [
-					"211"
-				]
+				"income": "211"
 			},
 			"credentials": [
 				{
@@ -1956,9 +1753,7 @@
 			"firstName": "Claudio",
 			"lastName": "Caruso",
 			"attributes": {
-				"income": [
-					"94"
-				]
+				"income": "94"
 			},
 			"credentials": [
 				{
@@ -1977,9 +1772,7 @@
 			"firstName": "Alessandra",
 			"lastName": "Sabatini",
 			"attributes": {
-				"income": [
-					"17"
-				]
+				"income": "17"
 			},
 			"credentials": [
 				{
@@ -1998,9 +1791,7 @@
 			"firstName": "Marco",
 			"lastName": "Spazziani",
 			"attributes": {
-				"income": [
-					"18"
-				]
+				"income": "18"
 			},
 			"credentials": [
 				{
@@ -2019,11 +1810,7 @@
 			"firstName": "Monia",
 			"lastName": "Felici",
 			"attributes": {
-				"income": [
-					"112",
-					"59",
-					"19"
-				]
+				"income": "112"
 			},
 			"credentials": [
 				{
@@ -2042,11 +1829,7 @@
 			"firstName": "Umberto",
 			"lastName": "Brunelletti",
 			"attributes": {
-				"income": [
-					"29",
-					"111",
-					"96"
-				]
+				"income": "29"
 			},
 			"credentials": [
 				{
@@ -2065,11 +1848,7 @@
 			"firstName": "Gianfranco",
 			"lastName": "Di Roma",
 			"attributes": {
-				"income": [
-					"94",
-					"99",
-					"4"
-				]
+				"income": "94"
 			},
 			"credentials": [
 				{
@@ -2088,12 +1867,7 @@
 			"firstName": "Elio",
 			"lastName": "Simoni",
 			"attributes": {
-				"income": [
-					"39",
-					"22",
-					"167",
-					"148"
-				]
+				"income": "39"
 			},
 			"credentials": [
 				{
@@ -2112,11 +1886,7 @@
 			"firstName": "Vittorio",
 			"lastName": "Marchetti",
 			"attributes": {
-				"income": [
-					"9",
-					"88",
-					"79"
-				]
+				"income": "9"
 			},
 			"credentials": [
 				{
@@ -2135,9 +1905,7 @@
 			"firstName": "Michele",
 			"lastName": "Alba",
 			"attributes": {
-				"income": [
-					"5"
-				]
+				"income": "5"
 			},
 			"credentials": [
 				{
@@ -2156,11 +1924,7 @@
 			"firstName": "Stefania",
 			"lastName": "Di Marsilio",
 			"attributes": {
-				"income": [
-					"81",
-					"99",
-					"180"
-				]
+				"income": "81"
 			},
 			"credentials": [
 				{
@@ -2179,9 +1943,7 @@
 			"firstName": "Antonio",
 			"lastName": "Scamolla",
 			"attributes": {
-				"income": [
-					"49"
-				]
+				"income": "49"
 			},
 			"credentials": [
 				{
@@ -2200,9 +1962,7 @@
 			"firstName": "Alfredo",
 			"lastName": "Pensato",
 			"attributes": {
-				"income": [
-					"10"
-				]
+				"income": "10"
 			},
 			"credentials": [
 				{
@@ -2221,9 +1981,7 @@
 			"firstName": "Serenella",
 			"lastName": "Di Vittorio",
 			"attributes": {
-				"income": [
-					"0"
-				]
+				"income": "0"
 			},
 			"credentials": [
 				{
@@ -2242,11 +2000,7 @@
 			"firstName": "Mario",
 			"lastName": "Morello",
 			"attributes": {
-				"income": [
-					"29",
-					"2",
-					"266"
-				]
+				"income": "29"
 			},
 			"credentials": [
 				{
@@ -2265,11 +2019,7 @@
 			"firstName": "Stella",
 			"lastName": "Visconti",
 			"attributes": {
-				"income": [
-					"48",
-					"99",
-					"11"
-				]
+				"income": "48"
 			},
 			"credentials": [
 				{
@@ -2288,11 +2038,7 @@
 			"firstName": "Angelo",
 			"lastName": "Mortellaro",
 			"attributes": {
-				"income": [
-					"39",
-					"47",
-					"23"
-				]
+				"income": "39"
 			},
 			"credentials": [
 				{
@@ -2311,12 +2057,7 @@
 			"firstName": "Eleonora",
 			"lastName": "Carrella",
 			"attributes": {
-				"income": [
-					"96",
-					"19",
-					"28",
-					"17"
-				]
+				"income": "96"
 			},
 			"credentials": [
 				{
@@ -2335,12 +2076,7 @@
 			"firstName": "Laura",
 			"lastName": "Passerini",
 			"attributes": {
-				"income": [
-					"57",
-					"7",
-					"91",
-					"82"
-				]
+				"income": "57"
 			},
 			"credentials": [
 				{
@@ -2359,12 +2095,7 @@
 			"firstName": "Massimo",
 			"lastName": "Massimi",
 			"attributes": {
-				"income": [
-					"148",
-					"3",
-					"9",
-					"207"
-				]
+				"income": "148"
 			},
 			"credentials": [
 				{
@@ -2383,10 +2114,7 @@
 			"firstName": "Laura",
 			"lastName": "Tramontana",
 			"attributes": {
-				"income": [
-					"193",
-					"201"
-				]
+				"income": "193"
 			},
 			"credentials": [
 				{
@@ -2405,11 +2133,7 @@
 			"firstName": "Alessandra",
 			"lastName": "Maiorino",
 			"attributes": {
-				"income": [
-					"41",
-					"59",
-					"215"
-				]
+				"income": "41"
 			},
 			"credentials": [
 				{
@@ -2428,9 +2152,7 @@
 			"firstName": "Danilo",
 			"lastName": "Toninelli",
 			"attributes": {
-				"income": [
-					"29"
-				]
+				"income": "29"
 			},
 			"credentials": [
 				{
@@ -2449,9 +2171,7 @@
 			"firstName": "Nicola",
 			"lastName": "Acunzo",
 			"attributes": {
-				"income": [
-					"18"
-				]
+				"income": "18"
 			},
 			"credentials": [
 				{
@@ -2470,9 +2190,7 @@
 			"firstName": "Cosimo",
 			"lastName": "Adelizzi",
 			"attributes": {
-				"income": [
-					"16"
-				]
+				"income": "16"
 			},
 			"credentials": [
 				{
@@ -2491,11 +2209,7 @@
 			"firstName": "Davide",
 			"lastName": "Aiello",
 			"attributes": {
-				"income": [
-					"15",
-					"29",
-					"6"
-				]
+				"income": "15"
 			},
 			"credentials": [
 				{
@@ -2514,12 +2228,7 @@
 			"firstName": "Piera",
 			"lastName": "Aiello",
 			"attributes": {
-				"income": [
-					"29",
-					"28",
-					"234",
-					"250"
-				]
+				"income": "29"
 			},
 			"credentials": [
 				{
@@ -2538,12 +2247,7 @@
 			"firstName": "Maria",
 			"lastName": "Alemanno",
 			"attributes": {
-				"income": [
-					"17",
-					"63",
-					"19",
-					"7"
-				]
+				"income": "17"
 			},
 			"credentials": [
 				{
@@ -2562,12 +2266,7 @@
 			"firstName": "Alessandro",
 			"lastName": "Amitrano",
 			"attributes": {
-				"income": [
-					"78",
-					"9",
-					"10",
-					"135"
-				]
+				"income": "78"
 			},
 			"credentials": [
 				{
@@ -2586,10 +2285,7 @@
 			"firstName": "Nunzio",
 			"lastName": "Angiola",
 			"attributes": {
-				"income": [
-					"76",
-					"200"
-				]
+				"income": "76"
 			},
 			"credentials": [
 				{
@@ -2608,10 +2304,7 @@
 			"firstName": "Nadia",
 			"lastName": "Aprile",
 			"attributes": {
-				"income": [
-					"123",
-					"8"
-				]
+				"income": "123"
 			},
 			"credentials": [
 				{
@@ -2630,9 +2323,7 @@
 			"firstName": "Giovanni",
 			"lastName": "Aresta",
 			"attributes": {
-				"income": [
-					"32"
-				]
+				"income": "32"
 			},
 			"credentials": [
 				{
@@ -2651,9 +2342,7 @@
 			"firstName": "Stefania",
 			"lastName": "Ascari",
 			"attributes": {
-				"income": [
-					"4"
-				]
+				"income": "4"
 			},
 			"credentials": [
 				{
@@ -2672,12 +2361,7 @@
 			"firstName": "Lucia",
 			"lastName": "Azzolina",
 			"attributes": {
-				"income": [
-					"156",
-					"67",
-					"99",
-					"11"
-				]
+				"income": "156"
 			},
 			"credentials": [
 				{
@@ -2696,12 +2380,7 @@
 			"firstName": "Vittoria",
 			"lastName": "Baldino",
 			"attributes": {
-				"income": [
-					"10",
-					"61",
-					"189",
-					"1"
-				]
+				"income": "10"
 			},
 			"credentials": [
 				{
@@ -2720,12 +2399,7 @@
 			"firstName": "Elisabetta",
 			"lastName": "Barbuto",
 			"attributes": {
-				"income": [
-					"100",
-					"58",
-					"34",
-					"81"
-				]
+				"income": "100"
 			},
 			"credentials": [
 				{
@@ -2744,10 +2418,7 @@
 			"firstName": "Massimo",
 			"lastName": "Baroni",
 			"attributes": {
-				"income": [
-					"0",
-					"1"
-				]
+				"income": "0"
 			},
 			"credentials": [
 				{
@@ -2765,6 +2436,9 @@
 			"email": "valentina.barzotti@vige.it",
 			"firstName": "Valentina",
 			"lastName": "Barzotti",
+			"attributes": {
+				"income": "-1"
+			},
 			"credentials": [
 				{
 					"type": "password",
@@ -2781,6 +2455,9 @@
 			"email": "sergio.battelli@vige.it",
 			"firstName": "Sergio",
 			"lastName": "Battelli",
+			"attributes": {
+				"income": "-1"
+			},
 			"credentials": [
 				{
 					"type": "password",
@@ -2797,6 +2474,9 @@
 			"email": "marco.bella@vige.it",
 			"firstName": "Marco",
 			"lastName": "Bella",
+			"attributes": {
+				"income": "-1"
+			},
 			"credentials": [
 				{
 					"type": "password",
@@ -2813,6 +2493,9 @@
 			"email": "fabio.berardini@vige.it",
 			"firstName": "Fabio",
 			"lastName": "Berardini",
+			"attributes": {
+				"income": "-1"
+			},
 			"credentials": [
 				{
 					"type": "password",
@@ -2829,6 +2512,9 @@
 			"email": "francesco.berti@vige.it",
 			"firstName": "Francesco",
 			"lastName": "Berti",
+			"attributes": {
+				"income": "-1"
+			},
 			"credentials": [
 				{
 					"type": "password",
@@ -2845,6 +2531,9 @@
 			"email": "anna.bilotti@vige.it",
 			"firstName": "Anna",
 			"lastName": "Bilotti",
+			"attributes": {
+				"income": "-1"
+			},
 			"credentials": [
 				{
 					"type": "password",
@@ -2861,6 +2550,9 @@
 			"email": "fabiola.bologna@vige.it",
 			"firstName": "Fabiola",
 			"lastName": "Bologna",
+			"attributes": {
+				"income": "-1"
+			},
 			"credentials": [
 				{
 					"type": "password",
@@ -2877,6 +2569,9 @@
 			"email": "giuseppe.brescia@vige.it",
 			"firstName": "Giuseppe",
 			"lastName": "Brescia",
+			"attributes": {
+				"income": "-1"
+			},
 			"credentials": [
 				{
 					"type": "password",
@@ -2893,6 +2588,9 @@
 			"email": "raffaele.bruno@vige.it",
 			"firstName": "Raffaele",
 			"lastName": "Bruno",
+			"attributes": {
+				"income": "-1"
+			},
 			"credentials": [
 				{
 					"type": "password",
@@ -2909,6 +2607,9 @@
 			"email": "stefano.buffagni@vige.it",
 			"firstName": "Stefano",
 			"lastName": "Buffagni",
+			"attributes": {
+				"income": "-1"
+			},
 			"credentials": [
 				{
 					"type": "password",
@@ -2925,6 +2626,9 @@
 			"email": "giuseppe.buonpane@vige.it",
 			"firstName": "Giuseppe",
 			"lastName": "Buonpane",
+			"attributes": {
+				"income": "-1"
+			},
 			"credentials": [
 				{
 					"type": "password",
@@ -2941,6 +2645,9 @@
 			"email": "francesca.businarolo@vige.it",
 			"firstName": "Francesca",
 			"lastName": "Businarolo",
+			"attributes": {
+				"income": "-1"
+			},
 			"credentials": [
 				{
 					"type": "password",
@@ -2957,6 +2664,9 @@
 			"email": "pino.cabras@vige.it",
 			"firstName": "Pino",
 			"lastName": "Cabras",
+			"attributes": {
+				"income": "-1"
+			},
 			"credentials": [
 				{
 					"type": "password",
@@ -2973,6 +2683,9 @@
 			"email": "luciano.cadeddu@vige.it",
 			"firstName": "Luciano",
 			"lastName": "Cadeddu",
+			"attributes": {
+				"income": "-1"
+			},
 			"credentials": [
 				{
 					"type": "password",
@@ -2989,6 +2702,9 @@
 			"email": "azzurra.cancelleri@vige.it",
 			"firstName": "Azzurra",
 			"lastName": "Cancelleri",
+			"attributes": {
+				"income": "-1"
+			},
 			"credentials": [
 				{
 					"type": "password",
@@ -3005,6 +2721,9 @@
 			"email": "luciano.cantone@vige.it",
 			"firstName": "Luciano",
 			"lastName": "Cantone",
+			"attributes": {
+				"income": "-1"
+			},
 			"credentials": [
 				{
 					"type": "password",
@@ -3021,6 +2740,9 @@
 			"email": "santi.cappellani@vige.it",
 			"firstName": "Santi",
 			"lastName": "Cappellani",
+			"attributes": {
+				"income": "-1"
+			},
 			"credentials": [
 				{
 					"type": "password",
@@ -3037,6 +2759,9 @@
 			"email": "luca.carabetta@vige.it",
 			"firstName": "Luca",
 			"lastName": "Carabetta",
+			"attributes": {
+				"income": "-1"
+			},
 			"credentials": [
 				{
 					"type": "password",
@@ -3053,6 +2778,9 @@
 			"email": "emilio.carelli@vige.it",
 			"firstName": "Emilio",
 			"lastName": "Carelli",
+			"attributes": {
+				"income": "-1"
+			},
 			"credentials": [
 				{
 					"type": "password",
@@ -3069,6 +2797,9 @@
 			"email": "paola.carinelli@vige.it",
 			"firstName": "Paola",
 			"lastName": "Carinelli",
+			"attributes": {
+				"income": "-1"
+			},
 			"credentials": [
 				{
 					"type": "password",
@@ -3085,6 +2816,9 @@
 			"email": "vittoria.casa@vige.it",
 			"firstName": "Vittoria",
 			"lastName": "Casa",
+			"attributes": {
+				"income": "-1"
+			},
 			"credentials": [
 				{
 					"type": "password",
@@ -3101,6 +2835,9 @@
 			"email": "barbara.lezzi@vige.it",
 			"firstName": "Barbara",
 			"lastName": "Lezzi",
+			"attributes": {
+				"income": "-1"
+			},
 			"credentials": [
 				{
 					"type": "password",
@@ -3117,6 +2854,9 @@
 			"email": "barbara.lezzi@vige.it",
 			"firstName": "Roberto",
 			"lastName": "Fico",
+			"attributes": {
+				"income": "-1"
+			},
 			"credentials": [
 				{
 					"type": "password",
@@ -3133,6 +2873,9 @@
 			"email": "barbara.lezzi@vige.it",
 			"firstName": "Gianfranco",
 			"lastName": "Gallè",
+			"attributes": {
+				"income": "-1"
+			},
 			"credentials": [
 				{
 					"type": "password",
@@ -3149,6 +2892,9 @@
 			"email": "barbara.lezzi@vige.it",
 			"firstName": "Anna Maria",
 			"lastName": "Baldassarre",
+			"attributes": {
+				"income": "-1"
+			},
 			"credentials": [
 				{
 					"type": "password",
@@ -3165,6 +2911,9 @@
 			"email": "elena.fattori@vige.it",
 			"firstName": "Elena",
 			"lastName": "Fattori",
+			"attributes": {
+				"income": "-1"
+			},
 			"credentials": [
 				{
 					"type": "password",
@@ -3181,6 +2930,9 @@
 			"email": "ilaria.fontana@vige.it",
 			"firstName": "Ilaria",
 			"lastName": "Fontana",
+			"attributes": {
+				"income": "-1"
+			},
 			"credentials": [
 				{
 					"type": "password",
@@ -3197,6 +2949,9 @@
 			"email": "nunzia.catalfo@vige.it",
 			"firstName": "Nunzia",
 			"lastName": "Catalfo",
+			"attributes": {
+				"income": "-1"
+			},
 			"credentials": [
 				{
 					"type": "password",
@@ -3214,7 +2969,7 @@
 			"firstName": "Vito",
 			"lastName": "Crimi",
 			"attributes": {
-				"income": []
+				"income": "-1"
 			},
 			"credentials": [
 				{

@@ -3,9 +3,7 @@
 		{
 			"name": "vota-theme",
 			"types": [
-				"admin",
-				"login",
-				"account"
+				"login"
 			]
 		}
 	]
