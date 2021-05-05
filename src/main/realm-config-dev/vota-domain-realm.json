@@ -68,7 +68,7 @@
 			"lastName": "Barillari",
 			"attributes": {
 				"block": "-1",
-				"zones": [6541069, 3174379, 3174004, 2]
+				"zones": [6542276, 2523962, 2523228, 4]
 			},
 			"credentials": [
 				{
@@ -88,7 +88,7 @@
 			"lastName": "Grillo",
 			"attributes": {
 				"block": "27",
-				"zones": [6539784, 3182163, 3174618, 0]
+				"zones": [6542276, 2523962, 2523228, 4]
 			},
 			"credentials": [
 				{
@@ -108,7 +108,7 @@
 			"lastName": "Di Stefano",
 			"attributes": {
 				"block": "123",
-				"zones": [6538453, 3173330, 3177401, 1]
+				"zones": [6542276, 2523962, 2523228, 4]
 			},
 			"credentials": [
 				{
@@ -128,7 +128,7 @@
 			"lastName": "Cubeddu",
 			"attributes": {
 				"block": "119",
-				"zones": [6536031, 3165241, 3165244, 1]
+				"zones": [6542276, 2523962, 2523228, 4]
 			},
 			"credentials": [
 				{
@@ -148,7 +148,7 @@
 			"lastName": "Celani",
 			"attributes": {
 				"block": "37",
-				"zones": [6541185, 3168670, 3181042, 3]
+				"zones": [6542276, 2523962, 2523228, 4]
 			},
 			"credentials": [
 				{
