@@ -27,7 +27,7 @@
 			"enabled": true,
 			"email": "vota@vige.it",
 			"attributes": {
-				"income": "-1"
+				"block": "-1"
 			},
 			"credentials": [
 				{
