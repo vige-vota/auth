@@ -28,7 +28,7 @@
 			"email": "lsflashboss62@gmail.com",
 			"attributes": {
 				"block": -1,
-				"zone": -1
+				"zones": [6541066, 3174379, 3174004, 2]
 			},
 			"credentials": [
 				{
@@ -48,7 +48,7 @@
 			"lastName": "Stancapiano",
 			"attributes": {
 				"block": "100",
-				"zone": 6540891
+				"zones": [6542276, 2523962, 2523228, 4]
 			},
 			"credentials": [
 				{
@@ -68,7 +68,7 @@
 			"lastName": "Barillari",
 			"attributes": {
 				"block": "-1",
-				"zone": 6543247
+				"zones": [6541069, 3174379, 3174004, 2]
 			},
 			"credentials": [
 				{
@@ -88,7 +88,7 @@
 			"lastName": "Grillo",
 			"attributes": {
 				"block": "27",
-				"zone": 3173038
+				"zones": [6539784, 3182163, 3174618, 0]
 			},
 			"credentials": [
 				{
@@ -108,7 +108,7 @@
 			"lastName": "Di Stefano",
 			"attributes": {
 				"block": "123",
-				"zone": 6542950
+				"zones": [6538453, 3173330, 3177401, 1]
 			},
 			"credentials": [
 				{
@@ -128,7 +128,7 @@
 			"lastName": "Cubeddu",
 			"attributes": {
 				"block": "119",
-				"zone": 6538690
+				"zones": [6536031, 3165241, 3165244, 1]
 			},
 			"credentials": [
 				{
@@ -148,7 +148,7 @@
 			"lastName": "Celani",
 			"attributes": {
 				"block": "37",
-				"zone": 6541860
+				"zones": [6541185, 3168670, 3181042, 3]
 			},
 			"credentials": [
 				{
@@ -168,7 +168,7 @@
 			"lastName": "Gigliotti",
 			"attributes": {
 				"block": "36",
-				"zone": 6536155
+				"zones": [6541505, 3171727, 3164604, 1]
 			},
 			"credentials": [
 				{
@@ -188,7 +188,7 @@
 			"lastName": "Spinella",
 			"attributes": {
 				"block": "26",
-				"zone": 6543805
+				"zones": [6540894, 6458617, 3174618, 0]
 			},
 			"credentials": [
 				{
@@ -208,7 +208,7 @@
 			"lastName": "Alessandrini",
 			"attributes": {
 				"block": "190",
-				"zone": 6540412
+				"zones": [6540655, 3165241, 3165244, 1]
 			},
 			"credentials": [
 				{
@@ -228,7 +228,7 @@
 			"lastName": "Santoni",
 			"attributes": {
 				"block": "83",
-				"zone": 6536956
+				"zones": [6535980, 3181912, 3165244, 1]
 			},
 			"credentials": [
 				{
@@ -248,7 +248,7 @@
 			"lastName": "Santoboni",
 			"attributes": {
 				"block": "19",
-				"zone": 8658897
+				"zones": [6539303, 11550038, 2523228, 4]
 			},
 			"credentials": [
 				{
@@ -268,7 +268,7 @@
 			"lastName": "Naimo",
 			"attributes": {
 				"block": "98",
-				"zone": 6542828
+				"zones": [6543475, 3177699, 3170831, 0]
 			},
 			"credentials": [
 				{
@@ -288,7 +288,7 @@
 			"lastName": "Bonaffini",
 			"attributes": {
 				"block": "142",
-				"zone": 6537928
+				"zones": [6542385, 3182712, 3170831, 0]
 			},
 			"credentials": [
 				{
@@ -308,7 +308,7 @@
 			"lastName": "Fossati",
 			"attributes": {
 				"block": "89",
-				"zone": 6541617
+				"zones": [6537232, 3174050, 3174618, 0]
 			},
 			"credentials": [
 				{
@@ -328,7 +328,7 @@
 			"lastName": "Fontana",
 			"attributes": {
 				"block": "87",
-				"zone": 6542709
+				"zones": [6543230, 3174050, 3174618, 0]
 			},
 			"credentials": [
 				{
@@ -348,7 +348,7 @@
 			"lastName": "Carrizales",
 			"attributes": {
 				"block": "16",
-				"zone": 6537125
+				"zones": [6540887, 6458616, 3174618, 0]
 			},
 			"credentials": [
 				{
@@ -368,7 +368,7 @@
 			"lastName": "Toro",
 			"attributes": {
 				"block": "59",
-				"zone": 6537489
+				"zones": [6540525, 3169069, 3174976, 2]
 			},
 			"credentials": [
 				{
@@ -388,7 +388,7 @@
 			"lastName": "Ronci",
 			"attributes": {
 				"block": "32",
-				"zone": 6538339
+				"zones": [6541857, 3176884, 3169778, 3]
 			},
 			"credentials": [
 				{
@@ -408,7 +408,7 @@
 			"lastName": "Di Maio",
 			"attributes": {
 				"block": "45",
-				"zone": 6543357
+				"zones": [6540400, 3168842, 3164604, 1]
 			},
 			"credentials": [
 				{
@@ -428,7 +428,7 @@
 			"lastName": "Cos",
 			"attributes": {
 				"block": "11",
-				"zone": 6541293
+				"zones": [6537599, 3174952, 3169778, 3]
 			},
 			"credentials": [
 				{
@@ -448,7 +448,7 @@
 			"lastName": "Briganti",
 			"attributes": {
 				"block": "-1",
-				"zone": 6541736
+				"zones": [6536701, 3169524, 3177401, 1]
 			},
 			"credentials": [
 				{
@@ -468,7 +468,7 @@
 			"lastName": "Briganti",
 			"attributes": {
 				"block": "-1",
-				"zone": 6543237
+				"zones": [6543466, 3177699, 3170831, 0]
 			},
 			"credentials": [
 				{
@@ -488,7 +488,7 @@
 			"lastName": "Castorino",
 			"attributes": {
 				"block": "-1",
-				"zone": 6537913
+				"zones": [6543101, 3178227, 3174618, 0]
 			},
 			"credentials": [
 				{
@@ -508,7 +508,7 @@
 			"lastName": "Bufalieri",
 			"attributes": {
 				"block": "9",
-				"zone": 6536947
+				"zones": [6541960, 2523918, 2523119, 4]
 			},
 			"credentials": [
 				{
@@ -528,7 +528,7 @@
 			"lastName": "Conte",
 			"attributes": {
 				"block": "112",
-				"zone": 6541608
+				"zones": [6537580, 3174952, 3169778, 3]
 			},
 			"credentials": [
 				{
@@ -548,7 +548,7 @@
 			"lastName": "Grillo",
 			"attributes": {
 				"block": "14",
-				"zone": 6537235
+				"zones": [6542135, 2522875, 2523119, 4]
 			},
 			"credentials": [
 				{
@@ -568,7 +568,7 @@
 			"lastName": "Fraccaro",
 			"attributes": {
 				"block": "121",
-				"zone": 6542381
+				"zones": [6537582, 3171456, 3177401, 1]
 			},
 			"credentials": [
 				{
@@ -588,7 +588,7 @@
 			"lastName": "Bonafede",
 			"attributes": {
 				"block": "120",
-				"zone": 6535975
+				"zones": [6537461, 3165802, 3183560, 3]
 			},
 			"credentials": [
 				{
@@ -608,7 +608,7 @@
 			"lastName": "Novelli",
 			"attributes": {
 				"block": "229",
-				"zone": 6543588
+				"zones": [6538792, 3182649, 3181042, 3]
 			},
 			"credentials": [
 				{
@@ -628,7 +628,7 @@
 			"lastName": "Corrado",
 			"attributes": {
 				"block": "248",
-				"zone": 6543221
+				"zones": [6541966, 2525065, 2523119, 4]
 			},
 			"credentials": [
 				{
@@ -648,7 +648,7 @@
 			"lastName": "Lombardi",
 			"attributes": {
 				"block": "243",
-				"zone": 6538311
+				"zones": [6542809, 3167094, 2523228, 4]
 			},
 			"credentials": [
 				{
@@ -668,7 +668,7 @@
 			"lastName": "Della Casa",
 			"attributes": {
 				"block": "231",
-				"zone": 6543105
+				"zones": [6536937, 3169411, 3174976, 2]
 			},
 			"credentials": [
 				{
@@ -688,7 +688,7 @@
 			"lastName": "Raggi",
 			"attributes": {
 				"block": "209",
-				"zone": 6536135
+				"zones": [6538677, 3169069, 3174976, 2]
 			},
 			"credentials": [
 				{
@@ -708,7 +708,7 @@
 			"lastName": "De Vito",
 			"attributes": {
 				"block": "201",
-				"zone": 6536498
+				"zones": [6536497, 3178227, 3174618, 0]
 			},
 			"credentials": [
 				{
@@ -728,7 +728,7 @@
 			"lastName": "Bonaventura",
 			"attributes": {
 				"block": "110",
-				"zone": 6537224
+				"zones": [6536376, 3171364, 3174618, 0]
 			},
 			"credentials": [
 				{
@@ -748,7 +748,7 @@
 			"lastName": "Cocchiarella",
 			"attributes": {
 				"block": "55",
-				"zone": 6536136
+				"zones": [6535962, 3164600, 3164604, 1]
 			},
 			"credentials": [
 				{
@@ -768,7 +768,7 @@
 			"lastName": "Barbet",
 			"attributes": {
 				"block": "68",
-				"zone": 6542002
+				"zones": [6539405, 6458616, 3174618, 0]
 			},
 			"credentials": [
 				{
@@ -788,7 +788,7 @@
 			"lastName": "Russo",
 			"attributes": {
 				"block": "132",
-				"zone": 6540187
+				"zones": [6536811, 3174529, 3165361, 2]
 			},
 			"credentials": [
 				{
@@ -808,7 +808,7 @@
 			"lastName": "Galletta",
 			"attributes": {
 				"block": "119",
-				"zone": 6542122
+				"zones": [6541154, 3182178, 3181042, 3]
 			},
 			"credentials": [
 				{
@@ -828,7 +828,7 @@
 			"lastName": "Casaleggio",
 			"attributes": {
 				"block": "1",
-				"zone": 6543459
+				"zones": [6537570, 3165924, 3169778, 3]
 			},
 			"credentials": [
 				{
@@ -848,7 +848,7 @@
 			"lastName": "Porrello",
 			"attributes": {
 				"block": "237",
-				"zone": 6540617
+				"zones": [6543454, 3177699, 3170831, 0]
 			},
 			"credentials": [
 				{
@@ -868,7 +868,7 @@
 			"lastName": "Ridolfi",
 			"attributes": {
 				"block": "116",
-				"zone": 6538303
+				"zones": [6539631, 3165241, 3165244, 1]
 			},
 			"credentials": [
 				{
@@ -888,7 +888,7 @@
 			"lastName": "Cardellino",
 			"attributes": {
 				"block": "-1",
-				"zone": 6539998
+				"zones": [6538781, 3182649, 3181042, 3]
 			},
 			"credentials": [
 				{
@@ -908,7 +908,7 @@
 			"lastName": "Fossati",
 			"attributes": {
 				"block": "-1",
-				"zone": 6542475
+				"zones": [6541031, 3181927, 3177401, 1]
 			},
 			"credentials": [
 				{
@@ -928,7 +928,7 @@
 			"lastName": "Romanazzi",
 			"attributes": {
 				"block": "-1",
-				"zone": 6540292
+				"zones": [6541394, 6458615, 2525468, 3]
 			},
 			"credentials": [
 				{
@@ -948,7 +948,7 @@
 			"lastName": "Zarro",
 			"attributes": {
 				"block": "-1",
-				"zone": 6539069
+				"zones": [6535957, 3181912, 3165244, 1]
 			},
 			"credentials": [
 				{
@@ -968,7 +968,7 @@
 			"lastName": "Calì",
 			"attributes": {
 				"block": "-1",
-				"zone": 6537683
+				"zones": [6538309, 3165200, 3164604, 1]
 			},
 			"credentials": [
 				{
@@ -988,7 +988,7 @@
 			"lastName": "Marini",
 			"attributes": {
 				"block": "-1",
-				"zone": 6539860
+				"zones": [6540738, 3180990, 3173222, 3]
 			},
 			"credentials": [
 				{
@@ -1008,7 +1008,7 @@
 			"lastName": "Caponegro",
 			"attributes": {
 				"block": "-1",
-				"zone": 6542912
+				"zones": [6538543, 6955471, 3174004, 2]
 			},
 			"credentials": [
 				{
@@ -1028,7 +1028,7 @@
 			"lastName": "Guida",
 			"attributes": {
 				"block": "-1",
-				"zone": 6540975
+				"zones": [6537219, 3177837, 3174618, 0]
 			},
 			"credentials": [
 				{
@@ -1048,7 +1048,7 @@
 			"lastName": "Colazza",
 			"attributes": {
 				"block": "-1",
-				"zone": 6540734
+				"zones": [6535954, 3181912, 3165244, 1]
 			},
 			"credentials": [
 				{
@@ -1068,7 +1068,7 @@
 			"lastName": "Nicolella",
 			"attributes": {
 				"block": "-1",
-				"zone": 6541389
+				"zones": [6543566, 3164418, 3164604, 1]
 			},
 			"credentials": [
 				{
@@ -1088,7 +1088,7 @@
 			"lastName": "Strani",
 			"attributes": {
 				"block": "3",
-				"zone": 6541936
+				"zones": [6540178, 3182163, 3174618, 0]
 			},
 			"credentials": [
 				{
@@ -1108,7 +1108,7 @@
 			"lastName": "Santarelli",
 			"attributes": {
 				"block": "44",
-				"zone": 6538777
+				"zones": [6541145, 3176513, 3174976, 2]
 			},
 			"credentials": [
 				{
@@ -1128,7 +1128,7 @@
 			"lastName": "Terzulli",
 			"attributes": {
 				"block": "22",
-				"zone": 6542590
+				"zones": [6539064, 2524906, 2525468, 3]
 			},
 			"credentials": [
 				{
@@ -1148,7 +1148,7 @@
 			"lastName": "Checchi",
 			"attributes": {
 				"block": "84",
-				"zone": 6537448
+				"zones": [6541021, 3171057, 3177401, 1]
 			},
 			"credentials": [
 				{
@@ -1168,7 +1168,7 @@
 			"lastName": "Mastroddi",
 			"attributes": {
 				"block": "93",
-				"zone": 6538658
+				"zones": [6542472, 3164697, 3174618, 0]
 			},
 			"credentials": [
 				{
@@ -1188,7 +1188,7 @@
 			"lastName": "Zilli",
 			"attributes": {
 				"block": "95",
-				"zone": 6542100
+				"zones": [6542118, 3178795, 3183560, 3]
 			},
 			"credentials": [
 				{
@@ -1208,7 +1208,7 @@
 			"lastName": "Fantegrossi",
 			"attributes": {
 				"block": "49",
-				"zone": 6537552
+				"zones": [6542238, 6458617, 3174618, 0]
 			},
 			"credentials": [
 				{
@@ -1228,7 +1228,7 @@
 			"lastName": "Cocchiarella",
 			"attributes": {
 				"block": "29",
-				"zone": 6543558
+				"zones": [6540847, 2525447, 2523119, 4]
 			},
 			"credentials": [
 				{
@@ -1248,7 +1248,7 @@
 			"lastName": "Airola",
 			"attributes": {
 				"block": "52",
-				"zone": 6542347
+				"zones": [6540606, 3181553, 3174618, 0]
 			},
 			"credentials": [
 				{
@@ -1268,7 +1268,7 @@
 			"lastName": "Scipioni",
 			"attributes": {
 				"block": "19",
-				"zone": 6542588
+				"zones": [8659027, 3176958, 3165361, 2]
 			},
 			"credentials": [
 				{
@@ -1288,7 +1288,7 @@
 			"lastName": "Bivi",
 			"attributes": {
 				"block": "158",
-				"zone": 6541378
+				"zones": [6538896, 3178795, 3183560, 3]
 			},
 			"credentials": [
 				{
@@ -1308,7 +1308,7 @@
 			"lastName": "Iennaco",
 			"attributes": {
 				"block": "50",
-				"zone": 6540720
+				"zones": [6537208, 3177837, 3174618, 0]
 			},
 			"credentials": [
 				{
@@ -1328,7 +1328,7 @@
 			"lastName": "Falconi",
 			"attributes": {
 				"block": "40",
-				"zone": 6535933
+				"zones": [12032174, 3173434, 3174618, 0]
 			},
 			"credentials": [
 				{
@@ -1348,7 +1348,7 @@
 			"lastName": "Rossi",
 			"attributes": {
 				"block": "39",
-				"zone": 6536902
+				"zones": [6539626, 3181553, 3174618, 0]
 			},
 			"credentials": [
 				{
@@ -1368,7 +1368,7 @@
 			"lastName": "Mastropietro",
 			"attributes": {
 				"block": "38",
-				"zone": 6537554
+				"zones": [6537207, 3171364, 3174618, 0]
 			},
 			"credentials": [
 				{
@@ -1388,7 +1388,7 @@
 			"lastName": "Baldassarre",
 			"attributes": {
 				"block": "14",
-				"zone": 6539858
+				"zones": [6542343, 3168670, 3181042, 3]
 			},
 			"credentials": [
 				{
@@ -1408,7 +1408,7 @@
 			"lastName": "Santomaggio",
 			"attributes": {
 				"block": "86",
-				"zone": 6538646
+				"zones": [6540165, 3178227, 3174618, 0]
 			},
 			"credentials": [
 				{
@@ -1428,7 +1428,7 @@
 			"lastName": "Vitale",
 			"attributes": {
 				"block": "71",
-				"zone": 6540034
+				"zones": [6542342, 3172391, 3181042, 3]
 			},
 			"credentials": [
 				{
@@ -1448,7 +1448,7 @@
 			"lastName": "Amati",
 			"attributes": {
 				"block": "6",
-				"zone": 6543661
+				"zones": [6541377, 3175444, 3173222, 3]
 			},
 			"credentials": [
 				{
@@ -1468,7 +1468,7 @@
 			"lastName": "Di Palma",
 			"attributes": {
 				"block": "67",
-				"zone": 6542692
+				"zones": [6543311, 2525065, 2523119, 4]
 			},
 			"credentials": [
 				{
@@ -1488,7 +1488,7 @@
 			"lastName": "Ortenzi",
 			"attributes": {
 				"block": "22",
-				"zone": 6541240
+				"zones": [6538882, 3178795, 3183560, 3]
 			},
 			"credentials": [
 				{
@@ -1508,7 +1508,7 @@
 			"lastName": "Aprile",
 			"attributes": {
 				"block": "10",
-				"zone": 6539167
+				"zones": [6537550, 3182350, 3169778, 3]
 			},
 			"credentials": [
 				{
@@ -1528,7 +1528,7 @@
 			"lastName": "Roscetti",
 			"attributes": {
 				"block": "12",
-				"zone": 6541488
+				"zones": [6536100, 3176217, 3174725, 0]
 			},
 			"credentials": [
 				{
@@ -1548,7 +1548,7 @@
 			"lastName": "Caregnato",
 			"attributes": {
 				"block": "71",
-				"zone": 6536333
+				"zones": [6538088, 3165523, 3170831, 0]
 			},
 			"credentials": [
 				{
@@ -1568,7 +1568,7 @@
 			"lastName": "Solimando",
 			"attributes": {
 				"block": "49",
-				"zone": 6539722
+				"zones": [6540843, 2525763, 2523119, 4]
 			},
 			"credentials": [
 				{
@@ -1588,7 +1588,7 @@
 			"lastName": "Cerqua",
 			"attributes": {
 				"block": "64",
-				"zone": 6538994
+				"zones": [6542900, 3164697, 3174618, 0]
 			},
 			"credentials": [
 				{
@@ -1608,7 +1608,7 @@
 			"lastName": "Telesca",
 			"attributes": {
 				"block": "39",
-				"zone": 6536697
+				"zones": [6543318, 6457397, 3170831, 0]
 			},
 			"credentials": [
 				{
@@ -1628,7 +1628,7 @@
 			"lastName": "Carletti",
 			"attributes": {
 				"block": "34",
-				"zone": 6539969
+				"zones": [6541015, 3168842, 3164604, 1]
 			},
 			"credentials": [
 				{
@@ -1648,7 +1648,7 @@
 			"lastName": "Nasini",
 			"attributes": {
 				"block": "53",
-				"zone": 6539035
+				"zones": [6543799, 3164564, 3170831, 0]
 			},
 			"credentials": [
 				{
@@ -1668,7 +1668,7 @@
 			"lastName": "Brunetti",
 			"attributes": {
 				"block": "78",
-				"zone": 6539156
+				"zones": [6541807, 3168670, 3181042, 3]
 			},
 			"credentials": [
 				{
@@ -1688,7 +1688,7 @@
 			"lastName": "Lanzo",
 			"attributes": {
 				"block": "12",
-				"zone": 6542209
+				"zones": [6536465, 3175531, 3174725, 0]
 			},
 			"credentials": [
 				{
@@ -1708,7 +1708,7 @@
 			"lastName": "Proietti",
 			"attributes": {
 				"block": "11",
-				"zone": 6542203
+				"zones": [6537433, 3175120, 3183560, 3]
 			},
 			"credentials": [
 				{
@@ -1728,7 +1728,7 @@
 			"lastName": "Castellino",
 			"attributes": {
 				"block": "8",
-				"zone": 6540027
+				"zones": [6538763, 3172391, 3181042, 3]
 			},
 			"credentials": [
 				{
@@ -1748,7 +1748,7 @@
 			"lastName": "Santori",
 			"attributes": {
 				"block": "1",
-				"zone": 6540819
+				"zones": [6537678, 2524906, 2525468, 3]
 			},
 			"credentials": [
 				{
@@ -1768,7 +1768,7 @@
 			"lastName": "Deriu",
 			"attributes": {
 				"block": "16",
-				"zone": 6538749
+				"zones": [6543423, 3172188, 3170831, 0]
 			},
 			"credentials": [
 				{
@@ -1788,7 +1788,7 @@
 			"lastName": "Polverini",
 			"attributes": {
 				"block": "55",
-				"zone": 6539711
+				"zones": [6541124, 3164038, 3174976, 2]
 			},
 			"credentials": [
 				{
@@ -1808,7 +1808,7 @@
 			"lastName": "Caridi",
 			"attributes": {
 				"block": "178",
-				"zone": 6537413
+				"zones": [6536694, 3165071, 3176525, 1]
 			},
 			"credentials": [
 				{
@@ -1828,7 +1828,7 @@
 			"lastName": "Lucia",
 			"attributes": {
 				"block": "211",
-				"zone": 6536202
+				"zones": [6537662, 2524906, 2525468, 3]
 			},
 			"credentials": [
 				{
@@ -1848,7 +1848,7 @@
 			"lastName": "Caruso",
 			"attributes": {
 				"block": "94",
-				"zone": 6543094
+				"zones": [6540832, 2524169, 2523119, 4]
 			},
 			"credentials": [
 				{
@@ -1868,7 +1868,7 @@
 			"lastName": "Sabatini",
 			"attributes": {
 				"block": "17",
-				"zone": 6540131
+				"zones": [6540956, 3182712, 3170831, 0]
 			},
 			"credentials": [
 				{
@@ -1888,7 +1888,7 @@
 			"lastName": "Spazziani",
 			"attributes": {
 				"block": "18",
-				"zone": 6541221
+				"zones": [6541005, 3171727, 3164604, 1]
 			},
 			"credentials": [
 				{
@@ -1908,7 +1908,7 @@
 			"lastName": "Felici",
 			"attributes": {
 				"block": "112",
-				"zone": 6538293
+				"zones": [6536574, 3177837, 3174618, 0]
 			},
 			"credentials": [
 				{
@@ -1928,7 +1928,7 @@
 			"lastName": "Brunelletti",
 			"attributes": {
 				"block": "29",
-				"zone": 6542674
+				"zones": [6536453, 3183298, 3170831, 0]
 			},
 			"credentials": [
 				{
@@ -1948,7 +1948,7 @@
 			"lastName": "Di Roma",
 			"attributes": {
 				"block": "94",
-				"zone": 6539265
+				"zones": [6536697, 3175985, 3176525, 1]
 			},
 			"credentials": [
 				{
@@ -1968,7 +1968,7 @@
 			"lastName": "Simoni",
 			"attributes": {
 				"block": "39",
-				"zone": 6542317
+				"zones": [6540144, 3175531, 3174725, 0]
 			},
 			"credentials": [
 				{
@@ -1988,7 +1988,7 @@
 			"lastName": "Marchetti",
 			"attributes": {
 				"block": "9",
-				"zone": 6541346
+				"zones": [6541113, 3171179, 3165048, 2]
 			},
 			"credentials": [
 				{
@@ -2008,7 +2008,7 @@
 			"lastName": "Alba",
 			"attributes": {
 				"block": "5",
-				"zone": 6542558
+				"zones": [6538063, 3165523, 3170831, 0]
 			},
 			"credentials": [
 				{
@@ -2028,7 +2028,7 @@
 			"lastName": "Di Marsilio",
 			"attributes": {
 				"block": "81",
-				"zone": 6541347
+				"zones": [6536442, 3183298, 3170831, 0]
 			},
 			"credentials": [
 				{
@@ -2048,7 +2048,7 @@
 			"lastName": "Scamolla",
 			"attributes": {
 				"block": "49",
-				"zone": 6540928
+				"zones": [6537773, 2524169, 2523119, 4]
 			},
 			"credentials": [
 				{
@@ -2068,7 +2068,7 @@
 			"lastName": "Pensato",
 			"attributes": {
 				"block": "10",
-				"zone": 6537642
+				"zones": [6536565, 3171364, 3174618, 0]
 			},
 			"credentials": [
 				{
@@ -2088,7 +2088,7 @@
 			"lastName": "Di Vittorio",
 			"attributes": {
 				"block": "0",
-				"zone": 6538732
+				"zones": [6537656, 2524906, 2525468, 3]
 			},
 			"credentials": [
 				{
@@ -2108,7 +2108,7 @@
 			"lastName": "Morello",
 			"attributes": {
 				"block": "29",
-				"zone": 6536552
+				"zones": [6543521, 3183298, 3170831, 0]
 			},
 			"credentials": [
 				{
@@ -2128,7 +2128,7 @@
 			"lastName": "Visconti",
 			"attributes": {
 				"block": "48",
-				"zone": 6537646
+				"zones": [6542796, 3182649, 3181042, 3]
 			},
 			"credentials": [
 				{
@@ -2148,7 +2148,7 @@
 			"lastName": "Mortellaro",
 			"attributes": {
 				"block": "39",
-				"zone": 6536435
+				"zones": [6542311, 3164697, 3174618, 0]
 			},
 			"credentials": [
 				{
@@ -2168,7 +2168,7 @@
 			"lastName": "Carrella",
 			"attributes": {
 				"block": "96",
-				"zone": 6536438
+				"zones": [6541101, 3182882, 3165361, 2]
 			},
 			"credentials": [
 				{
@@ -2188,7 +2188,7 @@
 			"lastName": "Passerini",
 			"attributes": {
 				"block": "57",
-				"zone": 6536317
+				"zones": [6540256, 3165200, 3164604, 1]
 			},
 			"credentials": [
 				{
@@ -2208,7 +2208,7 @@
 			"lastName": "Massimi",
 			"attributes": {
 				"block": "148",
-				"zone": 6543632
+				"zones": [6538050, 3165523, 3170831, 0]
 			},
 			"credentials": [
 				{
@@ -2228,7 +2228,7 @@
 			"lastName": "Tramontana",
 			"attributes": {
 				"block": "193",
-				"zone": 6539371
+				"zones": [6538974, 3174952, 3169778, 3]
 			},
 			"credentials": [
 				{
@@ -2248,7 +2248,7 @@
 			"lastName": "Maiorino",
 			"attributes": {
 				"block": "41",
-				"zone": 6541453
+				"zones": [6538854, 3175120, 3183560, 3]
 			},
 			"credentials": [
 				{
@@ -2268,7 +2268,7 @@
 			"lastName": "Toninelli",
 			"attributes": {
 				"block": "29",
-				"zone": 6538046
+				"zones": [6536676, 3171727, 3164604, 1]
 			},
 			"credentials": [
 				{
@@ -2288,7 +2288,7 @@
 			"lastName": "Acunzo",
 			"attributes": {
 				"block": "18",
-				"zone": 6536782
+				"zones": [6537886, 3172153, 2523228, 4]
 			},
 			"credentials": [
 				{
@@ -2308,7 +2308,7 @@
 			"lastName": "Adelizzi",
 			"attributes": {
 				"block": "16",
-				"zone": 6543197
+				"zones": [6539945, 3177088, 3177401, 1]
 			},
 			"credentials": [
 				{
@@ -2328,7 +2328,7 @@
 			"lastName": "Aiello",
 			"attributes": {
 				"block": "15",
-				"zone": 6542548
+				"zones": [6537073, 3175080, 3174725, 0]
 			},
 			"credentials": [
 				{
@@ -2348,7 +2348,7 @@
 			"lastName": "Aiello",
 			"attributes": {
 				"block": "29",
-				"zone": 6543633
+				"zones": [6538284, 3182209, 3164604, 1]
 			},
 			"credentials": [
 				{
@@ -2368,7 +2368,7 @@
 			"lastName": "Alemanno",
 			"attributes": {
 				"block": "17",
-				"zone": 6537514
+				"zones": [6539013, 3170025, 3182306, 3]
 			},
 			"credentials": [
 				{
@@ -2388,7 +2388,7 @@
 			"lastName": "Amitrano",
 			"attributes": {
 				"block": "78",
-				"zone": 6537758
+				"zones": [6540801, 2525058, 2525468, 3]
 			},
 			"credentials": [
 				{
@@ -2408,7 +2408,7 @@
 			"lastName": "Angiola",
 			"attributes": {
 				"block": "76",
-				"zone": 6536668
+				"zones": [6541219, 3171163, 3183560, 3]
 			},
 			"credentials": [
 				{
@@ -2428,7 +2428,7 @@
 			"lastName": "Aprile",
 			"attributes": {
 				"block": "123",
-				"zone": 6542411
+				"zones": [6539490, 3182163, 3174618, 0]
 			},
 			"credentials": [
 				{
@@ -2448,7 +2448,7 @@
 			"lastName": "Aresta",
 			"attributes": {
 				"block": "32",
-				"zone": 6539488
+				"zones": [6540919, 3165523, 3170831, 0]
 			},
 			"credentials": [
 				{
@@ -2468,7 +2468,7 @@
 			"lastName": "Ascari",
 			"attributes": {
 				"block": "4",
-				"zone": 6540592
+				"zones": [3164854, 3166396, 3174618, 0]
 			},
 			"credentials": [
 				{
@@ -2488,7 +2488,7 @@
 			"lastName": "Azzolina",
 			"attributes": {
 				"block": "156",
-				"zone": 6540471
+				"zones": [6537873, 3172153, 2523228, 4]
 			},
 			"credentials": [
 				{
@@ -2508,7 +2508,7 @@
 			"lastName": "Baldino",
 			"attributes": {
 				"block": "10",
-				"zone": 6540911
+				"zones": [6543072, 3167021, 3174725, 0]
 			},
 			"credentials": [
 				{
@@ -2528,7 +2528,7 @@
 			"lastName": "Barbuto",
 			"attributes": {
 				"block": "100",
-				"zone": 6539808
+				"zones": [6538962, 3181526, 3169778, 3]
 			},
 			"credentials": [
 				{
@@ -2548,7 +2548,7 @@
 			"lastName": "Baroni",
 			"attributes": {
 				"block": "0",
-				"zone": 6536893
+				"zones": [6537998, 6457397, 3170831, 0]
 			},
 			"credentials": [
 				{
@@ -2568,7 +2568,7 @@
 			"lastName": "Barzotti",
 			"attributes": {
 				"block": "-1",
-				"zone": 6536412
+				"zones": [6537183, 3181553, 3174618, 0]
 			},
 			"credentials": [
 				{
@@ -2588,7 +2588,7 @@
 			"lastName": "Battelli",
 			"attributes": {
 				"block": "-1",
-				"zone": 6539127
+				"zones": [6538035, 3164567, 3170831, 0]
 			},
 			"credentials": [
 				{
@@ -2608,7 +2608,7 @@
 			"lastName": "Bella",
 			"attributes": {
 				"block": "-1",
-				"zone": 6538266
+				"zones": [6539001, 3170025, 3182306, 3]
 			},
 			"credentials": [
 				{
@@ -2628,7 +2628,7 @@
 			"lastName": "Berardini",
 			"attributes": {
 				"block": "-1",
-				"zone": 6537296
+				"zones": [6541449, 3172188, 3170831, 0]
 			},
 			"credentials": [
 				{
@@ -2648,7 +2648,7 @@
 			"lastName": "Berti",
 			"attributes": {
 				"block": "-1",
-				"zone": 6539356
+				"zones": [6541329, 2524169, 2523119, 4]
 			},
 			"credentials": [
 				{
@@ -2668,7 +2668,7 @@
 			"lastName": "Bilotti",
 			"attributes": {
 				"block": "-1",
-				"zone": 6539596
+				"zones": [6542778, 3181553, 3174618, 0]
 			},
 			"credentials": [
 				{
@@ -2688,7 +2688,7 @@
 			"lastName": "Bologna",
 			"attributes": {
 				"block": "-1",
-				"zone": 6541437
+				"zones": [3172484, 3165184, 3176525, 1]
 			},
 			"credentials": [
 				{
@@ -2708,7 +2708,7 @@
 			"lastName": "Brescia",
 			"attributes": {
 				"block": "-1",
-				"zone": 6540107
+				"zones": [6538716, 3176513, 3174976, 2]
 			},
 			"credentials": [
 				{
@@ -2728,7 +2728,7 @@
 			"lastName": "Bruno",
 			"attributes": {
 				"block": "-1",
-				"zone": 6542649
+				"zones": [6538039, 3165523, 3170831, 0]
 			},
 			"credentials": [
 				{
@@ -2748,7 +2748,7 @@
 			"lastName": "Buffagni",
 			"attributes": {
 				"block": "-1",
-				"zone": 6537851
+				"zones": [6536893, 3165770, 3165048, 2]
 			},
 			"credentials": [
 				{
@@ -2768,7 +2768,7 @@
 			"lastName": "Buonpane",
 			"attributes": {
 				"block": "-1",
-				"zone": 6537058
+				"zones": [6537740, 2523918, 2523119, 4]
 			},
 			"credentials": [
 				{
@@ -2788,7 +2788,7 @@
 			"lastName": "Businarolo",
 			"attributes": {
 				"block": "-1",
-				"zone": 6538029
+				"zones": [6537500, 3180990, 3173222, 3]
 			},
 			"credentials": [
 				{
@@ -2808,7 +2808,7 @@
 			"lastName": "Cabras",
 			"attributes": {
 				"block": "-1",
-				"zone": 6543291
+				"zones": [6536778, 3183087, 3174004, 2]
 			},
 			"credentials": [
 				{
@@ -2828,7 +2828,7 @@
 			"lastName": "Cadeddu",
 			"attributes": {
 				"block": "-1",
-				"zone": 6536071
+				"zones": [6538383, 3165071, 3176525, 1]
 			},
 			"credentials": [
 				{
@@ -2848,7 +2848,7 @@
 			"lastName": "Cancelleri",
 			"attributes": {
 				"block": "-1",
-				"zone": 6539584
+				"zones": [6539593, 3169411, 3174976, 2]
 			},
 			"credentials": [
 				{
@@ -2868,7 +2868,7 @@
 			"lastName": "Cantone",
 			"attributes": {
 				"block": "-1",
-				"zone": 6542515
+				"zones": [6537171, 3181553, 3174618, 0]
 			},
 			"credentials": [
 				{
@@ -2888,7 +2888,7 @@
 			"lastName": "Cappellani",
 			"attributes": {
 				"block": "-1",
-				"zone": 6541426
+				"zones": [6538263, 3164418, 3164604, 1]
 			},
 			"credentials": [
 				{
@@ -2908,7 +2908,7 @@
 			"lastName": "Carabetta",
 			"attributes": {
 				"block": "-1",
-				"zone": 6540456
+				"zones": [6540584, 6955700, 3174618, 0]
 			},
 			"credentials": [
 				{
@@ -2928,7 +2928,7 @@
 			"lastName": "Carelli",
 			"attributes": {
 				"block": "-1",
-				"zone": 6540336
+				"zones": [6537057, 3176217, 3174725, 0]
 			},
 			"credentials": [
 				{
@@ -2948,7 +2948,7 @@
 			"lastName": "Carinelli",
 			"attributes": {
 				"block": "-1",
-				"zone": 6541424
+				"zones": [6541679, 3172391, 3181042, 3]
 			},
 			"credentials": [
 				{
@@ -2968,7 +2968,7 @@
 			"lastName": "Casa",
 			"attributes": {
 				"block": "-1",
-				"zone": 6540699
+				"zones": [6542529, 3173434, 3174618, 0]
 			},
 			"credentials": [
 				{
@@ -2988,7 +2988,7 @@
 			"lastName": "Lezzi",
 			"attributes": {
 				"block": "-1",
-				"zone": 6538815
+				"zones": [6540344, 3182163, 3174618, 0]
 			},
 			"credentials": [
 				{
@@ -3008,7 +3008,7 @@
 			"lastName": "Fico",
 			"attributes": {
 				"block": "-1",
-				"zone": 6539348
+				"zones": [6542402, 3182712, 3170831, 0]
 			},
 			"credentials": [
 				{
@@ -3028,7 +3028,7 @@
 			"lastName": "Gallè",
 			"attributes": {
 				"block": "-1",
-				"zone": 6543281
+				"zones": [6543611, 3179865, 3181042, 3]
 			},
 			"credentials": [
 				{
@@ -3048,7 +3048,7 @@
 			"lastName": "Baldassarre",
 			"attributes": {
 				"block": "-1",
-				"zone": 6537844
+				"zones": [6540468, 3170620, 3165361, 2]
 			},
 			"credentials": [
 				{
@@ -3068,7 +3068,7 @@
 			"lastName": "Fattori",
 			"attributes": {
 				"block": "-1",
-				"zone": 6537846
+				"zones": [6536765, 3171172, 3174004, 2]
 			},
 			"credentials": [
 				{
@@ -3088,7 +3088,7 @@
 			"lastName": "Fontana",
 			"attributes": {
 				"block": "-1",
-				"zone": 6537603
+				"zones": [6537856, 11550038, 2523228, 4]
 			},
 			"credentials": [
 				{
@@ -3108,7 +3108,7 @@
 			"lastName": "Catalfo",
 			"attributes": {
 				"block": "-1",
-				"zone": 6539450
+				"zones": [3179617, 3171172, 3174004, 2]
 			},
 			"credentials": [
 				{
@@ -3128,7 +3128,7 @@
 			"lastName": "Crimi",
 			"attributes": {
 				"block": "-1",
-				"zone": 6539693
+				"zones": [6542873, 3183298, 3170831, 0]
 			},
 			"credentials": [
 				{
