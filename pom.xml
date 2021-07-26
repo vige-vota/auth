@@ -213,6 +213,7 @@
 							<offline>true</offline>
 							<scripts>
 								<script>${project.build.directory}/keycloak-run/wildfly-${wildfly.version}/bin/keycloak-install.cli</script>
+								<script>auth-cities/src/main/config/admin-realm.cli</script>
 							</scripts>
 						</configuration>
 						<executions>
