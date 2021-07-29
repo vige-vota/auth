@@ -1,2 +1,0 @@
-embed-server --server-config=standalone.xml
-/subsystem=keycloak-server:write-attribute(name=master-realm-name,value=vota-domain)

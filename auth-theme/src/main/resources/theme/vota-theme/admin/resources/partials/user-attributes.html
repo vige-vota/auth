@@ -16,10 +16,20 @@
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="(key, value) in user.attributes | toOrderedMapSortedByKey">
+            <tr ng-repeat="(key, value) in user.attributes | toOrderedMapSortedByKey" data-ng-show="key !== 'block' && key !== 'zones'">
                 <td>{{key}}</td>
                 <td><input ng-model="user.attributes[key]" class="form-control" type="text" name="{{key}}" id="attribute-{{key}}" /></td>
                 <td class="kc-action-cell" data-ng-click="removeAttribute(key)">{{:: 'delete' | translate}}</td>
+            </tr>
+            <tr>
+                <td>{{:: 'block' | translate}}</td>
+                <td><input ng-model="user.attributes['block']" class="form-control" type="text" name="block" id="attribute-block" /></td>
+                <td class="kc-action-cell" data-ng-click="removeAttribute(block)">{{:: 'delete' | translate}}</td>
+            </tr>
+            <tr>
+                <td>{{:: 'zones' | translate}}</td>
+                <td><input ng-model="user.attributes['zones']" class="form-control" type="text" name="zones" id="attribute-zones" /></td>
+                <td class="kc-action-cell" data-ng-click="removeAttribute(zones)">{{:: 'delete' | translate}}</td>
             </tr>
             <tr>
                 <td><input ng-model="newAttribute.key" class="form-control" type="text" id="newAttributeKey" /></td>
@@ -28,6 +38,14 @@
             </tr>
             </tbody>
         </table>
+
+        <div class="form-group">
+                <label class="col-md-2 control-label" for="clients">{{:: 'client-roles' | translate}}</label>
+                <div class="col-md-6">
+                    <input type="hidden" ui-select2="clientsUiSelect" id="clients" data-ng-model="selectedClient" data-ng-change="changeClient(selectedClient);" data-placeholder="{{:: 'authz-select-client' | translate}}...">
+                    </input>
+                </div>
+        </div>
 
         <div class="form-group" data-ng-show="user.access.manage">
             <div class="col-md-12">
