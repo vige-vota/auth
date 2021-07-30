@@ -23,12 +23,12 @@
             </tr>
             <tr>
                 <td>{{:: 'block' | translate}}</td>
-                <td><input ng-model="user.attributes['block']" class="form-control" type="text" name="block" id="attribute-block" /></td>
+                <td><input ng-model="user.attributes['block']" class="form-control" type="text" name="block" id="attribute-block-over" /></td>
                 <td class="kc-action-cell" data-ng-click="removeAttribute(block)">{{:: 'delete' | translate}}</td>
             </tr>
             <tr>
                 <td>{{:: 'zones' | translate}}</td>
-                <td><input ng-model="user.attributes['zones']" class="form-control" type="text" name="zones" id="attribute-zones" /></td>
+                <td><input ng-model="user.attributes['zones']" class="form-control" type="text" name="zones" id="attribute-zones-over" /></td>
                 <td class="kc-action-cell" data-ng-click="removeAttribute(zones)">{{:: 'delete' | translate}}</td>
             </tr>
             <tr>
@@ -40,9 +40,9 @@
         </table>
 
         <div class="form-group">
-                <label class="col-md-2 control-label" for="clients">{{:: 'client-roles' | translate}}</label>
+                <label class="col-md-2 control-label" for="blocks">{{:: 'blocks' | translate}}</label>
                 <div class="col-md-6">
-                    <input type="hidden" ui-select2="clientsUiSelect" id="clients" data-ng-model="selectedClient" data-ng-change="changeClient(selectedClient);" data-placeholder="{{:: 'authz-select-client' | translate}}...">
+                    <input type="hidden" ui-select2="clientsUiSelect" id="blocks" data-ng-model="selectedBlock" data-ng-change="changeBlock(selectedBlock);" data-placeholder="{{:: 'authz-select-block' | translate}}...">
                     </input>
                 </div>
         </div>
