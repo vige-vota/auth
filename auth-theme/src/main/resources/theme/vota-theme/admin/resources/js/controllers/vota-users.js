@@ -1,9 +1,9 @@
-module.controller('VotaUserDetailCtrl', function($scope, $controller, realm, user, Client, BruteForceUser, User,
+module.controller('VotaUserDetailCtrl', function($scope, $controller, realm, user, Block, BruteForceUser, User,
                                              Components,
                                              UserImpersonation, RequiredActions,
                                              UserStorageOperations,
                                              $location, $http, Dialog, Notifications, $translate) {
-    angular.extend(this, $controller('UserDetailCtrl', {$scope: $scope, realm: realm, user: user, Client: Client, BruteForceUser: BruteForceUser, User: User,
+    angular.extend(this, $controller('UserDetailCtrl', {$scope: $scope, realm: realm, user: user, BruteForceUser: BruteForceUser, User: User,
                                              Components: Components,
                                              UserImpersonation: UserImpersonation, RequiredActions: RequiredActions,
                                              UserStorageOperations: UserStorageOperations,
@@ -38,5 +38,5 @@ module.controller('VotaUserDetailCtrl', function($scope, $controller, realm, use
         $scope.selectedClientMappings = [];
     };
 
-    clientSelectBlock($scope, realm.realm, Client);
+    clientSelectBlock($scope, realm.realm, Block);
 });
