@@ -1,11 +1,11 @@
-function clientSelectBlock($scope, realm, Client) {
+function clientSelectBlock($scope, realm, Block) {
     $scope.clientsUiSelect = {
         minimumInputLength: 0,
         delay: 500,
         allowClear: true,
         query: function (query) {
             var data = {results: []};
-            Client.query({realm: realm, search: true, clientId: query.term.trim(), max: 20}, function(response) {
+            Block.query({realm: realm, search: true, clientId: query.term.trim(), max: 20}, function(response) {
                 data.results = response;
                 query.callback(data);
             });
@@ -16,3 +16,14 @@ function clientSelectBlock($scope, realm, Client) {
         }
     };
 }
+
+module.factory('Block', function($resource) {
+    return $resource(authUrl + '/admin/realms/:realm/clients/:client', {
+        realm : '@realm',
+        client : '@client'
+    },  {
+        update : {
+            method : 'PUT'
+        }
+    });
+});
