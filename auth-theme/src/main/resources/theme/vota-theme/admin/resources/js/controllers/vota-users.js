@@ -1,4 +1,4 @@
-module.controller('VotaUserDetailCtrl', function($scope, $controller, realm, user, Block, BruteForceUser, User,
+module.controller('VotaUserDetailCtrl', function($scope, $controller, realm, user, Block, Cities, BruteForceUser, User,
                                              Components,
                                              UserImpersonation, RequiredActions,
                                              UserStorageOperations,
@@ -8,35 +8,31 @@ module.controller('VotaUserDetailCtrl', function($scope, $controller, realm, use
                                              UserImpersonation: UserImpersonation, RequiredActions: RequiredActions,
                                              UserStorageOperations: UserStorageOperations,
                                              $location: $location, $http: $http, Dialog: Dialog, Notifications: Notifications, $translate: $translate}));
-    
-    $scope.clientRoles = [];
-    $scope.clientComposite = [];
-    $scope.selectedClientRoles = [];
-    $scope.selectedClientMappings = [];
-    $scope.clientMappings = [];
+
     $scope.selectedBlock = null;
 
     $scope.changeBlock = function(block) {
         console.log("selected block: ", block);
         if (!block || !block.id) {
-            $scope.selectedClient = null;
+            $scope.selectedBlock = null;
             return;
         } else {
-            $scope.selectedClient = block;
+            $scope.selectedBlock = block;
         }
-        if ($scope.selectedBlock) {
-            console.log('load available');
-            $scope.clientComposite = CompositeClientRoleMapping.query({realm : realm.realm, userId : user.id, block : $scope.selectedBlock.id});
-            $scope.clientRoles = AvailableClientRoleMapping.query({realm : realm.realm, userId : user.id, block : $scope.selectedBlock.id});
-            $scope.clientMappings = ClientRoleMapping.query({realm : realm.realm, userId : user.id, block : $scope.selectedBlock.id});
+    };
+
+    $scope.selectedCities = null;
+    
+    $scope.changeCities = function(cities) {
+        console.log("selected cities: ", cities);
+        if (!cities || !cities.id) {
+            $scope.selectedCities = null;
+            return;
         } else {
-            $scope.clientRoles = null;
-            $scope.clientMappings = null;
-            $scope.clientComposite = null;
+            $scope.selectedCities = cities;
         }
-        $scope.selectedClientRoles = [];
-        $scope.selectedClientMappings = [];
     };
 
     clientSelectBlock($scope, realm.realm, Block);
+    clientSelectCities($scope, realm.realm, Cities);
 });
