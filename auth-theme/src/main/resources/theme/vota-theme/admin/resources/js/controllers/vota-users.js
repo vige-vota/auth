@@ -1,4 +1,4 @@
-module.controller('VotaUserDetailCtrl', function($scope, $controller, realm, user, Block, Cities, BruteForceUser, User,
+module.controller('VotaUserDetailCtrl', function($scope, $controller, $rootScope, realm, user, clients, Block, Cities, BruteForceUser, User,
                                              Components,
                                              UserImpersonation, RequiredActions,
                                              UserStorageOperations,
@@ -20,6 +20,7 @@ module.controller('VotaUserDetailCtrl', function($scope, $controller, realm, use
             $scope.selectedBlock = block;
         }
     };
+    $scope.blockUrl = clients.filter(e => e.clientId === 'votingPapers')[0].rootUrl;
 
     $scope.selectedCities = null;
     
@@ -32,7 +33,8 @@ module.controller('VotaUserDetailCtrl', function($scope, $controller, realm, use
             $scope.selectedCities = cities;
         }
     };
+    $scope.citiesUrl = clients.filter(e => e.clientId === 'citiesGenerator')[0].rootUrl;
 
-    clientSelectBlock($scope, realm.realm, Block);
-    clientSelectCities($scope, realm.realm, Cities);
+    selectBlock($scope, realm.realm, Block);
+    selectCities($scope, Cities);
 });

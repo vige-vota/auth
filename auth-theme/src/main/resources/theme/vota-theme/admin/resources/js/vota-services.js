@@ -1,11 +1,11 @@
-function clientSelectBlock($scope, realm, Block) {
-    $scope.clientsUiSelect = {
+function selectBlock($scope, realm, Block) {
+    $scope.blockUiSelect = {
         minimumInputLength: 0,
         delay: 500,
         allowClear: true,
         query: function (query) {
             var data = {results: []};
-            Block.query({realm: realm, search: true, clientId: query.term.trim(), max: 20}, function(response) {
+            Block.query($scope.blockUrl, {realm: realm, search: true, clientId: query.term.trim(), max: 20}, function(response) {
                 data.results = response;
                 query.callback(data);
             });
@@ -17,21 +17,21 @@ function clientSelectBlock($scope, realm, Block) {
     };
 }
 
-function clientSelectCities($scope, realm, Cities) {
-    $scope.clientsUiSelect = {
+function selectCities($scope, Cities) {
+    $scope.citiesUiSelect = {
         minimumInputLength: 0,
         delay: 500,
         allowClear: true,
         query: function (query) {
             var data = {results: []};
-            Cities.query({realm: realm, search: true, clientId: query.term.trim(), max: 20}, function(response) {
-                data.results = response;
+            Cities.query($scope.citiesUrl, {search: true, clientId: query.term.trim(), max: 20}, function(response) {
+                data.results = response.zones;
                 query.callback(data);
             });
         },
         formatResult: function(object, container, query) {
-            object.text = object.clientId;
-            return object.clientId;
+            object.text = object.name;
+            return object.name;
         }
     };
 }
@@ -48,12 +48,18 @@ module.factory('Block', function($resource) {
 });
 
 module.factory('Cities', function($resource) {
-    return $resource(authUrl + '/admin/realms/:realm/clients/:client', {
-        realm : '@realm',
-        client : '@client'
-    },  {
-        update : {
-            method : 'PUT'
-        }
-    });
+    return {
+    	query: function(url, options, myFunction){
+      		return $resource(url + '/cities', options, 
+      				{
+        				query : {
+          					method: 'GET',
+          					isArray: false
+        				},
+        				update : {
+            				method : 'PUT'
+        				}
+    			    }, myFunction).query(url + '/cities', options, myFunction);
+     	 }
+    }
 });

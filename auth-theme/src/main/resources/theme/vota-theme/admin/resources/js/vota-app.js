@@ -8,7 +8,10 @@ module.config([ '$routeProvider', function($routeProvider) {
                 },
                 user : function(UserLoader) {
                     return UserLoader();
-                }
+                },
+            	clients: function (ClientListLoader) {
+                	return ClientListLoader();
+           	 	}
             },
             controller : 'VotaUserDetailCtrl'
         })
