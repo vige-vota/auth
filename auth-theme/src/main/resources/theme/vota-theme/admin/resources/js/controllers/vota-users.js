@@ -35,6 +35,6 @@ module.controller('VotaUserDetailCtrl', function($scope, $controller, $rootScope
     };
     $scope.citiesUrl = clients.filter(e => e.clientId === 'citiesGenerator')[0].rootUrl;
 
-    selectBlock($scope, realm.realm, Block);
+    selectBlock($scope, Block);
     selectCities($scope, Cities);
 });
