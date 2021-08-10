@@ -5,8 +5,8 @@ function selectBlock($scope, Block) {
         allowClear: true,
         query: function (query) {
             var data = {results: []};
-            Block.query($scope.blockUrl, {search: true, clientId: query.term.trim(), max: 20}, function(response) {
-                data.results = response.votingPapers;
+            Block.query($scope.blockUrl, {search: true, name: query.term.trim(), max: 20}, function(response) {
+                data.results = response.votingPapers.filter(e => e.name.toLowerCase().includes(query.term.trim().toLowerCase()));
                 query.callback(data);
             });
         },
@@ -24,8 +24,8 @@ function selectCities($scope, Cities) {
         allowClear: true,
         query: function (query) {
             var data = {results: []};
-            Cities.query($scope.citiesUrl, {search: true, clientId: query.term.trim(), max: 20}, function(response) {
-                data.results = response.zones;
+            Cities.query($scope.citiesUrl, {search: true, name: query.term.trim(), max: 20}, function(response) {
+                data.results = response.zones.filter(e => e.name.toLowerCase().includes(query.term.trim().toLowerCase()));
                 query.callback(data);
             });
         },
