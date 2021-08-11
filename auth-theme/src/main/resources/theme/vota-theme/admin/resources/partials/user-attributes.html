@@ -50,31 +50,31 @@
             <legend><span class="text">{{:: 'residence' | translate}}</span></legend>
         
         	<div class="form-group">
-                <label class="col-md-2 control-label" for="blocks">{{:: 'circumscriptions' | translate}}</label>
+                <label class="col-md-2 control-label" for="circumscriptions">{{:: 'circumscriptions' | translate}}</label>
                 <div class="col-md-6">
-                    <input type="hidden" ui-select2="citiesUiSelect" id="cities" data-ng-model="selectedCities" data-ng-change="changeCities(selectedCities);" data-placeholder="{{:: 'authz-select-circumscriptions' | translate}}...">
+                    <input type="hidden" ui-select2="circumscriptionsUiSelect" id="circumscriptions" data-ng-model="selectedCircumscriptions" data-ng-change="changeCircumscriptions(selectedCircumscriptions);" data-placeholder="{{:: 'authz-select-circumscriptions' | translate}}...">
                     </input>
                 </div>
         	</div>
 
         	<div class="form-group">
-                <label class="col-md-2 control-label" for="blocks">{{:: 'regions' | translate}}</label>
+                <label class="col-md-2 control-label" for="regions">{{:: 'regions' | translate}}</label>
                 <div class="col-md-6">
-                    <input type="hidden" ui-select2="citiesUiSelect" id="cities" data-ng-model="selectedCities" data-ng-change="changeCities(selectedCities);" data-placeholder="{{:: 'authz-select-regions' | translate}}...">
+                    <input type="hidden" ui-select2="regionsUiSelect" id="regions" data-ng-model="selectedRegions" data-ng-change="changeRegions(selectedRegions);" data-placeholder="{{:: 'authz-select-regions' | translate}}...">
                     </input>
                 </div>
         	</div>
 
         	<div class="form-group">
-                <label class="col-md-2 control-label" for="blocks">{{:: 'provinces' | translate}}</label>
+                <label class="col-md-2 control-label" for="provinces">{{:: 'provinces' | translate}}</label>
                 <div class="col-md-6">
-                    <input type="hidden" ui-select2="citiesUiSelect" id="cities" data-ng-model="selectedCities" data-ng-change="changeCities(selectedCities);" data-placeholder="{{:: 'authz-select-provinces' | translate}}...">
+                    <input type="hidden" ui-select2="provincesUiSelect" id="provinces" data-ng-model="selectedProvinces" data-ng-change="changeProvinces(selectedProvinces);" data-placeholder="{{:: 'authz-select-provinces' | translate}}...">
                     </input>
                 </div>
         	</div>
 
         	<div class="form-group">
-                <label class="col-md-2 control-label" for="blocks">{{:: 'cities' | translate}}</label>
+                <label class="col-md-2 control-label" for="cities">{{:: 'cities' | translate}}</label>
                 <div class="col-md-6">
                     <input type="hidden" ui-select2="citiesUiSelect" id="cities" data-ng-model="selectedCities" data-ng-change="changeCities(selectedCities);" data-placeholder="{{:: 'authz-select-cities' | translate}}...">
                     </input>
