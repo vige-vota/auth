@@ -1,4 +1,4 @@
-module.controller('VotaUserDetailCtrl', function($scope, $controller, $rootScope, realm, user, clients, Block, Cities, BruteForceUser, User,
+module.controller('VotaUserDetailCtrl', function($scope, $controller, $rootScope, realm, user, clients, Zizzi, BruteForceUser, User,
                                              Components,
                                              UserImpersonation, RequiredActions,
                                              UserStorageOperations,
@@ -117,9 +117,9 @@ module.controller('VotaUserDetailCtrl', function($scope, $controller, $rootScope
     };
     $scope.citiesUrl = clients.filter(e => e.clientId === 'citiesGenerator')[0].rootUrl;
 
-    selectBlock($scope, Block);
-    selectCircumscriptions($scope, Cities);
-    selectRegions($scope, Cities);
-    selectProvinces($scope, Cities);
-    selectCities($scope, Cities);
+    selectBlock($scope, Zizzi);
+    selectCircumscriptions($scope, Zizzi);
+    selectRegions($scope, Zizzi);
+    selectProvinces($scope, Zizzi);
+    selectCities($scope, Zizzi);
 });

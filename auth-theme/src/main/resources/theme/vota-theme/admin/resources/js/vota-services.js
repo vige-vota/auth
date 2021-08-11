@@ -1,11 +1,11 @@
-function selectBlock($scope, Block) {
+function selectBlock($scope, Zizzi) {
     $scope.blockUiSelect = {
         minimumInputLength: 0,
         delay: 500,
         allowClear: true,
         query: function (query) {
             var data = {results: []};
-            Block.query($scope.blockUrl + '/votingPapers?all', {search: true, name: query.term.trim(), max: 20}, function(response) {
+            Zizzi.query($scope.blockUrl + '/votingPapers?all', {search: true, name: query.term.trim(), max: 20}, function(response) {
                 data.results = response.votingPapers.filter(e => e.name.toLowerCase().includes(query.term.trim().toLowerCase()));
                 query.callback(data);
             });
@@ -17,14 +17,14 @@ function selectBlock($scope, Block) {
     };
 }
 
-function selectCircumscriptions($scope, Cities) {
+function selectCircumscriptions($scope, Zizzi) {
     $scope.circumscriptionsUiSelect = {
         minimumInputLength: 0,
         delay: 500,
         allowClear: true,
         query: function (query) {
             var data = {results: []};
-            Cities.query($scope.citiesUrl + '/cities', {search: true, name: query.term.trim(), max: 20}, function(response) {
+            Zizzi.query($scope.citiesUrl + '/cities', {search: true, name: query.term.trim(), max: 20}, function(response) {
                 data.results = response.zones.filter(e => e.name.toLowerCase().includes(query.term.trim().toLowerCase()));
                 query.callback(data);
             });
@@ -36,14 +36,14 @@ function selectCircumscriptions($scope, Cities) {
     };
 }
 
-function selectRegions($scope, Cities) {
+function selectRegions($scope, Zizzi) {
     $scope.regionsUiSelect = {
         minimumInputLength: 0,
         delay: 500,
         allowClear: true,
         query: function (query) {
             var data = {results: []};
-            Cities.query($scope.citiesUrl + '/cities', {search: true, name: query.term.trim(), max: 20}, function(response) {
+            Zizzi.query($scope.citiesUrl + '/cities', {search: true, name: query.term.trim(), max: 20}, function(response) {
                 data.results = response.zones.filter(e => e.name.toLowerCase().includes(query.term.trim().toLowerCase()));
                 query.callback(data);
             });
@@ -55,14 +55,14 @@ function selectRegions($scope, Cities) {
     };
 }
 
-function selectProvinces($scope, Cities) {
+function selectProvinces($scope, Zizzi) {
     $scope.provincesUiSelect = {
         minimumInputLength: 0,
         delay: 500,
         allowClear: true,
         query: function (query) {
             var data = {results: []};
-            Cities.query($scope.citiesUrl + '/cities', {search: true, name: query.term.trim(), max: 20}, function(response) {
+            Zizzi.query($scope.citiesUrl + '/cities', {search: true, name: query.term.trim(), max: 20}, function(response) {
                 data.results = response.zones.filter(e => e.name.toLowerCase().includes(query.term.trim().toLowerCase()));
                 query.callback(data);
             });
@@ -74,14 +74,14 @@ function selectProvinces($scope, Cities) {
     };
 }
 
-function selectCities($scope, Cities) {
+function selectCities($scope, Zizzi) {
     $scope.citiesUiSelect = {
         minimumInputLength: 0,
         delay: 500,
         allowClear: true,
         query: function (query) {
             var data = {results: []};
-            Cities.query($scope.citiesUrl + '/cities', {search: true, name: query.term.trim(), max: 20}, function(response) {
+            Zizzi.query($scope.citiesUrl + '/cities', {search: true, name: query.term.trim(), max: 20}, function(response) {
                 data.results = response.zones.filter(e => e.name.toLowerCase().includes(query.term.trim().toLowerCase()));
                 query.callback(data);
             });
@@ -93,24 +93,7 @@ function selectCities($scope, Cities) {
     };
 }
 
-module.factory('Block', function($resource) {
-    return {
-    	query: function(url, options, myFunction){
-      		return $resource(url, options, 
-      				{
-        				query : {
-          					method: 'GET',
-          					isArray: false
-        				},
-        				update : {
-            				method : 'PUT'
-        				}
-    			    }, myFunction).query(url, options, myFunction);
-     	 }
-    }
-});
-
-module.factory('Cities', function($resource) {
+module.factory('Zizzi', function($resource) {
     return {
     	query: function(url, options, myFunction){
       		return $resource(url, options, 
