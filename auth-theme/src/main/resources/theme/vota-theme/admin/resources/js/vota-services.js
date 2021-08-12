@@ -43,7 +43,10 @@ function selectRegions($scope, Zizzi) {
         allowClear: true,
         query: function (query) {
             var data = {results: []};
-            Zizzi.query($scope.citiesUrl + '/cities', {search: true, name: query.term.trim(), max: 20}, function(response) {
+            let url = $scope.citiesUrl + '/cities';
+            if ($scope.selectedCircumscriptions)
+            	url = url + '/' + $scope.selectedCircumscriptions.id;
+            Zizzi.query(url, {search: true, name: query.term.trim(), max: 20}, function(response) {
                 data.results = response.zones.flatMap(f => f.zones).filter(e => e.name.toLowerCase().includes(query.term.trim().toLowerCase()));
                 query.callback(data);
             });
@@ -62,8 +65,14 @@ function selectProvinces($scope, Zizzi) {
         allowClear: true,
         query: function (query) {
             var data = {results: []};
-            Zizzi.query($scope.citiesUrl + '/cities', {search: true, name: query.term.trim(), max: 20}, function(response) {
-                data.results = response.zones.flatMap(f => f.zones).flatMap(g => g.zones).filter(e => e.name.toLowerCase().includes(query.term.trim().toLowerCase()));
+            let url = $scope.citiesUrl + '/cities';
+            if ($scope.selectedRegions)
+            	url = url + '/' + $scope.selectedRegions.id;
+            Zizzi.query(url, {search: true, name: query.term.trim(), max: 20}, function(response) {
+            	if ($scope.selectedRegions)
+                	data.results = response.zones.flatMap(f => f.zones).filter(e => e.name.toLowerCase().includes(query.term.trim().toLowerCase()));
+                else
+                	data.results = response.zones.flatMap(f => f.zones).flatMap(g => g.zones).filter(e => e.name.toLowerCase().includes(query.term.trim().toLowerCase()));
                 query.callback(data);
             });
         },
@@ -81,8 +90,14 @@ function selectCities($scope, Zizzi) {
         allowClear: true,
         query: function (query) {
             var data = {results: []};
-            Zizzi.query($scope.citiesUrl + '/cities', {search: true, name: query.term.trim(), max: 20}, function(response) {
-                data.results = response.zones.flatMap(f => f.zones).flatMap(g => g.zones).flatMap(h => h.zones).filter(e => e.name.toLowerCase().includes(query.term.trim().toLowerCase()));
+            let url = $scope.citiesUrl + '/cities';
+            if ($scope.selectedProvinces)
+            	url = url + '/' + $scope.selectedProvinces.id;
+            Zizzi.query(url, {search: true, name: query.term.trim(), max: 20}, function(response) {
+            	if ($scope.selectedProvinces)
+                	data.results = response.zones.flatMap(f => f.zones).filter(e => e.name.toLowerCase().includes(query.term.trim().toLowerCase()));
+                else
+                	data.results = response.zones.flatMap(f => f.zones).flatMap(g => g.zones).flatMap(h => h.zones).filter(e => e.name.toLowerCase().includes(query.term.trim().toLowerCase()));
                 query.callback(data);
             });
         },
