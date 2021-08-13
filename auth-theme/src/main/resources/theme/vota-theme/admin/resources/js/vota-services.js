@@ -53,6 +53,7 @@ function selectRegions($scope, Zizzi) {
         },
         formatResult: function(object, container, query) {
             object.text = object.name;
+            object.parent = { 'id': 0, 'name': 'buuuuuu', 'level': 0 }
             return object.name;
         }
     };
@@ -69,15 +70,13 @@ function selectProvinces($scope, Zizzi) {
             if ($scope.selectedRegions)
             	url = url + '/' + $scope.selectedRegions.id;
             Zizzi.query(url, {search: true, name: query.term.trim(), max: 20}, function(response) {
-            	if ($scope.selectedRegions)
-                	data.results = response.zones.flatMap(f => f.zones).filter(e => e.name.toLowerCase().includes(query.term.trim().toLowerCase()));
-                else
-                	data.results = response.zones.flatMap(f => f.zones).flatMap(g => g.zones).filter(e => e.name.toLowerCase().includes(query.term.trim().toLowerCase()));
+                data.results = response.zones.flatMap(f => f.zones).filter(e => e.name.toLowerCase().includes(query.term.trim().toLowerCase()));
                 query.callback(data);
             });
         },
         formatResult: function(object, container, query) {
             object.text = object.name;
+            object.parent = { 'id': 234, 'name': 'buuuuuu2', 'level': 1 }
             return object.name;
         }
     };
@@ -94,10 +93,7 @@ function selectCities($scope, Zizzi) {
             if ($scope.selectedProvinces)
             	url = url + '/' + $scope.selectedProvinces.id;
             Zizzi.query(url, {search: true, name: query.term.trim(), max: 20}, function(response) {
-            	if ($scope.selectedProvinces)
-                	data.results = response.zones.flatMap(f => f.zones).filter(e => e.name.toLowerCase().includes(query.term.trim().toLowerCase()));
-                else
-                	data.results = response.zones.flatMap(f => f.zones).flatMap(g => g.zones).flatMap(h => h.zones).filter(e => e.name.toLowerCase().includes(query.term.trim().toLowerCase()));
+                data.results = response.zones.flatMap(f => f.zones).filter(e => e.name.toLowerCase().includes(query.term.trim().toLowerCase()));
                 query.callback(data);
             });
         },

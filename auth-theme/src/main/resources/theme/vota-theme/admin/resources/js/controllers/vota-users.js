@@ -28,15 +28,12 @@ module.controller('VotaUserDetailCtrl', function($scope, $controller, $rootScope
         console.log("selected circumscriptions: ", circumscriptions);
         if (!circumscriptions || circumscriptions.id === null) {
             $scope.selectedCircumscriptions = null;
-            return;
         } else {
             $scope.selectedCircumscriptions = circumscriptions;
         }
-        if (!$scope.selectedCircumscriptions) {
-            $scope.selectedRegions = null;
-            $scope.selectedProvinces = null;
-            $scope.selectedCities = null;
-        }
+        $scope.selectedRegions = null;
+        $scope.selectedProvinces = null;
+        $scope.selectedCities = null;
     };
 
     $scope.selectedRegions = null;
@@ -45,14 +42,11 @@ module.controller('VotaUserDetailCtrl', function($scope, $controller, $rootScope
         console.log("selected regions: ", regions);
         if (!regions || regions.id === null) {
             $scope.selectedRegions = null;
-            return;
         } else {
             $scope.selectedRegions = regions;
         }
-        if (!$scope.selectedRegions) {
-            $scope.selectedProvinces = null;
-            $scope.selectedCities = null;
-        }
+        $scope.selectedProvinces = null;
+        $scope.selectedCities = null;
     };
 
     $scope.selectedProvinces = null;
@@ -61,13 +55,10 @@ module.controller('VotaUserDetailCtrl', function($scope, $controller, $rootScope
         console.log("selected provinces: ", provinces);
         if (!provinces || provinces.id === null) {
             $scope.selectedProvinces = null;
-            return;
         } else {
             $scope.selectedProvinces = provinces;
         }
-        if (!$scope.selectedProvinces) {
-            $scope.selectedCities = null;
-        }
+        $scope.selectedCities = null;
     };
 
     $scope.selectedCities = null;
@@ -76,7 +67,6 @@ module.controller('VotaUserDetailCtrl', function($scope, $controller, $rootScope
         console.log("selected cities: ", cities);
         if (!cities || cities.id === null) {
             $scope.selectedCities = null;
-            return;
         } else {
             $scope.selectedCities = cities;
         }
