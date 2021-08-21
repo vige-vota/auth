@@ -1,12 +1,17 @@
 function selectBlock($scope, Zizzi) {
+	var data = {results: []};
+    $.ajax($scope.blockUrl + '/votingPapers?all', {
+    }).done(function(data) {
+    	$scope.selectedBlock = getAllBlocks(data.votingPapers).filter(e => e.id == $scope.user.attributes['block'])[0];
+    	$scope.selectedBlock.text = $scope.selectedBlock.name;
+    });
     $scope.blockUiSelect = {
         minimumInputLength: 0,
         delay: 500,
         allowClear: true,
         query: function (query) {
-            var data = {results: []};
             Zizzi.query($scope.blockUrl + '/votingPapers?all', {search: true, name: query.term.trim(), max: 20}, function(response) {
-                data.results = response.votingPapers.filter(e => e.name.toLowerCase().includes(query.term.trim().toLowerCase()));
+                data.results = getAllBlocks(response.votingPapers).filter(e => e.name.toLowerCase().includes(query.term.trim().toLowerCase()));
                 query.callback(data);
             });
         },
@@ -129,6 +134,46 @@ function selectCities($scope, Zizzi) {
             return object.name;
         }
     };
+}
+
+function getAllBlocks(votingPapers) {
+	let result = []
+	if (votingPapers) {
+ 		votingPapers.forEach(e => {
+			result.push(e)
+			if (e.groups) {
+				e.groups.forEach(f => {
+ 					f.name = '------ ' + f.name
+					result.push(f)
+					if (f.parties) {
+						f.parties.forEach(h => {
+ 							h.name = '------------------------ ' + h.name
+							result.push(h)
+							if (h.candidates) {
+								h.candidates.forEach(i => {
+ 									i.name = '------------------------------------ ' + i.name
+									result.push(i)
+								})
+							}
+						})
+					}
+				})
+			}
+			if (e.parties) {
+				e.parties.forEach(g => {
+ 					g.name = '------ ' + g.name
+					result.push(g)
+					if (g.candidates) {
+						g.candidates.forEach(l => {
+ 							l.name = '------------------------ ' + l.name
+							result.push(l)
+						})
+					}
+				})
+			}
+		})
+	}
+	return result
 }
 
 module.factory('Zizzi', function($resource) {
