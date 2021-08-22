@@ -2,13 +2,16 @@ function selectBlock($scope, Zizzi) {
 	var data = {results: []};
     $.ajax($scope.blockUrl + '/votingPapers?all', {
     }).done(function(data) {
-    	$scope.selectedBlock = getAllBlocks(data.votingPapers).filter(e => e.id == $scope.user.attributes['block'])[0];
+    	data.votingPapers = getAllBlocks(data.votingPapers)
+    	$scope.selectedBlock = data.votingPapers.filter(e => e.id == $scope.user.attributes['block'])[0];
     	$scope.selectedBlock.text = $scope.selectedBlock.name;
     });
     $scope.blockUiSelect = {
         minimumInputLength: 0,
         delay: 500,
         allowClear: true,
+        initSelection: function () {
+        },
         query: function (query) {
             Zizzi.query($scope.blockUrl + '/votingPapers?all', {search: true, name: query.term.trim(), max: 20}, function(response) {
                 data.results = getAllBlocks(response.votingPapers).filter(e => e.name.toLowerCase().includes(query.term.trim().toLowerCase()));
@@ -33,6 +36,8 @@ function selectCircumscriptions($scope, Zizzi) {
         minimumInputLength: 0,
         delay: 500,
         allowClear: true,
+        initSelection: function () {
+        },
         query: function (query) {
             Zizzi.query($scope.citiesUrl + '/cities', {search: true, name: query.term.trim(), max: 20}, function(response) {
                 data.results = response.zones.filter(e => e.name.toLowerCase().includes(query.term.trim().toLowerCase()));
@@ -60,6 +65,8 @@ function selectRegions($scope, Zizzi) {
         minimumInputLength: 0,
         delay: 500,
         allowClear: true,
+        initSelection: function () {
+        },
         query: function (query) {
    			let url = $scope.citiesUrl + '/cities';
    			if ($scope.selectedCircumscriptions)
@@ -90,6 +97,8 @@ function selectProvinces($scope, Zizzi) {
         minimumInputLength: 0,
         delay: 500,
         allowClear: true,
+        initSelection: function () {
+        },
         query: function (query) {
    			let url = $scope.citiesUrl + '/cities';
    			if ($scope.selectedRegions)
@@ -120,6 +129,8 @@ function selectCities($scope, Zizzi) {
         minimumInputLength: 0,
         delay: 500,
         allowClear: true,
+        initSelection: function () {
+        },
         query: function (query) {
    			let url = $scope.citiesUrl + '/cities';
    			if ($scope.selectedProvinces)

@@ -42,7 +42,7 @@
         <div class="form-group">
                 <label class="col-md-2 control-label" for="blocks">{{:: 'blocks' | translate}}</label>
                 <div class="col-md-6">
-                    <input ui-select2="blockUiSelect" id="blocks" data-ng-model="selectedBlock" data-ng-change="changeBlock(selectedBlock);" data-placeholder="{{:: 'authz-select-block' | translate}}...">
+                    <input type="hidden" ui-select2="blockUiSelect" id="blocks" data-ng-model="selectedBlock" data-ng-change="changeBlock(selectedBlock);" data-placeholder="{{:: 'authz-select-block' | translate}}...">
                     </input>
                 </div>
         </div>

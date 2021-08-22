@@ -13,7 +13,7 @@ module.controller('VotaUserDetailCtrl', function($scope, $controller, $rootScope
 
     $scope.changeBlock = function(block) {
         console.log("selected block: ", block);
-        if (!block || !block.id) {
+        if (!block || block === null) {
             $scope.selectedBlock = null;
             return;
         } else {
