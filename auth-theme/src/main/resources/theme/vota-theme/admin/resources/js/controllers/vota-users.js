@@ -18,6 +18,8 @@ module.controller('VotaUserDetailCtrl', function($scope, $controller, $rootScope
             return;
         } else {
             $scope.selectedBlock = block;
+            $scope.user.attributes['block'] = $scope.selectedBlock.id.toString();
+            $scope.changed = true;
         }
     };
     $scope.blockUrl = clients.filter(e => e.clientId === 'votingPapers')[0].rootUrl;
@@ -30,6 +32,7 @@ module.controller('VotaUserDetailCtrl', function($scope, $controller, $rootScope
             $scope.selectedCircumscriptions = null;
         } else {
             $scope.selectedCircumscriptions = circumscriptions;
+            $scope.changed = true;
         }
         $scope.selectedRegions = null;
         $scope.selectedProvinces = null;
@@ -44,6 +47,7 @@ module.controller('VotaUserDetailCtrl', function($scope, $controller, $rootScope
             $scope.selectedRegions = null;
         } else {
             $scope.selectedRegions = regions;
+            $scope.changed = true;
         }
         $scope.selectedProvinces = null;
         $scope.selectedCities = null;
@@ -57,6 +61,7 @@ module.controller('VotaUserDetailCtrl', function($scope, $controller, $rootScope
             $scope.selectedProvinces = null;
         } else {
             $scope.selectedProvinces = provinces;
+            $scope.changed = true;
         }
         $scope.selectedCities = null;
     };
@@ -69,6 +74,8 @@ module.controller('VotaUserDetailCtrl', function($scope, $controller, $rootScope
             $scope.selectedCities = null;
         } else {
             $scope.selectedCities = cities;
+            $scope.user.attributes['block'] = $scope.selectedBlock.id.toString();
+            $scope.changed = true;
         }
     };
     $scope.citiesUrl = clients.filter(e => e.clientId === 'citiesGenerator')[0].rootUrl;
