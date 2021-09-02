@@ -1,25 +1,14 @@
 function selectBlock($scope, Zizzi) {
-    setTimeout(() => {
-      let component = this.document.querySelector('#s2id_blocks')
-      if (component) {
-      	component.focus()
-      	component.click()
-      }
-      let component2 = this.document.querySelector('#select2-drop-mask')
-      if (component2) {
-      	component2.focus()
-      	component2.click()
-      }
-      let component3 = this.document.querySelector('#select2-drop')
-      if (component3) {
-      	component3.focus()
-      	component3.click()
-      }
-    }, 10000);
-    data = JSON.parse('{"state": "PREPARE","nextId": 362, "votingPapers": [{"id": 11,"name": "Regionali","maxCandidates": 2,"color": "ff0055","type": "bigger-partygroup","disjointed": true,"zone": 3177401,"groups": [{"id": 27,"name": "Roberta Lombardi","image": null,"subtitle": "Candidata alla presidenza della regione","parties": [{"id": 28,"name": "Movimento 5 Stelle","image": null,"candidates": [{"id": 34,"name": "Karina Carrizales","image": null,"sex": "F"}]}]}]}]}')
-    data.votingPapers = getAllBlocks(data.votingPapers)
-    $scope.selectedBlock = data.votingPapers.filter(e => e.id == $scope.user.attributes['block'])[0];
-    $scope.selectedBlock.text = $scope.selectedBlock.name;
+	var data = {results: []};
+    $.ajax({
+        url: $scope.blockUrl + '/votingPapers?all',
+        success: function (result) {
+    		result.votingPapers = getAllBlocks(result.votingPapers)
+    		$scope.selectedBlock = result.votingPapers.filter(e => e.id == $scope.user.attributes['block'])[0];
+    		$scope.selectedBlock.text = $scope.selectedBlock.name;
+        },
+        async: false
+    });
     $scope.blockUiSelect = {
         minimumInputLength: 0,
         delay: 500,
@@ -40,23 +29,6 @@ function selectBlock($scope, Zizzi) {
 }
 
 function selectCircumscriptions($scope, Zizzi) {
-    setTimeout(() => {
-      let component = this.document.querySelector('#s2id_circumscriptions')
-      if (component) {
-      	component.focus()
-      	component.click()
-      }
-      let component2 = this.document.querySelector('#select2-drop-mask')
-      if (component2) {
-      	component2.focus()
-      	component2.click()
-      }
-      let component3 = this.document.querySelector('#select2-drop')
-      if (component3) {
-      	component3.focus()
-      	component3.click()
-      }
-    }, 12000);
 	var data = {results: []};
     $.ajax($scope.citiesUrl + '/cities', {
     }).done(function(data) {
@@ -83,23 +55,6 @@ function selectCircumscriptions($scope, Zizzi) {
 }
 
 function selectRegions($scope, Zizzi) {
-    setTimeout(() => {
-      let component = this.document.querySelector('#s2id_regions')
-      if (component) {
-      	component.focus()
-      	component.click()
-      }
-      let component2 = this.document.querySelector('#select2-drop-mask')
-      if (component2) {
-      	component2.focus()
-      	component2.click()
-      }
-      let component3 = this.document.querySelector('#select2-drop')
-      if (component3) {
-      	component3.focus()
-      	component3.click()
-      }
-    }, 14000);
 	var data = {results: []};
     let url = $scope.citiesUrl + '/cities';
     if ($scope.selectedCircumscriptions)
@@ -132,23 +87,6 @@ function selectRegions($scope, Zizzi) {
 }
 
 function selectProvinces($scope, Zizzi) {
-    setTimeout(() => {
-      let component = this.document.querySelector('#s2id_provinces')
-      if (component) {
-      	component.focus()
-      	component.click()
-      }
-      let component2 = this.document.querySelector('#select2-drop-mask')
-      if (component2) {
-      	component2.focus()
-      	component2.click()
-      }
-      let component3 = this.document.querySelector('#select2-drop')
-      if (component3) {
-      	component3.focus()
-      	component3.click()
-      }
-    }, 16000);
 	var data = {results: []};
     let url = $scope.citiesUrl + '/cities';
     if ($scope.selectedRegions)
@@ -181,23 +119,6 @@ function selectProvinces($scope, Zizzi) {
 }
 
 function selectCities($scope, Zizzi) {
-    setTimeout(() => {
-      let component = this.document.querySelector('#s2id_cities')
-      if (component) {
-      	component.focus()
-      	component.click()
-      }
-      let component2 = this.document.querySelector('#select2-drop-mask')
-      if (component2) {
-      	component2.focus()
-      	component2.click()
-      }
-      let component3 = this.document.querySelector('#select2-drop')
-      if (component3) {
-      	component3.focus()
-      	component3.click()
-      }
-    }, 18000);
 	var data = {results: []};
     let url = $scope.citiesUrl + '/cities';
     if ($scope.selectedProvinces)
