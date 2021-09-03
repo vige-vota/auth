@@ -1,7 +1,7 @@
 function selectBlock($scope, Zizzi) {
 	var data = {results: []};
     $.ajax({
-        url: $scope.blockUrl + '/votingPapers?all',
+        url: $scope.blockUrl + '/votingPapers?all&info',
         success: function (result) {
     		result.votingPapers = getAllBlocks(result.votingPapers)
     		$scope.selectedBlock = result.votingPapers.filter(e => e.id == $scope.user.attributes['block'])[0];
