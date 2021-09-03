@@ -22,16 +22,6 @@
                 <td class="kc-action-cell" data-ng-click="removeAttribute(key)">{{:: 'delete' | translate}}</td>
             </tr>
             <tr>
-                <td>{{:: 'block' | translate}}</td>
-                <td><input ng-model="user.attributes['block']" class="form-control" type="text" name="block" id="attribute-block-over" /></td>
-                <td class="kc-action-cell" data-ng-click="removeAttribute(block)">{{:: 'delete' | translate}}</td>
-            </tr>
-            <tr>
-                <td>{{:: 'zones' | translate}}</td>
-                <td><input ng-model="user.attributes['zones']" class="form-control" type="text" name="zones" id="attribute-zones-over" /></td>
-                <td class="kc-action-cell" data-ng-click="removeAttribute(zones)">{{:: 'delete' | translate}}</td>
-            </tr>
-            <tr>
                 <td><input ng-model="newAttribute.key" class="form-control" type="text" id="newAttributeKey" /></td>
                 <td><input ng-model="newAttribute.value" class="form-control" type="text" id="newAttributeValue" /></td>
                 <td class="kc-action-cell" data-ng-click="addAttribute()" data-ng-disabled="!newAttribute.key.length || !newAttribute.value.length">{{:: 'add' | translate}}</td>
