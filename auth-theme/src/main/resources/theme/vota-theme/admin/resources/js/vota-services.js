@@ -1,3 +1,5 @@
+var websocket_url = 'ws://localhost:8180/votingpaper-websocket';
+
 function selectBlock($scope, Zizzi) {
 	var data = {results: []};
     $.ajax({
@@ -218,3 +220,8 @@ module.factory('Zizzi', function($resource) {
      	 }
     }
 });
+
+module.factory('WebSocket', [function() {
+    var ws = new WebSocket(websocket_url);
+    return ws;
+}]);
