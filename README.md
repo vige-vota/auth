@@ -15,6 +15,7 @@ Requirements
 
 - JDK 16
 - Maven 3.8.x
+- NPM 7.16.0
 
 
 Build

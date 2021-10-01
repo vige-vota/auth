@@ -135,7 +135,7 @@ module.controller('VotaUserDetailCtrl', function($scope, $controller, WebSocket,
         			},
        				async: false
     			});
-				WebSocket.send(data);
+				WebSocket.send('/topic/votingpaper', null, data);
                 Notifications.success($translate.instant('user.create.success'));
             });
         } else {
@@ -154,7 +154,7 @@ module.controller('VotaUserDetailCtrl', function($scope, $controller, WebSocket,
         			},
        				async: false
     			});
-				WebSocket.send(data);
+				WebSocket.send('/topic/votingpaper', null, data);
                 Notifications.success($translate.instant('user.edit.success'));
             });
         }

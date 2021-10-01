@@ -9,6 +9,7 @@
 /node/
 node_tmp/
 npm-debug.log.*
+node_modules
 
 ######################
 # SASS

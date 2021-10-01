@@ -26,6 +26,9 @@
         var masterRealm = '${masterRealm}';
         var resourceVersion = '${resourceVersion}';
     </script>
+    
+    <script src="${resourceUrl}/node_modules/sockjs-client/dist/sockjs.min.js" type="text/javascript"></script>
+    <script src="${resourceUrl}/node_modules/stompjs/lib/stomp.min.js" type="text/javascript"></script>
 
     <!-- Minimized versions (for those that have one) -->
     <script src="${resourceCommonUrl}/node_modules/jquery/dist/jquery.min.js" type="text/javascript"></script>
