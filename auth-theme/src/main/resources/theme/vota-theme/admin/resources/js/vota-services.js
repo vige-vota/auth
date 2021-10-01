@@ -224,7 +224,6 @@ module.factory('WebSocket', [function(clients) {
 	let sockJs = Stomp.over(new SockJS(websocket_url, null, []));
 
     sockJs.heartbeat.outgoing = 10000
-    sockJs.heartbeat.incoming = 10000
     sockJs.debug = () => {}
     return sockJs;
 }]);
