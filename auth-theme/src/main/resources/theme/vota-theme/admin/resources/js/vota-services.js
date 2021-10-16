@@ -218,12 +218,3 @@ module.factory('Zizzi', function($resource) {
      	 }
     }
 });
-
-module.factory('WebSocket', [function(clients) {
-	let websocket_url = clients.filter(e => e.clientId === 'votingPapers')[0].rootUrl + '/votingpaper-websocket'
-	let sockJs = Stomp.over(new SockJS(websocket_url, null, []));
-
-    sockJs.heartbeat.outgoing = 10000
-    sockJs.debug = () => {}
-    return sockJs;
-}]);

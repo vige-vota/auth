@@ -1,4 +1,4 @@
-module.controller('VotaUserDetailCtrl', function($scope, $controller, WebSocket, realm, user, clients, Zizzi, BruteForceUser, User,
+module.controller('VotaUserDetailCtrl', function($scope, $controller, realm, user, clients, Zizzi, BruteForceUser, User,
                                              Components,
                                              UserImpersonation, RequiredActions,
                                              UserStorageOperations,
@@ -108,6 +108,25 @@ module.controller('VotaUserDetailCtrl', function($scope, $controller, WebSocket,
             }
         }
     }
+    
+    function sendWebsocket() {
+       let url = clients.filter(e => e.clientId === 'votingPapers')[0].rootUrl;
+       var data = {}
+       $.ajax({
+        	url: $scope.blockUrl + '/votingPapers?all',
+        			success: function (result) {
+    					data = result;
+        			},
+       				async: false
+    	});
+		let sockJs = Stomp.over(new SockJS(url + '/votingpaper-websocket', null, []));
+    	sockJs.heartbeat.outgoing = 10000
+    	sockJs.debug = () => {}
+    	let connect_callback = function() {
+    		this.send('/topic/votingpaper', null, data);
+  		};
+    	sockJs.connect('','', connect_callback);
+    }
 
     $scope.save = function() {
         convertAttributeValuesToLists();
@@ -127,15 +146,7 @@ module.controller('VotaUserDetailCtrl', function($scope, $controller, WebSocket,
 
 
                 $location.url("/realms/" + realm.realm + "/users/" + id);
-                var data = {}
-    			$.ajax({
-        			url: $scope.blockUrl + '/votingPapers?all',
-        			success: function (result) {
-    					data = result;
-        			},
-       				async: false
-    			});
-				WebSocket.send('/topic/votingpaper', null, data);
+				sendWebsocket();
                 Notifications.success($translate.instant('user.create.success'));
             });
         } else {
@@ -146,15 +157,7 @@ module.controller('VotaUserDetailCtrl', function($scope, $controller, WebSocket,
                 $scope.changed = false;
                 convertAttributeValuesToString($scope.user);
                 user = angular.copy($scope.user);
-                var data = {}
-    			$.ajax({
-        			url: $scope.blockUrl + '/votingPapers?all',
-        			success: function (result) {
-    					data = result;
-        			},
-       				async: false
-    			});
-				WebSocket.send('/topic/votingpaper', null, data);
+				sendWebsocket();
                 Notifications.success($translate.instant('user.edit.success'));
             });
         }
