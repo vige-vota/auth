@@ -18,9 +18,11 @@ RUN adduser -u 1000 -G adm -d /home/wildfly --shell /bin/bash wildfly && \
 USER root
 
 ENV MAVEN_VERSION=3.8.1
+ENV NODE_VERSION=16.11.1
 
 RUN mkdir /home/wildfly/apache-maven-$MAVEN_VERSION && \
-  	curl http://apache.ip-connect.vn.ua/maven/maven-3/$MAVEN_VERSION/binaries/apache-maven-$MAVEN_VERSION-bin.tar.gz | tar xvz -C /home/wildfly
+  	curl https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/$MAVEN_VERSION/apache-maven-$MAVEN_VERSION-bin.tar.gz | tar xvz -C /home/wildfly && \
+  	curl https://nodejs.org/download/release/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.gz | tar xvz -C /home/wildfly
 ENV TERM xterm
 ENV CITIESGENERATOR_URL=http://cities-generator-service.vige.it:8380
 ENV VOTINGPAPERS_URL=http://vota-votingpapers.vige.it:8180
