@@ -78,4 +78,37 @@
 			</plugin>
 		</plugins>
 	</build>
+
+	<profiles>
+		<profile>
+			<id>prepare-keycloak</id>
+			<build>
+				<plugins>
+					<plugin>
+						<artifactId>maven-dependency-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>deploy-applications</id>
+								<phase>install</phase>
+								<goals>
+									<goal>copy</goal>
+								</goals>
+								<configuration>
+									<artifactItems>
+										<artifactItem>
+											<groupId>it.vige</groupId>
+											<artifactId>auth-theme</artifactId>
+											<version>${project.version}</version>
+											<destFileName>auth-theme.jar</destFileName>
+											<outputDirectory>../target/keycloak-run/wildfly-${wildfly.version}/standalone/deployments</outputDirectory>
+										</artifactItem>
+									</artifactItems>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 </project>

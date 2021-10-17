@@ -131,24 +131,6 @@
 									</artifactItems>
 								</configuration>
 							</execution>
-							<execution>
-								<id>deploy-applications</id>
-								<phase>package</phase>
-								<goals>
-									<goal>copy</goal>
-								</goals>
-								<configuration>
-									<artifactItems>
-										<artifactItem>
-											<groupId>it.vige</groupId>
-											<artifactId>auth-theme</artifactId>
-											<version>${project.version}</version>
-											<destFileName>auth-theme.jar</destFileName>
-											<outputDirectory>${project.build.directory}/keycloak-run/wildfly-${wildfly.version}/standalone/deployments</outputDirectory>
-										</artifactItem>
-									</artifactItems>
-								</configuration>
-							</execution>
 						</executions>
 					</plugin>
 					<plugin>
