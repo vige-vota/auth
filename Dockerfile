@@ -33,9 +33,10 @@ ENV FRONTEND_URL=http://vota-frontend.vige.it
 WORKDIR /workspace
 COPY / /workspace/auth
 RUN chown -R wildfly:adm /workspace
-RUN cd auth && /home/wildfly/apache-maven-$MAVEN_VERSION/bin/mvn install -Pdocker,prepare-keycloak
+RUN export NPM_HOME=/home/wildfly/node-v$NODE_VERSION-linux-x64 && export PATH=$NPM_HOME/bin:$PATH && cd auth && /home/wildfly/apache-maven-$MAVEN_VERSION/bin/mvn install -Pdocker,prepare-keycloak
 RUN rm -Rf /home/wildfly/.m2 && \
 	rm -Rf /home/wildfly/apache-maven-$MAVEN_VERSION && \
+	rm -Rf /home/wildfly/node-v$NODE_VERSION-linux-x64 && \
 	mv /workspace/auth/target/keycloak-run/wildfly* /opt/keycloak && \
 	chown -R wildfly:adm /opt/keycloak && \
 	rm -Rf /workspace/auth
