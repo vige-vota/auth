@@ -1,0 +1,20 @@
+div.vige-logo-text {
+    background-image: url(../images/logo.ico);
+    background-repeat: no-repeat;
+    height: 110px;
+    width: 300px;
+    margin: 0 auto;
+    background-size: 60% 100%;
+    margin-left: 45%;
+}
+
+#kc-header-wrapper {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    line-height: 1.2em;
+    padding: 62px 10px 20px;
+    white-space: normal;
+    font-size: 11px;
+    text-align: left;
+    color: #ededed;
+}
