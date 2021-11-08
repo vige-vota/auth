@@ -5,7 +5,8 @@ function selectBlock($scope, Zizzi) {
         success: function (result) {
     		result.votingPapers = getAllBlocks(result.votingPapers)
     		$scope.selectedBlock = result.votingPapers.filter(e => e.id == $scope.user.attributes['block'])[0];
-    		$scope.selectedBlock.text = $scope.selectedBlock.name;
+    		if ($scope.selectedBlock)
+    			$scope.selectedBlock.text = $scope.selectedBlock.name;
         },
         async: false
     });
@@ -33,7 +34,7 @@ function selectCircumscriptions($scope, Zizzi) {
     $.ajax({
         url: $scope.citiesUrl + '/cities',
         success: function (result) {
-    		$scope.selectedCircumscriptions = result.zones.filter(e => e.id == $scope.user.attributes['zones'].split('##')[3])[0];
+    		$scope.selectedCircumscriptions = result.zones.filter(e => e.id == $scope.user.attributes['zones'].split('-')[0])[0];
     		$scope.selectedCircumscriptions.text = $scope.selectedCircumscriptions.name;
         },
         async: false
@@ -65,7 +66,9 @@ function selectRegions($scope, Zizzi) {
     $.ajax({
         url: url,
         success: function (result) {
-    		$scope.selectedRegions = result.zones.flatMap(f => f.zones).filter(e => e.id == $scope.user.attributes['zones'].split('##')[2])[0];
+        	let ids = $scope.user.attributes['zones'].split('-')
+        	let id = ids[0] + '-' + ids[1]
+    		$scope.selectedRegions = result.zones.flatMap(f => f.zones).filter(e => e.id == id)[0];
     		$scope.selectedRegions.text = $scope.selectedRegions.name;
         },
         async: false
@@ -100,7 +103,9 @@ function selectProvinces($scope, Zizzi) {
     $.ajax({
         url: url,
         success: function (result) {
-    		$scope.selectedProvinces = result.zones.flatMap(g => g.zones).filter(e => e.id == $scope.user.attributes['zones'].split('##')[1])[0];
+        	let ids = $scope.user.attributes['zones'].split('-')
+        	let id = ids[0] + '-' + ids[1] + '-' + ids[2]
+    		$scope.selectedProvinces = result.zones.flatMap(g => g.zones).filter(e => e.id == id)[0];
     		$scope.selectedProvinces.text = $scope.selectedProvinces.name;
         },
         async: false
@@ -135,7 +140,9 @@ function selectCities($scope, Zizzi) {
     $.ajax({
         url: url,
         success: function (result) {
-    		$scope.selectedCities = result.zones.flatMap(h => h.zones).filter(e => e.id == $scope.user.attributes['zones'].split('##')[0])[0];
+        	let ids = $scope.user.attributes['zones'].split('-')
+        	let id = ids[0] + '-' + ids[1] + '-' + ids[2] + '-' + ids[3]
+    		$scope.selectedCities = result.zones.flatMap(h => h.zones).filter(e => e.id == id)[0];
     		$scope.selectedCities.text = $scope.selectedCities.name;
         },
         async: false

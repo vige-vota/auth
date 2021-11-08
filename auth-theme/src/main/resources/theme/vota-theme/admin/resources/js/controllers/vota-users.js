@@ -32,7 +32,7 @@ module.controller('VotaUserDetailCtrl', function($scope, $controller, realm, use
             $scope.selectedCircumscriptions = null;
         } else {
             $scope.selectedCircumscriptions = circumscriptions;
-            $scope.user.attributes['zones'] = '##' + '##' + '##' + $scope.selectedCircumscriptions.id.toString();
+            $scope.user.attributes['zones'] = $scope.selectedCircumscriptions.id;
             $scope.changed = true;
         }
         $scope.selectedRegions = null;
@@ -48,7 +48,7 @@ module.controller('VotaUserDetailCtrl', function($scope, $controller, realm, use
             $scope.selectedRegions = null;
         } else {
             $scope.selectedRegions = regions;
-            $scope.user.attributes['zones'] = '##' + '##' + $scope.selectedRegions.id.toString() + '##' + $scope.selectedCircumscriptions.id.toString();
+            $scope.user.attributes['zones'] = $scope.selectedRegions.id;
             $scope.changed = true;
         }
         $scope.selectedProvinces = null;
@@ -63,7 +63,7 @@ module.controller('VotaUserDetailCtrl', function($scope, $controller, realm, use
             $scope.selectedProvinces = null;
         } else {
             $scope.selectedProvinces = provinces;
-            $scope.user.attributes['zones'] = '##' + $scope.selectedProvinces.id.toString() + '##' + $scope.selectedRegions.id.toString() + '##' + $scope.selectedCircumscriptions.id.toString();
+            $scope.user.attributes['zones'] = $scope.selectedProvinces.id;
             $scope.changed = true;
         }
         $scope.selectedCities = null;
@@ -77,7 +77,7 @@ module.controller('VotaUserDetailCtrl', function($scope, $controller, realm, use
             $scope.selectedCities = null;
         } else {
             $scope.selectedCities = cities;
-            $scope.user.attributes['zones'] = $scope.selectedCities.id.toString() + '##' + $scope.selectedProvinces.id.toString() + '##' + $scope.selectedRegions.id.toString() + '##' + $scope.selectedCircumscriptions.id.toString();
+            $scope.user.attributes['zones'] = $scope.selectedCities.id;
             $scope.changed = true;
         }
     };
@@ -88,26 +88,6 @@ module.controller('VotaUserDetailCtrl', function($scope, $controller, realm, use
     selectRegions($scope, Zizzi);
     selectProvinces($scope, Zizzi);
     selectCities($scope, Zizzi);
-    
-    function convertAttributeValuesToLists() {
-        var attrs = $scope.user.attributes;
-        for (var attribute in attrs) {
-            if (typeof attrs[attribute] === "string") {
-                var attrVals = attrs[attribute].split("##");
-                attrs[attribute] = attrVals;
-            }
-        }
-    }
-
-    function convertAttributeValuesToString(user) {
-        var attrs = user.attributes;
-        for (var attribute in attrs) {
-            if (typeof attrs[attribute] === "object") {
-                var attrVals = attrs[attribute].join("##");
-                attrs[attribute] = attrVals;
-            }
-        }
-    }
     
     function sendWebsocket() {
        let url = clients.filter(e => e.clientId === 'votingPapers')[0].rootUrl;
@@ -129,14 +109,12 @@ module.controller('VotaUserDetailCtrl', function($scope, $controller, realm, use
     }
 
     $scope.save = function() {
-        convertAttributeValuesToLists();
 
         if ($scope.create) {
             User.save({
                 realm: realm.realm
             }, $scope.user, function (data, headers) {
                 $scope.changed = false;
-                convertAttributeValuesToString($scope.user);
                 user = angular.copy($scope.user);
                 var l = headers().location;
 
@@ -155,7 +133,6 @@ module.controller('VotaUserDetailCtrl', function($scope, $controller, realm, use
                 userId: $scope.user.id
             }, $scope.user, function () {
                 $scope.changed = false;
-                convertAttributeValuesToString($scope.user);
                 user = angular.copy($scope.user);
 				sendWebsocket();
                 Notifications.success($translate.instant('user.edit.success'));

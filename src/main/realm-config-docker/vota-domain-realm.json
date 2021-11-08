@@ -28,7 +28,7 @@
 			"email": "vota@vige.it",
 			"attributes": {
 				"block": "-1",
-				"zones": [6541066, 3174379, 3174004, 2]
+				"zones": "3-3174004-3174379-6541066"
 			},
 			"credentials": [
 				{
