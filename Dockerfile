@@ -29,6 +29,7 @@ ENV VOTINGPAPERS_URL=http://vota-votingpapers.vige.it:8180
 ENV VOTING_URL=http://vota-voting.vige.it:8080
 ENV HISTORY_URL=http://vota-history.vige.it:8280
 ENV FRONTEND_URL=http://vota-frontend.vige.it
+ENV REPORT_URL=http://vota-report.vige.it
 
 WORKDIR /workspace
 COPY / /workspace/auth
@@ -50,5 +51,6 @@ CMD mkdir -p /opt/keycloak/realm-config/execution && \
 	sed -i -e 's@MAVEN_REPLACER_VOTING_SERVER_URL@'"$VOTING_URL"'@g' /opt/keycloak/realm-config/execution/vota-domain-realm.json && \
 	sed -i -e 's@MAVEN_REPLACER_HISTORY_SERVER_URL@'"$HISTORY_URL"'@g' /opt/keycloak/realm-config/execution/vota-domain-realm.json && \
 	sed -i -e 's@MAVEN_REPLACER_FRONTEND_SERVER_URL@'"$FRONTEND_URL"'@g' /opt/keycloak/realm-config/execution/vota-domain-realm.json && \
+	sed -i -e 's@MAVEN_REPLACER_REPORT_SERVER_URL@'"$REPORT_URL"'@g' /opt/keycloak/realm-config/execution/vota-domain-realm.json && \
 	java -D[Standalone] -server -Xms64m -Xmx512m -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=256m -Djava.net.preferIPv4Stack=true -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-exports=jdk.unsupported/sun.misc=ALL-UNNAMED --add-exports=jdk.unsupported/sun.reflect=ALL-UNNAMED -Dorg.jboss.boot.log.file=/opt/keycloak/standalone/log/server.log -Dlogging.configuration=file:/opt/keycloak/standalone/configuration/logging.properties -jar /opt/keycloak/jboss-modules.jar -mp /opt/keycloak/modules org.jboss.as.standalone -Djboss.home.dir=/opt/keycloak -Djboss.server.base.dir=/opt/keycloak/standalone -c standalone.xml -b 0.0.0.0 -Djboss.socket.binding.port-offset=400 -Dkeycloak.migration.action=import -Dkeycloak.migration.provider=dir -Dkeycloak.migration.dir=/opt/keycloak/realm-config/execution -Dkeycloak.migration.strategy=IGNORE_EXISTING -Dkeycloak.profile.feature.upload_scripts=enabled && \
     tail -f /dev/null

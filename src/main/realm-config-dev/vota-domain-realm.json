@@ -3270,7 +3270,9 @@
 				"http://localhost:8180/swagger-ui/*"
 			],
 			"webOrigins": [
-				"http://localhost:8180"
+				"http://localhost:8180",
+				"http://localhost:3001",
+				"http://localhost:3000"
 			],
 			"publicClient": false,
 			"secret": "bce5816d-98c4-404f-a18d-bcc5cb005c79",

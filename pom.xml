@@ -277,6 +277,10 @@
 											<token>MAVEN_REPLACER_FRONTEND_SERVER_URL</token>
 											<value>${frontend.url}</value>
 										</replacement>
+										<replacement>
+											<token>MAVEN_REPLACER_REPORT_SERVER_URL</token>
+											<value>${report.url}</value>
+										</replacement>
 									</replacements>
 								</configuration>
 							</execution>
