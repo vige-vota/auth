@@ -34,7 +34,7 @@ ENV REPORT_URL=http://vota-report.vige.it
 WORKDIR /workspace
 COPY / /workspace/auth
 RUN chown -R wildfly:adm /workspace
-RUN export NPM_HOME=/home/wildfly/node-v$NODE_VERSION-linux-x64 && export PATH=$NPM_HOME/bin:$PATH && cd auth && /home/wildfly/apache-maven-$MAVEN_VERSION/bin/mvn install -Pdocker,prepare-keycloak
+RUN export NPM_HOME=/home/wildfly/node-v$NODE_VERSION-linux-x64 && export PATH=$NPM_HOME/bin:$PATH && cd auth && /home/wildfly/apache-maven-$MAVEN_VERSION/bin/mvn clean install -Pdocker,prepare-keycloak
 RUN rm -Rf /home/wildfly/.m2 && \
 	rm -Rf /home/wildfly/apache-maven-$MAVEN_VERSION && \
 	rm -Rf /home/wildfly/node-v$NODE_VERSION-linux-x64 && \
