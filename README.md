@@ -8,12 +8,12 @@ It covers all the following features:
 - Import voting users.
 - Browsing users.
 
-This draft version has been tested on WildFly 23.0.0.Final.
+This draft version has been tested on WildFly 24.0.1.Final.
 
 Requirements
 ------------
 
-- JDK 16
+- JDK 17
 - Maven 3.8.x
 - NPM 8.0.0
 
@@ -42,7 +42,7 @@ If you want to start the WildFly prepared instance and execute the application i
 Where citiesgenerator.url, votingpapers.url, voting.url, history.url, frontend.url are the host names of the clients shown in the below guide.
 In a production environment you could move a different ssl certificate and keys. Use this command to generate it:
 ```
-keytool -genkey -alias server -storetype PKCS12 -keyalg RSA -keysize 2048 -keystore ./target/keycloak-run/wildfly-20.0.1.Final/standalone/configuration/application.keystore -validity 3650 -dname "CN=vota-auth.vige.it, OU=Vige, O=Vige, L=Rome, S=Italy, C=IT" -storepass password
+keytool -genkey -alias server -storetype PKCS12 -keyalg RSA -keysize 2048 -keystore ./target/keycloak-run/wildfly-24.0.1.Final/standalone/configuration/application.keystore -validity 3650 -dname "CN=vota-auth.vige.it, OU=Vige, O=Vige, L=Rome, S=Italy, C=IT" -storepass password
 ```
 If you start with the developer profile you must not specify the host names because the default host name localhost is used. If you don't declare the url variables in the mode production, the default will be localhost.
 To create new users in WildFly:

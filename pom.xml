@@ -53,15 +53,15 @@
 	</developers>
 
 	<properties>
-		<maven.compiler.source>16</maven.compiler.source>
-		<maven.compiler.target>16</maven.compiler.target>
+		<maven.compiler.source>17</maven.compiler.source>
+		<maven.compiler.target>17</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<spec.jakartaee.version>9.0.0</spec.jakartaee.version>
 		<maven.replacer.plugin.version>1.5.3</maven.replacer.plugin.version>
 		<maven.resources.plugin.version>3.2.0</maven.resources.plugin.version>
-		<wildfly.version>23.0.0.Final</wildfly.version>
-		<wildfly.maven.plugin.version>2.0.2.Final</wildfly.maven.plugin.version>
-		<keycloak.version>12.0.4</keycloak.version>
+		<wildfly.version>24.0.1.Final</wildfly.version>
+		<wildfly.maven.plugin.version>2.1.0.Final</wildfly.maven.plugin.version>
+		<keycloak.version>15.0.2</keycloak.version>
 		<maven.exec.plugin>3.0.0</maven.exec.plugin>
 	</properties>
 
