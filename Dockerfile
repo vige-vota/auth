@@ -10,7 +10,7 @@
 # See the License for the specific language governing permissions and        
 # limitations under the License.
 
-FROM openjdk:17-jdk
+FROM openjdk:15-jdk
 EXPOSE 8480
 RUN adduser -u 1000 -G adm -d /home/wildfly --shell /bin/bash wildfly && \
     echo "wildfly:secret" | chpasswd
