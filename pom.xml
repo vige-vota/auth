@@ -53,8 +53,8 @@
 	</developers>
 
 	<properties>
-		<maven.compiler.source>15</maven.compiler.source>
-		<maven.compiler.target>15</maven.compiler.target>
+		<maven.compiler.source>17</maven.compiler.source>
+		<maven.compiler.target>17</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<spec.jakartaee.version>9.0.0</spec.jakartaee.version>
 		<maven.replacer.plugin.version>1.5.3</maven.replacer.plugin.version>
