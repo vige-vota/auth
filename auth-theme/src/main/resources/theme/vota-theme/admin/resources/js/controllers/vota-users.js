@@ -88,6 +88,7 @@ module.controller('VotaUserDetailCtrl', function($scope, $controller, realm, use
     selectRegions($scope, Zizzi);
     selectProvinces($scope, Zizzi);
     selectCities($scope, Zizzi);
+    selectStamps($scope);
     
     function sendWebsocket() {
        let url = clients.filter(e => e.clientId === 'votingPapers')[0].rootUrl;

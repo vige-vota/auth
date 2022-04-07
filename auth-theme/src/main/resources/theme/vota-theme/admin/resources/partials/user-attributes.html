@@ -16,7 +16,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="(key, value) in user.attributes | toOrderedMapSortedByKey" data-ng-show="key !== 'block' && key !== 'zones'">
+            <tr ng-repeat="(key, value) in user.attributes | toOrderedMapSortedByKey" data-ng-show="key !== 'block' && key !== 'zones' && key !== 'stamps'">
                 <td>{{key}}</td>
                 <td><input ng-model="user.attributes[key]" class="form-control" type="text" name="{{key}}" id="attribute-{{key}}" /></td>
                 <td class="kc-action-cell" data-ng-click="removeAttribute(key)">{{:: 'delete' | translate}}</td>
@@ -68,6 +68,16 @@
                 <div class="col-md-6">
                     <input type="hidden" ng-disabled="!selectedProvinces" ui-select2="citiesUiSelect" id="cities" data-ng-model="selectedCities" data-ng-change="changeCities(selectedCities);" data-placeholder="{{:: 'authz-select-cities' | translate}}...">
                     </input>
+                </div>
+        	</div>
+        </fieldset>
+        
+        <fieldset class="border-top">
+            <legend><span class="text">{{:: 'stamps' | translate}}</span></legend>
+            
+        	<div class="form-group">
+                <div class="col-md-6" ng-repeat="(key, value) in selectedStamps">
+                    {{ value.value }}
                 </div>
         	</div>
         </fieldset>

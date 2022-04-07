@@ -169,6 +169,23 @@ function selectCities($scope, Zizzi) {
     };
 }
 
+class ValueText {
+  toString(){
+    return 'Pity the Foo';
+  }
+}
+
+function selectStamps($scope) {
+	let stamps = $scope.user.attributes['stamps'] 
+	$scope.selectedStamps = [];
+	if (stamps)
+		stamps.split('##').forEach((element, index) => {
+			let valueText = new ValueText();
+			valueText.value = element;
+			$scope.selectedStamps.push({ key: index, value: element });
+		});
+}
+
 function getAllBlocks(votingPapers) {
 	let result = []
 	if (votingPapers) {
