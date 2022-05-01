@@ -3674,7 +3674,7 @@
 			],
 			"clientRoles": {
 				"realm-management": [
-					"view-users"
+					"view-realm"
 				],
 				"account": [
 					"manage-account"
