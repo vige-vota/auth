@@ -17,7 +17,7 @@ RUN adduser -u 1000 -G adm -d /home/wildfly --shell /bin/bash wildfly && \
 
 USER root
 
-ENV MAVEN_VERSION=3.8.4
+ENV MAVEN_VERSION=3.8.6
 ENV NODE_VERSION=16.11.1
 
 RUN mkdir /home/wildfly/apache-maven-$MAVEN_VERSION && \
