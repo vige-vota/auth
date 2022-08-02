@@ -24,12 +24,12 @@ Build
 In development mode:
 ```
     mvn install -Pdevelopment
-    mvn package -Pdevelopment,prepare-keycloak
+    mvn install -Pdevelopment,prepare-keycloak
 ```
 In production mode:
 ```
     mvn install -Pproduction
-    mvn package -Pproduction,prepare-keycloak
+    mvn install -Pproduction,prepare-keycloak
 ```
 If you want to start the WildFly prepared instance and execute the application in the development mode:
 ```
