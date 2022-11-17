@@ -10,9 +10,9 @@
 # See the License for the specific language governing permissions and        
 # limitations under the License.
 
-FROM openjdk:18-jdk
+FROM arm64v8/eclipse-temurin:19-jdk
 EXPOSE 8480
-RUN adduser -u 1000 -G adm -d /home/wildfly --shell /bin/bash wildfly && \
+RUN adduser --uid 1000 --ingroup adm --home /home/wildfly --shell /bin/bash wildfly && \
     echo "wildfly:secret" | chpasswd
 
 USER root
@@ -22,7 +22,7 @@ ENV NODE_VERSION=16.11.1
 
 RUN mkdir /home/wildfly/apache-maven-$MAVEN_VERSION && \
   	curl https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/$MAVEN_VERSION/apache-maven-$MAVEN_VERSION-bin.tar.gz | tar xvz -C /home/wildfly && \
-  	curl https://nodejs.org/download/release/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.gz | tar xvz -C /home/wildfly
+  	curl https://nodejs.org/download/release/v$NODE_VERSION/node-v$NODE_VERSION-linux-arm64.tar.gz | tar xvz -C /home/wildfly
 ENV TERM xterm
 ENV CITIESGENERATOR_URL=http://cities-generator-service.vige.it:8380
 ENV VOTINGPAPERS_URL=http://vota-votingpapers.vige.it:8180
@@ -34,10 +34,10 @@ ENV REPORT_URL=http://vota-report.vige.it
 WORKDIR /workspace
 COPY / /workspace/auth
 RUN chown -R wildfly:adm /workspace
-RUN export NPM_HOME=/home/wildfly/node-v$NODE_VERSION-linux-x64 && export PATH=$NPM_HOME/bin:$PATH && cd auth && /home/wildfly/apache-maven-$MAVEN_VERSION/bin/mvn clean install -Pdocker,prepare-keycloak
+RUN export NPM_HOME=/home/wildfly/node-v$NODE_VERSION-linux-arm64 && export PATH=$NPM_HOME/bin:$PATH && cd auth && /home/wildfly/apache-maven-$MAVEN_VERSION/bin/mvn clean install -Pdocker,prepare-keycloak
 RUN rm -Rf /home/wildfly/.m2 && \
 	rm -Rf /home/wildfly/apache-maven-$MAVEN_VERSION && \
-	rm -Rf /home/wildfly/node-v$NODE_VERSION-linux-x64 && \
+	rm -Rf /home/wildfly/node-v$NODE_VERSION-linux-arm64 && \
 	mv /workspace/auth/target/keycloak-run/wildfly* /opt/keycloak && \
 	chown -R wildfly:adm /opt/keycloak && \
 	rm -Rf /workspace/auth

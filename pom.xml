@@ -53,8 +53,8 @@
 	</developers>
 
 	<properties>
-		<maven.compiler.source>18</maven.compiler.source>
-		<maven.compiler.target>18</maven.compiler.target>
+		<maven.compiler.source>19</maven.compiler.source>
+		<maven.compiler.target>19</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.replacer.plugin.version>1.5.3</maven.replacer.plugin.version>
 		<maven.resources.plugin.version>3.2.0</maven.resources.plugin.version>

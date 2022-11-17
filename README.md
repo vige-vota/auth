@@ -13,7 +13,7 @@ This draft version has been tested on WildFly 24.0.1.Final.
 Requirements
 ------------
 
-- JDK 18
+- JDK 19
 - Maven 3.8.x
 - NPM 8.0.0
 
