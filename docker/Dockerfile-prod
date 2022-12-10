@@ -11,7 +11,7 @@
 # limitations under the License.
 
 FROM arm64v8/eclipse-temurin:19-jdk
-EXPOSE 8480
+EXPOSE 8843
 RUN adduser --uid 1000 --ingroup adm --home /home/wildfly --shell /bin/bash wildfly && \
     echo "wildfly:secret" | chpasswd
 
@@ -24,17 +24,17 @@ RUN mkdir /home/wildfly/apache-maven-$MAVEN_VERSION && \
   	curl https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/$MAVEN_VERSION/apache-maven-$MAVEN_VERSION-bin.tar.gz | tar xvz -C /home/wildfly && \
   	curl https://nodejs.org/download/release/v$NODE_VERSION/node-v$NODE_VERSION-linux-arm64.tar.gz | tar xvz -C /home/wildfly
 ENV TERM xterm
-ENV CITIESGENERATOR_URL=http://cities-generator-service.vige.it:8380
-ENV VOTINGPAPERS_URL=http://vota-votingpapers.vige.it:8180
-ENV VOTING_URL=http://vota-voting.vige.it:8080
-ENV HISTORY_URL=http://vota-history.vige.it:8280
-ENV FRONTEND_URL=http://vota-frontend.vige.it
-ENV REPORT_URL=http://vota-report.vige.it
+ENV CITIESGENERATOR_URL=https://cities-generator-service.vige.it:8743
+ENV VOTINGPAPERS_URL=https://vota-votingpapers.vige.it:8543
+ENV VOTING_URL=https://vota-voting.vige.it:8443
+ENV HISTORY_URL=https://vota-history.vige.it:8643
+ENV FRONTEND_URL=https://vota-frontend.vige.it
+ENV REPORT_URL=https://vota-report.vige.it
 
 WORKDIR /workspace
 COPY / /workspace/auth
 RUN chown -R wildfly:adm /workspace
-RUN export NPM_HOME=/home/wildfly/node-v$NODE_VERSION-linux-arm64 && export PATH=$NPM_HOME/bin:$PATH && cd auth && /home/wildfly/apache-maven-$MAVEN_VERSION/bin/mvn clean install -Pdocker,prepare-keycloak
+RUN export NPM_HOME=/home/wildfly/node-v$NODE_VERSION-linux-arm64 && export PATH=$NPM_HOME/bin:$PATH && cd auth && /home/wildfly/apache-maven-$MAVEN_VERSION/bin/mvn clean install -Pproduction,prepare-keycloak
 RUN rm -Rf /home/wildfly/.m2 && \
 	rm -Rf /home/wildfly/apache-maven-$MAVEN_VERSION && \
 	rm -Rf /home/wildfly/node-v$NODE_VERSION-linux-arm64 && \

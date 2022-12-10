@@ -91,14 +91,6 @@
 		</profile>
 
 		<profile>
-			<id>docker</id>
-			<properties>
-				<realm.config.environment>docker</realm.config.environment>
-				<realm.migration>IGNORE_EXISTING</realm.migration>
-			</properties>
-		</profile>
-
-		<profile>
 			<id>prepare-keycloak</id>
 			<build>
 				<plugins>
