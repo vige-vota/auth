@@ -176,7 +176,6 @@
 			],
 			"webOrigins": [
 				"MAVEN_REPLACER_VOTINGPAPERS_SERVER_URL",
-				"MAVEN_REPLACER_REPORT_SERVER_URL",
 				"MAVEN_REPLACER_FRONTEND_SERVER_URL"
 			],
 			"publicClient": false,

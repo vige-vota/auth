@@ -3305,13 +3305,13 @@
 		{
 			"id": "c338b2be-dj73-571c-9bb0-77ad52e1f88h",
 			"clientId": "citiesGenerator",
-			"rootUrl": "http://localhost:8380",
+			"rootUrl": "MAVEN_REPLACER_CITIESGENERATOR_SERVER_URL",
 			"enabled": true,
 			"redirectUris": [
-				"http://localhost:8380/swagger-ui/*"
+				"MAVEN_REPLACER_CITIESGENERATOR_SERVER_URL/swagger-ui/*"
 			],
 			"webOrigins": [
-				"http://localhost:8380"
+				"MAVEN_REPLACER_CITIESGENERATOR_SERVER_URL:8380"
 			],
 			"publicClient": false,
 			"secret": "bce5816d-98c4-404f-a18d-bcc5cb005c79",
@@ -3361,14 +3361,15 @@
 		{
 			"id": "c338b2be-da73-471c-9bb0-77ad52e1f88g",
 			"clientId": "voting",
-			"rootUrl": "http://localhost:8080",
+			"rootUrl": "MAVEN_REPLACER_VOTING_SERVER_URL",
 			"enabled": true,
 			"redirectUris": [
-				"http://localhost:8080/vote/*",
-				"http://localhost:8080/swagger-ui/*"
+				"MAVEN_REPLACER_VOTING_SERVER_URL/vote/*",
+				"MAVEN_REPLACER_VOTING_SERVER_URL/result/*",
+				"MAVEN_REPLACER_VOTING_SERVER_URL/swagger-ui/*"
 			],
 			"webOrigins": [
-				"http://localhost:8080"
+				"MAVEN_REPLACER_VOTING_SERVER_URL"
 			],
 			"publicClient": false,
 			"secret": "bce5816d-98c4-404f-a18d-bcc5cb005c79",
@@ -3418,16 +3419,16 @@
 		{
 			"id": "c338b2be-da73-471c-9bb0-77ad52e1f88h",
 			"clientId": "votingPapers",
-			"rootUrl": "http://localhost:8180",
+			"rootUrl": "MAVEN_REPLACER_VOTINGPAPERS_SERVER_URL",
 			"enabled": true,
 			"redirectUris": [
-				"http://localhost:8180/votingPapers/*",
-				"http://localhost:8180/swagger-ui/*"
+				"MAVEN_REPLACER_VOTINGPAPERS_SERVER_URL/votingPapers/*",
+				"MAVEN_REPLACER_VOTINGPAPERS_SERVER_URL/swagger-ui/*"
 			],
 			"webOrigins": [
-				"http://localhost:8180",
-				"http://localhost:3001",
-				"http://localhost:3000"
+				"MAVEN_REPLACER_VOTINGPAPERS_SERVER_URL:8180",
+				"MAVEN_REPLACER_VOTINGPAPERS_SERVER_URL:3001",
+				"MAVEN_REPLACER_VOTINGPAPERS_SERVER_URL:3000"
 			],
 			"publicClient": false,
 			"secret": "bce5816d-98c4-404f-a18d-bcc5cb005c79",
@@ -3477,14 +3478,16 @@
 		{
 			"id": "c338b2be-da73-471c-9bb0-77ad52e1f88i",
 			"clientId": "history",
-			"rootUrl": "http://localhost:8280",
+			"rootUrl": "MAVEN_REPLACER_HISTORY_SERVER_URL:8280",
 			"enabled": true,
 			"redirectUris": [
-				"http://localhost:8280/save/*",
-				"http://localhost:8280/swagger-ui/*"
+				"MAVEN_REPLACER_HISTORY_SERVER_URL/save/*",
+				"MAVEN_REPLACER_HISTORY_SERVER_URL/votingPapers/*",
+				"MAVEN_REPLACER_HISTORY_SERVER_URL/result/*",
+				"MAVEN_REPLACER_HISTORY_SERVER_URL/swagger-ui/*"
 			],
 			"webOrigins": [
-				"http://localhost:8280"
+				"MAVEN_REPLACER_HISTORY_SERVER_URL:8280"
 			],
 			"publicClient": false,
 			"secret": "bce5816d-98c4-404f-a18d-bcc5cb005c79",
@@ -3534,17 +3537,17 @@
 		{
 			"id": "c338b2be-da73-471c-9bb0-77ad52e1f88l",
 			"clientId": "frontend",
-			"rootUrl": "http://localhost:3000",
+			"rootUrl": "MAVEN_REPLACER_FRONTEND_SERVER_URL",
 			"surrogateAuthRequired": false,
 			"enabled": true,
 			"alwaysDisplayInConsole": false,
 			"clientAuthenticatorType": "client-secret",
 			"secret": "**********",
 			"redirectUris": [
-				"http://localhost:3000/*"
+				"MAVEN_REPLACER_FRONTEND_SERVER_URL/*"
 			],
 			"webOrigins": [
-				"http://localhost:3000"
+				"MAVEN_REPLACER_FRONTEND_SERVER_URL"
 			],
 			"notBefore": 0,
 			"bearerOnly": false,
