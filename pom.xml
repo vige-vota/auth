@@ -95,8 +95,8 @@
 		<docker.keycloak.volume.external.theme>/opt/keycloak/themes/kauth-theme.jar</docker.keycloak.volume.external.theme>
 
 		<!-- Docker - Image saving options -->
-		<docker.keycloak.saveName>custom/keycloak:${project.version}</docker.keycloak.saveName>
-		<docker.keycloak.saveFile>custom-keycloak-server</docker.keycloak.saveFile>
+		<docker.keycloak.saveName>vige/vota-auth:${project.version}</docker.keycloak.saveName>
+		<docker.keycloak.saveFile>vige-vota-auth-server</docker.keycloak.saveFile>
 		<docker.keycloak.skipSave>false</docker.keycloak.skipSave>
 		
 	</properties>
