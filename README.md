@@ -32,7 +32,6 @@ In a production environment you could move a different ssl certificate and keys.
 ```
 keytool -genkey -alias server -storetype PKCS12 -keyalg RSA -keysize 2048 -keystore ./target/keycloak-run/wildfly-24.0.1.Final/standalone/configuration/application.keystore -validity 3650 -dname "CN=vota-auth.vige.it, OU=Vige, O=Vige, L=Rome, S=Italy, C=IT" -storepass password
 ```
-If you start with the developer profile you must not specify the host names because the default host name localhost is used. If you don't declare the url variables in the mode production, the default will be localhost.
 
 Docker develop image
 ------------
@@ -49,7 +48,7 @@ If you want start it in background mode:
 ```
     docker run -p 8480:8080 -p 8400:9090 -d --name vota-auth vige/vota-auth:1.1.1-SNAPSHOT
 ```
-If you want to configure, add votes, classes and new users or approve users connect to: [http://localhost:8480/admin/vota-domain/console](http://localhost:8480/admin/vota-domain/console) with root/gtn in the keycloak webapp.
+If you want to configure, add votes, classes and new users or approve users connect to: [http://vota-auth.vige.it:8480/admin/vota-domain/console](http://vota-auth.vige.it:8480/admin/vota-domain/console) with root/gtn in the keycloak webapp.
 If you want connect in the keycloak webapp as superuser connect to it with root/gtn
 
 Docker production image
@@ -67,5 +66,5 @@ If you want start it in background mode:
 ```
     docker run -p 8843:8443 -d --name vota-auth vige/vota-auth:1.1.1-SNAPSHOT
 ```
-If you want to configure, add votes, classes and new users or approve users connect to: [https://localhost:8843/admin/vota-domain/console](https://localhost:8843/admin/vota-domain/console) with root/gtn in the keycloak webapp.
+If you want to configure, add votes, classes and new users or approve users connect to: [https://vota-auth.vige.it:8843/admin/vota-domain/console](https://vota-auth.vige.it:8843/admin/vota-domain/console) with root/gtn in the keycloak webapp.
 If you want connect in the keycloak webapp as superuser connect to it with root/gtn
