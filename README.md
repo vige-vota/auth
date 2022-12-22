@@ -8,8 +8,6 @@ It covers all the following features:
 - Import voting users.
 - Browsing users.
 
-This draft version has been tested on Quarkus 24.0.1.Final.
-
 Requirements
 ------------
 
@@ -45,11 +43,11 @@ To install the docker image run the command:
 ```
 To run the image run the command:
 ```
-    docker run -p 8480:8480 --name vota-auth vige/vota-auth
+    docker run -p 8480:8080 -p 9090:9090 --name vota-auth vige/vota-auth:1.1.1-SNAPSHOT
 ```
 If you want start it in background mode:
 ```
-    docker run -p 8480:8480 -d --name vota-auth vige/vota-auth
+    docker run -p 8480:8080 -p 9090:9090 -d --name vota-auth vige/vota-auth:1.1.1-SNAPSHOT
 ```
 If you want to configure, add votes, classes and new users or approve users connect to: [http://localhost:8480/auth/admin/vota-domain/console](http://localhost:8480/auth/admin/vota-domain/console) with root/gtn in the keycloak webapp.
 If you want connect in the keycloak webapp as superuser connect to it with root/gtn

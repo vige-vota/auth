@@ -3311,7 +3311,7 @@
 				"MAVEN_REPLACER_CITIESGENERATOR_SERVER_URL/swagger-ui/*"
 			],
 			"webOrigins": [
-				"MAVEN_REPLACER_CITIESGENERATOR_SERVER_URL:8380"
+				"MAVEN_REPLACER_CITIESGENERATOR_SERVER_URL"
 			],
 			"publicClient": false,
 			"secret": "bce5816d-98c4-404f-a18d-bcc5cb005c79",
@@ -3426,9 +3426,8 @@
 				"MAVEN_REPLACER_VOTINGPAPERS_SERVER_URL/swagger-ui/*"
 			],
 			"webOrigins": [
-				"MAVEN_REPLACER_VOTINGPAPERS_SERVER_URL:8180",
-				"MAVEN_REPLACER_VOTINGPAPERS_SERVER_URL:3001",
-				"MAVEN_REPLACER_VOTINGPAPERS_SERVER_URL:3000"
+				"MAVEN_REPLACER_VOTING_SERVER_URL",
+				"MAVEN_REPLACER_FRONTEND_SERVER_URL"
 			],
 			"publicClient": false,
 			"secret": "bce5816d-98c4-404f-a18d-bcc5cb005c79",
@@ -3478,7 +3477,7 @@
 		{
 			"id": "c338b2be-da73-471c-9bb0-77ad52e1f88i",
 			"clientId": "history",
-			"rootUrl": "MAVEN_REPLACER_HISTORY_SERVER_URL:8280",
+			"rootUrl": "MAVEN_REPLACER_HISTORY_SERVER_URL",
 			"enabled": true,
 			"redirectUris": [
 				"MAVEN_REPLACER_HISTORY_SERVER_URL/save/*",
@@ -3487,7 +3486,7 @@
 				"MAVEN_REPLACER_HISTORY_SERVER_URL/swagger-ui/*"
 			],
 			"webOrigins": [
-				"MAVEN_REPLACER_HISTORY_SERVER_URL:8280"
+				"MAVEN_REPLACER_HISTORY_SERVER_URL"
 			],
 			"publicClient": false,
 			"secret": "bce5816d-98c4-404f-a18d-bcc5cb005c79",

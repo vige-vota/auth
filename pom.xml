@@ -92,7 +92,7 @@
 
 		<!-- Keycloak Theme -->
 		<docker.keycloak.volume.internal.theme>/auth-theme.jar</docker.keycloak.volume.internal.theme>
-		<docker.keycloak.volume.external.theme>/opt/keycloak/themes/kauth-theme.jar</docker.keycloak.volume.external.theme>
+		<docker.keycloak.volume.external.theme>/opt/keycloak/themes/auth-theme.jar</docker.keycloak.volume.external.theme>
 
 		<!-- Docker - Image saving options -->
 		<docker.keycloak.saveName>vige/vota-auth:${project.version}</docker.keycloak.saveName>
