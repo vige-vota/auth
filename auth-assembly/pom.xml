@@ -148,18 +148,18 @@
 		<profile>
 			<id>development</id>
 			<properties>
-				<docker.keycloak.port.internal>8080</docker.keycloak.port.internal>
-				<docker.keycloak.port.debug.internal>9090</docker.keycloak.port.debug.internal>
+				<docker.keycloak.port.internal>8480</docker.keycloak.port.internal>
+				<docker.keycloak.port.debug.internal>8400</docker.keycloak.port.debug.internal>
 				<docker.keycloak.debug>-agentlib:jdwp=transport=dt_socket,address=0.0.0.0:${docker.keycloak.port.debug.internal},server=y,suspend=n</docker.keycloak.debug>
-				<docker.keycloak.run.cmd.arg.1>start-dev</docker.keycloak.run.cmd.arg.1>
+				<docker.keycloak.run.cmd.arg.1>start-dev --http-port=${docker.keycloak.port.internal}</docker.keycloak.run.cmd.arg.1>
 			</properties>
 		</profile>
 
 		<profile>
 			<id>production</id>
 			<properties>
-				<docker.keycloak.port.internal>8443</docker.keycloak.port.internal>
-				<docker.keycloak.run.cmd.arg.1>start --hostname=auth-ct.vige.it --https-key-store-file=/opt/keycloak/conf/cert/application.keystore</docker.keycloak.run.cmd.arg.1>
+				<docker.keycloak.port.internal>8843</docker.keycloak.port.internal>
+				<docker.keycloak.run.cmd.arg.1>start --hostname=vota-auth.vige.it --https-key-store-file=/opt/keycloak/conf/cert/application.keystore --https-port=${docker.keycloak.port.internal}</docker.keycloak.run.cmd.arg.1>
 			</properties>
 		</profile>
 	</profiles>
