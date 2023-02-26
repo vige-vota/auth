@@ -16,6 +16,8 @@ ENV KEYCLOAK_ADMIN ${docker.keycloak.user}
 ENV KEYCLOAK_ADMIN_PASSWORD ${docker.keycloak.password}
 ENV JAVA_OPTS -server -Xms64m -Xmx512m -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=256m -Djava.net.preferIPv4Stack=true -Djava.awt.headless=true
 
+VOLUME /opt/keycloak/data
+COPY /volume/cert /opt/keycloak/data/cert
 COPY /realm-config ${docker.keycloak.volume.external.realm-config}
 COPY ${docker.keycloak.volume.internal.theme} ${docker.keycloak.volume.external.theme}
 
