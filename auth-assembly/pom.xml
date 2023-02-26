@@ -45,16 +45,30 @@
 									<directory>${project.basedir}/src/main/docker</directory>
 									<filtering>true</filtering>
 									<includes>
-										<include>Dockerfile</include>
+										<include>${realm.config.environment}/Dockerfile</include>
 									</includes>
 								</resource>
 								<resource>
-									<directory>${project.basedir}/src/main</directory>
+									<directory>${project.basedir}/src/main/docker</directory>
 									<filtering>false</filtering>
 									<includes>
-										<include>realm-config-${realm.config.environment}/**</include>
+										<include>${docker.keycloak.volume.internal.realm-config}/**</include>
 									</includes>
 								</resource>
+							</resources>
+							<outputDirectory>${project.build.directory}/dockertmp</outputDirectory>
+						</configuration>
+					</execution>
+					<execution>
+						<inherited>false</inherited>
+						<id>filter-auth-theme</id>
+						<phase>process-resources</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<overwrite>true</overwrite>
+							<resources>
 								<!-- # Unfiltered Resources -->
 								<resource>
 									<directory>${project.parent.basedir}/auth-theme/target</directory>
@@ -64,7 +78,7 @@
 									</includes>
 								</resource>
 							</resources>
-							<outputDirectory>${project.build.directory}/dockertmp</outputDirectory>
+							<outputDirectory>${project.build.directory}/dockertmp/${realm.config.environment}</outputDirectory>
 						</configuration>
 					</execution>
 				</executions>
@@ -81,7 +95,7 @@
 							<goal>replace</goal>
 						</goals>
 						<configuration>
-							<file>${project.build.directory}/dockertmp/realm-config-${realm.config.environment}/vota-domain-realm.json</file>
+							<file>${project.build.directory}/dockertmp/${docker.keycloak.volume.internal.realm-config}/vota-domain-realm.json</file>
 							<replacements>
 								<replacement>
 									<token>MAVEN_REPLACER_CITIESGENERATOR_SERVER_URL</token>
@@ -122,7 +136,7 @@
 							<alias>vota-auth</alias>
 							<name>vige/vota-auth:${project.version}</name>
 							<build>
-								<dockerFileDir>${project.build.directory}/dockertmp</dockerFileDir>
+								<dockerFileDir>${project.build.directory}/dockertmp/${realm.config.environment}</dockerFileDir>
 								<compression>gzip</compression>
 							</build>
 						</image>
