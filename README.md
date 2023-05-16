@@ -30,7 +30,7 @@ In production mode, here a sample:
 Where citiesgenerator.url, votingpapers.url, voting.url, history.url, frontend.url are the host names of the clients shown in the below guide.
 In a production environment you could move a different ssl certificate and keys. Use this command to generate it:
 ```
-keytool -genkey -alias server -storetype PKCS12 -keyalg RSA -keysize 2048 -keystore ./target/keycloak-run/wildfly-24.0.1.Final/standalone/configuration/application.keystore -validity 3650 -dname "CN=vota-auth.vige.it, OU=Vige, O=Vige, L=Rome, S=Italy, C=IT" -storepass password
+keytool -genkey -alias server -storetype PKCS12 -keyalg RSA -keysize 2048 -keystore ./auth-assembly/target/dockertmp/prod/cert/application.keystore -validity 3650 -dname "CN=vota-auth.vige.it, OU=Vige, O=Vige, L=Rome, S=Italy, C=IT" -storepass password
 ```
 
 Docker develop image
