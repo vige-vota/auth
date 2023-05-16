@@ -20,7 +20,7 @@
 
 	<groupId>it.vige</groupId>
 	<artifactId>auth</artifactId>
-	<version>1.1.1</version>
+	<version>1.1.2</version>
 	<packaging>pom</packaging>
 	<name>Vota Keycloak</name>
 	<description>Vota Keycloak Configuration</description>
@@ -56,8 +56,8 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		
-		<maven.compiler.source>19</maven.compiler.source>
-		<maven.compiler.target>19</maven.compiler.target>
+		<maven.compiler.source>20</maven.compiler.source>
+		<maven.compiler.target>20</maven.compiler.target>
 		
 		<maven.replacer.plugin.version>1.5.3</maven.replacer.plugin.version>
 		<maven.resources.plugin.version>3.3.0</maven.resources.plugin.version>
@@ -65,7 +65,7 @@
 		<maven.exec.plugin>3.1.0</maven.exec.plugin>
 		
 		<!-- Keycloak dependencies -->
-		<keycloak.version>20.0.2</keycloak.version>
+		<keycloak.version>21.1.1</keycloak.version>
 
 		<!-- Docker settings -->
 		<docker.keepRunning>true</docker.keepRunning>

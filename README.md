@@ -11,9 +11,9 @@ It covers all the following features:
 Requirements
 ------------
 
-- JDK 19
-- Maven 3.8.x
-- NPM 8.0.0
+- JDK 20
+- Maven 3.9.x
+- NPM 9.6.4
 
 
 Build
