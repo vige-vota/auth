@@ -13,7 +13,7 @@ Requirements
 
 - JDK 20
 - Maven 3.9.x
-- NPM 9.6.4
+- NPM 9.6.x
 
 
 Build
@@ -42,11 +42,11 @@ To install the docker image run the command:
 ```
 To run the image run the command:
 ```
-    docker run -p 8480:8480 -p 8400:8400 --name vota-auth vige/vota-auth:1.1.1
+    docker run -p 8480:8480 -p 8400:8400 --name vota-auth vige/vota-auth:1.1.2
 ```
 If you want start it in background mode:
 ```
-    docker run -p 8480:8480 -p 8400:8400 -d --name vota-auth vige/vota-auth:1.1.1
+    docker run -p 8480:8480 -p 8400:8400 -d --name vota-auth vige/vota-auth:1.1.2
 ```
 If you want to configure, add votes, classes and new users or approve users connect to: [http://vota-auth.vige.it:8480/admin/vota-domain/console](http://vota-auth.vige.it:8480/admin/vota-domain/console) with root/gtn in the keycloak webapp.
 If you want connect in the keycloak webapp as superuser connect to it with root/gtn
@@ -60,11 +60,11 @@ To install the docker image run the command:
 ```
 To run the image run the command:
 ```
-    docker run -p 8843:8843 --name vota-auth vige/vota-auth:1.1.1
+    docker run -p 8843:8843 --name vota-auth vige/vota-auth:1.1.2
 ```
 If you want start it in background mode:
 ```
-    docker run -p 8843:8843 -d --name vota-auth vige/vota-auth:1.1.1
+    docker run -p 8843:8843 -d --name vota-auth vige/vota-auth:1.1.2
 ```
 If you want to configure, add votes, classes and new users or approve users connect to: [https://vota-auth.vige.it:8843/admin/vota-domain/console](https://vota-auth.vige.it:8843/admin/vota-domain/console) with root/gtn in the keycloak webapp.
 If you want connect in the keycloak webapp as superuser connect to it with root/gtn
