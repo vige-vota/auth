@@ -7,12 +7,7 @@ import {
   SelectOption,
   SelectVariant,
 } from "@patternfly/react-core";
-import {
-  FormProvider,
-  UseFormReturn,
-  Controller,
-  useForm,
-} from "react-hook-form";
+import { FormProvider, UseFormReturn, Controller } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 import { FormAccess } from "../form-access/FormAccess";
@@ -45,7 +40,6 @@ export const AttributesForm = ({
     formState: { isDirty },
     handleSubmit,
   } = form;
-  const { control } = useForm<AttributeForm>();
   const [circumscriptionsOpen, setCircumscriptionsOpen] = useState(false);
   const [regionsOpen, setRegionsOpen] = useState(false);
   const [provincesOpen, setProvincesOpen] = useState(false);
@@ -74,7 +68,6 @@ export const AttributesForm = ({
       >
         <Controller
           name="circumscriptions"
-          control={control}
           defaultValue=""
           render={({ field }) => (
             <Select
@@ -116,7 +109,6 @@ export const AttributesForm = ({
       >
         <Controller
           name="regions"
-          control={control}
           defaultValue=""
           render={({ field }) => (
             <Select
@@ -158,7 +150,6 @@ export const AttributesForm = ({
       >
         <Controller
           name="provinces"
-          control={control}
           defaultValue=""
           render={({ field }) => (
             <Select
@@ -200,7 +191,6 @@ export const AttributesForm = ({
       >
         <Controller
           name="cities"
-          control={control}
           defaultValue=""
           render={({ field }) => (
             <Select
