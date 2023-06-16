@@ -18,6 +18,7 @@ ENV JAVA_OPTS -server -Xms64m -Xmx512m -XX:MetaspaceSize=96M -XX:MaxMetaspaceSiz
 
 COPY /realm-config ${docker.keycloak.volume.external.realm-config}
 COPY ${docker.keycloak.volume.internal.theme} ${docker.keycloak.volume.external.theme}
+COPY ${docker.keycloak.volume.internal.admin-ui} ${docker.keycloak.volume.external.admin-ui}
 
 EXPOSE ${docker.keycloak.port.internal}
 EXPOSE ${docker.keycloak.port.debug.internal}

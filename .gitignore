@@ -11,6 +11,9 @@ node_tmp/
 npm-debug.log.*
 node_modules
 npm
+dist
+/js/node/
+lib
 
 ######################
 # SASS

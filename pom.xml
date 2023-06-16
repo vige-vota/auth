@@ -94,10 +94,16 @@
 		<docker.keycloak.volume.internal.theme>/auth-theme.jar</docker.keycloak.volume.internal.theme>
 		<docker.keycloak.volume.external.theme>/opt/keycloak/providers/auth-theme.jar</docker.keycloak.volume.external.theme>
 
+		<!-- Keycloak Admin UI -->
+		<docker.keycloak.volume.internal.admin-ui>/keycloak-admin-ui-${keycloak.version}.jar</docker.keycloak.volume.internal.admin-ui>
+		<docker.keycloak.volume.external.admin-ui>/opt/keycloak/lib/lib/main/org.keycloak.keycloak-admin-ui-${keycloak.version}.jar</docker.keycloak.volume.external.admin-ui>
+		
 		<!-- Docker - Image saving options -->
 		<docker.keycloak.saveName>vige/vota-auth:${project.version}</docker.keycloak.saveName>
 		<docker.keycloak.saveFile>vige-vota-auth-server</docker.keycloak.saveFile>
 		<docker.keycloak.skipSave>false</docker.keycloak.skipSave>
+		<node.version>v18.15.0</node.version>
+		<frontend.plugin.version>1.12.1</frontend.plugin.version>
 		
 	</properties>
 
@@ -136,6 +142,7 @@
 	</profiles>
 
 	<modules>
+		<module>js</module>
 		<module>auth-theme</module>
 		<module>auth-assembly</module>
 	</modules>
