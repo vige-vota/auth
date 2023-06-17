@@ -83,7 +83,8 @@
     "react-router-dom": "6.10.0",
     "reactflow": "^11.7.0",
     "ui-shared": "999.0.0-SNAPSHOT",
-    "use-react-router-breadcrumbs": "^4.0.1"
+    "use-react-router-breadcrumbs": "^4.0.1",
+    "axios": "^1.4.0"
   },
   "devDependencies": {
     "@4tw/cypress-drag-drop": "^2.2.3",

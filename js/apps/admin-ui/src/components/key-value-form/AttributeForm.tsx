@@ -44,7 +44,7 @@ export const AttributesForm = ({
   const [regionsOpen, setRegionsOpen] = useState(false);
   const [provincesOpen, setProvincesOpen] = useState(false);
   const [citiesOpen, setCitiesOpen] = useState(false);
-  const locations = useCities().themes!;
+  const locations = useCities().nodes!;
 
   return (
     <FormAccess
@@ -84,13 +84,13 @@ export const AttributesForm = ({
               placeholderText="Select a theme"
               data-testid="select-circumscriptions"
             >
-              {locations.login.map((theme, idx) => (
+              {locations.circumscriptions.map((circumscription, idx) => (
                 <SelectOption
-                  selected={theme.name === field.value}
+                  selected={circumscription.name === field.value}
                   key={`circumscriptions-${idx}`}
-                  value={theme.name}
+                  value={circumscription.name}
                 >
-                  {t(`${theme.name}`)}
+                  {t(`${circumscription.name}`)}
                 </SelectOption>
               ))}
             </Select>
@@ -125,13 +125,13 @@ export const AttributesForm = ({
               placeholderText="Select a theme"
               data-testid="select-regions"
             >
-              {locations.account.map((theme, idx) => (
+              {locations.regions.map((region, idx) => (
                 <SelectOption
-                  selected={theme.name === field.value}
+                  selected={region.name === field.value}
                   key={`regions-${idx}`}
-                  value={theme.name}
+                  value={region.name}
                 >
-                  {t(`${theme.name}`)}
+                  {t(`${region.name}`)}
                 </SelectOption>
               ))}
             </Select>
@@ -166,13 +166,13 @@ export const AttributesForm = ({
               placeholderText="Select a theme"
               data-testid="select-provinces"
             >
-              {locations.admin.map((theme, idx) => (
+              {locations.provinces.map((province, idx) => (
                 <SelectOption
-                  selected={theme.name === field.value}
+                  selected={province.name === field.value}
                   key={`provinces-${idx}`}
-                  value={theme.name}
+                  value={province.name}
                 >
-                  {t(`${theme.name}`)}
+                  {t(`${province.name}`)}
                 </SelectOption>
               ))}
             </Select>
@@ -207,13 +207,13 @@ export const AttributesForm = ({
               placeholderText="Select a theme"
               data-testid="select-cities"
             >
-              {locations.email.map((theme, idx) => (
+              {locations.cities.map((city, idx) => (
                 <SelectOption
-                  selected={theme.name === field.value}
+                  selected={city.name === field.value}
                   key={`cities-${idx}`}
-                  value={theme.name}
+                  value={city.name}
                 >
-                  {t(`${theme.name}`)}
+                  {t(`${city.name}`)}
                 </SelectOption>
               ))}
             </Select>
