@@ -1,4 +1,6 @@
 import type RoleRepresentation from "@keycloak/keycloak-admin-client/lib/defs/roleRepresentation";
+import axios, { AxiosResponse } from "axios";
+import environment from "../../environment";
 import {
   ActionGroup,
   Button,
@@ -15,7 +17,6 @@ import type { KeyValueType } from "./key-value-convert";
 import { KeyValueInput } from "./KeyValueInput";
 import { HelpItem } from "ui-shared";
 import { useState } from "react";
-import { useCities } from "../../context/cities/CitiesProvider";
 
 export type AttributeForm = Omit<RoleRepresentation, "attributes"> & {
   attributes?: KeyValueType[];
@@ -27,6 +28,21 @@ export type AttributesFormProps = {
   reset?: () => void;
   fineGrainedAccess?: boolean;
 };
+
+export interface ZonesRepresentation {
+  zones?: {
+    [index: string]: ZonesFieldRepresentation[];
+  };
+}
+
+interface ZonesFieldRepresentation {
+  id?: string;
+  name?: string;
+  level?: number;
+  zones?: {
+    [index: string]: string[];
+  };
+}
 
 export const AttributesForm = ({
   form,
@@ -44,7 +60,11 @@ export const AttributesForm = ({
   const [regionsOpen, setRegionsOpen] = useState(false);
   const [provincesOpen, setProvincesOpen] = useState(false);
   const [citiesOpen, setCitiesOpen] = useState(false);
-  const locations = useCities().nodes!;
+  const [locations, setLocations] = useState<ZonesRepresentation>({});
+  const url = environment.resourceUrl + "?all";
+  axios.get(url).then((response: AxiosResponse) => {
+    setLocations(response.data);
+  });
 
   return (
     <FormAccess
