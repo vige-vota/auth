@@ -7,8 +7,8 @@
   "userIdHelperText": "Enter the unique ID of the user for this identity provider.",
   "usernameHelperText": "Enter the username of the user for this identity provider.",
   "federationLink": "UserStorageProvider this locally stored user was imported from.",
-  "circumscriptions": "Select circumscription.",
-  "regions": "Select region.",
-  "provinces": "Select province.",
-  "cities": "Select city."
+  "level0": "Select circumscription.",
+  "level1": "Select region.",
+  "level2": "Select province.",
+  "level3": "Select city."
 }

@@ -1,6 +1,4 @@
 import type RoleRepresentation from "@keycloak/keycloak-admin-client/lib/defs/roleRepresentation";
-import axios, { AxiosResponse } from "axios";
-import environment from "../../environment";
 import {
   ActionGroup,
   Button,
@@ -17,6 +15,13 @@ import type { KeyValueType } from "./key-value-convert";
 import { KeyValueInput } from "./KeyValueInput";
 import { HelpItem } from "ui-shared";
 import { useState } from "react";
+import {
+  level0,
+  level1,
+  level2,
+  level3,
+  initLocations,
+} from "../../context/cities/CitiesProvider";
 
 export type AttributeForm = Omit<RoleRepresentation, "attributes"> & {
   attributes?: KeyValueType[];
@@ -29,20 +34,71 @@ export type AttributesFormProps = {
   fineGrainedAccess?: boolean;
 };
 
-export interface ZonesRepresentation {
-  zones?: {
-    [index: string]: ZonesFieldRepresentation[];
-  };
-}
+const level0options = (value: string) => {
+  let level0options = "";
+  level0.map((idx, location) => {
+    level0options += (
+      <SelectOption
+        selected={location.name === value}
+        key={`level0-${idx}`}
+        value={location.name}
+      >
+        {t(`${location.name}`)}
+      </SelectOption>
+    );
+  });
+  return level0options;
+};
 
-interface ZonesFieldRepresentation {
-  id?: string;
-  name?: string;
-  level?: number;
-  zones?: {
-    [index: string]: string[];
-  };
-}
+const level1options = (value: string) => {
+  let level1options = "";
+  level1.map((idx, location) => {
+    level1options += (
+      <SelectOption
+        selected={location.name === value}
+        key={`level1-${idx}`}
+        value={location.name}
+      >
+        {t(`${location.name}`)}
+      </SelectOption>
+    );
+  });
+  return level1options;
+};
+
+const level2options = (value: string) => {
+  let level2options = "";
+  level2.map((idx, location) => {
+    level2options += (
+      <SelectOption
+        selected={location.name === value}
+        key={`level2-${idx}`}
+        value={location.name}
+      >
+        {t(`${location.name}`)}
+      </SelectOption>
+    );
+  });
+  return level2options;
+};
+
+const level3options = (value: string) => {
+  let level3options = "";
+  level3.map((idx, location) => {
+    level3options += (
+      <SelectOption
+        selected={location.name === value}
+        key={`level3-${idx}`}
+        value={location.name}
+      >
+        {t(`${location.name}`)}
+      </SelectOption>
+    );
+  });
+  return level3options;
+};
+
+const { t } = useTranslation("roles");
 
 export const AttributesForm = ({
   form,
@@ -50,21 +106,16 @@ export const AttributesForm = ({
   save,
   fineGrainedAccess,
 }: AttributesFormProps) => {
-  const { t } = useTranslation("roles");
   const noSaveCancelButtons = !save && !reset;
   const {
     formState: { isDirty },
     handleSubmit,
   } = form;
-  const [circumscriptionsOpen, setCircumscriptionsOpen] = useState(false);
-  const [regionsOpen, setRegionsOpen] = useState(false);
-  const [provincesOpen, setProvincesOpen] = useState(false);
-  const [citiesOpen, setCitiesOpen] = useState(false);
-  const [locations, setLocations] = useState<ZonesRepresentation>({});
-  const url = environment.resourceUrl + "?all";
-  axios.get(url).then((response: AxiosResponse) => {
-    setLocations(response.data);
-  });
+  const [level0Open, setLevel0Open] = useState(false);
+  const [level1Open, setLevel1Open] = useState(false);
+  const [level2Open, setLevel2Open] = useState(false);
+  const [level3Open, setLevel3Open] = useState(false);
+  initLocations();
 
   return (
     <FormAccess
@@ -77,165 +128,133 @@ export const AttributesForm = ({
         <KeyValueInput name="attributes" />
       </FormProvider>
       <FormGroup
-        label={t("circumscriptions")}
-        fieldId="kc-circumscriptions"
+        label={t("level0")}
+        fieldId="kc-level0"
         labelIcon={
           <HelpItem
-            helpText={t("users-help:circumscriptions")}
-            fieldLabelId="users:circumscriptions"
+            helpText={t("users-help:level0")}
+            fieldLabelId="users:level0"
           />
         }
       >
         <Controller
-          name="circumscriptions"
+          name="level0"
           defaultValue=""
           render={({ field }) => (
             <Select
-              toggleId="kc-circumscriptions-theme"
-              onToggle={() => setCircumscriptionsOpen(!circumscriptionsOpen)}
+              toggleId="kc-level0-theme"
+              onToggle={() => setLevel0Open(!level0Open)}
               onSelect={(_, value) => {
                 field.onChange(value as string);
-                setCircumscriptionsOpen(false);
+                setLevel0Open(false);
               }}
               selections={field.value}
               variant={SelectVariant.single}
-              aria-label={t("circumscriptions")}
-              isOpen={circumscriptionsOpen}
+              aria-label={t("level0")}
+              isOpen={level0Open}
               placeholderText="Select a theme"
-              data-testid="select-circumscriptions"
+              data-testid="select-level0"
             >
-              {locations.circumscriptions.map((circumscription, idx) => (
-                <SelectOption
-                  selected={circumscription.name === field.value}
-                  key={`circumscriptions-${idx}`}
-                  value={circumscription.name}
-                >
-                  {t(`${circumscription.name}`)}
-                </SelectOption>
-              ))}
+              {level0options(field.value)}
             </Select>
           )}
         />
       </FormGroup>
       <FormGroup
-        label={t("regions")}
-        fieldId="kc-regions"
+        label={t("level1")}
+        fieldId="kc-level1"
         labelIcon={
           <HelpItem
-            helpText={t("users-help:regions")}
-            fieldLabelId="users:regions"
+            helpText={t("users-help:level1")}
+            fieldLabelId="users:level1"
           />
         }
       >
         <Controller
-          name="regions"
+          name="level1"
           defaultValue=""
           render={({ field }) => (
             <Select
               toggleId="kc-account-theme"
-              onToggle={() => setRegionsOpen(!regionsOpen)}
+              onToggle={() => setLevel1Open(!level1Open)}
               onSelect={(_, value) => {
                 field.onChange(value as string);
-                setRegionsOpen(false);
+                setLevel1Open(false);
               }}
               selections={field.value}
               variant={SelectVariant.single}
-              aria-label={t("regions")}
-              isOpen={regionsOpen}
+              aria-label={t("level1")}
+              isOpen={level1Open}
               placeholderText="Select a theme"
-              data-testid="select-regions"
+              data-testid="select-level1"
             >
-              {locations.regions.map((region, idx) => (
-                <SelectOption
-                  selected={region.name === field.value}
-                  key={`regions-${idx}`}
-                  value={region.name}
-                >
-                  {t(`${region.name}`)}
-                </SelectOption>
-              ))}
+              {level1options(field.value)}
             </Select>
           )}
         />
       </FormGroup>
       <FormGroup
-        label={t("provinces")}
-        fieldId="kc-provinces"
+        label={t("level2")}
+        fieldId="kc-level2"
         labelIcon={
           <HelpItem
-            helpText={t("users-help:provinces")}
-            fieldLabelId="users:provinces"
+            helpText={t("users-help:level2")}
+            fieldLabelId="users:level2"
           />
         }
       >
         <Controller
-          name="provinces"
+          name="level2"
           defaultValue=""
           render={({ field }) => (
             <Select
-              toggleId="kc-provinces"
-              onToggle={() => setProvincesOpen(!provincesOpen)}
+              toggleId="kc-level2"
+              onToggle={() => setLevel2Open(!level2Open)}
               onSelect={(_, value) => {
                 field.onChange(value as string);
-                setProvincesOpen(false);
+                setLevel2Open(false);
               }}
               selections={field.value}
               variant={SelectVariant.single}
-              aria-label={t("provinces")}
-              isOpen={provincesOpen}
+              aria-label={t("level2")}
+              isOpen={level2Open}
               placeholderText="Select a theme"
-              data-testid="select-provinces"
+              data-testid="select-level2"
             >
-              {locations.provinces.map((province, idx) => (
-                <SelectOption
-                  selected={province.name === field.value}
-                  key={`provinces-${idx}`}
-                  value={province.name}
-                >
-                  {t(`${province.name}`)}
-                </SelectOption>
-              ))}
+              {level2options(field.value)}
             </Select>
           )}
         />
       </FormGroup>
       <FormGroup
-        label={t("cities")}
-        fieldId="kc-cities"
+        label={t("level3")}
+        fieldId="kc-level3"
         labelIcon={
           <HelpItem
-            helpText={t("users-help:cities")}
-            fieldLabelId="users:cities"
+            helpText={t("users-help:level3")}
+            fieldLabelId="users:level3"
           />
         }
       >
         <Controller
-          name="cities"
+          name="level3"
           defaultValue=""
           render={({ field }) => (
             <Select
-              toggleId="kc-cities"
-              onToggle={() => setCitiesOpen(!citiesOpen)}
+              toggleId="kc-level3"
+              onToggle={() => setLevel3Open(!level3Open)}
               onSelect={(_, value) => {
                 field.onChange(value as string);
-                setCitiesOpen(false);
+                setLevel3Open(false);
               }}
               selections={field.value}
               variant={SelectVariant.single}
-              aria-label={t("cities")}
-              isOpen={citiesOpen}
+              aria-label={t("level3")}
+              isOpen={level3Open}
               placeholderText="Select a theme"
-              data-testid="select-cities"
+              data-testid="select-level3"
             >
-              {locations.cities.map((city, idx) => (
-                <SelectOption
-                  selected={city.name === field.value}
-                  key={`cities-${idx}`}
-                  value={city.name}
-                >
-                  {t(`${city.name}`)}
-                </SelectOption>
-              ))}
+              {level3options(field.value)}
             </Select>
           )}
         />

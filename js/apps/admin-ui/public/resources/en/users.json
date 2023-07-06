@@ -172,8 +172,8 @@
   "credentialResetEmailSuccess": "Email sent to user.",
   "credentialResetEmailError": "Failed: {{error}}",
   "editUserLabel": "Edit User Label Button",
-  "circumscriptions": "Circumscription",
-  "regions": "Region",
-  "provinces": "Province",
-  "cities": "City"
+  "level0": "Circumscription",
+  "level1": "Region",
+  "level2": "Province",
+  "level3": "City"
 }
