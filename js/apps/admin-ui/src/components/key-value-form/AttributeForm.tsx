@@ -16,6 +16,7 @@ import { KeyValueInput } from "./KeyValueInput";
 import { HelpItem } from "ui-shared";
 import { useState, ReactElement } from "react";
 import {
+  ZonesRepresentation,
   ZonesFieldRepresentation,
   level0,
   level1,
@@ -35,71 +36,89 @@ export type AttributesFormProps = {
   fineGrainedAccess?: boolean;
 };
 
-const level0options = (value: string) => {
+const level0options = (
+  translation: any,
+  locations: ZonesRepresentation,
+  value: string
+) => {
   const options: ReactElement[] = [];
-  level0.arguments.map((idx: number, location: ZonesFieldRepresentation) => {
+  level0(locations).map((location: ZonesFieldRepresentation) => {
+    let idx = 0;
     options.push(
       <SelectOption
         selected={location.name === value}
-        key={`level0-${idx}`}
+        key={`level0-${idx++}`}
         value={location.name}
       >
-        {t(`${location.name}`)}
+        {translation(`${location.name}`)}
       </SelectOption>
     );
   });
   return options;
 };
 
-const level1options = (value: string) => {
+const level1options = (
+  translation: any,
+  locations: ZonesRepresentation,
+  value: string
+) => {
   const options: ReactElement[] = [];
-  level1.arguments.map((idx: number, location: ZonesFieldRepresentation) => {
+  level1(locations).map((location: ZonesFieldRepresentation) => {
+    let idx = 0;
     options.push(
       <SelectOption
         selected={location.name === value}
-        key={`level1-${idx}`}
+        key={`level1-${idx++}`}
         value={location.name}
       >
-        {t(`${location.name}`)}
+        {translation(`${location.name}`)}
       </SelectOption>
     );
   });
   return options;
 };
 
-const level2options = (value: string) => {
+const level2options = (
+  translation: any,
+  locations: ZonesRepresentation,
+  value: string
+) => {
   const options: ReactElement[] = [];
-  level2.arguments.map((idx: number, location: ZonesFieldRepresentation) => {
+  level2(locations).map((location: ZonesFieldRepresentation) => {
+    let idx = 0;
     options.push(
       <SelectOption
         selected={location.name === value}
-        key={`level2-${idx}`}
+        key={`level2-${idx++}`}
         value={location.name}
       >
-        {t(`${location.name}`)}
+        {translation(`${location.name}`)}
       </SelectOption>
     );
   });
   return options;
 };
 
-const level3options = (value: string) => {
+const level3options = (
+  translation: any,
+  locations: ZonesRepresentation,
+  value: string
+) => {
   const options: ReactElement[] = [];
-  level3.arguments.map((idx: number, location: ZonesFieldRepresentation) => {
+  level3(locations).map((location: ZonesFieldRepresentation) => {
+    let idx = 0;
     options.push(
       <SelectOption
         selected={location.name === value}
-        key={`level3-${idx}`}
+        key={`level3-${idx++}`}
         value={location.name}
       >
-        {t(`${location.name}`)}
+        {translation(`${location.name}`)}
       </SelectOption>
     );
   });
   return options;
 };
-
-const { t } = useTranslation("roles");
 
 export const AttributesForm = ({
   form,
@@ -116,7 +135,8 @@ export const AttributesForm = ({
   const [level1Open, setLevel1Open] = useState(false);
   const [level2Open, setLevel2Open] = useState(false);
   const [level3Open, setLevel3Open] = useState(false);
-  initLocations();
+  const locations = initLocations();
+  const { t } = useTranslation("roles");
 
   return (
     <FormAccess
@@ -156,7 +176,7 @@ export const AttributesForm = ({
               placeholderText="Select a theme"
               data-testid="select-level0"
             >
-              {level0options(field.value)}
+              {level0options(t, locations, field.value)}
             </Select>
           )}
         />
@@ -189,7 +209,7 @@ export const AttributesForm = ({
               placeholderText="Select a theme"
               data-testid="select-level1"
             >
-              {level1options(field.value)}
+              {level1options(t, locations, field.value)}
             </Select>
           )}
         />
@@ -222,7 +242,7 @@ export const AttributesForm = ({
               placeholderText="Select a theme"
               data-testid="select-level2"
             >
-              {level2options(field.value)}
+              {level2options(t, locations, field.value)}
             </Select>
           )}
         />
@@ -255,7 +275,7 @@ export const AttributesForm = ({
               placeholderText="Select a theme"
               data-testid="select-level3"
             >
-              {level3options(field.value)}
+              {level3options(t, locations, field.value)}
             </Select>
           )}
         />
