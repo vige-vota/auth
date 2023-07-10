@@ -14,8 +14,9 @@ import { FormAccess } from "../form-access/FormAccess";
 import type { KeyValueType } from "./key-value-convert";
 import { KeyValueInput } from "./KeyValueInput";
 import { HelpItem } from "ui-shared";
-import { useState } from "react";
+import { useState, ReactElement } from "react";
 import {
+  ZonesFieldRepresentation,
   level0,
   level1,
   level2,
@@ -35,9 +36,9 @@ export type AttributesFormProps = {
 };
 
 const level0options = (value: string) => {
-  let level0options = "";
-  level0.map((idx, location) => {
-    level0options += (
+  const options: ReactElement[] = [];
+  level0.arguments.map((idx: number, location: ZonesFieldRepresentation) => {
+    options.push(
       <SelectOption
         selected={location.name === value}
         key={`level0-${idx}`}
@@ -47,13 +48,13 @@ const level0options = (value: string) => {
       </SelectOption>
     );
   });
-  return level0options;
+  return options;
 };
 
 const level1options = (value: string) => {
-  let level1options = "";
-  level1.map((idx, location) => {
-    level1options += (
+  const options: ReactElement[] = [];
+  level1.arguments.map((idx: number, location: ZonesFieldRepresentation) => {
+    options.push(
       <SelectOption
         selected={location.name === value}
         key={`level1-${idx}`}
@@ -63,13 +64,13 @@ const level1options = (value: string) => {
       </SelectOption>
     );
   });
-  return level1options;
+  return options;
 };
 
 const level2options = (value: string) => {
-  let level2options = "";
-  level2.map((idx, location) => {
-    level2options += (
+  const options: ReactElement[] = [];
+  level2.arguments.map((idx: number, location: ZonesFieldRepresentation) => {
+    options.push(
       <SelectOption
         selected={location.name === value}
         key={`level2-${idx}`}
@@ -79,13 +80,13 @@ const level2options = (value: string) => {
       </SelectOption>
     );
   });
-  return level2options;
+  return options;
 };
 
 const level3options = (value: string) => {
-  let level3options = "";
-  level3.map((idx, location) => {
-    level3options += (
+  const options: ReactElement[] = [];
+  level3.arguments.map((idx: number, location: ZonesFieldRepresentation) => {
+    options.push(
       <SelectOption
         selected={location.name === value}
         key={`level3-${idx}`}
@@ -95,7 +96,7 @@ const level3options = (value: string) => {
       </SelectOption>
     );
   });
-  return level3options;
+  return options;
 };
 
 const { t } = useTranslation("roles");

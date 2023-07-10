@@ -26,7 +26,7 @@ export const initLocations = () => {
 };
 
 export const level0 = () => {
-  return locations.zones.values;
+  return locations.zones;
 };
 
 export const level1 = () => {
