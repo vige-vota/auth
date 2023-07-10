@@ -16,7 +16,6 @@ import { KeyValueInput } from "./KeyValueInput";
 import { HelpItem } from "ui-shared";
 import { useState, ReactElement } from "react";
 import {
-  ZonesRepresentation,
   ZonesFieldRepresentation,
   level0,
   level1,
@@ -36,81 +35,18 @@ export type AttributesFormProps = {
   fineGrainedAccess?: boolean;
 };
 
-const level0options = (
+const levelOptions = (
   translation: any,
-  locations: ZonesRepresentation,
+  locations: ZonesFieldRepresentation[],
   value: string
 ) => {
   const options: ReactElement[] = [];
-  level0(locations).map((location: ZonesFieldRepresentation) => {
+  locations.map((location: ZonesFieldRepresentation) => {
     let idx = 0;
     options.push(
       <SelectOption
         selected={location.name === value}
-        key={`level0-${idx++}`}
-        value={location.name}
-      >
-        {translation(`${location.name}`)}
-      </SelectOption>
-    );
-  });
-  return options;
-};
-
-const level1options = (
-  translation: any,
-  locations: ZonesRepresentation,
-  value: string
-) => {
-  const options: ReactElement[] = [];
-  level1(locations).map((location: ZonesFieldRepresentation) => {
-    let idx = 0;
-    options.push(
-      <SelectOption
-        selected={location.name === value}
-        key={`level1-${idx++}`}
-        value={location.name}
-      >
-        {translation(`${location.name}`)}
-      </SelectOption>
-    );
-  });
-  return options;
-};
-
-const level2options = (
-  translation: any,
-  locations: ZonesRepresentation,
-  value: string
-) => {
-  const options: ReactElement[] = [];
-  level2(locations).map((location: ZonesFieldRepresentation) => {
-    let idx = 0;
-    options.push(
-      <SelectOption
-        selected={location.name === value}
-        key={`level2-${idx++}`}
-        value={location.name}
-      >
-        {translation(`${location.name}`)}
-      </SelectOption>
-    );
-  });
-  return options;
-};
-
-const level3options = (
-  translation: any,
-  locations: ZonesRepresentation,
-  value: string
-) => {
-  const options: ReactElement[] = [];
-  level3(locations).map((location: ZonesFieldRepresentation) => {
-    let idx = 0;
-    options.push(
-      <SelectOption
-        selected={location.name === value}
-        key={`level3-${idx++}`}
+        key={`level${location.level}-${idx++}`}
         value={location.name}
       >
         {translation(`${location.name}`)}
@@ -176,7 +112,7 @@ export const AttributesForm = ({
               placeholderText="Select a theme"
               data-testid="select-level0"
             >
-              {level0options(t, locations, field.value)}
+              {levelOptions(t, level0(locations), field.value)}
             </Select>
           )}
         />
@@ -209,7 +145,7 @@ export const AttributesForm = ({
               placeholderText="Select a theme"
               data-testid="select-level1"
             >
-              {level1options(t, locations, field.value)}
+              {levelOptions(t, level1(locations), field.value)}
             </Select>
           )}
         />
@@ -242,7 +178,7 @@ export const AttributesForm = ({
               placeholderText="Select a theme"
               data-testid="select-level2"
             >
-              {level2options(t, locations, field.value)}
+              {levelOptions(t, level2(locations), field.value)}
             </Select>
           )}
         />
@@ -275,7 +211,7 @@ export const AttributesForm = ({
               placeholderText="Select a theme"
               data-testid="select-level3"
             >
-              {level3options(t, locations, field.value)}
+              {levelOptions(t, level3(locations), field.value)}
             </Select>
           )}
         />
