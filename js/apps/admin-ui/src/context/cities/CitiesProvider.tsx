@@ -1,6 +1,7 @@
 import axios, { AxiosResponse } from "axios";
 import environment from "../../environment";
 import { useState } from "react";
+import { useAdminClient, useFetch } from "../auth/AdminClient";
 
 export interface ZonesRepresentation {
   zones: ZonesFieldRepresentation[];
@@ -15,6 +16,24 @@ export interface ZonesFieldRepresentation {
 
 export const initLocations = () => {
   const url = environment.resourceUrl + "?all";
+  const { adminClient } = useAdminClient();
+  console.log(adminClient.clients);
+
+  useFetch(
+    async () => {
+      const listResources = await adminClient.clients.listResources();
+      const resource = await adminClient.clients.getResource();
+      const resourceServer = await adminClient.clients.getResourceServer();
+      return { listResources, resource, resourceServer };
+    },
+    ({ listResources, resource, resourceServer }) => {
+      console.log(listResources);
+      console.log(resource);
+      console.log(resourceServer);
+    },
+    []
+  );
+
   const [locations, setLocations] = useState<ZonesRepresentation>({
     zones: [],
   });
