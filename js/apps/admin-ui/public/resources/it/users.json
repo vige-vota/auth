@@ -1,6 +1,6 @@
 {
-  "circumscriptions": "Circoscrizione",
-  "regions": "Regione",
-  "provinces": "Provincia",
-  "cities": "Comune"
+  "level0": "Circoscrizione",
+  "level1": "Regione",
+  "level2": "Provincia",
+  "level3": "Comune"
 }

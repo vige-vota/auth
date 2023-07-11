@@ -10,5 +10,9 @@
   "level0": "Select circumscription.",
   "level1": "Select region.",
   "level2": "Select province.",
-  "level3": "Select city."
+  "level3": "Select city.",
+  "level0-ph": "Select a circumscription",
+  "level1-ph": "Select a region",
+  "level2-ph": "Select a province",
+  "level3-ph": "Select a city"
 }

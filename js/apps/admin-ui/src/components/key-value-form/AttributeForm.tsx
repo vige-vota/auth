@@ -72,7 +72,7 @@ export const AttributesForm = ({
   const [level2Open, setLevel2Open] = useState(false);
   const [level3Open, setLevel3Open] = useState(false);
   const locations = initLocations();
-  const { t } = useTranslation("roles");
+  const { t } = useTranslation("users");
 
   return (
     <FormAccess
@@ -109,7 +109,7 @@ export const AttributesForm = ({
               variant={SelectVariant.single}
               aria-label={t("level0")}
               isOpen={level0Open}
-              placeholderText="Select a theme"
+              placeholderText={t("users-help:level0-ph")}
               data-testid="select-level0"
             >
               {levelOptions(t, level0(locations), field.value)}
@@ -142,7 +142,7 @@ export const AttributesForm = ({
               variant={SelectVariant.single}
               aria-label={t("level1")}
               isOpen={level1Open}
-              placeholderText="Select a theme"
+              placeholderText={t("users-help:level1-ph")}
               data-testid="select-level1"
             >
               {levelOptions(t, level1(locations), field.value)}
@@ -175,7 +175,7 @@ export const AttributesForm = ({
               variant={SelectVariant.single}
               aria-label={t("level2")}
               isOpen={level2Open}
-              placeholderText="Select a theme"
+              placeholderText={t("users-help:level2-ph")}
               data-testid="select-level2"
             >
               {levelOptions(t, level2(locations), field.value)}
@@ -208,7 +208,7 @@ export const AttributesForm = ({
               variant={SelectVariant.single}
               aria-label={t("level3")}
               isOpen={level3Open}
-              placeholderText="Select a theme"
+              placeholderText={t("users-help:level3-ph")}
               data-testid="select-level3"
             >
               {levelOptions(t, level3(locations), field.value)}

@@ -1,6 +1,10 @@
 {
-  "circumscriptions": "Seleziona la circoscrizione.",
-  "regions": "Seleziona la regione.",
-  "provinces": "Seleziona la provincia.",
-  "cities": "Seleziona il comune."
+  "level0": "Seleziona la circoscrizione.",
+  "level1": "Seleziona la regione.",
+  "level2": "Seleziona la provincia.",
+  "level3": "Seleziona il comune.",
+  "level0-ph": "Seleziona una circoscrizione",
+  "level1-ph": "Seleziona una regione",
+  "level2-ph": "Seleziona una provincia",
+  "level3-ph": "Seleziona una città"
  }
