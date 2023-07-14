@@ -1,7 +1,7 @@
 import axios, { AxiosResponse } from "axios";
-import environment from "../../environment";
 import { useState } from "react";
 import { useAdminClient, useFetch } from "../auth/AdminClient";
+import type { ClientQuery } from "@keycloak/keycloak-admin-client/lib/resources/clients";
 
 export interface ZonesRepresentation {
   zones: ZonesFieldRepresentation[];
@@ -15,31 +15,30 @@ export interface ZonesFieldRepresentation {
 }
 
 export const initLocations = () => {
-  const url = environment.resourceUrl + "?all";
   const { adminClient } = useAdminClient();
-  console.log(adminClient.clients);
+  const [locations, setLocations] = useState<ZonesRepresentation>({
+    zones: [],
+  });
 
   useFetch(
-    async () => {
-      const listResources = await adminClient.clients.listResources();
-      const resource = await adminClient.clients.getResource();
-      const resourceServer = await adminClient.clients.getResourceServer();
-      return { listResources, resource, resourceServer };
+    () => {
+      const params: ClientQuery = {
+        max: 20,
+      };
+      params.clientId = "citiesGenerator";
+      params.search = true;
+      return adminClient.clients.find(params);
     },
-    ({ listResources, resource, resourceServer }) => {
-      console.log(listResources);
-      console.log(resource);
-      console.log(resourceServer);
+    (clients) => {
+      const rootUrl = clients[0].rootUrl;
+      const url = rootUrl + "/cities?all";
+      axios.get(url).then((response: AxiosResponse) => {
+        setLocations(response.data);
+      });
     },
     []
   );
 
-  const [locations, setLocations] = useState<ZonesRepresentation>({
-    zones: [],
-  });
-  axios.get(url).then((response: AxiosResponse) => {
-    setLocations(response.data);
-  });
   return locations;
 };
 
