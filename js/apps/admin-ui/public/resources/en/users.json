@@ -175,5 +175,8 @@
   "level0": "Circumscription",
   "level1": "Region",
   "level2": "Province",
-  "level3": "City"
+  "level3": "City",
+  "blocks": "Blocks",
+  "residence": "Residence",
+  "stamps": "Stamps"
 }

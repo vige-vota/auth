@@ -2,5 +2,8 @@
   "level0": "Circoscrizione",
   "level1": "Regione",
   "level2": "Provincia",
-  "level3": "Comune"
+  "level3": "Comune",
+  "blocks": "Blocchi Scheda",
+  "residence": "Residenza",
+  "stamps": "Timbri"
 }
