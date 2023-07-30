@@ -6,8 +6,6 @@ import {
   Select,
   SelectOption,
   SelectVariant,
-  SimpleList,
-  SimpleListItem,
 } from "@patternfly/react-core";
 import { FormProvider, UseFormReturn, Controller } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -15,6 +13,7 @@ import { useTranslation } from "react-i18next";
 import { FormAccess } from "../form-access/FormAccess";
 import type { KeyValueType } from "./key-value-convert";
 import { KeyValueInput } from "./KeyValueInput";
+import { Stamps } from "./Stamps";
 import { HelpItem } from "ui-shared";
 import { useState, ReactElement } from "react";
 import {
@@ -41,19 +40,6 @@ export type AttributesFormProps = {
   save?: (model: AttributeForm) => void;
   reset?: () => void;
   fineGrainedAccess?: boolean;
-};
-
-const levelStamps = () => {
-  const options = [
-    <SimpleListItem key="item1" isActive>
-      List item 1
-    </SimpleListItem>,
-    <SimpleListItem key="item2" component="a" href="#">
-      List item 2
-    </SimpleListItem>,
-    <SimpleListItem key="item3">List item 3</SimpleListItem>,
-  ];
-  return options;
 };
 
 const levelOptions = (
@@ -306,9 +292,9 @@ export const AttributesForm = ({
           <span className="text">{t("users:stamps")}</span>
         </legend>
         <FormGroup fieldId="kc-stamps">
-          <SimpleList aria-label="Simple List Example">
-            {levelStamps}
-          </SimpleList>
+          <FormProvider {...form}>
+            <Stamps name="attributes" />
+          </FormProvider>
         </FormGroup>
       </fieldset>
 
