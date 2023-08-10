@@ -18,12 +18,6 @@ export class StampTextBase extends Component<StampTextProps> {
     super(props);
   }
 
-  restoreText = () => {
-    const inputRef = this.props.innerRef || this.inputRef;
-    // restore the value
-    (inputRef.current as HTMLInputElement).value = String(this.props.value);
-  };
-
   render() {
     const { innerRef, value, ...props } = this.props;
 
