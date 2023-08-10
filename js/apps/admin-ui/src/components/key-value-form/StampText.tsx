@@ -1,6 +1,6 @@
 import styles from "@patternfly/react-styles/css/components/FormControl/form-control";
 import { css } from "@patternfly/react-styles";
-import { createRef, forwardRef } from "react";
+import { Component, createRef, forwardRef } from "react";
 import {
   getDefaultOUIAId,
   getOUIAProps,
@@ -43,10 +43,7 @@ interface StampTextState {
   ouiaStateId: string;
 }
 
-export class StampTextBase extends React.Component<
-  StampTextProps,
-  StampTextState
-> {
+export class StampTextBase extends Component<StampTextProps, StampTextState> {
   static displayName = "StampTextBase";
   static defaultProps: StampTextProps = {
     "aria-label": "",
