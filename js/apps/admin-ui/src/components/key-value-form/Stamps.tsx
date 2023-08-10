@@ -1,12 +1,16 @@
-import { EmptyState, Grid, GridItem, InputGroup } from "@patternfly/react-core";
-import { Fragment } from "react";
+import { Grid, GridItem, InputGroup } from "@patternfly/react-core";
+import { Fragment, forwardRef } from "react";
 import { useFieldArray, useFormContext } from "react-hook-form";
-
-import { KeycloakTextInput } from "../keycloak-text-input/KeycloakTextInput";
+import { StampText } from "./StampText";
 
 type StampsProps = {
   name: string;
 };
+
+const StampPrint = forwardRef<HTMLInputElement>(({ ...props }, ref) => {
+  return <StampText {...props} ref={ref} />;
+});
+StampPrint.displayName = "StampText";
 
 export const Stamps = ({ name }: StampsProps) => {
   const { control, register } = useFormContext();
@@ -20,14 +24,10 @@ export const Stamps = ({ name }: StampsProps) => {
     <Grid hasGutter>
       {fields.map((attribute, index) => {
         return (
-          <Fragment key={attribute.id}>
+          <Fragment key={index}>
             <GridItem span={6}>
               <InputGroup>
-                <KeycloakTextInput
-                  data-testid={`${name}-value`}
-                  {...register(`${name}.${index}.value`, { required: true })}
-                  isRequired
-                />
+                <StampPrint {...register(`${name}.${index}.value`)} />
               </InputGroup>
             </GridItem>
           </Fragment>
@@ -35,10 +35,6 @@ export const Stamps = ({ name }: StampsProps) => {
       })}
     </Grid>
   ) : (
-    <EmptyState
-      data-testid={`${name}-empty-state`}
-      className="pf-u-p-0"
-      variant="xs"
-    ></EmptyState>
+    <Grid hasGutter />
   );
 };
