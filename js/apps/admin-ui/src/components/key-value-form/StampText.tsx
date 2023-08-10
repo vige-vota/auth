@@ -1,5 +1,6 @@
 import styles from "@patternfly/react-styles/css/components/FormControl/form-control";
 import { css } from "@patternfly/react-styles";
+import { createRef, forwardRef } from "react";
 import {
   getDefaultOUIAId,
   getOUIAProps,
@@ -56,7 +57,7 @@ export class StampTextBase extends React.Component<
     isIconSprite: false,
     ouiaSafe: true,
   };
-  inputRef = React.createRef<HTMLInputElement>();
+  inputRef = createRef<HTMLInputElement>();
 
   constructor(props: StampTextProps) {
     super(props);
@@ -140,7 +141,7 @@ export class StampTextBase extends React.Component<
     typeof value === "string" ? value.replace(/\n/g, " ") : value;
 }
 
-export const StampText = React.forwardRef(
+export const StampText = forwardRef(
   (props: StampTextProps, ref: React.Ref<HTMLInputElement>) => (
     <StampTextBase {...props} innerRef={ref as React.MutableRefObject<any>} />
   )
