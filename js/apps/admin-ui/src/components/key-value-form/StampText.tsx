@@ -10,11 +10,8 @@ export interface StampTextProps
   innerRef?: React.RefObject<any>;
 }
 
-interface StampTextState {}
-
-export class StampTextBase extends Component<StampTextProps, StampTextState> {
+export class StampTextBase extends Component<StampTextProps> {
   static displayName = "StampTextBase";
-  static defaultProps: StampTextProps = {};
   inputRef = createRef<HTMLInputElement>();
 
   constructor(props: StampTextProps) {
