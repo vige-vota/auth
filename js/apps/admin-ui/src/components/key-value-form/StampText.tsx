@@ -1,9 +1,7 @@
-import { Component, createRef, forwardRef } from "react";
-import { OUIAProps } from "@patternfly/react-core/helpers";
+import { Component, forwardRef } from "react";
 
 export interface StampTextProps
-  extends Omit<React.HTMLProps<HTMLInputElement>, "ref">,
-    OUIAProps {
+  extends Omit<React.HTMLProps<HTMLInputElement>, "ref"> {
   /** Value of the text input. */
   value?: string | number;
   /** A reference object to attach to the text input box. */
@@ -12,7 +10,6 @@ export interface StampTextProps
 
 export class StampTextBase extends Component<StampTextProps> {
   static displayName = "StampTextBase";
-  inputRef = createRef<HTMLInputElement>();
 
   constructor(props: StampTextProps) {
     super(props);
@@ -21,17 +18,8 @@ export class StampTextBase extends Component<StampTextProps> {
   render() {
     const { innerRef, value, ...props } = this.props;
 
-    return (
-      <input
-        {...props}
-        value={this.sanitizeInputValue(value)}
-        ref={innerRef || this.inputRef}
-      />
-    );
+    return <input {...props} value={value} ref={innerRef} />;
   }
-
-  private sanitizeInputValue = (value: string | number | undefined) =>
-    typeof value === "string" ? value.replace(/\n/g, " ") : value;
 }
 
 export const StampText = forwardRef(
