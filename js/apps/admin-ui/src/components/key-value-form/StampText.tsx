@@ -2,7 +2,7 @@ import { Component, createRef, forwardRef } from "react";
 import { OUIAProps } from "@patternfly/react-core/helpers";
 
 export interface StampTextProps
-  extends Omit<React.HTMLProps<HTMLInputElement>, "disabled" | "ref">,
+  extends Omit<React.HTMLProps<HTMLInputElement>, "ref">,
     OUIAProps {
   /** Value of the text input. */
   value?: string | number;
