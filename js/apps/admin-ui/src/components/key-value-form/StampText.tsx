@@ -5,7 +5,7 @@ export interface StampTextProps
   /** Value of the text input. */
   value?: string | number;
   /** A reference object to attach to the text input box. */
-  innerRef?: React.RefObject<any>;
+  innerRef?: React.Ref<HTMLInputElement>;
 }
 
 export class StampTextBase extends Component<StampTextProps> {
@@ -24,7 +24,7 @@ export class StampTextBase extends Component<StampTextProps> {
 
 export const StampText = forwardRef(
   (props: StampTextProps, ref: React.Ref<HTMLInputElement>) => (
-    <StampTextBase {...props} innerRef={ref as React.MutableRefObject<any>} />
+    <StampTextBase {...props} innerRef={ref} />
   )
 );
 StampText.displayName = "StampText";
