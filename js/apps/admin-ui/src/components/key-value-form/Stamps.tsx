@@ -1,14 +1,9 @@
-import { Grid, GridItem } from "@patternfly/react-core";
-import { Fragment, Component, forwardRef } from "react";
-import { useFieldArray, useFormContext } from "react-hook-form";
-
-type StampsProps = {
-  name: string;
-};
+import { Component, forwardRef } from "react";
+import { useFormContext } from "react-hook-form";
 
 export interface StampTextProps {
   /** Value of the text input. */
-  value?: string | number;
+  value?: string;
   /** A reference object to attach to the text input box. */
   innerRef?: React.Ref<HTMLOutputElement>;
 }
@@ -17,13 +12,9 @@ export class StampTextBase extends Component<StampTextProps> {
   static displayName = "StampTextBase";
 
   render() {
-    const { innerRef, value, ...props } = this.props;
+    const { innerRef, value } = this.props;
 
-    return (
-      <output {...props} ref={innerRef}>
-        {value}
-      </output>
-    );
+    return <output ref={innerRef}>{value}</output>;
   }
 }
 
@@ -34,27 +25,8 @@ export const StampText = forwardRef(
 );
 StampText.displayName = "StampText";
 
-export const Stamps = ({ name }: StampsProps) => {
-  const { control, register } = useFormContext();
+export const Stamps = () => {
+  const { register } = useFormContext();
 
-  const { fields } = useFieldArray({
-    control,
-    name,
-  });
-
-  return fields.length > 0 ? (
-    <Grid hasGutter>
-      {fields.map((attribute, index) => {
-        return (
-          <Fragment key={index}>
-            <GridItem span={6}>
-              <StampText {...register(`${name}.${index}.value`)} />
-            </GridItem>
-          </Fragment>
-        );
-      })}
-    </Grid>
-  ) : (
-    <Grid hasGutter />
-  );
+  return <StampText {...register(`attributes.2.value`)} />;
 };

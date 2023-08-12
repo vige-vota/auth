@@ -293,7 +293,7 @@ export const AttributesForm = ({
         </legend>
         <FormGroup fieldId="kc-stamps">
           <FormProvider {...form}>
-            <Stamps name="attributes" />
+            <Stamps />
           </FormProvider>
         </FormGroup>
       </fieldset>
