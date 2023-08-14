@@ -2,19 +2,15 @@ import { Component, forwardRef } from "react";
 import { useFormContext } from "react-hook-form";
 
 export interface StampTextProps {
-  /** Value of the text input. */
-  value?: string;
   /** A reference object to attach to the text input box. */
   innerRef?: React.Ref<HTMLOutputElement>;
 }
 
 export class StampTextBase extends Component<StampTextProps> {
-  static displayName = "StampTextBase";
-
   render() {
-    const { innerRef, value } = this.props;
+    const { innerRef } = this.props;
 
-    return <output ref={innerRef}>{value}</output>;
+    return <output ref={innerRef} />;
   }
 }
 
