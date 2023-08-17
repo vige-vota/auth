@@ -6,6 +6,8 @@ import {
   Select,
   SelectOption,
   SelectVariant,
+  Grid,
+  GridItem,
 } from "@patternfly/react-core";
 import { FormProvider, UseFormReturn, Controller } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -13,9 +15,8 @@ import { useTranslation } from "react-i18next";
 import { FormAccess } from "../form-access/FormAccess";
 import type { KeyValueType } from "./key-value-convert";
 import { KeyValueInput } from "./KeyValueInput";
-import { Stamps } from "./Stamps";
 import { HelpItem } from "ui-shared";
-import { useState, ReactElement } from "react";
+import { useState, ReactElement, Fragment } from "react";
 import {
   ZonesFieldRepresentation,
   level0,
@@ -113,190 +114,253 @@ export const AttributesForm = ({
     >
       <FormProvider {...form}>
         <KeyValueInput name="attributes" />
-      </FormProvider>
 
-      <FormGroup
-        label={t("blocks")}
-        fieldId="kc-blocks"
-        labelIcon={
-          <HelpItem
-            helpText={t("users-help:blocks")}
-            fieldLabelId="users:blocks"
+        <FormGroup
+          label={t("blocks")}
+          fieldId="kc-blocks"
+          labelIcon={
+            <HelpItem
+              helpText={t("users-help:blocks")}
+              fieldLabelId="users:blocks"
+            />
+          }
+        >
+          <Controller
+            name="attributes"
+            defaultValue=""
+            render={({ field }) => {
+              const valueFromRender = field.value[0];
+              if (valueFromRender !== undefined) {
+                console.log(valueFromRender);
+                const value = Object.values(valueFromRender)[1];
+                console.log(value);
+                return (
+                  <Select
+                    toggleId="kc-blocks"
+                    onToggle={() => setBlocksOpen(!blocksOpen)}
+                    onSelect={(_, value) => {
+                      field.onChange(value as string);
+                      setBlocksOpen(false);
+                    }}
+                    selections={valueFromRender}
+                    variant={SelectVariant.single}
+                    aria-label={t("blocks")}
+                    isOpen={blocksOpen}
+                    placeholderText={t("users-help:blocks-ph")}
+                    data-testid="select-blocks"
+                  >
+                    {blockOptions(t, blocksLevel(blocks), valueFromRender)}
+                  </Select>
+                );
+              } else return <output>buuuuuublocks</output>;
+            }}
           />
-        }
-      >
-        <Controller
-          name="blocks"
-          defaultValue=""
-          render={({ field }) => (
-            <Select
-              toggleId="kc-blocks"
-              onToggle={() => setBlocksOpen(!blocksOpen)}
-              onSelect={(_, value) => {
-                field.onChange(value as string);
-                setBlocksOpen(false);
+        </FormGroup>
+
+        <fieldset className="border-top">
+          <legend>
+            <span className="text">{t("users:residence")}</span>
+          </legend>
+          <FormGroup
+            label={t("level0")}
+            fieldId="kc-level0"
+            labelIcon={
+              <HelpItem
+                helpText={t("users-help:level0")}
+                fieldLabelId="users:level0"
+              />
+            }
+          >
+            <Controller
+              name="attributes"
+              defaultValue=""
+              render={({ field }) => {
+                const valueFromRender = field.value[1];
+                console.log(valueFromRender);
+                if (valueFromRender !== undefined) {
+                  const value = Object.values(valueFromRender)[1];
+                  console.log(value);
+                  return (
+                    <Select
+                      toggleId="kc-level0"
+                      onToggle={() => setLevel0Open(!level0Open)}
+                      onSelect={(_, value) => {
+                        field.onChange(value as string);
+                        setLevel0Open(false);
+                      }}
+                      selections={valueFromRender}
+                      variant={SelectVariant.single}
+                      aria-label={t("level0")}
+                      isOpen={level0Open}
+                      placeholderText={t("users-help:level0-ph")}
+                      data-testid="select-level0"
+                    >
+                      {levelOptions(t, level0(locations), valueFromRender)}
+                    </Select>
+                  );
+                } else return <output>buuuuuu0</output>;
               }}
-              selections={field.value}
-              variant={SelectVariant.single}
-              aria-label={t("blocks")}
-              isOpen={blocksOpen}
-              placeholderText={t("users-help:blocks-ph")}
-              data-testid="select-blocks"
-            >
-              {blockOptions(t, blocksLevel(blocks), field.value)}
-            </Select>
-          )}
-        />
-      </FormGroup>
+            />
+          </FormGroup>
+          <FormGroup
+            label={t("level1")}
+            fieldId="kc-level1"
+            labelIcon={
+              <HelpItem
+                helpText={t("users-help:level1")}
+                fieldLabelId="users:level1"
+              />
+            }
+          >
+            <Controller
+              name="attributes"
+              defaultValue=""
+              render={({ field }) => {
+                const valueFromRender = field.value[1];
+                console.log(valueFromRender);
+                if (valueFromRender !== undefined) {
+                  const value = Object.values(valueFromRender)[1];
+                  console.log(value);
+                  return (
+                    <Select
+                      toggleId="kc-level1"
+                      onToggle={() => setLevel1Open(!level1Open)}
+                      onSelect={(_, value) => {
+                        field.onChange(value as string);
+                        setLevel1Open(false);
+                      }}
+                      selections={valueFromRender}
+                      variant={SelectVariant.single}
+                      aria-label={t("level1")}
+                      isOpen={level1Open}
+                      placeholderText={t("users-help:level1-ph")}
+                      data-testid="select-level1"
+                    >
+                      {levelOptions(t, level1(locations), valueFromRender)}
+                    </Select>
+                  );
+                } else return <output>buuuuuu1</output>;
+              }}
+            />
+          </FormGroup>
+          <FormGroup
+            label={t("level2")}
+            fieldId="kc-level2"
+            labelIcon={
+              <HelpItem
+                helpText={t("users-help:level2")}
+                fieldLabelId="users:level2"
+              />
+            }
+          >
+            <Controller
+              name="attributes"
+              defaultValue=""
+              render={({ field }) => {
+                const valueFromRender = field.value[1];
+                console.log(valueFromRender);
+                if (valueFromRender !== undefined) {
+                  const value = Object.values(valueFromRender)[1];
+                  console.log(value);
+                  return (
+                    <Select
+                      toggleId="kc-level2"
+                      onToggle={() => setLevel2Open(!level2Open)}
+                      onSelect={(_, value) => {
+                        field.onChange(value as string);
+                        setLevel2Open(false);
+                      }}
+                      selections={valueFromRender}
+                      variant={SelectVariant.single}
+                      aria-label={t("level2")}
+                      isOpen={level3Open}
+                      placeholderText={t("users-help:level2-ph")}
+                      data-testid="select-level2"
+                    >
+                      {levelOptions(t, level2(locations), valueFromRender)}
+                    </Select>
+                  );
+                } else return <output>buuuuuu2</output>;
+              }}
+            />
+          </FormGroup>
+          <FormGroup
+            label={t("level3")}
+            fieldId="kc-level3"
+            labelIcon={
+              <HelpItem
+                helpText={t("users-help:level3")}
+                fieldLabelId="users:level3"
+              />
+            }
+          >
+            <Controller
+              name="attributes"
+              defaultValue=""
+              render={({ field }) => {
+                const valueFromRender = field.value[1];
+                console.log(valueFromRender);
+                if (valueFromRender !== undefined) {
+                  const value = Object.values(valueFromRender)[1];
+                  console.log(value);
+                  return (
+                    <Select
+                      toggleId="kc-level3"
+                      onToggle={() => setLevel3Open(!level3Open)}
+                      onSelect={(_, value) => {
+                        field.onChange(value as string);
+                        setLevel3Open(false);
+                      }}
+                      selections={valueFromRender}
+                      variant={SelectVariant.single}
+                      aria-label={t("level3")}
+                      isOpen={level3Open}
+                      placeholderText={t("users-help:level3-ph")}
+                      data-testid="select-level3"
+                    >
+                      {levelOptions(t, level3(locations), valueFromRender)}
+                    </Select>
+                  );
+                } else return <output>buuuuuu3</output>;
+              }}
+            />
+          </FormGroup>
+        </fieldset>
 
-      <fieldset className="border-top">
-        <legend>
-          <span className="text">{t("users:residence")}</span>
-        </legend>
-        <FormGroup
-          label={t("level0")}
-          fieldId="kc-level0"
-          labelIcon={
-            <HelpItem
-              helpText={t("users-help:level0")}
-              fieldLabelId="users:level0"
+        <fieldset className="border-top">
+          <legend>
+            <span className="text">{t("users:stamps")}</span>
+          </legend>
+          <FormGroup fieldId="kc-stamps">
+            <Controller
+              name="attributes"
+              defaultValue=""
+              render={({ field }) => {
+                const valueFromRender = field.value[2];
+                console.log(valueFromRender);
+                if (valueFromRender !== undefined) {
+                  const value = `${Object.values(valueFromRender)[1]}`;
+                  console.log(value);
+                  const stamps: string[] = value.split("##");
+                  return (
+                    <Grid hasGutter>
+                      {stamps.map((attribute, index) => {
+                        return (
+                          <Fragment key={index}>
+                            <GridItem span={6}>
+                              <output key={index}>{attribute}</output>
+                            </GridItem>
+                          </Fragment>
+                        );
+                      })}
+                    </Grid>
+                  );
+                } else return <output>buuuuuu</output>;
+              }}
             />
-          }
-        >
-          <Controller
-            name="level0"
-            defaultValue=""
-            render={({ field }) => (
-              <Select
-                toggleId="kc-level0-theme"
-                onToggle={() => setLevel0Open(!level0Open)}
-                onSelect={(_, value) => {
-                  field.onChange(value as string);
-                  setLevel0Open(false);
-                }}
-                selections={field.value}
-                variant={SelectVariant.single}
-                aria-label={t("level0")}
-                isOpen={level0Open}
-                placeholderText={t("users-help:level0-ph")}
-                data-testid="select-level0"
-              >
-                {levelOptions(t, level0(locations), field.value)}
-              </Select>
-            )}
-          />
-        </FormGroup>
-        <FormGroup
-          label={t("level1")}
-          fieldId="kc-level1"
-          labelIcon={
-            <HelpItem
-              helpText={t("users-help:level1")}
-              fieldLabelId="users:level1"
-            />
-          }
-        >
-          <Controller
-            name="level1"
-            defaultValue=""
-            render={({ field }) => (
-              <Select
-                toggleId="kc-account-theme"
-                onToggle={() => setLevel1Open(!level1Open)}
-                onSelect={(_, value) => {
-                  field.onChange(value as string);
-                  setLevel1Open(false);
-                }}
-                selections={field.value}
-                variant={SelectVariant.single}
-                aria-label={t("level1")}
-                isOpen={level1Open}
-                placeholderText={t("users-help:level1-ph")}
-                data-testid="select-level1"
-              >
-                {levelOptions(t, level1(locations), field.value)}
-              </Select>
-            )}
-          />
-        </FormGroup>
-        <FormGroup
-          label={t("level2")}
-          fieldId="kc-level2"
-          labelIcon={
-            <HelpItem
-              helpText={t("users-help:level2")}
-              fieldLabelId="users:level2"
-            />
-          }
-        >
-          <Controller
-            name="level2"
-            defaultValue=""
-            render={({ field }) => (
-              <Select
-                toggleId="kc-level2"
-                onToggle={() => setLevel2Open(!level2Open)}
-                onSelect={(_, value) => {
-                  field.onChange(value as string);
-                  setLevel2Open(false);
-                }}
-                selections={field.value}
-                variant={SelectVariant.single}
-                aria-label={t("level2")}
-                isOpen={level2Open}
-                placeholderText={t("users-help:level2-ph")}
-                data-testid="select-level2"
-              >
-                {levelOptions(t, level2(locations), field.value)}
-              </Select>
-            )}
-          />
-        </FormGroup>
-        <FormGroup
-          label={t("level3")}
-          fieldId="kc-level3"
-          labelIcon={
-            <HelpItem
-              helpText={t("users-help:level3")}
-              fieldLabelId="users:level3"
-            />
-          }
-        >
-          <Controller
-            name="level3"
-            defaultValue=""
-            render={({ field }) => (
-              <Select
-                toggleId="kc-level3"
-                onToggle={() => setLevel3Open(!level3Open)}
-                onSelect={(_, value) => {
-                  field.onChange(value as string);
-                  setLevel3Open(false);
-                }}
-                selections={field.value}
-                variant={SelectVariant.single}
-                aria-label={t("level3")}
-                isOpen={level3Open}
-                placeholderText={t("users-help:level3-ph")}
-                data-testid="select-level3"
-              >
-                {levelOptions(t, level3(locations), field.value)}
-              </Select>
-            )}
-          />
-        </FormGroup>
-      </fieldset>
-
-      <fieldset className="border-top">
-        <legend>
-          <span className="text">{t("users:stamps")}</span>
-        </legend>
-        <FormGroup fieldId="kc-stamps">
-          <FormProvider {...form}>
-            <Stamps />
-          </FormProvider>
-        </FormGroup>
-      </fieldset>
+          </FormGroup>
+        </fieldset>
+      </FormProvider>
 
       {!noSaveCancelButtons && (
         <ActionGroup className="kc-attributes__action-group">
