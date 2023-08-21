@@ -23,6 +23,10 @@ import {
   level1,
   level2,
   level3,
+  level0value,
+  level1value,
+  level2value,
+  level3value,
   initLocations,
 } from "../../context/cities/CitiesProvider";
 import {
@@ -44,21 +48,17 @@ export type AttributesFormProps = {
 };
 
 const levelOptions = (
-  translation: any,
   locations: ZonesFieldRepresentation[],
-  value: string
+  value: ZonesFieldRepresentation
 ) => {
   const options: ReactElement[] = [];
   locations.map((location: ZonesFieldRepresentation) => {
-    let idx = 0;
     options.push(
       <SelectOption
-        selected={location.name === value}
-        key={`level${location.level}-${idx++}`}
+        selected={location === value}
+        key={location.id}
         value={location.name}
-      >
-        {translation(`${location.name}`)}
-      </SelectOption>
+      />
     );
   });
   return options;
@@ -131,9 +131,6 @@ export const AttributesForm = ({
             render={({ field }) => {
               const valueFromRender = field.value[0];
               if (valueFromRender !== undefined) {
-                console.log(valueFromRender);
-                const value = Object.values(valueFromRender)[1];
-                console.log(value);
                 return (
                   <Select
                     toggleId="kc-blocks"
@@ -175,30 +172,31 @@ export const AttributesForm = ({
               name="attributes"
               defaultValue=""
               render={({ field }) => {
-                const valueFromRender = field.value[1];
-                console.log(valueFromRender);
-                if (valueFromRender !== undefined) {
-                  const value = Object.values(valueFromRender)[1];
-                  console.log(value);
-                  return (
-                    <Select
-                      toggleId="kc-level0"
-                      onToggle={() => setLevel0Open(!level0Open)}
-                      onSelect={(_, value) => {
-                        field.onChange(value as string);
-                        setLevel0Open(false);
-                      }}
-                      selections={valueFromRender}
-                      variant={SelectVariant.single}
-                      aria-label={t("level0")}
-                      isOpen={level0Open}
-                      placeholderText={t("users-help:level0-ph")}
-                      data-testid="select-level0"
-                    >
-                      {levelOptions(t, level0(locations), valueFromRender)}
-                    </Select>
-                  );
-                } else return <output>buuuuuu0</output>;
+                const fieldValue = field.value;
+                let valueFromRender = fieldValue;
+                if (Array.isArray(fieldValue)) {
+                  const valueFromRenderAll = fieldValue[1];
+                  const value = `${Object.values(valueFromRenderAll)[1]}`;
+                  valueFromRender = level0value(value, locations);
+                }
+                return (
+                  <Select
+                    toggleId="kc-level0"
+                    onToggle={() => setLevel0Open(!level0Open)}
+                    onSelect={(_, value) => {
+                      field.onChange(value as string);
+                      setLevel0Open(false);
+                    }}
+                    selections={valueFromRender}
+                    variant={SelectVariant.single}
+                    aria-label={t("level0")}
+                    isOpen={level0Open}
+                    placeholderText={t("users-help:level0-ph")}
+                    data-testid="select-level0"
+                  >
+                    {levelOptions(level0(locations), valueFromRender)}
+                  </Select>
+                );
               }}
             />
           </FormGroup>
@@ -216,30 +214,31 @@ export const AttributesForm = ({
               name="attributes"
               defaultValue=""
               render={({ field }) => {
-                const valueFromRender = field.value[1];
-                console.log(valueFromRender);
-                if (valueFromRender !== undefined) {
-                  const value = Object.values(valueFromRender)[1];
-                  console.log(value);
-                  return (
-                    <Select
-                      toggleId="kc-level1"
-                      onToggle={() => setLevel1Open(!level1Open)}
-                      onSelect={(_, value) => {
-                        field.onChange(value as string);
-                        setLevel1Open(false);
-                      }}
-                      selections={valueFromRender}
-                      variant={SelectVariant.single}
-                      aria-label={t("level1")}
-                      isOpen={level1Open}
-                      placeholderText={t("users-help:level1-ph")}
-                      data-testid="select-level1"
-                    >
-                      {levelOptions(t, level1(locations), valueFromRender)}
-                    </Select>
-                  );
-                } else return <output>buuuuuu1</output>;
+                const fieldValue = field.value;
+                let valueFromRender = fieldValue;
+                if (Array.isArray(fieldValue)) {
+                  const valueFromRenderAll = fieldValue[1];
+                  const value = `${Object.values(valueFromRenderAll)[1]}`;
+                  valueFromRender = level1value(value, locations);
+                }
+                return (
+                  <Select
+                    toggleId="kc-level1"
+                    onToggle={() => setLevel1Open(!level1Open)}
+                    onSelect={(_, value) => {
+                      field.onChange(value as string);
+                      setLevel1Open(false);
+                    }}
+                    selections={valueFromRender}
+                    variant={SelectVariant.single}
+                    aria-label={t("level1")}
+                    isOpen={level1Open}
+                    placeholderText={t("users-help:level1-ph")}
+                    data-testid="select-level1"
+                  >
+                    {levelOptions(level1(locations), valueFromRender)}
+                  </Select>
+                );
               }}
             />
           </FormGroup>
@@ -257,30 +256,31 @@ export const AttributesForm = ({
               name="attributes"
               defaultValue=""
               render={({ field }) => {
-                const valueFromRender = field.value[1];
-                console.log(valueFromRender);
-                if (valueFromRender !== undefined) {
-                  const value = Object.values(valueFromRender)[1];
-                  console.log(value);
-                  return (
-                    <Select
-                      toggleId="kc-level2"
-                      onToggle={() => setLevel2Open(!level2Open)}
-                      onSelect={(_, value) => {
-                        field.onChange(value as string);
-                        setLevel2Open(false);
-                      }}
-                      selections={valueFromRender}
-                      variant={SelectVariant.single}
-                      aria-label={t("level2")}
-                      isOpen={level3Open}
-                      placeholderText={t("users-help:level2-ph")}
-                      data-testid="select-level2"
-                    >
-                      {levelOptions(t, level2(locations), valueFromRender)}
-                    </Select>
-                  );
-                } else return <output>buuuuuu2</output>;
+                const fieldValue = field.value;
+                let valueFromRender = fieldValue;
+                if (Array.isArray(fieldValue)) {
+                  const valueFromRenderAll = fieldValue[1];
+                  const value = `${Object.values(valueFromRenderAll)[1]}`;
+                  valueFromRender = level2value(value, locations);
+                }
+                return (
+                  <Select
+                    toggleId="kc-level2"
+                    onToggle={() => setLevel2Open(!level2Open)}
+                    onSelect={(_, value) => {
+                      field.onChange(value as string);
+                      setLevel2Open(false);
+                    }}
+                    selections={valueFromRender}
+                    variant={SelectVariant.single}
+                    aria-label={t("level2")}
+                    isOpen={level3Open}
+                    placeholderText={t("users-help:level2-ph")}
+                    data-testid="select-level2"
+                  >
+                    {levelOptions(level2(locations), valueFromRender)}
+                  </Select>
+                );
               }}
             />
           </FormGroup>
@@ -298,30 +298,31 @@ export const AttributesForm = ({
               name="attributes"
               defaultValue=""
               render={({ field }) => {
-                const valueFromRender = field.value[1];
-                console.log(valueFromRender);
-                if (valueFromRender !== undefined) {
-                  const value = Object.values(valueFromRender)[1];
-                  console.log(value);
-                  return (
-                    <Select
-                      toggleId="kc-level3"
-                      onToggle={() => setLevel3Open(!level3Open)}
-                      onSelect={(_, value) => {
-                        field.onChange(value as string);
-                        setLevel3Open(false);
-                      }}
-                      selections={valueFromRender}
-                      variant={SelectVariant.single}
-                      aria-label={t("level3")}
-                      isOpen={level3Open}
-                      placeholderText={t("users-help:level3-ph")}
-                      data-testid="select-level3"
-                    >
-                      {levelOptions(t, level3(locations), valueFromRender)}
-                    </Select>
-                  );
-                } else return <output>buuuuuu3</output>;
+                const fieldValue = field.value;
+                let valueFromRender = fieldValue;
+                if (Array.isArray(fieldValue)) {
+                  const valueFromRenderAll = fieldValue[1];
+                  const value = `${Object.values(valueFromRenderAll)[1]}`;
+                  valueFromRender = level3value(value, locations);
+                }
+                return (
+                  <Select
+                    toggleId="kc-level3"
+                    onToggle={() => setLevel3Open(!level3Open)}
+                    onSelect={(_, value) => {
+                      field.onChange(value as string);
+                      setLevel3Open(false);
+                    }}
+                    selections={valueFromRender}
+                    variant={SelectVariant.single}
+                    aria-label={t("level3")}
+                    isOpen={level3Open}
+                    placeholderText={t("users-help:level3-ph")}
+                    data-testid="select-level3"
+                  >
+                    {levelOptions(level3(locations), valueFromRender)}
+                  </Select>
+                );
               }}
             />
           </FormGroup>
@@ -337,10 +338,8 @@ export const AttributesForm = ({
               defaultValue=""
               render={({ field }) => {
                 const valueFromRender = field.value[2];
-                console.log(valueFromRender);
                 if (valueFromRender !== undefined) {
                   const value = `${Object.values(valueFromRender)[1]}`;
-                  console.log(value);
                   const stamps: string[] = value.split("##");
                   return (
                     <Grid hasGutter>
