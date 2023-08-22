@@ -72,56 +72,76 @@ export const level3 = (
 };
 
 export const level0value = (
-  location: string,
+  location: any,
   locations: ZonesRepresentation
 ): string => {
-  const id = location.split("-")[0];
   let level: string = "";
-  level0(locations).forEach((location) => {
-    if (location.id === id && location.name !== undefined)
-      level = location.name;
-  });
+  if (Array.isArray(location)) {
+    const valueFromRenderAll = location[1];
+    const value = `${Object.values(valueFromRenderAll)[1]}`;
+    const id = value.split("-")[0];
+    level0(locations).forEach((location) => {
+      if (location.id === id && location.name !== undefined)
+        level = location.name;
+    });
+  }
   return level;
 };
 
 export const level1value = (
-  location: string,
+  location: any,
   locations: ZonesRepresentation
 ): string => {
-  const splittedLocation = location.split("-");
-  const id = splittedLocation[0] + "-" + splittedLocation[1];
   let level: string = "";
-  level1(locations).forEach((location) => {
-    if (location.id === id && location.name !== undefined)
-      level = location.name;
-  });
+  if (Array.isArray(location)) {
+    const valueFromRenderAll = location[1];
+    const value = `${Object.values(valueFromRenderAll)[1]}`;
+    const splittedLocation = value.split("-");
+    const id = splittedLocation[0] + "-" + splittedLocation[1];
+    level1(locations).forEach((location) => {
+      if (location.id === id && location.name !== undefined)
+        level = location.name;
+    });
+  }
   return level;
 };
 
 export const level2value = (
-  location: string,
+  location: any,
   locations: ZonesRepresentation
 ): string => {
-  const splittedLocation = location.split("-");
-  const id =
-    splittedLocation[0] + "-" + splittedLocation[1] + "-" + splittedLocation[2];
   let level: string = "";
-  level2(locations).forEach((location) => {
-    if (location.id === id && location.name !== undefined)
-      level = location.name;
-  });
+  if (Array.isArray(location)) {
+    const valueFromRenderAll = location[1];
+    const value = `${Object.values(valueFromRenderAll)[1]}`;
+    const splittedLocation = value.split("-");
+    const id =
+      splittedLocation[0] +
+      "-" +
+      splittedLocation[1] +
+      "-" +
+      splittedLocation[2];
+    level2(locations).forEach((location) => {
+      if (location.id === id && location.name !== undefined)
+        level = location.name;
+    });
+  }
   return level;
 };
 
 export const level3value = (
-  location: string,
+  location: any,
   locations: ZonesRepresentation
 ): string => {
-  const id = location;
   let level: string = "";
-  level3(locations).forEach((location) => {
-    if (location.id === id && location.name !== undefined)
-      level = location.name;
-  });
+  if (Array.isArray(location)) {
+    const valueFromRenderAll = location[1];
+    const value = `${Object.values(valueFromRenderAll)[1]}`;
+    const id = value;
+    level3(locations).forEach((location) => {
+      if (location.id === id && location.name !== undefined)
+        level = location.name;
+    });
+  }
   return level;
 };

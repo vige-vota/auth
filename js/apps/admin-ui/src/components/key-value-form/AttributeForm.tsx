@@ -173,12 +173,7 @@ export const AttributesForm = ({
               defaultValue=""
               render={({ field }) => {
                 const fieldValue = field.value;
-                let valueFromRender = fieldValue;
-                if (Array.isArray(fieldValue)) {
-                  const valueFromRenderAll = fieldValue[1];
-                  const value = `${Object.values(valueFromRenderAll)[1]}`;
-                  valueFromRender = level0value(value, locations);
-                }
+                const valueFromRender = level0value(fieldValue, locations);
                 return (
                   <Select
                     toggleId="kc-level0"
@@ -194,7 +189,7 @@ export const AttributesForm = ({
                     placeholderText={t("users-help:level0-ph")}
                     data-testid="select-level0"
                   >
-                    {levelOptions(level0(locations), valueFromRender)}
+                    {levelOptions(level0(locations), fieldValue)}
                   </Select>
                 );
               }}
@@ -215,12 +210,7 @@ export const AttributesForm = ({
               defaultValue=""
               render={({ field }) => {
                 const fieldValue = field.value;
-                let valueFromRender = fieldValue;
-                if (Array.isArray(fieldValue)) {
-                  const valueFromRenderAll = fieldValue[1];
-                  const value = `${Object.values(valueFromRenderAll)[1]}`;
-                  valueFromRender = level1value(value, locations);
-                }
+                const valueFromRender = level1value(fieldValue, locations);
                 return (
                   <Select
                     toggleId="kc-level1"
@@ -236,7 +226,7 @@ export const AttributesForm = ({
                     placeholderText={t("users-help:level1-ph")}
                     data-testid="select-level1"
                   >
-                    {levelOptions(level1(locations), valueFromRender)}
+                    {levelOptions(level1(locations), fieldValue)}
                   </Select>
                 );
               }}
@@ -257,12 +247,7 @@ export const AttributesForm = ({
               defaultValue=""
               render={({ field }) => {
                 const fieldValue = field.value;
-                let valueFromRender = fieldValue;
-                if (Array.isArray(fieldValue)) {
-                  const valueFromRenderAll = fieldValue[1];
-                  const value = `${Object.values(valueFromRenderAll)[1]}`;
-                  valueFromRender = level2value(value, locations);
-                }
+                const valueFromRender = level2value(fieldValue, locations);
                 return (
                   <Select
                     toggleId="kc-level2"
@@ -274,11 +259,11 @@ export const AttributesForm = ({
                     selections={valueFromRender}
                     variant={SelectVariant.single}
                     aria-label={t("level2")}
-                    isOpen={level3Open}
+                    isOpen={level2Open}
                     placeholderText={t("users-help:level2-ph")}
                     data-testid="select-level2"
                   >
-                    {levelOptions(level2(locations), valueFromRender)}
+                    {levelOptions(level2(locations), fieldValue)}
                   </Select>
                 );
               }}
@@ -299,12 +284,7 @@ export const AttributesForm = ({
               defaultValue=""
               render={({ field }) => {
                 const fieldValue = field.value;
-                let valueFromRender = fieldValue;
-                if (Array.isArray(fieldValue)) {
-                  const valueFromRenderAll = fieldValue[1];
-                  const value = `${Object.values(valueFromRenderAll)[1]}`;
-                  valueFromRender = level3value(value, locations);
-                }
+                const valueFromRender = level3value(fieldValue, locations);
                 return (
                   <Select
                     toggleId="kc-level3"
@@ -320,7 +300,7 @@ export const AttributesForm = ({
                     placeholderText={t("users-help:level3-ph")}
                     data-testid="select-level3"
                   >
-                    {levelOptions(level3(locations), valueFromRender)}
+                    {levelOptions(level3(locations), fieldValue)}
                   </Select>
                 );
               }}
