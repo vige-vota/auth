@@ -177,7 +177,9 @@ export const AttributesForm = ({
                 return (
                   <Select
                     toggleId="kc-level0"
-                    onToggle={() => setLevel0Open(!level0Open)}
+                    onToggle={() => {
+                      setLevel0Open(!level0Open);
+                    }}
                     onSelect={(_, value) => {
                       field.onChange(value as string);
                       setLevel0Open(false);
@@ -189,7 +191,7 @@ export const AttributesForm = ({
                     placeholderText={t("users-help:level0-ph")}
                     data-testid="select-level0"
                   >
-                    {levelOptions(level0(locations), fieldValue)}
+                    {levelOptions(level0(locations), valueFromRender)}
                   </Select>
                 );
               }}
@@ -214,7 +216,9 @@ export const AttributesForm = ({
                 return (
                   <Select
                     toggleId="kc-level1"
-                    onToggle={() => setLevel1Open(!level1Open)}
+                    onToggle={() => {
+                      setLevel1Open(!level1Open);
+                    }}
                     onSelect={(_, value) => {
                       field.onChange(value as string);
                       setLevel1Open(false);
@@ -226,7 +230,7 @@ export const AttributesForm = ({
                     placeholderText={t("users-help:level1-ph")}
                     data-testid="select-level1"
                   >
-                    {levelOptions(level1(locations), fieldValue)}
+                    {levelOptions(level1(locations), valueFromRender)}
                   </Select>
                 );
               }}
@@ -251,7 +255,9 @@ export const AttributesForm = ({
                 return (
                   <Select
                     toggleId="kc-level2"
-                    onToggle={() => setLevel2Open(!level2Open)}
+                    onToggle={() => {
+                      setLevel2Open(!level2Open);
+                    }}
                     onSelect={(_, value) => {
                       field.onChange(value as string);
                       setLevel2Open(false);
@@ -263,7 +269,7 @@ export const AttributesForm = ({
                     placeholderText={t("users-help:level2-ph")}
                     data-testid="select-level2"
                   >
-                    {levelOptions(level2(locations), fieldValue)}
+                    {levelOptions(level2(locations), valueFromRender)}
                   </Select>
                 );
               }}
@@ -288,7 +294,9 @@ export const AttributesForm = ({
                 return (
                   <Select
                     toggleId="kc-level3"
-                    onToggle={() => setLevel3Open(!level3Open)}
+                    onToggle={() => {
+                      setLevel3Open(!level3Open);
+                    }}
                     onSelect={(_, value) => {
                       field.onChange(value as string);
                       setLevel3Open(false);
@@ -300,7 +308,7 @@ export const AttributesForm = ({
                     placeholderText={t("users-help:level3-ph")}
                     data-testid="select-level3"
                   >
-                    {levelOptions(level3(locations), fieldValue)}
+                    {levelOptions(level3(locations), valueFromRender)}
                   </Select>
                 );
               }}
