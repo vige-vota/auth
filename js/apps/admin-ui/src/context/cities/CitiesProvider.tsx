@@ -48,25 +48,32 @@ export const level0 = (
 };
 
 export const level1 = (
-  locations: ZonesRepresentation
+  locations: ZonesRepresentation,
+  location?: ZonesFieldRepresentation
 ): ZonesFieldRepresentation[] => {
-  return locations.zones.flatMap((e: ZonesFieldRepresentation) => e.zones);
+  return locations.zones
+    .filter((d) => (location !== undefined ? d === location : true))
+    .flatMap((e: ZonesFieldRepresentation) => e.zones);
 };
 
 export const level2 = (
-  locations: ZonesRepresentation
+  locations: ZonesRepresentation,
+  location?: ZonesFieldRepresentation
 ): ZonesFieldRepresentation[] => {
   return locations.zones
     .flatMap((e: ZonesFieldRepresentation) => e.zones)
+    .filter((d) => (location !== undefined ? d === location : true))
     .flatMap((f: ZonesFieldRepresentation) => f.zones);
 };
 
 export const level3 = (
-  locations: ZonesRepresentation
+  locations: ZonesRepresentation,
+  location?: ZonesFieldRepresentation
 ): ZonesFieldRepresentation[] => {
   return locations.zones
     .flatMap((e: ZonesFieldRepresentation) => e.zones)
     .flatMap((f: ZonesFieldRepresentation) => f.zones)
+    .filter((d) => (location !== undefined ? d === location : true))
     .flatMap((g) => g.zones);
 };
 

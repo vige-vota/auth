@@ -104,6 +104,10 @@ export const AttributesForm = ({
   const locations = initLocations();
   const blocks = initBlocks();
   const { t } = useTranslation("users");
+  let valueFromRender0: ZonesFieldRepresentation;
+  let valueFromRender1: ZonesFieldRepresentation;
+  let valueFromRender2: ZonesFieldRepresentation;
+  let valueFromRender3: ZonesFieldRepresentation;
 
   return (
     <FormAccess
@@ -173,7 +177,7 @@ export const AttributesForm = ({
               defaultValue=""
               render={({ field }) => {
                 const fieldValue = field.value;
-                const valueFromRender = level0value(fieldValue, locations);
+                valueFromRender0 = level0value(fieldValue, locations);
                 return (
                   <Select
                     toggleId="kc-level0"
@@ -184,14 +188,14 @@ export const AttributesForm = ({
                       field.onChange(value as string);
                       setLevel0Open(false);
                     }}
-                    selections={valueFromRender}
+                    selections={valueFromRender0}
                     variant={SelectVariant.single}
                     aria-label={t("level0")}
                     isOpen={level0Open}
                     placeholderText={t("users-help:level0-ph")}
                     data-testid="select-level0"
                   >
-                    {levelOptions(level0(locations), valueFromRender)}
+                    {levelOptions(level0(locations), valueFromRender0)}
                   </Select>
                 );
               }}
@@ -212,7 +216,7 @@ export const AttributesForm = ({
               defaultValue=""
               render={({ field }) => {
                 const fieldValue = field.value;
-                const valueFromRender = level1value(fieldValue, locations);
+                valueFromRender1 = level1value(fieldValue, locations);
                 return (
                   <Select
                     toggleId="kc-level1"
@@ -223,14 +227,17 @@ export const AttributesForm = ({
                       field.onChange(value as string);
                       setLevel1Open(false);
                     }}
-                    selections={valueFromRender}
+                    selections={valueFromRender1}
                     variant={SelectVariant.single}
                     aria-label={t("level1")}
                     isOpen={level1Open}
                     placeholderText={t("users-help:level1-ph")}
                     data-testid="select-level1"
                   >
-                    {levelOptions(level1(locations), valueFromRender)}
+                    {levelOptions(
+                      level1(locations, valueFromRender0),
+                      valueFromRender1
+                    )}
                   </Select>
                 );
               }}
@@ -251,7 +258,7 @@ export const AttributesForm = ({
               defaultValue=""
               render={({ field }) => {
                 const fieldValue = field.value;
-                const valueFromRender = level2value(fieldValue, locations);
+                valueFromRender2 = level2value(fieldValue, locations);
                 return (
                   <Select
                     toggleId="kc-level2"
@@ -262,14 +269,17 @@ export const AttributesForm = ({
                       field.onChange(value as string);
                       setLevel2Open(false);
                     }}
-                    selections={valueFromRender}
+                    selections={valueFromRender2}
                     variant={SelectVariant.single}
                     aria-label={t("level2")}
                     isOpen={level2Open}
                     placeholderText={t("users-help:level2-ph")}
                     data-testid="select-level2"
                   >
-                    {levelOptions(level2(locations), valueFromRender)}
+                    {levelOptions(
+                      level2(locations, valueFromRender1),
+                      valueFromRender2
+                    )}
                   </Select>
                 );
               }}
@@ -290,7 +300,7 @@ export const AttributesForm = ({
               defaultValue=""
               render={({ field }) => {
                 const fieldValue = field.value;
-                const valueFromRender = level3value(fieldValue, locations);
+                valueFromRender3 = level3value(fieldValue, locations);
                 return (
                   <Select
                     toggleId="kc-level3"
@@ -301,14 +311,17 @@ export const AttributesForm = ({
                       field.onChange(value as string);
                       setLevel3Open(false);
                     }}
-                    selections={valueFromRender}
+                    selections={valueFromRender3}
                     variant={SelectVariant.single}
                     aria-label={t("level3")}
                     isOpen={level3Open}
                     placeholderText={t("users-help:level3-ph")}
                     data-testid="select-level3"
                   >
-                    {levelOptions(level3(locations), valueFromRender)}
+                    {levelOptions(
+                      level3(locations, valueFromRender2),
+                      valueFromRender3
+                    )}
                   </Select>
                 );
               }}
