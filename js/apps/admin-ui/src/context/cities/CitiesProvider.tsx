@@ -92,6 +92,14 @@ export const level0value = (
         return `${this.name}`;
       };
     });
+  } else if (typeof location === "string" && location !== "") {
+    const id = location.split("-")[0];
+    level0(locations).forEach((loc) => {
+      if (loc.id === id) level = loc;
+      loc.toString = function locToString() {
+        return `${this.name}`;
+      };
+    });
   }
   return level;
 };
@@ -101,14 +109,28 @@ export const level1value = (
   locations: ZonesRepresentation
 ): ZonesFieldRepresentation => {
   let level: ZonesFieldRepresentation = location;
+  const levels1: ZonesFieldRepresentation[] = level1(locations);
   if (Array.isArray(location)) {
     const valueFromRenderAll = location[1];
     const value = `${Object.values(valueFromRenderAll)[1]}`;
     const splittedLocation = value.split("-");
     const id = splittedLocation[0] + "-" + splittedLocation[1];
-    level1(locations).forEach((location) => {
+    levels1.forEach((location) => {
       if (location.id === id) level = location;
       location.toString = function locToString() {
+        return `${this.name}`;
+      };
+    });
+  } else if (typeof location === "string" && location !== "") {
+    const splittedLocation = location.split("-");
+    let id1: string | undefined = "";
+    if (splittedLocation.length >= 2)
+      id1 = splittedLocation[0] + "-" + splittedLocation[1];
+    else id1 = findFirstElement(levels1, splittedLocation[0]);
+    const id = id1;
+    levels1.forEach((loc) => {
+      if (loc.id === id) level = loc;
+      loc.toString = function locToString() {
         return `${this.name}`;
       };
     });
@@ -121,6 +143,7 @@ export const level2value = (
   locations: ZonesRepresentation
 ): ZonesFieldRepresentation => {
   let level: ZonesFieldRepresentation = location;
+  const levels2: ZonesFieldRepresentation[] = level2(locations);
   if (Array.isArray(location)) {
     const valueFromRenderAll = location[1];
     const value = `${Object.values(valueFromRenderAll)[1]}`;
@@ -131,9 +154,25 @@ export const level2value = (
       splittedLocation[1] +
       "-" +
       splittedLocation[2];
-    level2(locations).forEach((location) => {
+    levels2.forEach((location) => {
       if (location.id === id) level = location;
       location.toString = function locToString() {
+        return `${this.name}`;
+      };
+    });
+  } else if (typeof location === "string" && location !== "") {
+    const splittedLocation = location.split("-");
+    let id1: string | undefined = "";
+    let id2: string | undefined = "";
+    if (splittedLocation.length >= 2)
+      id1 = splittedLocation[0] + "-" + splittedLocation[1];
+    else id1 = findFirstElement(level1(locations), splittedLocation[0]);
+    if (splittedLocation.length >= 3) id2 = id1 + "-" + splittedLocation[2];
+    else id2 = findFirstElement(levels2, id1);
+    const id = id2;
+    levels2.forEach((loc) => {
+      if (loc.id === id) level = loc;
+      loc.toString = function locToString() {
         return `${this.name}`;
       };
     });
@@ -146,16 +185,45 @@ export const level3value = (
   locations: ZonesRepresentation
 ): ZonesFieldRepresentation => {
   let level: ZonesFieldRepresentation = location;
+  const levels3: ZonesFieldRepresentation[] = level3(locations);
   if (Array.isArray(location)) {
     const valueFromRenderAll = location[1];
     const value = `${Object.values(valueFromRenderAll)[1]}`;
     const id = value;
-    level3(locations).forEach((location) => {
+    levels3.forEach((location) => {
       if (location.id === id) level = location;
       location.toString = function locToString() {
         return `${this.name}`;
       };
     });
+  } else if (typeof location === "string" && location !== "") {
+    const splittedLocation = location.split("-");
+    let id1: string | undefined = "";
+    let id2: string | undefined = "";
+    let id3: string | undefined = "";
+    if (splittedLocation.length >= 2)
+      id1 = splittedLocation[0] + "-" + splittedLocation[1];
+    else id1 = findFirstElement(level1(locations), splittedLocation[0]);
+    if (splittedLocation.length >= 3) id2 = id1 + "-" + splittedLocation[2];
+    else id2 = findFirstElement(level2(locations), id1);
+    if (splittedLocation.length >= 4) id3 = id2 + "-" + splittedLocation[3];
+    else id3 = findFirstElement(level3(locations), id2);
+    const id = id3;
+    levels3.forEach((loc) => {
+      if (loc.id === id) level = loc;
+      loc.toString = function locToString() {
+        return `${this.name}`;
+      };
+    });
   }
   return level;
+};
+
+export const findFirstElement = (
+  locations: ZonesFieldRepresentation[],
+  id?: string
+): string | undefined => {
+  return locations.filter(
+    (location) => id !== undefined && location.id?.startsWith(id)
+  )[0].id;
 };

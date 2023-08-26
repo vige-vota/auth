@@ -54,11 +54,9 @@ const levelOptions = (
   const options: ReactElement[] = [];
   locations.map((location: ZonesFieldRepresentation) => {
     options.push(
-      <SelectOption
-        selected={location === value}
-        key={location.id}
-        value={location.name}
-      />
+      <SelectOption selected={location === value} value={location.id}>
+        {location.name}
+      </SelectOption>
     );
   });
   return options;
