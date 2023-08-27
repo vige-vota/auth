@@ -343,34 +343,21 @@ export const AttributesForm = ({
                   if (valueFromRender !== undefined) {
                     const value = `${Object.values(valueFromRender)[1]}`;
                     stamps = value.split("##");
-                    return (
-                      <Grid hasGutter>
-                        {stamps.map((attribute, index) => {
-                          return (
-                            <Fragment key={index}>
-                              <GridItem span={6}>
-                                <output key={index}>{attribute}</output>
-                              </GridItem>
-                            </Fragment>
-                          );
-                        })}
-                      </Grid>
-                    );
-                  } else return <output>buuuuuu</output>;
-                } else
-                  return (
-                    <Grid hasGutter>
-                      {stamps.map((attribute, index) => {
-                        return (
-                          <Fragment key={index}>
-                            <GridItem span={6}>
-                              <output key={index}>{attribute}</output>
-                            </GridItem>
-                          </Fragment>
-                        );
-                      })}
-                    </Grid>
-                  );
+                  }
+                }
+                return (
+                  <Grid hasGutter>
+                    {stamps.map((attribute, index) => {
+                      return (
+                        <Fragment key={index}>
+                          <GridItem span={6}>
+                            <output key={index}>{attribute}</output>
+                          </GridItem>
+                        </Fragment>
+                      );
+                    })}
+                  </Grid>
+                );
               }}
             />
           </FormGroup>
