@@ -83,6 +83,8 @@ const blockOptions = (
   return options;
 };
 
+let stamps: string[] = [];
+
 export const AttributesForm = ({
   form,
   reset,
@@ -336,10 +338,26 @@ export const AttributesForm = ({
               name="attributes"
               defaultValue=""
               render={({ field }) => {
-                const valueFromRender = field.value[2];
-                if (valueFromRender !== undefined) {
-                  const value = `${Object.values(valueFromRender)[1]}`;
-                  const stamps: string[] = value.split("##");
+                if (Array.isArray(field.value)) {
+                  const valueFromRender = field.value[2];
+                  if (valueFromRender !== undefined) {
+                    const value = `${Object.values(valueFromRender)[1]}`;
+                    stamps = value.split("##");
+                    return (
+                      <Grid hasGutter>
+                        {stamps.map((attribute, index) => {
+                          return (
+                            <Fragment key={index}>
+                              <GridItem span={6}>
+                                <output key={index}>{attribute}</output>
+                              </GridItem>
+                            </Fragment>
+                          );
+                        })}
+                      </Grid>
+                    );
+                  } else return <output>buuuuuu</output>;
+                } else
                   return (
                     <Grid hasGutter>
                       {stamps.map((attribute, index) => {
@@ -353,7 +371,6 @@ export const AttributesForm = ({
                       })}
                     </Grid>
                   );
-                } else return <output>buuuuuu</output>;
               }}
             />
           </FormGroup>
