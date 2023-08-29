@@ -3,6 +3,8 @@ import { useState } from "react";
 import { useAdminClient, useFetch } from "../auth/AdminClient";
 import type { ClientQuery } from "@keycloak/keycloak-admin-client/lib/resources/clients";
 
+export const ID_ZONES = "zones---";
+
 export interface ZonesRepresentation {
   zones: ZonesFieldRepresentation[];
 }
@@ -88,6 +90,7 @@ export const level0value = (
     const value = `${Object.values(valueFromRenderAll)[1]}`;
     id = value.split("-")[0];
   } else if (typeof location === "string" && location !== "") {
+    location = location.replaceAll(ID_ZONES, "");
     id = location.split("-")[0];
   }
   level0(locations).forEach((loc) => {
@@ -112,6 +115,7 @@ export const level1value = (
     const splittedLocation = value.split("-");
     id = splittedLocation[0] + "-" + splittedLocation[1];
   } else if (typeof location === "string" && location !== "") {
+    location = location.replaceAll(ID_ZONES, "");
     const splittedLocation = location.split("-");
     let id1: string | undefined = "";
     if (splittedLocation.length >= 2)
@@ -146,6 +150,7 @@ export const level2value = (
       "-" +
       splittedLocation[2];
   } else if (typeof location === "string" && location !== "") {
+    location = location.replaceAll(ID_ZONES, "");
     const splittedLocation = location.split("-");
     let id1: string | undefined = "";
     let id2: string | undefined = "";
@@ -177,6 +182,7 @@ export const level3value = (
     const value = `${Object.values(valueFromRenderAll)[1]}`;
     id = value;
   } else if (typeof location === "string" && location !== "") {
+    location = location.replaceAll(ID_ZONES, "");
     const splittedLocation = location.split("-");
     let id1: string | undefined = "";
     let id2: string | undefined = "";

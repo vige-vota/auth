@@ -19,10 +19,12 @@ import { KeyValueInput } from "./KeyValueInput";
 import { HelpItem } from "ui-shared";
 import { useState, ReactElement, Fragment } from "react";
 import {
+  BlocksRepresentation,
   VotingPaperRepresentation,
   blocksLevel,
   blockvalue,
   initBlocks,
+  ID_BLOCK,
 } from "../../context/blocks/BlocksProvider";
 import "./attribute-form.css";
 
@@ -53,6 +55,7 @@ const blockOptions = (
 };
 
 let stamps: string[] = [];
+let blocks: BlocksRepresentation;
 
 export const AttributesForm = ({
   form,
@@ -67,7 +70,7 @@ export const AttributesForm = ({
   } = form;
   const [blocksOpen, setBlocksOpen] = useState(false);
   let valueFromRender: VotingPaperRepresentation;
-  const blocks = initBlocks();
+  blocks = initBlocks();
   const { t } = useTranslation("users");
 
   return (
@@ -95,13 +98,17 @@ export const AttributesForm = ({
             defaultValue=""
             render={({ field }) => {
               const fieldValue = field.value;
-              valueFromRender = blockvalue(fieldValue, blocks);
+              if (
+                typeof fieldValue !== "string" ||
+                fieldValue.startsWith(ID_BLOCK)
+              )
+                valueFromRender = blockvalue(fieldValue, blocks);
               return (
                 <Select
                   toggleId="kc-blocks"
                   onToggle={() => setBlocksOpen(!blocksOpen)}
                   onSelect={(_, value) => {
-                    field.onChange(value as string);
+                    field.onChange(ID_BLOCK + value);
                     setBlocksOpen(false);
                   }}
                   selections={valueFromRender}

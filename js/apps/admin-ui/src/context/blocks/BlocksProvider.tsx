@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useAdminClient, useFetch } from "../auth/AdminClient";
 import type { ClientQuery } from "@keycloak/keycloak-admin-client/lib/resources/clients";
 
+export const ID_BLOCK = "blocks---";
 export interface BlocksRepresentation {
   votingPapers: BlocksFieldRepresentation[];
 }
@@ -78,6 +79,9 @@ export const blockvalue = (
     const valueFromRenderAll = level[0];
     const value = `${Object.values(valueFromRenderAll)[1]}`;
     id = +value;
+  } else if (typeof level === "string") {
+    level = level.replaceAll(ID_BLOCK, "");
+    id = +level;
   }
   levels.forEach((block) => {
     if (block.id === id) level = block;
