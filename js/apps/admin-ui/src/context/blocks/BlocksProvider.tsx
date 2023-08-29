@@ -8,32 +8,32 @@ export interface BlocksRepresentation {
 }
 
 export interface BlocksFieldRepresentation {
-  id?: string;
+  id?: number;
   name?: string;
   votingPapers: VotingPaperRepresentation[];
 }
 
 export interface VotingPaperRepresentation {
-  id?: string;
+  id?: number;
   name?: string;
   groups?: GroupRepresentation[];
   parties?: PartyRepresentation[];
 }
 
 export interface GroupRepresentation {
-  id?: string;
+  id?: number;
   name?: string;
   parties?: PartyRepresentation[];
 }
 
 export interface PartyRepresentation {
-  id?: string;
+  id?: number;
   name?: string;
   candidates?: CandidateRepresentation[];
 }
 
 export interface CandidateRepresentation {
-  id?: string;
+  id?: number;
   name?: string;
 }
 
@@ -71,31 +71,20 @@ export const blockvalue = (
   block: any,
   blocks: BlocksRepresentation
 ): VotingPaperRepresentation => {
-  let level: VotingPaperRepresentation = block;
+  let level: any = block;
   const levels: VotingPaperRepresentation[] = blocksLevel(blocks);
-  if (Array.isArray(location)) {
-    const valueFromRenderAll = block[1];
+  let id = 0;
+  if (Array.isArray(level)) {
+    const valueFromRenderAll = level[0];
     const value = `${Object.values(valueFromRenderAll)[1]}`;
-    const id = value;
-    levels.forEach((block) => {
-      if (block.id === id) level = block;
-      block.toString = function locToString() {
-        return `${this.name}`;
-      };
-    });
-  } else if (typeof block === "string" && block !== "") {
-    const splittedBlock = block.split("-");
-    let id1: string | undefined = "";
-    if (splittedBlock.length >= 2)
-      id1 = splittedBlock[0] + "-" + splittedBlock[1];
-    const id = id1;
-    levels.forEach((loc) => {
-      if (loc.id === id) level = loc;
-      loc.toString = function locToString() {
-        return `${this.name}`;
-      };
-    });
+    id = +value;
   }
+  levels.forEach((block) => {
+    if (block.id === id) level = block;
+    block.toString = function locToString() {
+      return `${this.name}`;
+    };
+  });
   return level;
 };
 

@@ -82,25 +82,20 @@ export const level0value = (
   locations: ZonesRepresentation
 ): ZonesFieldRepresentation => {
   let level: ZonesFieldRepresentation = location;
+  let id: string | undefined = "";
   if (Array.isArray(location)) {
     const valueFromRenderAll = location[1];
     const value = `${Object.values(valueFromRenderAll)[1]}`;
-    const id = value.split("-")[0];
-    level0(locations).forEach((location) => {
-      if (location.id === id) level = location;
-      location.toString = function locToString() {
-        return `${this.name}`;
-      };
-    });
+    id = value.split("-")[0];
   } else if (typeof location === "string" && location !== "") {
-    const id = location.split("-")[0];
-    level0(locations).forEach((loc) => {
-      if (loc.id === id) level = loc;
-      loc.toString = function locToString() {
-        return `${this.name}`;
-      };
-    });
+    id = location.split("-")[0];
   }
+  level0(locations).forEach((loc) => {
+    if (loc.id === id) level = loc;
+    loc.toString = function locToString() {
+      return `${this.name}`;
+    };
+  });
   return level;
 };
 
@@ -110,31 +105,26 @@ export const level1value = (
 ): ZonesFieldRepresentation => {
   let level: ZonesFieldRepresentation = location;
   const levels1: ZonesFieldRepresentation[] = level1(locations);
+  let id: string | undefined = "";
   if (Array.isArray(location)) {
     const valueFromRenderAll = location[1];
     const value = `${Object.values(valueFromRenderAll)[1]}`;
     const splittedLocation = value.split("-");
-    const id = splittedLocation[0] + "-" + splittedLocation[1];
-    levels1.forEach((location) => {
-      if (location.id === id) level = location;
-      location.toString = function locToString() {
-        return `${this.name}`;
-      };
-    });
+    id = splittedLocation[0] + "-" + splittedLocation[1];
   } else if (typeof location === "string" && location !== "") {
     const splittedLocation = location.split("-");
     let id1: string | undefined = "";
     if (splittedLocation.length >= 2)
       id1 = splittedLocation[0] + "-" + splittedLocation[1];
     else id1 = findFirstElement(levels1, splittedLocation[0]);
-    const id = id1;
-    levels1.forEach((loc) => {
-      if (loc.id === id) level = loc;
-      loc.toString = function locToString() {
-        return `${this.name}`;
-      };
-    });
+    id = id1;
   }
+  levels1.forEach((loc) => {
+    if (loc.id === id) level = loc;
+    loc.toString = function locToString() {
+      return `${this.name}`;
+    };
+  });
   return level;
 };
 
@@ -144,22 +134,17 @@ export const level2value = (
 ): ZonesFieldRepresentation => {
   let level: ZonesFieldRepresentation = location;
   const levels2: ZonesFieldRepresentation[] = level2(locations);
+  let id: string | undefined = "";
   if (Array.isArray(location)) {
     const valueFromRenderAll = location[1];
     const value = `${Object.values(valueFromRenderAll)[1]}`;
     const splittedLocation = value.split("-");
-    const id =
+    id =
       splittedLocation[0] +
       "-" +
       splittedLocation[1] +
       "-" +
       splittedLocation[2];
-    levels2.forEach((location) => {
-      if (location.id === id) level = location;
-      location.toString = function locToString() {
-        return `${this.name}`;
-      };
-    });
   } else if (typeof location === "string" && location !== "") {
     const splittedLocation = location.split("-");
     let id1: string | undefined = "";
@@ -169,14 +154,14 @@ export const level2value = (
     else id1 = findFirstElement(level1(locations), splittedLocation[0]);
     if (splittedLocation.length >= 3) id2 = id1 + "-" + splittedLocation[2];
     else id2 = findFirstElement(levels2, id1);
-    const id = id2;
-    levels2.forEach((loc) => {
-      if (loc.id === id) level = loc;
-      loc.toString = function locToString() {
-        return `${this.name}`;
-      };
-    });
+    id = id2;
   }
+  levels2.forEach((loc) => {
+    if (loc.id === id) level = loc;
+    loc.toString = function locToString() {
+      return `${this.name}`;
+    };
+  });
   return level;
 };
 
@@ -186,16 +171,11 @@ export const level3value = (
 ): ZonesFieldRepresentation => {
   let level: ZonesFieldRepresentation = location;
   const levels3: ZonesFieldRepresentation[] = level3(locations);
+  let id: string | undefined = "";
   if (Array.isArray(location)) {
     const valueFromRenderAll = location[1];
     const value = `${Object.values(valueFromRenderAll)[1]}`;
-    const id = value;
-    levels3.forEach((location) => {
-      if (location.id === id) level = location;
-      location.toString = function locToString() {
-        return `${this.name}`;
-      };
-    });
+    id = value;
   } else if (typeof location === "string" && location !== "") {
     const splittedLocation = location.split("-");
     let id1: string | undefined = "";
@@ -208,14 +188,14 @@ export const level3value = (
     else id2 = findFirstElement(level2(locations), id1);
     if (splittedLocation.length >= 4) id3 = id2 + "-" + splittedLocation[3];
     else id3 = findFirstElement(level3(locations), id2);
-    const id = id3;
-    levels3.forEach((loc) => {
-      if (loc.id === id) level = loc;
-      loc.toString = function locToString() {
-        return `${this.name}`;
-      };
-    });
+    id = id3;
   }
+  levels3.forEach((location) => {
+    if (location.id === id) level = location;
+    location.toString = function locToString() {
+      return `${this.name}`;
+    };
+  });
   return level;
 };
 

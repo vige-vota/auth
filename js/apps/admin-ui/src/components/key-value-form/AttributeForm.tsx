@@ -19,7 +19,6 @@ import { KeyValueInput } from "./KeyValueInput";
 import { HelpItem } from "ui-shared";
 import { useState, ReactElement, Fragment } from "react";
 import {
-  BlocksFieldRepresentation,
   VotingPaperRepresentation,
   blocksLevel,
   blockvalue,
@@ -40,7 +39,7 @@ export type AttributesFormProps = {
 
 const blockOptions = (
   blocks: VotingPaperRepresentation[],
-  value?: BlocksFieldRepresentation
+  value?: VotingPaperRepresentation
 ) => {
   const options: ReactElement[] = [];
   blocks.map((block: VotingPaperRepresentation) => {
@@ -112,7 +111,7 @@ export const AttributesForm = ({
                   placeholderText={t("users-help:blocks-ph")}
                   data-testid="select-blocks"
                 >
-                  {blockOptions(blocksLevel(blocks))}
+                  {blockOptions(blocksLevel(blocks), valueFromRender)}
                 </Select>
               );
             }}
