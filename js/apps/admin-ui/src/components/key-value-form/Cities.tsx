@@ -74,7 +74,7 @@ export const Cities = () => {
               typeof fieldValue !== "string" ||
               fieldValue.startsWith(ID_ZONES)
             )
-              valueFromRender0 = level0value(fieldValue, locations);
+              valueFromRender0 = level0value(field, locations);
             return (
               <Select
                 toggleId="kc-level0"
@@ -117,7 +117,7 @@ export const Cities = () => {
               typeof fieldValue !== "string" ||
               fieldValue.startsWith(ID_ZONES)
             )
-              valueFromRender1 = level1value(fieldValue, locations);
+              valueFromRender1 = level1value(field, locations);
             return (
               <Select
                 toggleId="kc-level1"
@@ -163,7 +163,7 @@ export const Cities = () => {
               typeof fieldValue !== "string" ||
               fieldValue.startsWith(ID_ZONES)
             )
-              valueFromRender2 = level2value(fieldValue, locations);
+              valueFromRender2 = level2value(field, locations);
             return (
               <Select
                 toggleId="kc-level2"
@@ -209,7 +209,7 @@ export const Cities = () => {
               typeof fieldValue !== "string" ||
               fieldValue.startsWith(ID_ZONES)
             )
-              valueFromRender3 = level3value(fieldValue, locations);
+              valueFromRender3 = level3value(field, locations);
             return (
               <Select
                 toggleId="kc-level3"
