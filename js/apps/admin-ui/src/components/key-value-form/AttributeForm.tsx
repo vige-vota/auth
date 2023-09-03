@@ -56,7 +56,6 @@ const blockOptions = (
 
 let stamps: string[] = [];
 let blocks: BlocksRepresentation;
-let fieldAttributes: any;
 
 export const AttributesForm = ({
   form,
@@ -98,14 +97,12 @@ export const AttributesForm = ({
             name="attributes"
             defaultValue=""
             render={({ field }) => {
-              if (!fieldAttributes && field.value != "")
-                fieldAttributes = field;
               const fieldValue = field.value;
               if (
                 typeof fieldValue !== "string" ||
                 fieldValue.startsWith(ID_BLOCK)
               )
-                valueFromRender = blockvalue(fieldValue, blocks);
+                valueFromRender = blockvalue(field, blocks);
               return (
                 <Select
                   toggleId="kc-blocks"
@@ -113,9 +110,6 @@ export const AttributesForm = ({
                   onSelect={(_, value) => {
                     field.onChange(ID_BLOCK + value);
                     setBlocksOpen(false);
-                    fieldAttributes.value[0].value = value.toString();
-                    field = fieldAttributes;
-                    console.log(field);
                   }}
                   selections={valueFromRender}
                   variant={SelectVariant.single}

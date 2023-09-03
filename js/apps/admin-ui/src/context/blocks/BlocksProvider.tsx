@@ -2,6 +2,7 @@ import axios, { AxiosResponse } from "axios";
 import { useState } from "react";
 import { useAdminClient, useFetch } from "../auth/AdminClient";
 import type { ClientQuery } from "@keycloak/keycloak-admin-client/lib/resources/clients";
+import { fieldAttributes, initFieldAttributes } from "../RealmsContext";
 
 export const ID_BLOCK = "blocks---";
 export interface BlocksRepresentation {
@@ -69,10 +70,11 @@ export const initBlocks = () => {
 const flatVotingPapers: VotingPaperRepresentation[] = [];
 
 export const blockvalue = (
-  block: any,
+  field: any,
   blocks: BlocksRepresentation
 ): VotingPaperRepresentation => {
-  let level: any = block;
+  let level: any = field.value;
+  initFieldAttributes(field);
   const levels: VotingPaperRepresentation[] = blocksLevel(blocks);
   let id = 0;
   if (Array.isArray(level)) {
@@ -89,6 +91,7 @@ export const blockvalue = (
       return `${this.name}`;
     };
   });
+  if (fieldAttributes) fieldAttributes.value[0].value = id.toString();
   return level;
 };
 
