@@ -2,41 +2,40 @@ import axios, { AxiosResponse } from "axios";
 import { useState } from "react";
 import { useAdminClient, useFetch } from "../auth/AdminClient";
 import type { ClientQuery } from "@keycloak/keycloak-admin-client/lib/resources/clients";
-import { fieldAttributes, initFieldAttributes } from "../RealmsContext";
 
-export const ID_BLOCK = "blocks---";
+export const ID_BLOCK = "block";
 export interface BlocksRepresentation {
   votingPapers: BlocksFieldRepresentation[];
 }
 
 export interface BlocksFieldRepresentation {
-  id?: number;
-  name?: string;
+  id: number;
+  name: string;
   votingPapers: VotingPaperRepresentation[];
 }
 
 export interface VotingPaperRepresentation {
-  id?: number;
-  name?: string;
+  id: number;
+  name: string;
   groups?: GroupRepresentation[];
   parties?: PartyRepresentation[];
 }
 
 export interface GroupRepresentation {
-  id?: number;
-  name?: string;
+  id: number;
+  name: string;
   parties?: PartyRepresentation[];
 }
 
 export interface PartyRepresentation {
-  id?: number;
-  name?: string;
+  id: number;
+  name: string;
   candidates?: CandidateRepresentation[];
 }
 
 export interface CandidateRepresentation {
-  id?: number;
-  name?: string;
+  id: number;
+  name: string;
 }
 
 export const initBlocks = () => {
@@ -68,32 +67,6 @@ export const initBlocks = () => {
 };
 
 const flatVotingPapers: VotingPaperRepresentation[] = [];
-
-export const blockvalue = (
-  field: any,
-  blocks: BlocksRepresentation
-): VotingPaperRepresentation => {
-  let level: any = field.value;
-  initFieldAttributes(field);
-  const levels: VotingPaperRepresentation[] = blocksLevel(blocks);
-  let id = 0;
-  if (Array.isArray(level)) {
-    const valueFromRenderAll = level[0];
-    const value = `${Object.values(valueFromRenderAll)[1]}`;
-    id = +value;
-  } else if (typeof level === "string") {
-    level = level.replaceAll(ID_BLOCK, "");
-    id = +level;
-  }
-  levels.forEach((block) => {
-    if (block.id === id) level = block;
-    block.toString = function locToString() {
-      return `${this.name}`;
-    };
-  });
-  if (fieldAttributes) fieldAttributes.value[0].value = id.toString();
-  return level;
-};
 
 export const blocksLevel = (
   blocks: BlocksRepresentation
@@ -134,4 +107,17 @@ export const blocksLevel = (
     });
   }
   return flatVotingPapers;
+};
+
+export const getDescription = (
+  blocks: VotingPaperRepresentation[],
+  field: any
+): string => {
+  let description = "";
+  let id = "";
+  if (field.value !== undefined && field.value !== "")
+    id = field.value[0].value;
+  if (blocks.length > 0)
+    description = blocks.filter((block) => block.id === +id)[0].name;
+  return description;
 };

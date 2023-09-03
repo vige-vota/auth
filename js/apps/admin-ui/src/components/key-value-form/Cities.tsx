@@ -11,36 +11,29 @@ import {
   level1,
   level2,
   level3,
-  level0value,
-  level1value,
-  level2value,
-  level3value,
   initLocations,
   ID_ZONES,
+  getId,
+  getDescription,
 } from "../../context/cities/CitiesProvider";
 import { useTranslation } from "react-i18next";
 import { HelpItem } from "ui-shared";
 import { Controller } from "react-hook-form";
 
-const levelOptions = (
-  locations: ZonesFieldRepresentation[],
-  value: ZonesFieldRepresentation
-) => {
+const levelOptions = (locations: ZonesFieldRepresentation[], value: string) => {
   const options: ReactElement[] = [];
   locations.map((location: ZonesFieldRepresentation) => {
     options.push(
-      <SelectOption selected={location === value} value={location.id}>
+      <SelectOption
+        selected={location.id === getId(value, location.level)}
+        value={location.id}
+      >
         {location.name}
       </SelectOption>
     );
   });
   return options;
 };
-
-let valueFromRender0: ZonesFieldRepresentation;
-let valueFromRender1: ZonesFieldRepresentation;
-let valueFromRender2: ZonesFieldRepresentation;
-let valueFromRender3: ZonesFieldRepresentation;
 
 export const Cities = () => {
   const [level0Open, setLevel0Open] = useState(false);
@@ -69,12 +62,8 @@ export const Cities = () => {
           name="attributes"
           defaultValue=""
           render={({ field }) => {
-            const fieldValue = field.value;
-            if (
-              typeof fieldValue !== "string" ||
-              fieldValue.startsWith(ID_ZONES)
-            )
-              valueFromRender0 = level0value(field, locations);
+            const levelOptionsV = level0(locations);
+            const id = getId(field, 0);
             return (
               <Select
                 toggleId="kc-level0"
@@ -82,17 +71,18 @@ export const Cities = () => {
                   setLevel0Open(!level0Open);
                 }}
                 onSelect={(_, value) => {
-                  field.onChange(ID_ZONES + value);
+                  field.value[1] = { key: ID_ZONES, value: value };
+                  field.onChange(field.value);
                   setLevel0Open(false);
                 }}
-                selections={valueFromRender0}
+                selections={getDescription(levelOptionsV, id)}
                 variant={SelectVariant.single}
                 aria-label={t("level0")}
                 isOpen={level0Open}
                 placeholderText={t("users-help:level0-ph")}
                 data-testid="select-level0"
               >
-                {levelOptions(level0(locations), valueFromRender0)}
+                {levelOptions(levelOptionsV, id)}
               </Select>
             );
           }}
@@ -112,12 +102,8 @@ export const Cities = () => {
           name="attributes"
           defaultValue=""
           render={({ field }) => {
-            const fieldValue = field.value;
-            if (
-              typeof fieldValue !== "string" ||
-              fieldValue.startsWith(ID_ZONES)
-            )
-              valueFromRender1 = level1value(field, locations);
+            const levelOptionsV = level1(locations, field);
+            const id = getId(field, 1);
             return (
               <Select
                 toggleId="kc-level1"
@@ -125,20 +111,18 @@ export const Cities = () => {
                   setLevel1Open(!level1Open);
                 }}
                 onSelect={(_, value) => {
-                  field.onChange(ID_ZONES + value);
+                  field.value[1] = { key: ID_ZONES, value: value };
+                  field.onChange(field.value);
                   setLevel1Open(false);
                 }}
-                selections={valueFromRender1}
+                selections={getDescription(levelOptionsV, id)}
                 variant={SelectVariant.single}
                 aria-label={t("level1")}
                 isOpen={level1Open}
                 placeholderText={t("users-help:level1-ph")}
                 data-testid="select-level1"
               >
-                {levelOptions(
-                  level1(locations, valueFromRender0),
-                  valueFromRender1
-                )}
+                {levelOptions(levelOptionsV, id)}
               </Select>
             );
           }}
@@ -158,12 +142,8 @@ export const Cities = () => {
           name="attributes"
           defaultValue=""
           render={({ field }) => {
-            const fieldValue = field.value;
-            if (
-              typeof fieldValue !== "string" ||
-              fieldValue.startsWith(ID_ZONES)
-            )
-              valueFromRender2 = level2value(field, locations);
+            const levelOptionsV = level2(locations, field);
+            const id = getId(field, 2);
             return (
               <Select
                 toggleId="kc-level2"
@@ -171,20 +151,18 @@ export const Cities = () => {
                   setLevel2Open(!level2Open);
                 }}
                 onSelect={(_, value) => {
-                  field.onChange(ID_ZONES + value);
+                  field.value[1] = { key: ID_ZONES, value: value };
+                  field.onChange(field.value);
                   setLevel2Open(false);
                 }}
-                selections={valueFromRender2}
+                selections={getDescription(levelOptionsV, id)}
                 variant={SelectVariant.single}
                 aria-label={t("level2")}
                 isOpen={level2Open}
                 placeholderText={t("users-help:level2-ph")}
                 data-testid="select-level2"
               >
-                {levelOptions(
-                  level2(locations, valueFromRender1),
-                  valueFromRender2
-                )}
+                {levelOptions(levelOptionsV, id)}
               </Select>
             );
           }}
@@ -204,12 +182,8 @@ export const Cities = () => {
           name="attributes"
           defaultValue=""
           render={({ field }) => {
-            const fieldValue = field.value;
-            if (
-              typeof fieldValue !== "string" ||
-              fieldValue.startsWith(ID_ZONES)
-            )
-              valueFromRender3 = level3value(field, locations);
+            const levelOptionsV = level3(locations, field);
+            const id = getId(field, 3);
             return (
               <Select
                 toggleId="kc-level3"
@@ -217,20 +191,18 @@ export const Cities = () => {
                   setLevel3Open(!level3Open);
                 }}
                 onSelect={(_, value) => {
-                  field.onChange(ID_ZONES + value);
+                  field.value[1] = { key: ID_ZONES, value: value };
+                  field.onChange(field.value);
                   setLevel3Open(false);
                 }}
-                selections={valueFromRender3}
+                selections={getDescription(levelOptionsV, id)}
                 variant={SelectVariant.single}
                 aria-label={t("level3")}
                 isOpen={level3Open}
                 placeholderText={t("users-help:level3-ph")}
                 data-testid="select-level3"
               >
-                {levelOptions(
-                  level3(locations, valueFromRender2),
-                  valueFromRender3
-                )}
+                {levelOptions(levelOptionsV, id)}
               </Select>
             );
           }}

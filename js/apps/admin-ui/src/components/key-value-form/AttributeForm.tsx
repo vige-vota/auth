@@ -22,9 +22,9 @@ import {
   BlocksRepresentation,
   VotingPaperRepresentation,
   blocksLevel,
-  blockvalue,
   initBlocks,
   ID_BLOCK,
+  getDescription,
 } from "../../context/blocks/BlocksProvider";
 import "./attribute-form.css";
 
@@ -97,28 +97,24 @@ export const AttributesForm = ({
             name="attributes"
             defaultValue=""
             render={({ field }) => {
-              const fieldValue = field.value;
-              if (
-                typeof fieldValue !== "string" ||
-                fieldValue.startsWith(ID_BLOCK)
-              )
-                valueFromRender = blockvalue(field, blocks);
+              const blocksLevelV = blocksLevel(blocks);
               return (
                 <Select
                   toggleId="kc-blocks"
                   onToggle={() => setBlocksOpen(!blocksOpen)}
                   onSelect={(_, value) => {
-                    field.onChange(ID_BLOCK + value);
+                    field.value[0] = { key: ID_BLOCK, value: value };
+                    field.onChange(field.value);
                     setBlocksOpen(false);
                   }}
-                  selections={valueFromRender}
+                  selections={getDescription(blocksLevelV, field)}
                   variant={SelectVariant.single}
                   aria-label={t("blocks")}
                   isOpen={blocksOpen}
                   placeholderText={t("users-help:blocks-ph")}
                   data-testid="select-blocks"
                 >
-                  {blockOptions(blocksLevel(blocks), valueFromRender)}
+                  {blockOptions(blocksLevelV, valueFromRender)}
                 </Select>
               );
             }}

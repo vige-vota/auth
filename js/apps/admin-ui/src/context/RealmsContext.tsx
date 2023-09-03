@@ -6,12 +6,6 @@ import { PropsWithChildren, useCallback, useMemo, useState } from "react";
 import { createNamedContext, useRequiredContext } from "ui-shared";
 import { useAdminClient, useFetch } from "./auth/AdminClient";
 
-export let fieldAttributes: any;
-
-export const initFieldAttributes = (field: any) => {
-  if (!fieldAttributes) fieldAttributes = field;
-};
-
 type RealmsContextProps = {
   /** A list of all the realms. */
   realms: RealmRepresentation[];
