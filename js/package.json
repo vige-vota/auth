@@ -3,11 +3,9 @@
   "workspaces": [
     "libs/ui-shared",
     "libs/keycloak-admin-client",
-    "libs/keycloak-js",
     "libs/keycloak-masthead",
     "apps/account-ui",
-    "apps/admin-ui",
-    "apps/keycloak-server"
+    "apps/admin-ui"
   ],
   "scripts": {
     "prepare": "cd .. && husky install js/.husky"

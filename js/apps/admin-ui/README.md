@@ -16,10 +16,6 @@ node --version
 
 In order to run the Keycloak server you will also have to install the Java Development Kit (JDK). We recommend that you use the same version of the JDK as [required by the Keycloak server](https://github.com/keycloak/keycloak/blob/main/docs/building.md#building-from-source).
 
-### Running the Keycloak server
-
-See the instructions in the [Keycloak server app](../keycloak-server/README.md).
-
 ### Running the development server
 
 Now that the Keycloak sever is running it's time to run the development server for the Admin UI. This server is used to build the Admin UI in a manner that it can be iterated on quickly in a browser, using features such as [Hot Module Replacement (HMR)](https://vitejs.dev/guide/features.html#hot-module-replacement) and [Fast Refresh](https://www.npmjs.com/package/react-refresh).
@@ -49,10 +45,6 @@ npm run lint
 ## Integration testing with Cypress
 
 This repository contains integration tests developed with the [Cypress framework](https://www.cypress.io/).
-
-### Prerequisites
-
-Ensure the Keycloak and development server are running as [outlined previously](#running-the-keycloak-server) in this document.
 
 ### Running the tests
 

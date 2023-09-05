@@ -20,9 +20,6 @@
   "wireit": {
     "build": {
       "command": "vite build",
-      "dependencies": [
-        "../../libs/keycloak-js:build"
-      ],
       "files": [
         "src/**",
         "package.json",
@@ -34,10 +31,7 @@
       ]
     },
     "lint": {
-      "command": "eslint . --ext js,jsx,mjs,ts,tsx",
-      "dependencies": [
-        "../../libs/keycloak-js:build"
-      ]
+      "command": "eslint . --ext js,jsx,mjs,ts,tsx"
     }
   },
   "dependencies": {
