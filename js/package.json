@@ -2,7 +2,6 @@
   "name": "root",
   "workspaces": [
     "libs/ui-shared",
-    "libs/keycloak-masthead",
     "apps/admin-ui"
   ],
   "scripts": {
