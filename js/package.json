@@ -4,7 +4,6 @@
     "libs/ui-shared",
     "libs/keycloak-admin-client",
     "libs/keycloak-masthead",
-    "apps/account-ui",
     "apps/admin-ui"
   ],
   "scripts": {
