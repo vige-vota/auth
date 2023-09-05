@@ -4,7 +4,6 @@
   "exclude": [
     "node_modules",
     "dist",
-    "keycloak-theme",
-    "server"
+    "keycloak-theme"
   ]
 }
