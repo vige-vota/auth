@@ -2,7 +2,6 @@
   "name": "root",
   "workspaces": [
     "libs/ui-shared",
-    "libs/keycloak-admin-client",
     "libs/keycloak-masthead",
     "apps/admin-ui"
   ],

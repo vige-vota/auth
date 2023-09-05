@@ -16,7 +16,6 @@
 
     <modules>
         <module>apps/admin-ui</module>
-        <module>libs/keycloak-admin-client</module>
     </modules>
 
     <build>

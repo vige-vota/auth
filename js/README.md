@@ -8,7 +8,6 @@ This directory contains the UIs and related libraries of the Keycloak project wr
     │   ├── admin-ui                   # Admin UI for handling login, registration, administration, and account management
     ├── keycloak-theme                 # Maven build for the Keycloak theme
     ├── libs
-    │   ├── keycloak-admin-client      # Keycloak Admin Client library for Keycloak REST API
     │   └── keycloak-masthead          # Keycloak Masthead library for an easy way to bring applications into the Keycloak ecosystem, allow users to access
     │                                  # and manage security for those applications and manage authorization of resources
     ├── ...

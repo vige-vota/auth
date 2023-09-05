@@ -15,43 +15,35 @@
     "dev": {
       "command": "vite --host",
       "dependencies": [
-        "../../libs/ui-shared:build",
-        "../../libs/keycloak-admin-client:build"
+        "../../libs/ui-shared:build"
       ]
     },
     "preview": {
       "command": "vite preview",
       "dependencies": [
-        "../../libs/ui-shared:build",
-        "../../libs/keycloak-admin-client:build"
+        "../../libs/ui-shared:build"
       ]
     },
     "build": {
       "command": "vite build",
       "dependencies": [
-        "../../libs/ui-shared:build",
-        "../../libs/keycloak-admin-client:build"
+        "../../libs/ui-shared:build"
       ]
     },
     "lint": {
       "command": "eslint . --ext js,jsx,mjs,ts,tsx",
       "dependencies": [
-        "../../libs/ui-shared:build",
-        "../../libs/keycloak-admin-client:build"
+        "../../libs/ui-shared:build"
       ]
     },
     "test": {
       "command": "vitest",
       "dependencies": [
-        "../../libs/ui-shared:build",
-        "../../libs/keycloak-admin-client:build"
+        "../../libs/ui-shared:build"
       ]
     },
     "cy:check-types": {
-      "command": "tsc --project cypress/tsconfig.json",
-      "dependencies": [
-        "../../libs/keycloak-admin-client:build"
-      ]
+      "command": "tsc --project cypress/tsconfig.json"
     }
   },
   "dependencies": {
