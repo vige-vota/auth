@@ -8,7 +8,7 @@
 		<relativePath>../../pom.xml</relativePath>
 	</parent>
 	<artifactId>keycloak-admin-ui</artifactId>
-	<name>Keycloak Admin UI</name>
+	<name>Vota Keycloak Admin UI</name>
 	<description>The user inferface to administrate the Keycloak server.</description>
 	<build>
 		<resources>
@@ -36,12 +36,23 @@
 						</goals>
 						<configuration>
         					<tasks>
-								<get src="https://github.com/keycloak/keycloak/archive/refs/tags/21.1.1.zip"
-									dest="${project.build.directory}/21.1.1.zip"
+								<mkdir dir="../../libs/ui-shared"/>
+								<get src="https://github.com/keycloak/keycloak/archive/refs/tags/${project.version}.zip"
+									dest="${project.build.directory}/${project.version}.zip"
 									verbose="false"
-									usetimestamp="true" />
-								<unzip src="${project.build.directory}/21.1.1.zip" dest="${project.build.directory}" />
-								<copydir src="${project.build.directory}/keycloak-21.1.1/js/libs/ui-shared" dest="../../libs/ui-shared"/>
+									usetimestamp="true" 
+									skipexisting="true" />
+								<unzip src="${project.build.directory}/${project.version}.zip" dest="${project.build.directory}" overwrite="false" />
+								<copy todir="../../libs/ui-shared" overwrite="true">
+									<fileset dir="${project.build.directory}/keycloak-${project.version}/js/libs/ui-shared"/>
+								</copy>
+								<copy todir="${project.basedir}" overwrite="true">
+									<fileset dir="${project.build.directory}/keycloak-${project.version}/js/apps/admin-ui">
+										<exclude name="package.json"/>
+										<exclude name="pom.xml"/>
+										<exclude name="README.md"/>
+									</fileset>
+								</copy>
           					</tasks>
 						</configuration>
 					</execution>

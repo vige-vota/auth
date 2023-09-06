@@ -11,7 +11,7 @@
     <artifactId>keycloak-js-parent</artifactId>
     <packaging>pom</packaging>
 
-    <name>Keycloak JavaScript Parent</name>
+    <name>Vota Keycloak JavaScript Parent</name>
     <description>Parent of all JavaScript related code, sets up Node.js and NPM and installs dependencies for all projects in the workspace.</description>
 
     <modules>
