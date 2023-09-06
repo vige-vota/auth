@@ -51,6 +51,11 @@
 										<exclude name="package.json"/>
 										<exclude name="pom.xml"/>
 										<exclude name="README.md"/>
+										<exclude name="public/resources/it/users.json"/>
+										<exclude name="public/resources/it/users-help.json"/>
+										<exclude name="public/resources/en/users.json"/>
+										<exclude name="public/resources/en/users-help.json"/>
+										<exclude name="src/components/key-value-form/AttributeForm.tsx"/>
 									</fileset>
 								</copy>
           					</tasks>

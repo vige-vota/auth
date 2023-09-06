@@ -150,6 +150,8 @@ keycloak-admin-ui
 !keycloak-admin-ui/src/context/blocks
 !keycloak-admin-ui/src/context/cities
 !keycloak-admin-ui/pom.xml
+!keycloak-admin-ui/package.json
+!keycloak-admin-ui/README.md
 !keycloak-admin-ui/public/resources/it/users.json
 !keycloak-admin-ui/public/resources/it/users-help.json
 !keycloak-admin-ui/public/resources/en/users.json
