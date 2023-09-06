@@ -149,5 +149,6 @@ keycloak-admin-ui
 !keycloak-admin-ui/src/components/key-value-form/Cities.tsa
 !keycloak-admin-ui/src/context/blocks
 !keycloak-admin-ui/src/context/cities
-keycloak-admin-ui/pom.xml
-
+!keycloak-admin-ui/pom.xml
+!keycloak-admin-ui/public/resources/it
+!keycloak-admin-ui/public/resources/en
