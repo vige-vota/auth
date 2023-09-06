@@ -147,6 +147,7 @@ Desktop.ini
 !/js/pom.xml
 !/js/package.json
 !/js/package-lock.json
+!/js/README.md
 !/js/apps/admin-ui/src/components/key-value-form/AttributeForm.tsx
 !/js/apps/admin-ui/src/components/key-value-form/Cities.tsx
 !/js/apps/admin-ui/src/components/key-value-form/attribute-form.css
