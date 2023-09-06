@@ -146,7 +146,7 @@ Desktop.ini
 libs
 admin-ui
 !admin-ui/src/components/key-value-form/AttributeForm.tsx
-!admin-ui/src/components/key-value-form/Cities.tsa
+!admin-ui/src/components/key-value-form/Cities.tsx
 !admin-ui/src/components/key-value-form/attribute-form.css
 !admin-ui/src/context/blocks
 !admin-ui/src/context/cities
