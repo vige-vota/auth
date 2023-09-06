@@ -6,5 +6,15 @@
   "groups": "Groups where the user has membership. To leave a group, select it and click Leave.",
   "userIdHelperText": "Enter the unique ID of the user for this identity provider.",
   "usernameHelperText": "Enter the username of the user for this identity provider.",
-  "federationLink": "UserStorageProvider this locally stored user was imported from."
+  "federationLink": "UserStorageProvider this locally stored user was imported from.",
+  "level0": "Select circumscription.",
+  "level1": "Select region.",
+  "level2": "Select province.",
+  "level3": "Select city.",
+  "level0-ph": "Select a circumscription...",
+  "level1-ph": "Select a region...",
+  "level2-ph": "Select a province...",
+  "level3-ph": "Select a city...",
+  "blocks": "Select a block",
+  "blocks-ph": "Select a block..."
 }
