@@ -117,7 +117,7 @@ export const getDescription = (
   let id = "";
   if (field.value !== undefined && field.value !== "")
     id = field.value[0].value;
-  if (blocks.length > 0)
+  if (blocks.length > 0 && id != "-1")
     description = blocks.filter((block) => block.id === +id)[0].name;
   return description;
 };
