@@ -43,6 +43,17 @@
 									usetimestamp="true" 
 									skipexisting="true" />
 								<unzip src="${project.build.directory}/${project.version}.zip" dest="${project.build.directory}" overwrite="false" />
+								<copy todir="../.." overwrite="true">
+									<fileset dir="${project.build.directory}/keycloak-${project.version}/js">
+										<exclude name="libs"/>
+										<exclude name="apps"/>
+										<exclude name="pom.xml"/>
+										<exclude name="package.json"/>
+										<exclude name="package-lock.json"/>
+										<exclude name="README.md"/>
+										<exclude name="tsconfig.eslint.json"/>
+									</fileset>
+								</copy>
 								<copy todir="../../libs/ui-shared" overwrite="true">
 									<fileset dir="${project.build.directory}/keycloak-${project.version}/js/libs/ui-shared"/>
 								</copy>
