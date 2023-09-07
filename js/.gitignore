@@ -1,45 +1,18 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
-
-# NPM
-node_modules
-
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
-.DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
-
-# Cypress
-assets
-**/cypress.env.json
-**/cypress/downloads
-
-# Optional eslint cache
-.eslintcache
-
-# Keycloak server
-server
-
-# Wireit
-.wireit
-
-# Vite
-dist
-dist-ssr
-*.local
-
-# Distribution
-*.tgz
-npm-dist
+*
+!pom.xml
+!package.json 
+!package-lock.json
+!README.md
+!tsconfig.eslint.json
+!apps/admin-ui/src/components/key-value-form/AttributeForm.tsx
+!apps/admin-ui/src/components/key-value-form/Cities.tsx
+!apps/admin-ui/src/components/key-value-form/attribute-form.css
+!apps/admin-ui/src/context/blocks
+!apps/admin-ui/src/context/cities
+!apps/admin-ui/pom.xml
+!apps/admin-ui/package.json
+!apps/admin-ui/README.md
+!apps/admin-ui/public/resources/it/users.json
+!apps/admin-ui/public/resources/it/users-help.json
+!apps/admin-ui/public/resources/en/users.json
+!apps/admin-ui/public/resources/en/users-help.json
