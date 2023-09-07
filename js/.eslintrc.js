@@ -1,15 +1,7 @@
 /** @type {import("eslint").Linter.Config } */
 module.exports = {
   root: true,
-  ignorePatterns: [
-    "node_modules",
-    "dist",
-    "keycloak-theme",
-    "server",
-    // Keycloak JS follows a completely different and outdated style, so we'll exclude it for now.
-    // TODO: Eventually align the code-style for Keycloak JS.
-    "libs/keycloak-js",
-  ],
+  ignorePatterns: ["node_modules", "dist", "keycloak-theme"],
   parserOptions: {
     tsconfigRootDir: __dirname,
     project: "./tsconfig.eslint.json",

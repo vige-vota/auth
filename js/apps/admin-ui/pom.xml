@@ -52,6 +52,7 @@
 										<exclude name="package-lock.json"/>
 										<exclude name="README.md"/>
 										<exclude name="tsconfig.eslint.json"/>
+										<exclude name=".eslintrc.js"/>
 									</fileset>
 								</copy>
 								<copy todir="../../libs/ui-shared" overwrite="true">

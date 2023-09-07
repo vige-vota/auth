@@ -4,6 +4,7 @@
 !package-lock.json
 !README.md
 !tsconfig.eslint.json
+!.eslintrc.js
 !apps/admin-ui/src/components/key-value-form/AttributeForm.tsx
 !apps/admin-ui/src/components/key-value-form/Cities.tsx
 !apps/admin-ui/src/components/key-value-form/attribute-form.css
