@@ -4,12 +4,54 @@
 	<parent>
 		<artifactId>keycloak-js-parent</artifactId>
 		<groupId>org.keycloak</groupId>
-		<version>21.1.1</version>
+		<version>22.0.1</version>
 		<relativePath>../../pom.xml</relativePath>
 	</parent>
 	<artifactId>keycloak-admin-ui</artifactId>
 	<name>Vota Keycloak Admin UI</name>
 	<description>The user inferface to administrate the Keycloak server.</description>
+
+    <profiles>
+        <profile>
+            <id>withoutTranslations</id>
+            <activation>
+                <property>
+                    <name>skipCommunityTranslations</name>
+                </property>
+            </activation>
+            <build>
+                <resources>
+                    <resource>
+                        <directory>dist</directory>
+                        <targetPath>theme/keycloak.v2/admin/resources</targetPath>
+                        <includes>
+                            <include>locales/en/**</include>
+                        </includes>
+                    </resource>
+                </resources>
+            </build>
+        </profile>
+        <profile>
+            <id>withTranslations</id>
+            <activation>
+                <property>
+                    <name>!skipCommunityTranslations</name>
+                </property>
+            </activation>
+            <build>
+                <resources>
+                    <resource>
+                        <directory>dist</directory>
+                        <targetPath>theme/keycloak.v2/admin/resources</targetPath>
+                        <includes>
+                            <include>locales/**</include>
+                        </includes>
+                    </resource>
+                </resources>
+            </build>
+        </profile>
+    </profiles>
+
 	<build>
 		<resources>
 			<resource>
@@ -20,6 +62,7 @@
 				<targetPath>theme/keycloak.v2/admin/resources</targetPath>
 				<excludes>
 					<exclude>index.html</exclude>
+                    <exclude>locales/**</exclude>
 				</excludes>
 			</resource>
 		</resources>
@@ -48,8 +91,7 @@
 										<exclude name="**/libs/**"/>
 										<exclude name="**/apps/**"/>
 										<exclude name="pom.xml"/>
-										<exclude name="package.json"/>
-										<exclude name="package-lock.json"/>
+										<exclude name="pnpm-lock.yaml"/>
 										<exclude name="README.md"/>
 										<exclude name="tsconfig.eslint.json"/>
 										<exclude name=".eslintrc.js"/>
@@ -85,7 +127,7 @@
 							<goal>npm</goal>
 						</goals>
 						<configuration>
-							<arguments>run build --workspace=admin-ui</arguments>
+							<arguments>run build</arguments>
 						</configuration>
 					</execution>
 				</executions>
@@ -117,34 +159,40 @@
 							<token>href="./</token>
 							<value>href="${resourceUrl}/</value>
 						</replacement>
-						<replacement>
-							<token>
-								<![CDATA[</body>]]>
-							</token>
-							<value xml:space="preserve">
-								<![CDATA[
+                        <replacement>
+                            <token><![CDATA[<link rel="icon" type="image/svg+xml" href="${resourceUrl}/favicon.svg" />]]></token>
+                            <value xml:space="preserve"><![CDATA[<link rel="icon" type="${properties.favIconType!"image/svg+xml"}" href="${resourceUrl}${properties.favIcon!"/favicon.svg"}" />]]></value>
+                        </replacement>
+                        <replacement>
+                            <token><![CDATA[<title>Keycloak Administration UI</title>]]></token>
+                            <value xml:space="preserve"><![CDATA[<title>${properties.title!"Keycloak Administration UI"}</title>]]></value>
+                        </replacement>
+                        <replacement>
+                            <token><![CDATA[</body>]]></token>
+                            <value xml:space="preserve">
+<![CDATA[
   <script id="environment" type="application/json">
     {
       "loginRealm": "${loginRealm!"master"}",
+      "clientId": "${clientId}",
       "authServerUrl": "${authServerUrl}",
       "authUrl": "${authUrl}",
       "consoleBaseUrl": "${consoleBaseUrl}",
       "resourceUrl": "${resourceUrl}",
       "masterRealm": "${masterRealm}",
       "resourceVersion": "${resourceVersion}",
-      "isRunningAsTheme": true
+      "logo": "${properties.logo!""}",
+      "logoUrl": "${properties.logoUrl!""}"
     }
   </script>
 </body>
 ]]>
-							</value>
-						</replacement>
-						<replacement>
-							<token>
-								<![CDATA[</head>]]>
-							</token>
-							<value xml:space="preserve">
-								<![CDATA[
+</value>
+                        </replacement>
+                        <replacement>
+                            <token><![CDATA[</head>]]></token>
+                            <value xml:space="preserve">
+<![CDATA[
     <#if properties.styles?has_content>
       <#list properties.styles?split(' ') as style>
       <link href="${resourceUrl}/${style}" rel="stylesheet"/>
@@ -152,8 +200,8 @@
     </#if>
   </head>
 ]]>
-							</value>
-						</replacement>
+</value>
+                        </replacement>
 					</replacements>
 				</configuration>
 			</plugin>

@@ -65,7 +65,7 @@
 		<maven.exec.plugin>3.1.0</maven.exec.plugin>
 		
 		<!-- Keycloak dependencies -->
-		<keycloak.version>21.1.1</keycloak.version>
+		<keycloak.version>22.0.1</keycloak.version>
 
 		<!-- Docker settings -->
 		<docker.keepRunning>true</docker.keepRunning>
