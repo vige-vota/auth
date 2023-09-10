@@ -152,6 +152,9 @@ importers:
       use-react-router-breadcrumbs:
         specifier: ^4.0.1
         version: 4.0.1(react-router-dom@6.12.1)(react@18.2.0)
+      axios:
+        specifier: ^1.4.0
+        version: 1.4.0
     devDependencies:
       '@4tw/cypress-drag-drop':
         specifier: ^2.2.4
@@ -6899,7 +6902,7 @@ packages:
     id: file:apps/admin-ui
     name: admin-ui
     dependencies:
-      '@keycloak/keycloak-admin-client': link:libs/keycloak-admin-client
+      '@keycloak/keycloak-admin-client': 22.0.1
       '@patternfly/patternfly': 4.224.2
       '@patternfly/react-code-editor': 4.82.115(react-dom@18.2.0)(react-monaco-editor@0.51.0)(react@18.2.0)
       '@patternfly/react-core': 4.276.8(react-dom@18.2.0)(react@18.2.0)
@@ -6912,7 +6915,7 @@ packages:
       flat: 5.0.2
       i18next: 23.2.8
       i18next-http-backend: 2.2.1
-      keycloak-js: link:libs/keycloak-js
+      keycloak-js: 22.0.1
       lodash-es: 4.17.21
       monaco-editor: 0.40.0
       react: 18.2.0
