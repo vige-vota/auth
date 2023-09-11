@@ -1,6 +1,7 @@
 import axios, { AxiosResponse } from "axios";
 import { useState } from "react";
-import { useAdminClient, useFetch } from "../auth/AdminClient";
+import { adminClient } from "../../admin-client";
+import { useFetch } from "../../utils/useFetch";
 import type { ClientQuery } from "@keycloak/keycloak-admin-client/lib/resources/clients";
 
 export const ID_ZONES = "zones";
@@ -17,7 +18,6 @@ export interface ZonesFieldRepresentation {
 }
 
 export const initLocations = () => {
-  const { adminClient } = useAdminClient();
   const [locations, setLocations] = useState<ZonesRepresentation>({
     zones: [],
   });

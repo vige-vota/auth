@@ -12,7 +12,7 @@ import {
 import { FormProvider, UseFormReturn, Controller } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-import { FormAccess } from "../form-access/FormAccess";
+import { FormAccess } from "../form/FormAccess";
 import type { KeyValueType } from "./key-value-convert";
 import { Cities } from "./Cities";
 import { KeyValueInput } from "./KeyValueInput";
