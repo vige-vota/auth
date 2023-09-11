@@ -4,6 +4,7 @@
 !tsconfig.eslint.json
 !pnpm-lock.yaml
 !.eslintrc.js
+!.husky
 !apps/admin-ui/src/components/key-value-form/AttributeForm.tsx
 !apps/admin-ui/src/components/key-value-form/Cities.tsx
 !apps/admin-ui/src/components/key-value-form/attribute-form.css
