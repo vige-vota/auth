@@ -179,5 +179,12 @@
   "credentialResetConfirmText": "Are you sure you want to send email to user",
   "credentialResetEmailSuccess": "Email sent to user.",
   "credentialResetEmailError": "Failed: {{error}}",
-  "editUserLabel": "Edit User Label Button"
+  "editUserLabel": "Edit User Label Button",
+  "level0": "Circumscription",
+  "level1": "Region",
+  "level2": "Province",
+  "level3": "City",
+  "blocks": "Blocks",
+  "residence": "Residence",
+  "stamps": "Stamps"
 }

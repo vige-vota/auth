@@ -124,7 +124,7 @@
 					<execution>
 						<id>npm-build</id>
 						<goals>
-							<goal>npm</goal>
+							<goal>pnpm</goal>
 						</goals>
 						<configuration>
 							<arguments>run build</arguments>
