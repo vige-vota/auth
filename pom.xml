@@ -20,7 +20,7 @@
 
 	<groupId>it.vige</groupId>
 	<artifactId>auth</artifactId>
-	<version>1.1.2</version>
+	<version>1.1.3</version>
 	<packaging>pom</packaging>
 	<name>Vota Keycloak</name>
 	<description>Vota Keycloak Configuration</description>
