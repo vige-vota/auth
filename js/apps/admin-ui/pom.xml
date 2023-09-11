@@ -122,7 +122,7 @@
 				<artifactId>frontend-maven-plugin</artifactId>
 				<executions>
 					<execution>
-						<id>npm-build</id>
+						<id>run-build</id>
 						<goals>
 							<goal>pnpm</goal>
 						</goals>
