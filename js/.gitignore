@@ -12,7 +12,7 @@
 !apps/admin-ui/pom.xml
 !apps/admin-ui/package.json
 !apps/admin-ui/README.md
-!apps/admin-ui/public/resources/it/users.json
-!apps/admin-ui/public/resources/it/users-help.json
-!apps/admin-ui/public/resources/en/users.json
-!apps/admin-ui/public/resources/en/users-help.json
+!apps/admin-ui/public/locales/it/users.json
+!apps/admin-ui/public/locales/it/users-help.json
+!apps/admin-ui/public/locales/en/users.json
+!apps/admin-ui/public/locales/en/users-help.json
