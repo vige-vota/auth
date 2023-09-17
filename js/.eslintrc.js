@@ -1,11 +1,7 @@
 /** @type {import("eslint").Linter.Config } */
 module.exports = {
   root: true,
-  ignorePatterns: [
-    "node_modules",
-    "dist",
-    "keycloak-theme",
-  ],
+  ignorePatterns: ["node_modules", "dist", "keycloak-theme"],
   parserOptions: {
     tsconfigRootDir: __dirname,
     project: "./tsconfig.eslint.json",
@@ -21,7 +17,6 @@ module.exports = {
     "plugin:import/typescript",
     "plugin:react/recommended",
     "plugin:react/jsx-runtime",
-    "plugin:react-hooks/recommended",
     "plugin:@typescript-eslint/base",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:prettier/recommended",

@@ -12,7 +12,7 @@ import {
 import { FormProvider, UseFormReturn, Controller } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-import { FormAccess } from "../form/FormAccess";
+import { FormAccess } from "../form-access/FormAccess";
 import type { KeyValueType } from "./key-value-convert";
 import { Cities } from "./Cities";
 import { KeyValueInput } from "./KeyValueInput";
@@ -63,7 +63,6 @@ export const AttributesForm = ({
   save,
   fineGrainedAccess,
 }: AttributesFormProps) => {
-  const { t } = useTranslation("roles");
   const noSaveCancelButtons = !save && !reset;
   const {
     formState: { isDirty },
@@ -72,12 +71,14 @@ export const AttributesForm = ({
   const [blocksOpen, setBlocksOpen] = useState(false);
   let valueFromRender: VotingPaperRepresentation;
   blocks = initBlocks();
+  const { t } = useTranslation("users");
 
   return (
     <FormAccess
       role="manage-realm"
       onSubmit={save ? handleSubmit(save) : undefined}
       fineGrainedAccess={fineGrainedAccess}
+      className="pf-u-mt-lg"
     >
       <FormProvider {...form}>
         <KeyValueInput name="attributes" />
