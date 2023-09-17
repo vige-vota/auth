@@ -17,7 +17,7 @@
 	<parent>
 		<artifactId>auth</artifactId>
 		<groupId>it.vige</groupId>
-		<version>1.1.2</version>
+		<version>1.1.3</version>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>auth-assembly</artifactId>
@@ -50,6 +50,16 @@
 									<includes>
 										<include>*.jar</include>
 									</includes>
+								</resource>
+								<resource>
+									<directory>${project.parent.basedir}/js/apps/admin-ui/target</directory>
+									<filtering>false</filtering>
+									<includes>
+										<include>*.jar</include>
+									</includes>
+									<excludes>
+										<exclude>*-sources.jar</exclude>
+									</excludes>
 								</resource>
 							</resources>
 							<outputDirectory>${project.build.directory}/dockertmp/${realm.config.environment}</outputDirectory>

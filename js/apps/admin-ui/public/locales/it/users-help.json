@@ -1,0 +1,12 @@
+{
+  "level0": "Seleziona la circoscrizione.",
+  "level1": "Seleziona la regione.",
+  "level2": "Seleziona la provincia.",
+  "level3": "Seleziona il comune.",
+  "level0-ph": "Seleziona la circoscrizione...",
+  "level1-ph": "Seleziona la regione...",
+  "level2-ph": "Seleziona la provincia...",
+  "level3-ph": "Seleziona la città...",
+  "blocks": "Seleziona un blocco",
+  "blocks-ph": "Seleziona un blocco..."
+ }

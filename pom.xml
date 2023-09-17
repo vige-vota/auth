@@ -20,7 +20,7 @@
 
 	<groupId>it.vige</groupId>
 	<artifactId>auth</artifactId>
-	<version>1.1.2</version>
+	<version>1.1.3</version>
 	<packaging>pom</packaging>
 	<name>Vota Keycloak</name>
 	<description>Vota Keycloak Configuration</description>
@@ -65,7 +65,7 @@
 		<maven.exec.plugin>3.1.0</maven.exec.plugin>
 		
 		<!-- Keycloak dependencies -->
-		<keycloak.version>21.1.1</keycloak.version>
+		<keycloak.version>22.0.1</keycloak.version>
 
 		<!-- Docker settings -->
 		<docker.keepRunning>true</docker.keepRunning>
@@ -94,10 +94,17 @@
 		<docker.keycloak.volume.internal.theme>/auth-theme.jar</docker.keycloak.volume.internal.theme>
 		<docker.keycloak.volume.external.theme>/opt/keycloak/providers/auth-theme.jar</docker.keycloak.volume.external.theme>
 
+		<!-- Keycloak Admin UI -->
+		<docker.keycloak.volume.internal.admin-ui>/keycloak-admin-ui-${keycloak.version}.jar</docker.keycloak.volume.internal.admin-ui>
+		<docker.keycloak.volume.external.admin-ui>/opt/keycloak/lib/lib/main/org.keycloak.keycloak-admin-ui-${keycloak.version}.jar</docker.keycloak.volume.external.admin-ui>
+		
 		<!-- Docker - Image saving options -->
 		<docker.keycloak.saveName>vige/vota-auth:${project.version}</docker.keycloak.saveName>
 		<docker.keycloak.saveFile>vige-vota-auth-server</docker.keycloak.saveFile>
 		<docker.keycloak.skipSave>false</docker.keycloak.skipSave>
+		<node.version>v18.16.0</node.version>
+        <pnpm.version>8.6.2</pnpm.version>
+		<frontend.plugin.version>1.12.1</frontend.plugin.version>
 		
 	</properties>
 
@@ -115,6 +122,11 @@
 					<artifactId>docker-maven-plugin</artifactId>
 					<version>${maven.docker.plugin.version}</version>
 				</plugin>
+                <plugin>
+                    <groupId>com.github.eirslett</groupId>
+                    <artifactId>frontend-maven-plugin</artifactId>
+                    <version>${frontend.plugin.version}</version>
+                </plugin>
 			</plugins>
 		</pluginManagement>
 	</build>
@@ -136,6 +148,7 @@
 	</profiles>
 
 	<modules>
+		<module>js</module>
 		<module>auth-theme</module>
 		<module>auth-assembly</module>
 	</modules>

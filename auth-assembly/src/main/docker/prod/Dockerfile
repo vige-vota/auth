@@ -21,6 +21,7 @@ VOLUME /opt/keycloak/data
 COPY /cert /opt/keycloak/data/cert
 COPY /realm-config ${docker.keycloak.volume.external.realm-config}
 COPY ${docker.keycloak.volume.internal.theme} ${docker.keycloak.volume.external.theme}
+COPY ${docker.keycloak.volume.internal.admin-ui} ${docker.keycloak.volume.external.admin-ui}
 
 EXPOSE ${docker.keycloak.port.internal}
 
