@@ -71,7 +71,8 @@
     "react-router-dom": "6.12.1",
     "reactflow": "^11.7.4",
     "ui-shared": "workspace:*",
-    "use-react-router-breadcrumbs": "^4.0.1"
+    "use-react-router-breadcrumbs": "^4.0.1",
+    "axios": "^1.4.0"
   },
   "devDependencies": {
     "@4tw/cypress-drag-drop": "^2.2.4",
